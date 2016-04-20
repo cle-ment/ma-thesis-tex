@@ -1,0 +1,51 @@
+\documentclass[english,12pt,a4paper,pdftex,sci,utf8]{aaltothesis}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+   % put here packages only for the PDF:
+   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+   \usepackage{hyperref} 
+\else
+   % put here packages only for the DVI:
+\fi
+
+% put all the other packages here:
+\usepackage{clemens_thesis} 
+
+\includeonly{./tex/preamble, ./tex/background}
+
+\begin{document}
+
+\include{./tex/preamble}
+
+%\maketitle
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+%% Content
+
+\include{./tex/introduction}
+\include{./tex/background}
+\include{./tex/methods}
+\include{./tex/experiments}
+\include{./tex/results}
+\include{./tex/discussion}
+
+%% Bibliography
+
+\clearpage
+%% The \phantomsection command is nessesary for hyperref to jump to the 
+%% correct page, in other words it puts a hyper marker on the page.
+\phantomsection
+\addcontentsline{toc}{section}{\refname}
+%\addcontentsline{toc}{section}{References}
+\bibliography{thesis-research.bib}
+\bibliographystyle{apalike}
+\nocite{*}
+
+%% Appendix
+
+\include{./tex/appendix}
+
+\end{document}

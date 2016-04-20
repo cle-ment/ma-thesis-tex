@@ -1,0 +1,32 @@
+\contentsline {section}{Abstract{} }{ii}{section*.1}
+\contentsline {section}{Preface}{iii}{section*.2}
+\contentsline {section}{Contents}{iv}{section*.3}
+\contentsline {section}{Symbols and abbreviations}{v}{section*.5}
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Structure}{1}{subsection.1.2}
+\contentsline {section}{\numberline {1}Background / Context}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Research objectives}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Related work}{1}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Feature extraction from Text}{1}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Text classification}{1}{subsubsection.1.2.2}
+\contentsline {section}{\numberline {3}Methods}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Collecting Data}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Paragraph labels: Manual crowd-sourcing}{3}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Sentence labels: Crowd-sourced collection via Crowdflower}{3}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Feature extraction from Text Data}{3}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}N-grams}{3}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Word2Vec}{3}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Supervised Classification Methods}{3}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Prediction Settings}{3}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Multi-class multi-output prediction on paragraphs}{3}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Multi-class single-output prediction on sentences}{3}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}Experiments}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Classification of paragraph labels}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Classification of sentence labels}{4}{subsection.4.2}
+\contentsline {section}{\numberline {5}Results}{5}{section.5}
+\contentsline {section}{\numberline {6}Discussion and Conclusions}{6}{section.6}
+\contentsline {section}{References}{2}{section*.9}
+\contentsline {section}{\numberline {A}Appendix }{12}{appendix.A}
+\contentsline {section}{\numberline {B}Appendix }{13}{appendix.B}
