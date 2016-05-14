@@ -1,31 +1,199 @@
+% !TEX root = ../thesis.tex
+% !TEX spellcheck = en-US
+
 \clearpage
 \section{Methods}
 
-\subsection{Collecting Data}
+\subsection{TODO}
 
 \begin{itemize}
-
-\item Document data extraction for crowdflower: http://localhost:8888/notebooks/thesis/sandbox/crowdflower-data-collection/extract-data-crowdflower.ipynb
-
+  \item Linear machine
+  \item explain metrics
+  \item single class, multi-class and multi-label classification
+  \item hard vs soft allocation (probabilistic vs discriminant)
 \end{itemize}
 
-\subsubsection{Paragraph labels: Manual crowd-sourcing}
+\subsection{Problem formalism}
 
-\subsubsection{Sentence labels: Crowd-sourced collection via Crowdflower}
+The problem at hand is to design a predictive function $\mu$ that best approximates the correct target response $y_i$ for an input document $d_i$, given as
 
-\subsection{Feature extraction from Text Data}
+\begin{equation}
+  \{ (d_1, y_1), (d_2, y_2), \ldots, (d_n, y_n) \}, \quad d_i \in \mathcal{D}, \; y_i \in \mathcal{Y}
+\end{equation}
 
-\subsubsection{N-grams}
+where $\mathcal{D}$ is a set of $n$ documents, each of which is sequence of varying length that is composed of UTF-8 encoded characters, and $\mathcal{Y}$ is a the label space with $y_i \in \{0, 1\}^{c}$ indicating the presence of each of the $c$ class labels to be predicted.
 
-Relevant sources: \cite{Chen:1996aa}
 
-\subsubsection{Word2Vec}
+\subsection{Metrics and Evaluation}
 
-\subsection{Supervised Classification Methods}
+\subsubsection{Precision, Recall and F1 Score}
 
-\subsection{Prediction Settings}
+In the field of Information Retrieval it is common practice to measure the effectiveness of a predictive system in terms of its precision and recall. This gives an improved
+The precision of such system is \textquote{the proportion of retrieved material that is actually relevant} whereas the recall measures \textquote{proportion of relevant material actually retrieved in answer to a search request}~\cite{Rijsbergen:1979aa}. Formally these two measures are defined as:
 
-\subsubsection{Multi-class multi-output prediction on paragraphs}
+\begin{equation}
+    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+\end{equation}
+\begin{equation}
+    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\end{equation}
 
-\subsubsection{Multi-class single-output prediction on sentences}
+As in~\cite{Powers:2011aa} \textquote{True and False Positives (TP/FP) refer to the number of Predicted Positives that were correct/incorrect, and similarly for True and False Negatives (TN/FN)}.
 
+As both, high precision and recall, are important for an robust information retrieval system they are typically combined into a single measure such as the F-measure, also referred to as F-score. The F-score is the weighted harmonic mean between precision and recall, derived from the measure of effectiveness proposed in~\cite{Rijsbergen:1979aa}. The most common form is the $F_1$ score  where precision and recall are assigned equal weight:
+\begin{equation}
+  \label{f1measure}
+  F_1 = 2 * \frac{\text{Precision} * \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+
+The $F_1$ score has the advantage of its intuitive interpretability as both precision and recall are well understood measures and as it lives in the range $[0,1]$, meaning that the effectiveness of the system is can be expressed in terms of percentage.
+
+It is however important to point out that any version of the F-measure is a biased score as it \textquote{ignores TN which can vary freely without affecting the statistic}~\cite{Powers:2011aa}. This can affect the evaluation of a classifier when the class distribution is skewed, motivating the use of unbiased measures in these cases, such as the ones described next.
+
+\subsubsection{Matthews Correlation Coefficient}
+
+Matthews Correlation Coefficient is an unbiased variant of the F-measure
+
+Informedness, Markedness and
+
+\subsubsection{Cross-entropy}
+
+
+\subsection{Data}
+
+\todo{Describe data format}
+
+In order to perform supervised learning labelled data was needed for training. Together with the process of reframing of the research problem this was approached in an iterative way. First a quick prototypical tool was built to collect labels in a crowd-sourced fashion. This allowed getting more knowledge about the problem itself, especially with regards to how humans perform the task of labelling topics of text sections, and to perform first experiments of algorithmically achieving meaningful results in agreement to human behavior on this task. Then these learnings were taken into consideration when re-scoping the research problem and according to that data was collected using the microtasking service crowdflower.com~\cite{crowdflower}, leading to a quality dataset of labelled sentences from job ads.
+
+\subsubsection{Explorative Data Collection}
+
+\todo{Picture of software setup?}
+
+To collect first data a tool was build, consisting of a Node.js~\cite{nodejs} server using MongoDB\cite{mongodb} as a database and communicating via a JSON with a simplistic website front-end using the mustache template engine~\cite{mustache}. The tool is online\footnote{\url{http://thesis.cwestrup.de/jobad-tagger/}} and it's source code is publicly available on GitHub\footnote{\url{https://github.com/cle-ment/thesis-tagger}} with it's API documentation hosted online as well\footnote{\url{http://thesis.cwestrup.de/jobad-tagger/apidoc/}}.
+
+The data generated by using the free text description of each job ad and splitting it into paragraphs as can be seen in the software package as well\footnote{\url{https://github.com/cle-ment/thesis-tagger/blob/master/pre-processing.ipynb}}.
+
+The goal of this prototype tool for data collection was on the one hand to acquire data in order to carry our first experiments as fast as possible, and on the other hand to gain a deeper understanding about the research problem itself by giving an open, unbiased task to the participants. In particular the question at hand was how humans label the content of the different parts of a job ad.
+
+The exact task given to the participants was ``Describe what each section is about by adding one or more tags/keywords to it''. They were shown a job ad that was split into paragraphs and besides each paragraph was a text field to enter 1 or more tags.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/thesis-tagger-interface.png}
+  \caption{Interface of the tagging tool}
+  \label{fig:thesis-tagger-interface}
+\end{figure}
+
+In a first step the tool was only shown to 3 participants to get immediate feedback if the user interface had flaws and whether the task was understood.   Based on this feedback the tool was improved by providing an example for the participants and then tested with a slightly larger group of 12 persons. After correcting a few minor details in the user interface a public link was then shared via social media and other channels with as many people as possible. A few days later the tool was then also shared internally within Sanoma where it was set up as a competition to tag the most possible job ads.
+
+In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 tags.
+
+\todo{Describe data: Different characteristics}
+\todo{show distribution?}
+\todo{show embedding visualizations}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/paragraph-data-tSNE.eps}
+        \caption{t-SNE Embedding}
+        \label{fig:paragraph-data-tSNE}
+    \end{subfigure}
+    %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/paragraph-data-principal-components-projection.eps}
+        \caption{Principal Components Projection}
+        \label{fig:paragraph-data-principal-components-projection}
+    \end{subfigure}
+    \caption{Visualizing the paragraph dataset. The data mapped into a vector space via a Unigram TF.IDF mapping.}
+    \label{fig:paragraph-data}
+\end{figure}
+
+
+\subsubsection{Crowdsourced Data Collection with Refined Research Problem}
+
+
+
+
+\subsection{Discriminant Functions for Multi-class Classification}
+
+A simple approach to multi-class classification is to pose the learning problem as a combination of binary classification problems as described in~\cite[Chapter 4.1.2, p.~182]{Bishop:2006aa}. This can be done by using $K$ separate classifiers, each of which predicts one of the classes against all $K-1$ other classes, which is known as the \textit{one-versus-the-rest} classification scheme. An alternative approach is to train $K (K - 1) / 2$ binary classifiers for each possible pair of classes, referred to as \textit{one-versus-one} classification.
+
+These extensions though have major drawbacks as pointed out by~\cite[Chapter 5.2.2]{Duda:1973aa}. As illustrated by~\ref{fig:Bishop2006aa-p182-ch4-fig4-1} both of the classification schemes lead to ambiguous regions in the hypothesis space as their classification is undefined.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{img/Bishop2006aa-p182-ch4-fig4-1-a.eps}
+        \caption{One-Vs-Rest classification scheme}
+        \label{fig:Bishop2006aa-p182-ch4-fig4-1-a}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{img/Bishop2006aa-p182-ch4-fig4-1-b.eps}
+        \caption{One-Vs-One classification scheme}
+        \label{fig:Bishop2006aa-p182-ch4-fig4-1-b}
+    \end{subfigure}
+    \caption{: Ambiguous regions in the hypothesis space (\cite{Bishop:2006aa} Chapter 4, Figure 4.1) }
+    \label{fig:Bishop2006aa-p182-ch4-fig4-1}
+\end{figure}
+
+\cite{Bishop:2006aa}
+
+
+\subsection{Vector-Space Models}
+
+Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
+
+\subsubsection{N-gram language models}
+
+N-gram language models are based on co-occurrences of word or character sequences, so-called N-grams or $k$-shingles as they are referred to in the Data Mining literature~\cite[Chapter 3.2, p.~72]{Leskovec:2014aa}. Formally an N-gram is defined as a sequence of $n$ items, each of which consist of $n$ characters or words, effectively used to capture sub-sequences of text. Common choices are N-grams of size 1, 2 or 3 --- called ``unigrams'', ``bigrams'' and ``trigrams'' respectively --- and the definition can be extended to using a window size $[\textit{w}_{\text{min}}, \textit{w}_{\text{max}}]$, employing all combinations of N-grams in this interval.
+
+N-grams are usually used to create a vector-space model by representing each document in a dataset as a \textit{bag-of-words} or \textit{bag-of-N-grams} vector so that each dimension of the vector represents statistics about the corresponding N-gram. For unigrams
+
+- TF.IDF
+- simple wordcounts
+- show T-SNE embeddings of doc2vec vectors
+
+Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}.
+
+Notable shortcomings of this method are it's inability to capture word-order
+
+\begin{itemize}
+  \item vector space models
+  \item bag of words
+  \item \textquote{The most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
+\end{itemize}
+
+
+
+% \subsection{Collecting Data}
+%
+% \begin{itemize}
+%
+% \item Document data extraction for crowdflower:
+http://localhost:8888/notebooks/thesis/sandbox/crowdflower-data-collection/extract-data-crowdflower.ipynb
+%
+% \end{itemize}
+%
+% \subsubsection{Paragraph labels: Manual crowd-sourcing}
+%
+% \subsubsection{Sentence labels: Crowd-sourced collection via Crowdflower}
+%
+% \subsection{Feature extraction from Text Data}
+%
+% \subsubsection{N-grams}
+%
+% Relevant sources: \cite{Chen:1996aa}
+%
+% \subsubsection{Word2Vec}
+%
+% \subsection{Supervised Classification Methods}
+%
+% \subsection{Prediction Settings}
+%
+% \subsubsection{Multi-class multi-output prediction on paragraphs}
+%
+% \subsubsection{Multi-class single-output prediction on sentences}

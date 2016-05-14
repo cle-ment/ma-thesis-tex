@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: ./tex/preamble.aux
+A level-1 auxiliary file: ./tex/introduction.aux
+A level-1 auxiliary file: ./tex/background.aux
+A level-1 auxiliary file: ./tex/methods.aux
+A level-1 auxiliary file: ./tex/experiments.aux
+A level-1 auxiliary file: ./tex/results.aux
+A level-1 auxiliary file: ./tex/discussion.aux
+The style file: apalike.bst
+A level-1 auxiliary file: ./tex/appendix.aux
+Database file #1: literature/thesis-research.bib.bib
+Warning--to sort, need author or key in crowdflower
+Warning--to sort, need author or key in nodejs
+Warning--to sort, need author or key in mongodb
+Warning--to sort, need author or key in mustache
+Warning--empty journal in Powers:2011aa
+You've used 12 entries,
+            1935 wiz_defined-function locations,
+            543 strings with 5296 characters,
+and the built_in function-call counts, 3506 in all, are:
+= -- 340
+> -- 101
+< -- 8
++ -- 31
+- -- 31
+* -- 258
+:= -- 619
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 70
+chr.to.int$ -- 12
+cite$ -- 21
+duplicate$ -- 161
+empty$ -- 267
+format.name$ -- 43
+if$ -- 688
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 11
+newline$ -- 62
+num.names$ -- 26
+pop$ -- 76
+preamble$ -- 1
+purify$ -- 74
+quote$ -- 0
+skip$ -- 122
+stack$ -- 0
+substring$ -- 180
+swap$ -- 17
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 64
+warning$ -- 5
+while$ -- 20
+width$ -- 0
+write$ -- 147
+(There were 5 warnings)

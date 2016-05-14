@@ -1,339 +1,66 @@
 \begin{thebibliography}{}
 
-\bibitem[Alfonseca and Manandhar, 2002]{Alfonseca:2002aa}
-Alfonseca, E. and Manandhar, S. (2002).
-\newblock An unsupervised method for general named entity recognition and
-  automated concept discovery.
-\newblock In {\em Proceedings of the 1st international conference on general
-  {WordNet}, {Mysore}, {India}}, page~34.
+\bibitem[mus, 2016]{mustache}
+ (2016).
+\newblock {{ mustache }}.
+\newblock \url{https://mustache.github.io}.
 
-\bibitem[Baluja et~al., 2000]{Baluja:2000aa}
-Baluja, S., Mittal, V.~O., and Sukthankar, R. (2000).
-\newblock Applying {Machine} {Learning} for {High}-{Performance}
-  {Named}-{Entity} {Extraction}.
-\newblock {\em Computational Intelligence}, 16(4):586--595.
+\bibitem[cro, 2016]{crowdflower}
+ (2016).
+\newblock Crowdflower.
+\newblock \url{https://www.crowdflower.com}.
 
-\bibitem[Bastian et~al., 2014]{Bastian:2014aa}
-Bastian, M., Hayes, M., Vaughan, W., Shah, S., Skomoroch, P., Kim, H., Uryasev,
-  S., and Lloyd, C. (2014).
-\newblock {LinkedIn} skills: large-scale topic extraction and inference.
-\newblock pages 1--8. ACM Press.
+\bibitem[mon, 2016]{mongodb}
+ (2016).
+\newblock Mongodb.
+\newblock \url{https://www.mongodb.com}.
 
-\bibitem[Bengio et~al., 2006]{Bengio:2006aa}
-Bengio, Y., Schwenk, H., Sen{\'e}cal, J.-S., Morin, F., and Gauvain, J.-L.
-  (2006).
-\newblock Neural {Probabilistic} {Language} {Models}.
-\newblock In Holmes, P. D.~E. and Jain, P. L.~C., editors, {\em Innovations in
-  {Machine} {Learning}}, number 194 in Studies in {Fuzziness} and {Soft}
-  {Computing}, pages 137--186. Springer Berlin Heidelberg.
-\newblock DOI: 10.1007/3-540-33486-6\_6.
+\bibitem[nod, 2016]{nodejs}
+ (2016).
+\newblock Node.js.
+\newblock \url{https://nodejs.org/en/}.
 
-\bibitem[Bernstein et~al., 2011]{Bernstein:2011aa}
-Bernstein, M.~S., Brandt, J., Miller, R.~C., and Karger, D.~R. (2011).
-\newblock Crowds in {Two} {Seconds}: {Enabling} {Realtime} {Crowd}-powered
-  {Interfaces}.
-\newblock In {\em Proceedings of the 24th {Annual} {ACM} {Symposium} on {User}
-  {Interface} {Software} and {Technology}}, {UIST} '11, pages 33--42, New York,
-  NY, USA. ACM.
+\bibitem[Bishop, 2006]{Bishop:2006aa}
+Bishop, C.~M. (2006).
+\newblock {\em Pattern {Recognition} and {Machine} {Learning} ({Information}
+  {Science} and {Statistics})}.
+\newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA.
 
-\bibitem[Blei et~al., 2010]{Blei:2010aa}
-Blei, D., Carin, L., and Dunson, D. (2010).
-\newblock Probabilistic {Topic} {Models}.
-\newblock {\em IEEE Signal Processing Magazine}, 27(6):55--65.
+\bibitem[Do and Ng, 2006]{Do:2006aa}
+Do, C.~B. and Ng, A.~Y. (2006).
+\newblock Transfer learning for text classification.
+\newblock In Weiss, Y., Sch{\"o}lkopf, B., and Platt, J.~C., editors, {\em
+  Advances in {Neural} {Information} {Processing} {Systems} 18}, pages
+  299--306. MIT Press.
 
-\bibitem[Blei, 2012]{Blei:2012aa}
-Blei, D.~M. (2012).
-\newblock Probabilistic {Topic} {Models}.
-\newblock {\em Commun. ACM}, 55(4):77--84.
-
-\bibitem[Brooke, 2014]{Brooke:2014aa}
-Brooke, J. (2014).
-\newblock {\em Computational {Approaches} to {Style} and the {Lexicon}}.
-\newblock PhD thesis, University of Toronto.
-
-\bibitem[Callison-Burch and Dredze, 2010]{Callison-Burch:2010aa}
-Callison-Burch, C. and Dredze, M. (2010).
-\newblock Creating speech and language data with {Amazon}'s {Mechanical}
-  {Turk}.
-\newblock In {\em Proceedings of the {NAACL} {HLT} 2010 {Workshop} on
-  {Creating} {Speech} and {Language} {Data} with {Amazon}'s {Mechanical}
-  {Turk}}, pages 1--12. Association for Computational Linguistics.
-
-\bibitem[Chen and Goodman, 1996]{Chen:1996aa}
-Chen, S.~F. and Goodman, J. (1996).
-\newblock An {Empirical} {Study} of {Smoothing} {Techniques} for {Language}
-  {Modeling}.
-\newblock In {\em Proceedings of the 34th {Annual} {Meeting} on {Association}
-  for {Computational} {Linguistics}}, {ACL} '96, pages 310--318, Stroudsburg,
-  PA, USA. Association for Computational Linguistics.
-
-\bibitem[Cheng et~al., 2014]{Cheng:2014aa}
-Cheng, J., Kartsaklis, D., and Grefenstette, E. (2014).
-\newblock Investigating the role of prior disambiguation in deep-learning
-  compositional models of meaning.
-\newblock {\em arXiv preprint arXiv:1411.4116}.
-
-\bibitem[Chien and Chen, 2008]{Chien:2008aa}
-Chien, C.-F. and Chen, L.-F. (2008).
-\newblock Data mining to improve personnel selection and enhance human capital:
-  {A} case study in high-technology industry.
-\newblock {\em Expert Systems with Applications}, 34(1):280--290.
-
-\bibitem[Clark et~al., 2013]{Clark:2013aa}
-Clark, A., Fox, C., and Lappin, S. (2013).
-\newblock {\em The {Handbook} of {Computational} {Linguistics} and {Natural}
-  {Language} {Processing}}.
-\newblock John Wiley \& Sons.
-
-\bibitem[Collobert and Weston, 2008]{Collobert:2008aa}
-Collobert, R. and Weston, J. (2008).
-\newblock A {Unified} {Architecture} for {Natural} {Language} {Processing}:
-  {Deep} {Neural} {Networks} with {Multitask} {Learning}.
-\newblock In {\em Proceedings of the 25th {International} {Conference} on
-  {Machine} {Learning}}, {ICML} '08, pages 160--167, New York, NY, USA. ACM.
-
-\bibitem[Domingos, 2012]{Domingos:2012aa}
-Domingos, P. (2012).
-\newblock A {Few} {Useful} {Things} to {Know} {About} {Machine} {Learning}.
-\newblock {\em Commun. ACM}, 55(10):78--87.
-
-\bibitem[Echarte et~al., 2007]{Echarte:2007aa}
-Echarte, F., Astrain, J.~J., C{\'o}rdoba, A., and Villadangos, J.~E. (2007).
-\newblock Ontology of {Folksonomy}: {A} {New} {Modelling} {Method}.
-\newblock {\em SAAKM}, 289:36.
-
-\bibitem[Faruqui and Pad{\'o}, 2011]{Faruqui:2011aa}
-Faruqui, M. and Pad{\'o}, S. (2011).
-\newblock "{I} {Thou} {Thee}, {Thou} {Traitor}": {Predicting} {Formal} vs.
-  {Informal} {Address} in {English} {Literature}.
-\newblock In {\em Proceedings of the 49th {Annual} {Meeting} of the
-  {Association} for {Computational} {Linguistics}: {Human} {Language}
-  {Technologies}: {Short} {Papers} - {Volume} 2}, {HLT} '11, pages 467--472,
-  Stroudsburg, PA, USA. Association for Computational Linguistics.
-
-\bibitem[Gers et~al., 1999]{Gers:1999aa}
-Gers, F., Schmidhuber, J., and Cummins, F. (1999).
-\newblock Learning to forget: continual prediction with {LSTM}.
-\newblock In {\em Artificial {Neural} {Networks}, 1999. {ICANN} 99. {Ninth}
-  {International} {Conference} on ({Conf}. {Publ}. {No}. 470)}, volume~2, pages
-  850--855 vol.2.
-
-\bibitem[Ginter and Kanerva, 2014]{Ginter:2014aa}
-Ginter, F. and Kanerva, J. (2014).
-\newblock Fast {Training} of word2vec {Representations} {Using} {N-gram}
-  {Corpora}.
-
-\bibitem[Guillory and Hancock, 2012]{Guillory:2012aa}
-Guillory, J. and Hancock, J.~T. (2012).
-\newblock The effect of {Linkedin} on deception in resumes.
-\newblock {\em Cyberpsychology, Behavior and Social Networking},
-  15(3):135--140.
-
-\bibitem[{Hokey Min} and {Ahmed Emam}, 2003]{Hokey-Min:2003aa}
-{Hokey Min} and {Ahmed Emam} (2003).
-\newblock Developing the profiles of truck drivers for their successful
-  recruitment and retention: {A} data mining approach.
-\newblock {\em International Journal of Physical Distribution \& Logistics
-  Management}, 33(2):149--162.
-
-\bibitem[Hussain et~al., 2007]{Hussain:2007aa}
-Hussain, Z., Wallace, J., and Cornelius, N.~E. (2007).
-\newblock The use and impact of human resource information systems on human
-  resource management professionals.
-\newblock {\em Information \& Management}, 44(1):74--89.
-
-\bibitem[Ipeirotis, 2010]{Ipeirotis:2010aa}
-Ipeirotis, P.~G. (2010).
-\newblock Demographics of mechanical turk.
-
-\bibitem[Jagadish et~al., 1998]{Jagadish:1998aa}
-Jagadish, H.~V., Koudas, N., Muthukrishnan, S., Poosala, V., Sevcik, K.~C., and
-  Suel, T. (1998).
-\newblock Optimal histograms with quality guarantees.
-\newblock In {\em {VLDB}}, volume~98, pages 24--27.
-
-\bibitem[Johnson and Zhang, 2014]{Johnson:2014aa}
-Johnson, R. and Zhang, T. (2014).
-\newblock Effective {Use} of {Word} {Order} for {Text} {Categorization} with
-  {Convolutional} {Neural} {Networks}.
-\newblock {\em arXiv:1412.1058 [cs, stat]}.
-\newblock arXiv: 1412.1058.
-
-\bibitem[Kalchbrenner et~al., 2014]{Kalchbrenner:2014aa}
-Kalchbrenner, N., Grefenstette, E., and Blunsom, P. (2014).
-\newblock A convolutional neural network for modelling sentences.
-\newblock {\em arXiv preprint arXiv:1404.2188}.
-
-\bibitem[Kim, 2014]{Kim:2014aa}
-Kim, Y. (2014).
-\newblock Convolutional neural networks for sentence classification.
-\newblock {\em arXiv preprint arXiv:1408.5882}.
-
-\bibitem[Kotzias et~al., 2015]{Kotzias:2015aa}
-Kotzias, D., Denil, M., de~Freitas, N., and Smyth, P. (2015).
-\newblock From {Group} to {Individual} {Labels} {Using} {Deep} {Features}.
-\newblock In {\em Proceedings of the 21th {ACM} {SIGKDD} {International}
-  {Conference} on {Knowledge} {Discovery} and {Data} {Mining}}, {KDD} '15,
-  pages 597--606, New York, NY, USA. ACM.
-
-\bibitem[Lafferty et~al., 2001]{Lafferty:2001aa}
-Lafferty, J., McCallum, A., and Pereira, F. (2001).
-\newblock Conditional {Random} {Fields}: {Probabilistic} {Models} for
-  {Segmenting} and {Labeling} {Sequence} {Data}.
-\newblock {\em Departmental Papers (CIS)}.
-
-\bibitem[Lange and Zilles, 2004]{Lange:2004aa}
-Lange, S. and Zilles, S. (2004).
-\newblock Formal language identification: query learning vs. {Gold}-style
-  learning.
-\newblock {\em Information Processing Letters}, 91(6):285--292.
+\bibitem[Duda et~al., 1973]{Duda:1973aa}
+Duda, R.~O., Hart, P.~E., and {others} (1973).
+\newblock {\em Pattern classification and scene analysis}, volume~3.
+\newblock Wiley New York.
 
 \bibitem[Le and Mikolov, 2014]{Le:2014aa}
 Le, Q.~V. and Mikolov, T. (2014).
 \newblock Distributed representations of sentences and documents.
 \newblock {\em arXiv preprint arXiv:1405.4053}.
 
-\bibitem[Lee et~al., 2015]{Lee:2015:RJO:2700171.2791048}
-Lee, Y.-C., Hong, J., Kim, S.-W., Gao, S., and Hwang, J.-Y. (2015).
-\newblock On recommending job openings.
-\newblock In {\em Proceedings of the 26th ACM Conference on Hypertext \&\#38;
-  Social Media}, HT '15, pages 331--332, New York, NY, USA. ACM.
-
 \bibitem[Leskovec et~al., 2014]{Leskovec:2014aa}
 Leskovec, J., Rajaraman, A., and Ullman, J.~D. (2014).
 \newblock {\em Mining of massive datasets}.
 \newblock Cambridge University Press.
-
-\bibitem[Lewis, 1992]{Lewis:1992aa}
-Lewis, D.~D. (1992).
-\newblock Feature selection and feature extraction for text categorization.
-\newblock In {\em Proceedings of the workshop on {Speech} and {Natural}
-  {Language}}, pages 212--217. Association for Computational Linguistics.
-
-\bibitem[Little et~al., 2010]{Little:2010aa}
-Little, G., Chilton, L.~B., Goldman, M., and Miller, R.~C. (2010).
-\newblock Exploring {Iterative} and {Parallel} {Human} {Computation}
-  {Processes}.
-\newblock In {\em Proceedings of the {ACM} {SIGKDD} {Workshop} on {Human}
-  {Computation}}, {HCOMP} '10, pages 68--76, New York, NY, USA. ACM.
-
-\bibitem[Luhn, 1958]{Luhn:1958aa}
-Luhn, H. (1958).
-\newblock A {Business} {Intelligence} {System}.
-\newblock {\em IBM Journal of Research and Development}, 2(4):314--319.
-
-\bibitem[Mason and Watts, 2010]{Mason:2010aa}
-Mason, W. and Watts, D.~J. (2010).
-\newblock Financial {Incentives} and the "{Performance} of {Crowds}".
-\newblock {\em SIGKDD Explor. Newsl.}, 11(2):100--108.
 
 \bibitem[Mikolov, 2012]{Mikolov:2012aa}
 Mikolov, T. (2012).
 \newblock {\em Statistical {Language} {Models} {Based} on {Neural} {Networks}}.
 \newblock PhD thesis, Ph. D. thesis, Brno University of Technology.
 
-\bibitem[Mikolov et~al., 2013]{Mikolov:2013aa}
-Mikolov, T., Le, Q.~V., and Sutskever, I. (2013).
-\newblock Exploiting similarities among languages for machine translation.
-\newblock {\em arXiv preprint arXiv:1309.4168}.
+\bibitem[Powers, 2011]{Powers:2011aa}
+Powers, D.~M. (2011).
+\newblock Evaluation: from precision, recall and {F}-measure to {ROC},
+  informedness, markedness and correlation.
 
-\bibitem[Nadeau and Sekine, 2007]{Nadeau:2007aa}
-Nadeau, D. and Sekine, S. (2007).
-\newblock A survey of named entity recognition and classification.
-\newblock {\em Lingvisticae Investigationes}, 30(1):3--26.
-
-\bibitem[Navigli and Velardi, 2004]{Navigli:2004aa}
-Navigli, R. and Velardi, P. (2004).
-\newblock Learning {Domain} {Ontologies} from {Document} {Warehouses} and
-  {Dedicated} {Web} {Sites}.
-\newblock {\em Computational Linguistics}, 30(2):151--179.
-
-\bibitem[Pavlick et~al., 2014]{Pavlick:2014aa}
-Pavlick, E., Post, M., Irvine, A., Kachaev, D., and Callison-Burch, C. (2014).
-\newblock The {Language} {Demographics} of {Amazon} {Mechanical} {Turk}.
-\newblock {\em Transactions of the Association for Computational Linguistics},
-  2(0):79--92.
-
-\bibitem[Powell et~al., 2011]{Powell:2011aa}
-Powell, D.~M., Goffin, R.~D., and Gellatly, I.~R. (2011).
-\newblock Gender differences in personality scores: {Implications} for
-  differential hiring rates.
-\newblock {\em Personality and Individual Differences}, 50(1):106--110.
-
-\bibitem[Rothstein and Goffin, 2006]{Rothstein:2006aa}
-Rothstein, M.~G. and Goffin, R.~D. (2006).
-\newblock The use of personality measures in personnel selection: {What} does
-  current research support?
-\newblock {\em Human Resource Management Review}, 16(2):155--180.
-
-\bibitem[Saidi~Mehrabad and Fathian~Brojeny, 2007]{Saidi-Mehrabad:2007aa}
-Saidi~Mehrabad, M. and Fathian~Brojeny, M. (2007).
-\newblock The development of an expert system for effective selection and
-  appointment of the jobs applicants in human resource management.
-\newblock {\em Computers \& Industrial Engineering}, 53(2):306--312.
-
-\bibitem[Shahaf et~al., 2012]{Shahaf:2012aa}
-Shahaf, D., Guestrin, C., and Horvitz, E. (2012).
-\newblock Metro maps of science.
-\newblock In {\em Proceedings of the 18th {ACM} {SIGKDD} international
-  conference on {Knowledge} discovery and data mining}, pages 1122--1130. ACM.
-
-\bibitem[Sivaram and Ramar, 2010]{Sivaram:2010aa}
-Sivaram, N. and Ramar, K. (2010).
-\newblock Applicability of clustering and classification algorithms for
-  recruitment data mining.
-\newblock {\em International Journal of Computer Applications}, 4(5):23--28.
-
-\bibitem[Stavrou et~al., 2007]{Stavrou:2007aa}
-Stavrou, E.~T., Charalambous, C., and Spiliotis, S. (2007).
-\newblock Human resource management and performance: {A} neural network
-  analysis.
-\newblock {\em European Journal of Operational Research}, 181(1):453--467.
-
-\bibitem[Strzalkowski and Wang, 1996]{Strzalkowski:1996aa}
-Strzalkowski, T. and Wang, J. (1996).
-\newblock A {Self}-learning {Universal} {Concept} {Spotter}.
-\newblock In {\em Proceedings of the 16th {Conference} on {Computational}
-  {Linguistics} - {Volume} 2}, {COLING} '96, pages 931--936, Stroudsburg, PA,
-  USA. Association for Computational Linguistics.
-
-\bibitem[Taylor, 2006]{Taylor:2006aa}
-Taylor, S. (2006).
-\newblock Acquaintance, meritocracy and critical realism: {Researching}
-  recruitment and selection processes in smaller and growth organizations.
-\newblock {\em Human Resource Management Review}, 16(4):478--489.
-
-\bibitem[von Ahn and Dabbish, 2004]{Ahn:2004aa}
-von Ahn, L. and Dabbish, L. (2004).
-\newblock Labeling {Images} with a {Computer} {Game}.
-\newblock In {\em Proceedings of the {SIGCHI} {Conference} on {Human} {Factors}
-  in {Computing} {Systems}}, {CHI} '04, pages 319--326, New York, NY, USA. ACM.
-
-\bibitem[Waltz, 2003]{Waltz:2003aa}
-Waltz, E. (2003).
-\newblock {\em Knowledge {Management} in the {Intelligence} {Enterprise}}.
-\newblock Artech House.
-
-\bibitem[Youyou et~al., 2015]{Youyou:2015aa}
-Youyou, W., Kosinski, M., and Stillwell, D. (2015).
-\newblock Computer-based personality judgments are more accurate than those
-  made by humans.
-\newblock {\em Proceedings of the National Academy of Sciences},
-  112(4):1036--1040.
-
-\bibitem[Zhang et~al., 2004]{Zhang:2004aa}
-Zhang, L., Pan, Y., and Zhang, T. (2004).
-\newblock Focused {Named} {Entity} {Recognition} {Using} {Machine} {Learning}.
-\newblock In {\em Proceedings of the 27th {Annual} {International} {ACM}
-  {SIGIR} {Conference} on {Research} and {Development} in {Information}
-  {Retrieval}}, {SIGIR} '04, pages 281--288, New York, NY, USA. ACM.
-
-\bibitem[Zhang et~al., 2006]{Zhang:2006aa}
-Zhang, L., Wu, X., and Yu, Y. (2006).
-\newblock Emergent {Semantics} from {Folksonomies}: {A} {Quantitative} {Study}.
-\newblock In Spaccapietra, S., Aberer, K., and Cudr{\'e}-Mauroux, P., editors,
-  {\em Journal on {Data} {Semantics} {VI}}, number 4090 in Lecture {Notes} in
-  {Computer} {Science}, pages 168--186. Springer Berlin Heidelberg.
-\newblock DOI: 10.1007/11803034\_8.
+\bibitem[Rijsbergen, 1979]{Rijsbergen:1979aa}
+Rijsbergen, C. J.~V. (1979).
+\newblock {\em Information {Retrieval}}.
+\newblock Butterworth-Heinemann, London ; Boston, 2nd edition edition.
 
 \end{thebibliography}
