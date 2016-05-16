@@ -38,11 +38,6 @@ Duda, R.~O., Hart, P.~E., and {others} (1973).
 \newblock {\em Pattern classification and scene analysis}, volume~3.
 \newblock Wiley New York.
 
-\bibitem[Le and Mikolov, 2014]{Le:2014aa}
-Le, Q.~V. and Mikolov, T. (2014).
-\newblock Distributed representations of sentences and documents.
-\newblock {\em arXiv preprint arXiv:1405.4053}.
-
 \bibitem[Leskovec et~al., 2014]{Leskovec:2014aa}
 Leskovec, J., Rajaraman, A., and Ullman, J.~D. (2014).
 \newblock {\em Mining of massive datasets}.

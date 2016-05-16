@@ -23,47 +23,11 @@ The problem at hand is to design a predictive function $\mu$ that best approxima
 
 where $\mathcal{D}$ is a set of $n$ documents, each of which is sequence of varying length that is composed of UTF-8 encoded characters, and $\mathcal{Y}$ is a the label space with $y_i \in \{0, 1\}^{c}$ indicating the presence of each of the $c$ class labels to be predicted.
 
-
-\subsection{Metrics and Evaluation}
-
-\subsubsection{Precision, Recall and F1 Score}
-
-In the field of Information Retrieval it is common practice to measure the effectiveness of a predictive system in terms of its precision and recall. This gives an improved
-The precision of such system is \textquote{the proportion of retrieved material that is actually relevant} whereas the recall measures \textquote{proportion of relevant material actually retrieved in answer to a search request}~\cite{Rijsbergen:1979aa}. Formally these two measures are defined as:
-
-\begin{equation}
-    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
-\end{equation}
-\begin{equation}
-    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
-\end{equation}
-
-As in~\cite{Powers:2011aa} \textquote{True and False Positives (TP/FP) refer to the number of Predicted Positives that were correct/incorrect, and similarly for True and False Negatives (TN/FN)}.
-
-As both, high precision and recall, are important for an robust information retrieval system they are typically combined into a single measure such as the F-measure, also referred to as F-score. The F-score is the weighted harmonic mean between precision and recall, derived from the measure of effectiveness proposed in~\cite{Rijsbergen:1979aa}. The most common form is the $F_1$ score  where precision and recall are assigned equal weight:
-\begin{equation}
-  \label{f1measure}
-  F_1 = 2 * \frac{\text{Precision} * \text{Recall}}{\text{Precision} + \text{Recall}}
-\end{equation}
-
-The $F_1$ score has the advantage of its intuitive interpretability as both precision and recall are well understood measures and as it lives in the range $[0,1]$, meaning that the effectiveness of the system is can be expressed in terms of percentage.
-
-It is however important to point out that any version of the F-measure is a biased score as it \textquote{ignores TN which can vary freely without affecting the statistic}~\cite{Powers:2011aa}. This can affect the evaluation of a classifier when the class distribution is skewed, motivating the use of unbiased measures in these cases, such as the ones described next.
-
-\subsubsection{Matthews Correlation Coefficient}
-
-Matthews Correlation Coefficient is an unbiased variant of the F-measure
-
-Informedness, Markedness and
-
-\subsubsection{Cross-entropy}
-
-
-\subsection{Data}
+\section{Data}
 
 \todo{Describe data format}
 
-In order to perform supervised learning labelled data was needed for training. Together with the process of reframing of the research problem this was approached in an iterative way. First a quick prototypical tool was built to collect labels in a crowd-sourced fashion. This allowed getting more knowledge about the problem itself, especially with regards to how humans perform the task of labelling topics of text sections, and to perform first experiments of algorithmically achieving meaningful results in agreement to human behavior on this task. Then these learnings were taken into consideration when re-scoping the research problem and according to that data was collected using the microtasking service crowdflower.com~\cite{crowdflower}, leading to a quality dataset of labelled sentences from job ads.
+In order to perform supervised learning labelled data was needed for training. Together with the process of reframing of the research problem this was approached in an iterative way. First a quick prototypical tool was built to collect labels in a crowd-sourced fashion. This allowed getting more knowledge about the problem itself, especially with regards to how humans perform the task of labelling topics of text sections, and to perform first experiments of algorithmically achieving meaningful results in agreement to human behavior on this task. Then these learnings were taken into consideration when re-scoping the research problem and according to that data was collected using the microtasking service crowdflower~\cite{crowdflower}, leading to a quality dataset of labelled sentences from job ads.
 
 \subsubsection{Explorative Data Collection}
 
@@ -81,7 +45,7 @@ The exact task given to the participants was ``Describe what each section is abo
   \centering
   \includegraphics[width=0.5\textwidth]{img/thesis-tagger-interface.png}
   \caption{Interface of the tagging tool}
-  \label{fig:thesis-tagger-interface}
+\label{fig:thesis-tagger-interface}
 \end{figure}
 
 In a first step the tool was only shown to 3 participants to get immediate feedback if the user interface had flaws and whether the task was understood.   Based on this feedback the tool was improved by providing an example for the participants and then tested with a slightly larger group of 12 persons. After correcting a few minor details in the user interface a public link was then shared via social media and other channels with as many people as possible. A few days later the tool was then also shared internally within Sanoma where it was set up as a competition to tag the most possible job ads.
@@ -94,24 +58,159 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{img/paragraph-data-tSNE.eps}
-        \caption{t-SNE Embedding}
-        \label{fig:paragraph-data-tSNE}
+    \includegraphics[width=\textwidth]{img/paragraph-data-tSNE.eps}
+    \caption{t-SNE Embedding}
+  \label{fig:paragraph-data-tSNE}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/paragraph-data-principal-components-projection.eps}
+    \caption{Principal Components Projection}
+  \label{fig:paragraph-data-principal-components-projection}
+\end{figure}
+
+\subsubsection{Crowdsourced Data Collection with Refined Research Problem}
+
+
+\begin{figure}[h]
+ % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
+    \centering
+    \begin{subfigure}[b]{0.46\textwidth}
+        \includegraphics[width=\textwidth]{img/sentence-data-judgement-confidence.pdf}
+        \caption{Confidence}
+      \label{fig:sentence-data-judgement-confidence}
     \end{subfigure}
+    ~
     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
     %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{img/paragraph-data-principal-components-projection.eps}
-        \caption{Principal Components Projection}
-        \label{fig:paragraph-data-principal-components-projection}
+    \begin{subfigure}[b]{0.43\textwidth}
+        \includegraphics[width=\textwidth]{img/sentence-data-judgement-confidence-cumulative.pdf}
+        \caption{Cumulative Confidence}
+        \label{fig:sentence-data-judgement-confidence-cumulative}
     \end{subfigure}
-    \caption{Visualizing the paragraph dataset. The data mapped into a vector space via a Unigram TF.IDF mapping.}
-    \label{fig:paragraph-data}
+    \caption{Amount of label judgements versus label confidence of the sentence label data collected via crowdflower}
+  \label{fig:sentence-data-judgements}
 \end{figure}
 
 
-\subsubsection{Crowdsourced Data Collection with Refined Research Problem}
+\begin{figure}[h]
+  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
+    \centering
+    \includegraphics[width=\textwidth]{img/sentence-data-label-dist.pdf}
+    \caption{Distribution of labels in sentence data}
+  \label{fig:sentence-data-label-dist}
+\end{figure}
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+\todo{explain suervised classifiaction and binaty vs multi}
+
+\subsection{Binary Classification}
+\label{sub:binary-classification}
+
+In binary or dichotomous classification we are given a single class $c$ and a set of labelled data points $\mathcal{D} = \{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n) \}$ where labels $y_i \in \{0, 1\}$ encode whether a data point $x_i$ belongs the class $c$ or not. The task is then to achieve correct classification of new data points without knowing the true label via a model function or predictor $f(\cdot)$.
+
+To evaluate such a predictor it is useful to present the results in form of a contingency table as shown in table Table~\ref{table:contingency-table-2}, because it gives valuable insights about the performance of the prediction. The table shows the proportion of data points that belong to the class (RP) or not (RN) and were predicted correctly (TP) or incorrectly (FN), as well as the number of data samples that do not belong to the class (RN) and were falsely predicted to be in the class (FP) or correctly predicted to not be in the class (TN), and the same proportions for the positively (PP) and negatively (PN) predicted cases with respect to the true assignments to the data. N refers to the total amount of data points.
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{r | c c }
+      & Real Positives (RP) & Real Negatives (RN) \\
+      \hline
+      Predicted Positives (PP) & True Positives (TP) & False Positives (FP) \\
+      Predicted Negatives (PN) & False Negatives (FN) & True Negatives (TN) \\
+    \end{tabular}
+  \caption{Contingency table for binary classification}
+  \label{table:contingency-table-2}
+  \end{center}
+\end{table}
+
+An intuitive choice towards classification is to simply ask which data points were correctly classified to belong to the class or not. In terms of the contingency table above the ratio of $(\text{TP} + \text{FP}) / (\text{N})$, commonly referred to as the ``accuracy'' of the classifier.
+
+This choice can give a good intuition and it does capture the effectiveness on both true positives as well as true negatives, but it is strongly influenced by bias of the true and predicted class distribution (known as prevalence RP/N and label bias) as pointed out by \cite{Powers:2011aa}. For example given a population of 900 positive and 100 negative examples, a predictor that simply always chooses a positive assignment can achieve accuracy of 90\% while it obviously is not a great predictor.
+
+\subsubsection{Precision, Recall and F1 Score}
+\label{subs:precision-recall-f1score}
+
+In the field of Information Retrieval it is common practice to measure the effectiveness of a predictive system in terms of its precision and recall.
+The precision of such system is \textquote{the proportion of retrieved material that is actually relevant} whereas the recall measures \textquote{proportion of relevant material actually retrieved in answer to a search request}~\cite{Rijsbergen:1979aa}. Formally these two measures are defined as:
+
+\begin{equation}
+    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+\end{equation}
+\begin{equation}
+    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\end{equation}
+
+This
+
+As both, high precision and recall, are important for an robust information retrieval system they are typically combined into a single measure such as the F-measure, also referred to as F-score. The F-score is the weighted harmonic mean between precision and recall, derived from the measure of effectiveness proposed in~\cite{Rijsbergen:1979aa}. The most common form is the $F_1$ score  where precision and recall are assigned equal weight:
+\begin{equation}
+  \label{f1measure}
+  F_1 = 2 * \frac{\text{Precision} * \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+
+The $F_1$ score has the advantage of its intuitive interpretability as both precision and recall are well understood measures and, analogous to recall, precision and accuracy, as it lives in the range $[0,1]$, giving a single number that can express the effectiveness of the system in terms of percentage.
+
+It is however important to point out that any version of the F-measure is a biased score as it \textquote{ignores TN which can vary freely without affecting the statistic}~\cite{Powers:2011aa}. This can affect the evaluation of a classifier when the class distribution is skewed (prevalence) or the classifier develops a bias towards certain classes (label bias), motivating the use of unbiased measures in these cases, such as the ones described next.
+
+\subsubsection{Informedness, Markedness and Matthews Correlation Coefficient}
+\label{subs:informedness-markedness-mcc}
+
+\cite{Powers:2011aa} introduces unbiased analogue measures to Recall and Precision, called ``Informedness'' and ``Markedness'' respectively. As \cite{Powers:2011aa} lays out, \blockquote{Informedness quantifies how informed a predictor is for the specified condition, and specifies the probability that a prediction is informed in relation to the condition (versus chance).}:
+
+\begin{equation}
+  \begin{split}
+  \text{Informedness} &= \text{Recall} + \text{Inverse Recall} \text{ – } 1 \\
+  &= 1 - \text{Miss Rate} - \text{Fallout} \\
+  &= 1 - \frac{\text{FN}}{ \text{RN}} - \frac{\text{FP}}{\text{RP}}
+  \end{split}
+\end{equation}
+
+Further he defines:
+\blockquote{Markedness quantifies how marked a condition is for the specified predictor, and specifies the probability that a condition is marked by the predictor (versus chance).}
+
+\begin{equation}
+  \begin{split}
+  \text{Informedness} &= \text{Recall} + \text{Inverse Recall} \text{ – } 1 \\
+  &= 1 - \text{Miss Rate} - \text{Fallout} \\
+  &= 1 - \frac{\text{FN}}{ \text{RN}} - \frac{\text{FP}}{\text{RP}}
+  \end{split}
+\end{equation}
+
+Based on Informedness and Markedness we can then see that ``Matthews Correlation Coefficient'' $r_{G}$ is a score that balances these two measures, and can thus be used as unbiased alternative to the F-measure:
+
+\begin{equation}
+  \begin{split}
+  r_{G} &= \pm \sqrt{\text{Informedness} \cdot \text{Markedness}} \\
+  &= \frac{(\text{TP} \cdot \text{TN} - \text{FP} \cdot \text{FN})}{(\text{TP} + \text{FN})(\text{FP} + \text{TN})(\text{TP} + \text{FP})(\text{FN} + \text{TN})}
+\end{split}
+\end{equation}
+
+\subsection{Multi-class classification}
+
+
+\begin{center}
+  \begin{table}[h]
+  \begin{tabular}{r | c c c c }
+    & Real Class 1 & Real Class 2 & \ldots & Real Class $k$ \\
+    \hline
+    Predicted Class 1    & & & \\
+    Predicted Class 2    & & & \\
+    \ldots               & & & \\
+    Predicted Class $k$  & & & \\
+  \end{tabular}
+  \caption{Contingency table for $k$ classes, also referred to as Confusion Matrix}
+\label{table:contingency-table-k2}
+\end{table}
+\end{center}
+
+
+\subsubsection{Matthews Correlation Coefficient for K classes}
+
+\subsubsection{Categorical Cross-entropy / Multi-class Log-loss}
 
 
 
@@ -143,18 +242,27 @@ These extensions though have major drawbacks as pointed out by~\cite[Chapter 5.2
 \cite{Bishop:2006aa}
 
 
-\subsection{Vector-Space Models}
+\section{Vector-Space Models}
+\label{sec:vector-space-models}
+
 
 Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
 
-\subsubsection{N-gram language models}
+\subsection{N-gram language models}
 
 N-gram language models are based on co-occurrences of word or character sequences, so-called N-grams or $k$-shingles as they are referred to in the Data Mining literature~\cite[Chapter 3.2, p.~72]{Leskovec:2014aa}. Formally an N-gram is defined as a sequence of $n$ items, each of which consist of $n$ characters or words, effectively used to capture sub-sequences of text. Common choices are N-grams of size 1, 2 or 3 --- called ``unigrams'', ``bigrams'' and ``trigrams'' respectively --- and the definition can be extended to using a window size $[\textit{w}_{\text{min}}, \textit{w}_{\text{max}}]$, employing all combinations of N-grams in this interval.
 
 N-grams are usually used to create a vector-space model by representing each document in a dataset as a \textit{bag-of-words} or \textit{bag-of-N-grams} vector so that each dimension of the vector represents statistics about the corresponding N-gram. For unigrams
 
-- TF.IDF
-- simple wordcounts
+parameters
+- words vs chars
+- stop words
+- ngram range
+- max features
+- TF.IDF vs simple wordcounts
+- sublinear TF
+- norm
+
 - show T-SNE embeddings of doc2vec vectors
 
 Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}.

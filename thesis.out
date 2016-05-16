@@ -14,28 +14,26 @@
 \BOOKMARK [1][-]{section.3}{Methods}{}% 14
 \BOOKMARK [2][-]{subsection.3.1}{TODO}{section.3}% 15
 \BOOKMARK [2][-]{subsection.3.2}{Problem formalism}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.3}{Metrics and Evaluation}{section.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Precision, Recall and F1 Score}{subsection.3.3}% 18
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Informedness, Markedness and Matthews Correlation Coefficient}{subsection.3.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Cross-entropy}{subsection.3.3}% 20
-\BOOKMARK [2][-]{subsection.3.4}{Data}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Explorative Data Collection}{subsection.3.4}% 22
-\BOOKMARK [2][-]{subsection.3.5}{Crowdsourced Data Collection with Refined Research Problem}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.6}{Discriminant Functions for Multi-class Classification}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.7}{Vector-Space Models}{section.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.7.1}{N-gram language models}{subsection.3.7}% 26
-\BOOKMARK [1][-]{section.4}{Experiments}{}% 27
-\BOOKMARK [2][-]{subsection.4.1}{TODO}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.2}{Classification of paragraph labels}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.3}{Unsupervised label detection}{section.4}% 30
-\BOOKMARK [2][-]{subsection.4.4}{Classification of sentence labels}{section.4}% 31
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Experiment 1: Feature Extraction through Vector Space Models}{subsection.4.4}% 32
-\BOOKMARK [3][-]{subsubsection.4.4.2}{N-gram models}{subsection.4.4}% 33
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Distributed Representations language models}{subsection.4.4}% 34
-\BOOKMARK [2][-]{subsection.4.5}{Neural Networks}{section.4}% 35
-\BOOKMARK [1][-]{section.5}{Results}{}% 36
-\BOOKMARK [2][-]{subsection.5.1}{TODO}{section.5}% 37
-\BOOKMARK [1][-]{section.6}{Discussion and Conclusions}{}% 38
-\BOOKMARK [1][-]{section*.18}{References}{}% 39
-\BOOKMARK [1][-]{appendix.A}{Appendix }{}% 40
-\BOOKMARK [1][-]{appendix.B}{Appendix : Experiments}{}% 41
+\BOOKMARK [1][-]{section.4}{Data}{}% 17
+\BOOKMARK [2][-]{subsubsection.4.0.1}{Explorative Data Collection}{section.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.0.2}{Crowdsourced Data Collection with Refined Research Problem}{subsubsection.4.0.1}% 19
+\BOOKMARK [1][-]{section.5}{Evaluation}{}% 20
+\BOOKMARK [2][-]{subsection.5.1}{Binary Classification}{section.5}% 21
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Precision, Recall and F1 Score}{subsection.5.1}% 22
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Informedness, Markedness and Matthews Correlation Coefficient}{subsection.5.1}% 23
+\BOOKMARK [2][-]{subsection.5.2}{Multi-class classification}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Matthews Correlation Coefficient for K classes}{subsection.5.2}% 25
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Categorical Cross-entropy / Multi-class Log-loss}{subsection.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.3}{Discriminant Functions for Multi-class Classification}{section.5}% 27
+\BOOKMARK [1][-]{section.6}{Vector-Space Models}{}% 28
+\BOOKMARK [2][-]{subsection.6.1}{N-gram language models}{section.6}% 29
+\BOOKMARK [1][-]{section.7}{Experiments}{}% 30
+\BOOKMARK [2][-]{subsection.7.1}{TODO}{section.7}% 31
+\BOOKMARK [2][-]{subsection.7.2}{Effectiveness and Expressiveness of Vector Space Models}{section.7}% 32
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Baselines Classifiers: Uniform and Stratified Guessing}{subsection.7.2}% 33
+\BOOKMARK [1][-]{section.8}{Results}{}% 34
+\BOOKMARK [2][-]{subsection.8.1}{TODO}{section.8}% 35
+\BOOKMARK [1][-]{section.9}{Discussion and Conclusions}{}% 36
+\BOOKMARK [1][-]{section*.27}{References}{}% 37
+\BOOKMARK [1][-]{appendix.A}{Appendix }{}% 38
+\BOOKMARK [1][-]{appendix.B}{Appendix : Experiments}{}% 39

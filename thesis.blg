@@ -16,45 +16,45 @@ Warning--to sort, need author or key in nodejs
 Warning--to sort, need author or key in mongodb
 Warning--to sort, need author or key in mustache
 Warning--empty journal in Powers:2011aa
-You've used 12 entries,
+You've used 11 entries,
             1935 wiz_defined-function locations,
-            543 strings with 5296 characters,
-and the built_in function-call counts, 3506 in all, are:
-= -- 340
-> -- 101
-< -- 8
-+ -- 31
-- -- 31
-* -- 258
-:= -- 619
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 70
-chr.to.int$ -- 12
-cite$ -- 21
-duplicate$ -- 161
-empty$ -- 267
-format.name$ -- 43
-if$ -- 688
+            538 strings with 5164 characters,
+and the built_in function-call counts, 3195 in all, are:
+= -- 310
+> -- 88
+< -- 7
++ -- 27
+- -- 27
+* -- 235
+:= -- 561
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 63
+chr.to.int$ -- 11
+cite$ -- 20
+duplicate$ -- 148
+empty$ -- 247
+format.name$ -- 36
+if$ -- 629
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 62
-num.names$ -- 26
-pop$ -- 76
+missing$ -- 10
+newline$ -- 57
+num.names$ -- 23
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 67
 quote$ -- 0
-skip$ -- 122
+skip$ -- 111
 stack$ -- 0
-substring$ -- 180
-swap$ -- 17
+substring$ -- 168
+swap$ -- 16
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 58
 warning$ -- 5
-while$ -- 20
+while$ -- 18
 width$ -- 0
-write$ -- 147
+write$ -- 135
 (There were 5 warnings)
