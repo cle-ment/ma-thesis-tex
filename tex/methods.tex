@@ -58,14 +58,14 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{img/paragraph-data-tSNE.eps}
+    \includegraphics[width=\textwidth]{img/paragraph-data-tSNE.pdf}
     \caption{t-SNE Embedding}
   \label{fig:paragraph-data-tSNE}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{img/paragraph-data-principal-components-projection.eps}
+    \includegraphics[width=\textwidth]{img/paragraph-data-principal-components-projection.pdf}
     \caption{Principal Components Projection}
   \label{fig:paragraph-data-principal-components-projection}
 \end{figure}
@@ -102,6 +102,8 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
   \label{fig:sentence-data-label-dist}
 \end{figure}
 
+\clearpage
+
 \section{Evaluation}
 \label{sec:evaluation}
 
@@ -110,7 +112,7 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
 \subsection{Binary Classification}
 \label{sub:binary-classification}
 
-In binary or dichotomous classification we are given a single class $c$ and a set of labelled data points $\mathcal{D} = \{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n) \}$ where labels $y_i \in \{0, 1\}$ encode whether a data point $x_i$ belongs the class $c$ or not. The task is then to achieve correct classification of new data points without knowing the true label via a model function or predictor $f(\cdot)$.
+In binary or dichotomous case of classification we are given a single class $k$ and a set of labelled data points $\mathcal{D} = \{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n) \}$ where targets $y_i \in \{0, 1\}$ encode whether a data point $x_i$ belongs the class $c$ or not. The task is then to achieve correct classification of new data points without knowing the true label via a model function or predictor $f(\cdot)$.
 
 To evaluate such a predictor it is useful to present the results in form of a contingency table as shown in table Table~\ref{table:contingency-table-2}, because it gives valuable insights about the performance of the prediction. The table shows the proportion of data points that belong to the class (RP) or not (RN) and were predicted correctly (TP) or incorrectly (FN), as well as the number of data samples that do not belong to the class (RN) and were falsely predicted to be in the class (FP) or correctly predicted to not be in the class (TN), and the same proportions for the positively (PP) and negatively (PN) predicted cases with respect to the true assignments to the data. N refers to the total amount of data points.
 
@@ -154,6 +156,7 @@ As both, high precision and recall, are important for an robust information retr
 
 The $F_1$ score has the advantage of its intuitive interpretability as both precision and recall are well understood measures and, analogous to recall, precision and accuracy, as it lives in the range $[0,1]$, giving a single number that can express the effectiveness of the system in terms of percentage.
 
+The F1 score is widely used in the field of Machine Learning and Data Mining and thus it is an important measure to consider to compare results to outcomes of prior publications by others.
 It is however important to point out that any version of the F-measure is a biased score as it \textquote{ignores TN which can vary freely without affecting the statistic}~\cite{Powers:2011aa}. This can affect the evaluation of a classifier when the class distribution is skewed (prevalence) or the classifier develops a bias towards certain classes (label bias), motivating the use of unbiased measures in these cases, such as the ones described next.
 
 \subsubsection{Informedness, Markedness and Matthews Correlation Coefficient}
@@ -180,7 +183,7 @@ Further he defines:
   \end{split}
 \end{equation}
 
-Based on Informedness and Markedness we can then see that ``Matthews Correlation Coefficient'' $r_{G}$ is a score that balances these two measures, and can thus be used as unbiased alternative to the F-measure:
+Based on Informedness and Markedness we can then see that \emph{Matthews Correlation Coefficient} $r_{G}$, first proposed by \cite{Matthews:1975aa}, is a score that balances these two measures:
 
 \begin{equation}
   \begin{split}
@@ -189,30 +192,37 @@ Based on Informedness and Markedness we can then see that ``Matthews Correlation
 \end{split}
 \end{equation}
 
+Matthews Correlation Coefficient can thus be used as unbiased alternative to the F-measure and offers a similar ease of interpretability as it ranges from -1 to 1, the former indicating a negative correlation or adverse estimation and the latter  indicating a perfect prediction, while a coefficient of 0 reflects chance.
+
 \subsection{Multi-class classification}
 
+Multi-class classification refers to a generalization of the binary case where we aim to predict for each datapoint $x_i$ one of $K$ labels for the classes at hand. The target space $\mathcal{Y}$ can be represented with each $y_i \in \{0,1\}^k$, known as \emph{one-hot encoding}, where each target is $c$-dimensional vector. Alternatively we can encode the targets as categorical variables $y_i \in {c_1, c_2, \ldots, c_k}$. The contingency table from the binary case can be extended as in table~\ref{table:contingency-table-k}, which is then commonly known as \emph{Confusion Matrix} or \emph{Error Matrix} \todo{citation for Confusion Matrix?}.
 
 \begin{center}
   \begin{table}[h]
   \begin{tabular}{r | c c c c }
     & Real Class 1 & Real Class 2 & \ldots & Real Class $k$ \\
     \hline
-    Predicted Class 1    & & & \\
-    Predicted Class 2    & & & \\
-    \ldots               & & & \\
-    Predicted Class $k$  & & & \\
+    Predicted Class 1    & \ldots & \ldots & & \ldots \\
+    Predicted Class 2    & \ldots & \ldots & & \ldots \\
+    \ldots               & & & & \\
+    Predicted Class $k$  & \ldots & \ldots & & \ldots \\
   \end{tabular}
   \caption{Contingency table for $k$ classes, also referred to as Confusion Matrix}
-\label{table:contingency-table-k2}
+\label{table:contingency-table-k}
 \end{table}
 \end{center}
+
+\subsubsection{Averaging for Multi-class Recall, Precision and F1-Score}
+
+
 
 
 \subsubsection{Matthews Correlation Coefficient for K classes}
 
 \subsubsection{Categorical Cross-entropy / Multi-class Log-loss}
 
-
+\subsection{Multi-label classification}
 
 
 \subsection{Discriminant Functions for Multi-class Classification}
@@ -224,14 +234,14 @@ These extensions though have major drawbacks as pointed out by~\cite[Chapter 5.2
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{img/Bishop2006aa-p182-ch4-fig4-1-a.eps}
+        \includegraphics[width=\textwidth]{img/Bishop2006aa-p182-ch4-fig4-1-a.pdf}
         \caption{One-Vs-Rest classification scheme}
         \label{fig:Bishop2006aa-p182-ch4-fig4-1-a}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{img/Bishop2006aa-p182-ch4-fig4-1-b.eps}
+        \includegraphics[width=\textwidth]{img/Bishop2006aa-p182-ch4-fig4-1-b.pdf}
         \caption{One-Vs-One classification scheme}
         \label{fig:Bishop2006aa-p182-ch4-fig4-1-b}
     \end{subfigure}

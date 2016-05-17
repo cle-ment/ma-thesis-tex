@@ -43,6 +43,13 @@ Leskovec, J., Rajaraman, A., and Ullman, J.~D. (2014).
 \newblock {\em Mining of massive datasets}.
 \newblock Cambridge University Press.
 
+\bibitem[Matthews, 1975]{Matthews:1975aa}
+Matthews, B.~W. (1975).
+\newblock Comparison of the predicted and observed secondary structure of {T}4
+  phage lysozyme.
+\newblock {\em Biochimica et Biophysica Acta (BBA) - Protein Structure},
+  405(2):442--451.
+
 \bibitem[Mikolov, 2012]{Mikolov:2012aa}
 Mikolov, T. (2012).
 \newblock {\em Statistical {Language} {Models} {Based} on {Neural} {Networks}}.

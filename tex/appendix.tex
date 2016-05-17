@@ -1,6 +1,15 @@
 % !TEX root = ../thesis.tex
 % !TEX spellcheck = en-US
 
+%% Equations, tables and figures have their own numbering in Appendices
+\renewcommand{\theequation}{B\arabic{equation}}
+\setcounter{equation}{0}
+\renewcommand{\thefigure}{B\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{B\arabic{table}}
+\setcounter{table}{0}
+
+
 %% Appendices
 \clearpage
 
@@ -8,17 +17,8 @@
 
 \section{Appendix \label{A}}
 
-Bla
 
 \clearpage
 \section{Appendix \label{B}: Experiments}
 
 \includepdf[pages=-, offset=75 -75]{appendix/doc2vec.pdf}
-
-%% Equations, tables and figures have their own numbering in Appendices
-%\renewcommand{\theequation}{B\arabic{equation}}
-%\setcounter{equation}{0}
-%\renewcommand{\thefigure}{B\arabic{figure}}
-%\setcounter{figure}{0}
-%\renewcommand{\thetable}{B\arabic{table}}
-%\setcounter{table}{0}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.21)  16 MAY 2016 17:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.21)  17 MAY 2016 11:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1335,7 +1335,7 @@ Package microtype Info: Loading generic settings for font family
 
 
 
-] <img/thesis-tagger-interface.png, id=298, 754.82pt x 778.91pt>
+] <img/thesis-tagger-interface.png, id=318, 754.82pt x 778.91pt>
 File: img/thesis-tagger-interface.png Graphic file (type png)
  <use img/thesis-tagger-interface.png>
 Package pdftex.def Info: img/thesis-tagger-interface.png used on input line 46.
@@ -1366,48 +1366,30 @@ LaTeX Warning: Marginpar on page 5 moved.
 
 LaTeX Warning: Marginpar on page 5 moved.
 
-Package epstopdf Info: Source file: <img/paragraph-data-tSNE.eps>
-(epstopdf)                    date: 2016-05-13 19:37:03
-(epstopdf)                    size: 221460 bytes
-(epstopdf)             Output file: <img/paragraph-data-tSNE-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-13 19:46:06
-(epstopdf)                    size: 87641 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/paragraph-data-tSNE-eps-converted-to.pdf img/paragraph-data-tSNE.eps>
-(epstopdf)             \includegraphics on input line 61.
-Package epstopdf Info: Output file is already uptodate.
-<img/paragraph-data-tSNE-eps-converted-to.pdf, id=300, 1084.05pt x 1084.05pt>
-File: img/paragraph-data-tSNE-eps-converted-to.pdf Graphic file (type pdf)
- <use img/paragraph-data-tSNE-eps-converted-to.pdf>
-Package pdftex.def Info: img/paragraph-data-tSNE-eps-converted-to.pdf used on input line 61.
-(pdftex.def)             Requested size: 426.79134pt x 426.79733pt.
+<img/paragraph-data-tSNE.pdf, id=320, 533.78462pt x 492.51501pt>
+File: img/paragraph-data-tSNE.pdf Graphic file (type pdf)
+ <use img/paragraph-data-tSNE.pdf>
+Package pdftex.def Info: img/paragraph-data-tSNE.pdf used on input line 61.
+(pdftex.def)             Requested size: 426.79134pt x 393.79459pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package epstopdf Info: Source file: <img/paragraph-data-principal-components-projection.eps>
-(epstopdf)                    date: 2016-05-13 19:36:26
-(epstopdf)                    size: 221294 bytes
-(epstopdf)             Output file: <img/paragraph-data-principal-components-projection-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-13 19:46:07
-(epstopdf)                    size: 81901 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/paragraph-data-principal-components-projection-eps-converted-to.pdf img/paragraph-data-principal-components-projection.eps>
-(epstopdf)             \includegraphics on input line 68.
-Package epstopdf Info: Output file is already uptodate.
-<img/paragraph-data-principal-components-projection-eps-converted-to.pdf, id=301, 1084.05pt x 1084.05pt>
-File: img/paragraph-data-principal-components-projection-eps-converted-to.pdf Graphic file (type pdf)
- <use img/paragraph-data-principal-components-projection-eps-converted-to.pdf>
-Package pdftex.def Info: img/paragraph-data-principal-components-projection-eps-converted-to.pdf used on input line 68.
-(pdftex.def)             Requested size: 426.79134pt x 426.79733pt.
+<img/paragraph-data-principal-components-projection.pdf, id=321, 496.3575pt x 492.51501pt>
+File: img/paragraph-data-principal-components-projection.pdf Graphic file (type pdf)
+ <use img/paragraph-data-principal-components-projection.pdf>
+Package pdftex.def Info: img/paragraph-data-principal-components-projection.pdf used on input line 68.
+(pdftex.def)             Requested size: 426.79134pt x 423.49452pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/sentence-data-judgement-confidence.pdf, id=302, 233.93962pt x 223.80959pt>
+<img/sentence-data-judgement-confidence.pdf, id=322, 233.93962pt x 223.80959pt>
 File: img/sentence-data-judgement-confidence.pdf Graphic file (type pdf)
  <use img/sentence-data-judgement-confidence.pdf>
 Package pdftex.def Info: img/sentence-data-judgement-confidence.pdf used on input line 80.
 (pdftex.def)             Requested size: 196.32687pt x 187.82458pt.
- <img/sentence-data-judgement-confidence-cumulative.pdf, id=303, 218.852pt x 223.80959pt>
+ <img/sentence-data-judgement-confidence-cumulative.pdf, id=323, 218.852pt x 223.80959pt>
 File: img/sentence-data-judgement-confidence-cumulative.pdf Graphic file (type pdf)
  <use img/sentence-data-judgement-confidence-cumulative.pdf>
 Package pdftex.def Info: img/sentence-data-judgement-confidence-cumulative.pdf used on input line 88.
@@ -1416,7 +1398,7 @@ Package pdftex.def Info: img/sentence-data-judgement-confidence-cumulative.pdf u
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/sentence-data-label-dist.pdf, id=318, 496.254pt x 232.86687pt>
+<img/sentence-data-label-dist.pdf, id=338, 496.254pt x 232.86687pt>
 File: img/sentence-data-label-dist.pdf Graphic file (type pdf)
  <use img/sentence-data-label-dist.pdf>
 Package pdftex.def Info: img/sentence-data-label-dist.pdf used on input line 100.
@@ -1425,246 +1407,275 @@ Package pdftex.def Info: img/sentence-data-label-dist.pdf used on input line 100
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (10.4115pt too wide) in paragraph at lines 108--108
-[][][][]\T1/lmr/m/n/12 (-20) explain 
- []
-
-
-Overfull \hbox (20.13474pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) suervised 
- []
-
-
-Overfull \hbox (0.80927pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) multi  
- []
-
-
-Overfull \hbox (10.4115pt too wide) in paragraph at lines 108--108
-[][][][]\T1/lmr/m/n/12 (-20) explain 
- []
-
-
-Overfull \hbox (20.13474pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) suervised 
- []
-
-
-Overfull \hbox (0.80927pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) multi  
- []
-
-
-Overfull \hbox (10.4115pt too wide) in paragraph at lines 108--108
-[][][][]\T1/lmr/m/n/12 (-20) explain 
- []
-
-
-Overfull \hbox (20.13474pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) suervised 
- []
-
-
-Overfull \hbox (0.80927pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) multi  
- []
-
-
-Overfull \hbox (10.4115pt too wide) in paragraph at lines 108--108
-[][][][]\T1/lmr/m/n/12 (-20) explain 
- []
-
-
-Overfull \hbox (20.13474pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) suervised 
- []
-
-
-Overfull \hbox (0.80927pt too wide) in paragraph at lines 108--108
-\T1/lmr/m/n/12 (-20) multi  
- []
-
-[6 <./img/paragraph-data-tSNE-eps-converted-to.pdf>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./img/paragraph-data-principal-components-projection-eps-converted-to.pdf>] [8 <./img/sentence-data-judgement-confidence.pdf> <./img/sentence-data-judgement-confidence-cumulative.pdf
+[6 <./img/paragraph-data-tSNE.pdf>] [7 <./img/paragraph-data-principal-components-projection.pdf>] [8 <./img/sentence-data-judgement-confidence.pdf> <./img/sentence-data-judgement-confidence-cumulative.pdf
 
 pdfTeX warning: pdflatex (file ./img/sentence-data-judgement-confidence-cumulative.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./img/sentence-data-label-dist.pdf
 
 pdfTeX warning: pdflatex (file ./img/sentence-data-label-dist.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [9] [10]
-Overfull \hbox (6.60378pt too wide) in paragraph at lines 223--224
+>]
+Overfull \hbox (10.4115pt too wide) in paragraph at lines 110--110
+[][][][]\T1/lmr/m/n/12 (-20) explain 
+ []
+
+
+Overfull \hbox (20.13474pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) suervised 
+ []
+
+
+Overfull \hbox (0.80927pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) multi  
+ []
+
+
+Overfull \hbox (10.4115pt too wide) in paragraph at lines 110--110
+[][][][]\T1/lmr/m/n/12 (-20) explain 
+ []
+
+
+Overfull \hbox (20.13474pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) suervised 
+ []
+
+
+Overfull \hbox (0.80927pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) multi  
+ []
+
+
+Overfull \hbox (10.4115pt too wide) in paragraph at lines 110--110
+[][][][]\T1/lmr/m/n/12 (-20) explain 
+ []
+
+
+Overfull \hbox (20.13474pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) suervised 
+ []
+
+
+Overfull \hbox (0.80927pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) multi  
+ []
+
+
+Overfull \hbox (10.4115pt too wide) in paragraph at lines 110--110
+[][][][]\T1/lmr/m/n/12 (-20) explain 
+ []
+
+
+Overfull \hbox (20.13474pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) suervised 
+ []
+
+
+Overfull \hbox (0.80927pt too wide) in paragraph at lines 110--110
+\T1/lmr/m/n/12 (-20) multi  
+ []
+
+[9
+
+] [10]
+Overfull \hbox (12.64998pt too wide) in paragraph at lines 199--199
+[][][][]\T1/lmr/m/n/12 (-20) citation 
+ []
+
+
+Overfull \hbox (12.64998pt too wide) in paragraph at lines 199--199
+[][][][]\T1/lmr/m/n/12 (-20) citation 
+ []
+
+
+Overfull \hbox (12.64998pt too wide) in paragraph at lines 199--199
+[][][][]\T1/lmr/m/n/12 (-20) citation 
+ []
+
+
+Overfull \hbox (12.64998pt too wide) in paragraph at lines 199--199
+[][][][]\T1/lmr/m/n/12 (-20) citation 
+ []
+
+[11]
+Overfull \hbox (6.60378pt too wide) in paragraph at lines 232--233
 []\T1/lmr/m/n/12 (-20) These ex-ten-sions though have ma-jor draw-backs as pointed out by [[],
  []
 
-Package epstopdf Info: Source file: <img/Bishop2006aa-p182-ch4-fig4-1-a.eps>
-(epstopdf)                    date: 2016-04-27 00:18:13
-(epstopdf)                    size: 52625 bytes
-(epstopdf)             Output file: <img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-04-27 00:46:18
-(epstopdf)                    size: 16391 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf img/Bishop2006aa-p182-ch4-fig4-1-a.eps>
-(epstopdf)             \includegraphics on input line 228.
-Package epstopdf Info: Output file is already uptodate.
-<img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf, id=563, 200.75pt x 200.75pt>
-File: img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf Graphic file (type pdf)
- <use img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf>
-Package pdftex.def Info: img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf used on input line 228.
+<img/Bishop2006aa-p182-ch4-fig4-1-a.pdf, id=594, 200.75pt x 200.75pt>
+File: img/Bishop2006aa-p182-ch4-fig4-1-a.pdf Graphic file (type pdf)
+ <use img/Bishop2006aa-p182-ch4-fig4-1-a.pdf>
+Package pdftex.def Info: img/Bishop2006aa-p182-ch4-fig4-1-a.pdf used on input line 237.
 (pdftex.def)             Requested size: 170.71393pt x 170.72406pt.
-Package epstopdf Info: Source file: <img/Bishop2006aa-p182-ch4-fig4-1-b.eps>
-(epstopdf)                    date: 2016-04-27 00:18:40
-(epstopdf)                    size: 51493 bytes
-(epstopdf)             Output file: <img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-04-27 00:46:19
-(epstopdf)                    size: 15959 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf img/Bishop2006aa-p182-ch4-fig4-1-b.eps>
-(epstopdf)             \includegraphics on input line 235.
-Package epstopdf Info: Output file is already uptodate.
- <img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf, id=564, 200.75pt x 200.75pt>
-File: img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf Graphic file (type pdf)
- <use img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf>
-Package pdftex.def Info: img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf used on input line 235.
+ <img/Bishop2006aa-p182-ch4-fig4-1-b.pdf, id=595, 200.75pt x 200.75pt>
+File: img/Bishop2006aa-p182-ch4-fig4-1-b.pdf Graphic file (type pdf)
+ <use img/Bishop2006aa-p182-ch4-fig4-1-b.pdf>
+Package pdftex.def Info: img/Bishop2006aa-p182-ch4-fig4-1-b.pdf used on input line 244.
 (pdftex.def)             Requested size: 170.71393pt x 170.72406pt.
- [11 <./img/Bishop2006aa-p182-ch4-fig4-1-a-eps-converted-to.pdf> <./img/Bishop2006aa-p182-ch4-fig4-1-b-eps-converted-to.pdf>])
-Overfull \hbox (20.99655pt too wide) in paragraph at lines 279--32
+ [12 <./img/Bishop2006aa-p182-ch4-fig4-1-a.pdf> <./img/Bishop2006aa-p182-ch4-fig4-1-b.pdf>])
+Overfull \hbox (20.99655pt too wide) in paragraph at lines 295--32
 []\T1/lmr/m/n/12 (-20) http://localhost:8888/notebooks/thesis/sandbox/crowdflower-data-collection/extract-
  []
 
-[12]
+[13]
 \openout2 = `./tex/experiments.aux'.
 
  (./tex/experiments.tex
-Overfull \hbox (18.72615pt too wide) in paragraph at lines 17--17
+Overfull \hbox (10.47728pt too wide) in paragraph at lines 17--17
+\T1/lmr/m/n/12 (-20) dataset 
+ []
+
+
+Overfull \hbox (10.47728pt too wide) in paragraph at lines 17--17
+\T1/lmr/m/n/12 (-20) dataset 
+ []
+
+
+Overfull \hbox (10.47728pt too wide) in paragraph at lines 17--17
+\T1/lmr/m/n/12 (-20) dataset 
+ []
+
+
+Overfull \hbox (10.47728pt too wide) in paragraph at lines 17--17
+\T1/lmr/m/n/12 (-20) dataset 
+ []
+
+
+Overfull \hbox (18.72615pt too wide) in paragraph at lines 18--18
 [][][][]\T1/lmr/m/n/12 (-20) reference 
  []
 
 
-Overfull \hbox (10.18126pt too wide) in paragraph at lines 17--17
+Overfull \hbox (10.18126pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 (-20) jupyter 
  []
 
 
-Overfull \hbox (18.72615pt too wide) in paragraph at lines 17--17
+Overfull \hbox (18.72615pt too wide) in paragraph at lines 18--18
 [][][][]\T1/lmr/m/n/12 (-20) reference 
  []
 
 
-Overfull \hbox (10.18126pt too wide) in paragraph at lines 17--17
+Overfull \hbox (10.18126pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 (-20) jupyter 
  []
 
 
-Overfull \hbox (18.72615pt too wide) in paragraph at lines 17--17
+Overfull \hbox (18.72615pt too wide) in paragraph at lines 18--18
 [][][][]\T1/lmr/m/n/12 (-20) reference 
  []
 
 
-Overfull \hbox (10.18126pt too wide) in paragraph at lines 17--17
+Overfull \hbox (10.18126pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 (-20) jupyter 
  []
 
 
-Overfull \hbox (18.72615pt too wide) in paragraph at lines 17--17
+Overfull \hbox (18.72615pt too wide) in paragraph at lines 18--18
 [][][][]\T1/lmr/m/n/12 (-20) reference 
  []
 
 
-Overfull \hbox (10.18126pt too wide) in paragraph at lines 17--17
+Overfull \hbox (10.18126pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 (-20) jupyter 
  []
 
 
-Overfull \hbox (13.81477pt too wide) in paragraph at lines 22--22
+LaTeX Warning: Marginpar on page 14 moved.
+
+
+Overfull \hbox (13.81477pt too wide) in paragraph at lines 23--23
 [][][][]\T1/lmr/m/n/12 (-20) actually 
  []
 
 
-Overfull \hbox (1.41193pt too wide) in paragraph at lines 22--22
+Overfull \hbox (1.41193pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) quire- 
  []
 
 
-Overfull \hbox (4.07135pt too wide) in paragraph at lines 22--22
+Overfull \hbox (4.07135pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) ments  
  []
 
 
-Overfull \hbox (13.81477pt too wide) in paragraph at lines 22--22
+Overfull \hbox (13.81477pt too wide) in paragraph at lines 23--23
 [][][][]\T1/lmr/m/n/12 (-20) actually 
  []
 
 
-Overfull \hbox (1.41193pt too wide) in paragraph at lines 22--22
+Overfull \hbox (1.41193pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) quire- 
  []
 
 
-Overfull \hbox (4.07135pt too wide) in paragraph at lines 22--22
+Overfull \hbox (4.07135pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) ments  
  []
 
 
-Overfull \hbox (13.81477pt too wide) in paragraph at lines 22--22
+Overfull \hbox (13.81477pt too wide) in paragraph at lines 23--23
 [][][][]\T1/lmr/m/n/12 (-20) actually 
  []
 
 
-Overfull \hbox (1.41193pt too wide) in paragraph at lines 22--22
+Overfull \hbox (1.41193pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) quire- 
  []
 
 
-Overfull \hbox (4.07135pt too wide) in paragraph at lines 22--22
+Overfull \hbox (4.07135pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) ments  
  []
 
 
-Overfull \hbox (13.81477pt too wide) in paragraph at lines 22--22
+Overfull \hbox (13.81477pt too wide) in paragraph at lines 23--23
 [][][][]\T1/lmr/m/n/12 (-20) actually 
  []
 
 
-Overfull \hbox (1.41193pt too wide) in paragraph at lines 22--22
+Overfull \hbox (1.41193pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) quire- 
  []
 
 
-Overfull \hbox (4.07135pt too wide) in paragraph at lines 22--22
+Overfull \hbox (4.07135pt too wide) in paragraph at lines 23--23
 \T1/lmr/m/n/12 (-20) ments  
  []
 
-<img/exp-vector-space-conf-matrix-guessing-uniform.pdf, id=608, 255.40921pt x 234.07199pt>
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+<img/exp-vector-space-conf-matrix-guessing-uniform.pdf, id=646, 255.40921pt x 234.07199pt>
 File: img/exp-vector-space-conf-matrix-guessing-uniform.pdf Graphic file (type pdf)
  <use img/exp-vector-space-conf-matrix-guessing-uniform.pdf>
-Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-uniform.pdf used on input line 33.
+Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-uniform.pdf used on input line 34.
 (pdftex.def)             Requested size: 200.59244pt x 183.8362pt.
- <img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf, id=609, 263.78423pt x 234.07199pt>
+ <img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf, id=647, 263.78423pt x 234.07199pt>
 File: img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf Graphic file (type pdf)
  <use img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf>
-Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf used on input line 41.
+Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf used on input line 42.
 (pdftex.def)             Requested size: 204.85802pt x 181.7825pt.
- <img/exp-vector-space-conf-matrix-guessing-stratified.pdf, id=610, 255.40921pt x 234.07199pt>
+ <img/exp-vector-space-conf-matrix-guessing-stratified.pdf, id=648, 255.40921pt x 234.07199pt>
 File: img/exp-vector-space-conf-matrix-guessing-stratified.pdf Graphic file (type pdf)
  <use img/exp-vector-space-conf-matrix-guessing-stratified.pdf>
-Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-stratified.pdf used on input line 47.
+Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-stratified.pdf used on input line 48.
 (pdftex.def)             Requested size: 200.59244pt x 183.8362pt.
- <img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf, id=611, 258.20087pt x 234.07199pt>
+ <img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf, id=649, 258.20087pt x 234.07199pt>
 File: img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf Graphic file (type pdf)
  <use img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf>
-Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf used on input line 55.
+Package pdftex.def Info: img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf used on input line 56.
 (pdftex.def)             Requested size: 204.85802pt x 185.72203pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [13
+
+LaTeX Warning: Reference `' on page 14 undefined on input line 67.
+
+) [14
 
 
 
-] [14 <./img/exp-vector-space-conf-matrix-guessing-uniform.pdf> <./img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf
+] [15 <./img/exp-vector-space-conf-matrix-guessing-uniform.pdf> <./img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf
 
 pdfTeX warning: pdflatex (file ./img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./img/exp-vector-space-conf-matrix-guessing-stratified.pdf
@@ -1676,149 +1687,153 @@ pdfTeX warning: pdflatex (file ./img/exp-vector-space-conf-matrix-guessing-strat
 >]
 \openout2 = `./tex/results.aux'.
 
- (./tex/results.tex) [15
+ (./tex/results.tex) [16
 
 
 
 ]
 \openout2 = `./tex/discussion.aux'.
 
- (./tex/discussion.tex) [16
+ (./tex/discussion.tex) [17
 
 
 
-] (./thesis.bbl) [17
+] (./thesis.bbl) [18
 
 
 ]
 \openout2 = `./tex/appendix.aux'.
 
- (./tex/appendix.tex [18
+ (./tex/appendix.tex [19
 
 
-] <appendix/doc2vec.pdf, id=802, 614.295pt x 794.97pt>
+] <appendix/doc2vec.pdf, id=841, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf>
-Package pdftex.def Info: appendix/doc2vec.pdf used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf used on input line 24.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf>
-Package pdftex.def Info: appendix/doc2vec.pdf used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf used on input line 24.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- <appendix/doc2vec.pdf, id=805, page=1, 614.295pt x 794.97pt>
+ <appendix/doc2vec.pdf, id=844, page=1, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 1>
-Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 24.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 1>
-Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 1>
-Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 1>
-Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [19
+ [20
 
-] <appendix/doc2vec.pdf, id=811, page=2, 614.295pt x 794.97pt>
+] <appendix/doc2vec.pdf, id=849, page=2, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 2>
-Package pdftex.def Info: appendix/doc2vec.pdf, page2 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page2 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 2>
-Package pdftex.def Info: appendix/doc2vec.pdf, page2 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page2 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 1>
-Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page1 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [20 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=848, page=3, 614.295pt x 794.97pt>
+ [21 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=885, page=3, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 3>
-Package pdftex.def Info: appendix/doc2vec.pdf, page3 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page3 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 3>
-Package pdftex.def Info: appendix/doc2vec.pdf, page3 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page3 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 2>
-Package pdftex.def Info: appendix/doc2vec.pdf, page2 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page2 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [21 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=863, page=4, 614.295pt x 794.97pt>
+ [22 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=900, page=4, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 4>
-Package pdftex.def Info: appendix/doc2vec.pdf, page4 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page4 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 4>
-Package pdftex.def Info: appendix/doc2vec.pdf, page4 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page4 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 3>
-Package pdftex.def Info: appendix/doc2vec.pdf, page3 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page3 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [22 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=868, page=5, 614.295pt x 794.97pt>
+ [23 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=905, page=5, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 5>
-Package pdftex.def Info: appendix/doc2vec.pdf, page5 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page5 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 5>
-Package pdftex.def Info: appendix/doc2vec.pdf, page5 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page5 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 4>
-Package pdftex.def Info: appendix/doc2vec.pdf, page4 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page4 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [23 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=873, page=6, 614.295pt x 794.97pt>
+ [24 <./appendix/doc2vec.pdf>] <appendix/doc2vec.pdf, id=910, page=6, 614.295pt x 794.97pt>
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 6>
-Package pdftex.def Info: appendix/doc2vec.pdf, page6 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page6 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 6>
-Package pdftex.def Info: appendix/doc2vec.pdf, page6 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page6 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 5>
-Package pdftex.def Info: appendix/doc2vec.pdf, page5 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page5 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [24 <./appendix/doc2vec.pdf>]
+ [25 <./appendix/doc2vec.pdf>]
 File: appendix/doc2vec.pdf Graphic file (type pdf)
  <use appendix/doc2vec.pdf, page 6>
-Package pdftex.def Info: appendix/doc2vec.pdf, page6 used on input line 16.
+Package pdftex.def Info: appendix/doc2vec.pdf, page6 used on input line 24.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [25 <./appendix/doc2vec.pdf>])
+ [26 <./appendix/doc2vec.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 53.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 53.
  (./thesis.aux (./tex/preamble.aux) (./tex/introduction.aux) (./tex/background.aux) (./tex/methods.aux) (./tex/experiments.aux) (./tex/results.aux) (./tex/discussion.aux) (./tex/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 53.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 53.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0006672A6D912BC4A689DF88B753D022;2653.
+(rerunfilecheck)             Checksum: 1B268E4955693D64AAEE80B1A9BB76AF;2952.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 53.
  ) 
 Here is how much of TeX's memory you used:
- 23159 strings out of 493089
- 426217 string characters out of 6134841
- 965195 words of memory out of 5000000
- 25861 multiletter control sequences out of 15000+600000
- 115271 words of font info for 127 fonts, out of 8000000 for 9000
+ 23193 strings out of 493089
+ 426551 string characters out of 6134841
+ 966504 words of memory out of 5000000
+ 25877 multiletter control sequences out of 15000+600000
+ 115851 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,18n,78p,1095b,714s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on thesis.pdf (31 pages, 771317 bytes).
+Output written on thesis.pdf (32 pages, 678270 bytes).
 PDF statistics:
- 976 PDF objects out of 1000 (max. 8388607)
- 580 compressed objects within 6 object streams
- 116 named destinations out of 1000 (max. 500000)
- 32174 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1015 PDF objects out of 1200 (max. 8388607)
+ 619 compressed objects within 7 object streams
+ 123 named destinations out of 1000 (max. 500000)
+ 32198 words of extra memory for PDF output out of 35830 (max. 10000000)
 

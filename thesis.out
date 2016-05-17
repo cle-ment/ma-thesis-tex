@@ -22,18 +22,21 @@
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Precision, Recall and F1 Score}{subsection.5.1}% 22
 \BOOKMARK [3][-]{subsubsection.5.1.2}{Informedness, Markedness and Matthews Correlation Coefficient}{subsection.5.1}% 23
 \BOOKMARK [2][-]{subsection.5.2}{Multi-class classification}{section.5}% 24
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Matthews Correlation Coefficient for K classes}{subsection.5.2}% 25
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Categorical Cross-entropy / Multi-class Log-loss}{subsection.5.2}% 26
-\BOOKMARK [2][-]{subsection.5.3}{Discriminant Functions for Multi-class Classification}{section.5}% 27
-\BOOKMARK [1][-]{section.6}{Vector-Space Models}{}% 28
-\BOOKMARK [2][-]{subsection.6.1}{N-gram language models}{section.6}% 29
-\BOOKMARK [1][-]{section.7}{Experiments}{}% 30
-\BOOKMARK [2][-]{subsection.7.1}{TODO}{section.7}% 31
-\BOOKMARK [2][-]{subsection.7.2}{Effectiveness and Expressiveness of Vector Space Models}{section.7}% 32
-\BOOKMARK [3][-]{subsubsection.7.2.1}{Baselines Classifiers: Uniform and Stratified Guessing}{subsection.7.2}% 33
-\BOOKMARK [1][-]{section.8}{Results}{}% 34
-\BOOKMARK [2][-]{subsection.8.1}{TODO}{section.8}% 35
-\BOOKMARK [1][-]{section.9}{Discussion and Conclusions}{}% 36
-\BOOKMARK [1][-]{section*.27}{References}{}% 37
-\BOOKMARK [1][-]{appendix.A}{Appendix }{}% 38
-\BOOKMARK [1][-]{appendix.B}{Appendix : Experiments}{}% 39
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Averaging for Multi-class Recall, Precision and F1-Score}{subsection.5.2}% 25
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Matthews Correlation Coefficient for K classes}{subsection.5.2}% 26
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Categorical Cross-entropy / Multi-class Log-loss}{subsection.5.2}% 27
+\BOOKMARK [2][-]{subsection.5.3}{Multi-label classification}{section.5}% 28
+\BOOKMARK [2][-]{subsection.5.4}{Discriminant Functions for Multi-class Classification}{section.5}% 29
+\BOOKMARK [1][-]{section.6}{Vector-Space Models}{}% 30
+\BOOKMARK [2][-]{subsection.6.1}{N-gram language models}{section.6}% 31
+\BOOKMARK [1][-]{section.7}{Experiments}{}% 32
+\BOOKMARK [2][-]{subsection.7.1}{TODO}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.2}{Effectiveness and Expressiveness of Statistical \(Vector Space\) Language Models}{section.7}% 34
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Baselines Classifiers: Uniform and Stratified Guessing}{subsection.7.2}% 35
+\BOOKMARK [3][-]{subsubsection.7.2.2}{N-gram Language Models}{subsection.7.2}% 36
+\BOOKMARK [1][-]{section.8}{Results}{}% 37
+\BOOKMARK [2][-]{subsection.8.1}{TODO}{section.8}% 38
+\BOOKMARK [1][-]{section.9}{Discussion and Conclusions}{}% 39
+\BOOKMARK [1][-]{section*.29}{References}{}% 40
+\BOOKMARK [1][-]{appendix.A}{Appendix }{}% 41
+\BOOKMARK [1][-]{appendix.B}{Appendix : Experiments}{}% 42
