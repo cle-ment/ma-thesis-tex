@@ -2,28 +2,10 @@
 % !TEX spellcheck = en-US
 
 \clearpage
-\section{Methods}
 
-\subsection{TODO}
+\section{Research process and Design Development}
 
-\begin{itemize}
-  \item Linear machine
-  \item explain metrics
-  \item single class, multi-class and multi-label classification
-  \item hard vs soft allocation (probabilistic vs discriminant)
-\end{itemize}
-
-\subsection{Problem formalism}
-
-The problem at hand is to design a predictive function $\mu$ that best approximates the correct target response $y_i$ for an input document $d_i$, given as
-
-\begin{equation}
-  \{ (d_1, y_1), (d_2, y_2), \ldots, (d_n, y_n) \}, \quad d_i \in \mathcal{D}, \; y_i \in \mathcal{Y}
-\end{equation}
-
-where $\mathcal{D}$ is a set of $n$ documents, each of which is sequence of varying length that is composed of UTF-8 encoded characters, and $\mathcal{Y}$ is a the label space with $y_i \in \{0, 1\}^{c}$ indicating the presence of each of the $c$ class labels to be predicted.
-
-\section{Data}
+\subsection{Data}
 
 \todo{Describe data format}
 
@@ -43,8 +25,8 @@ The exact task given to the participants was ``Describe what each section is abo
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{img/thesis-tagger-interface.png}
-  \caption{Interface of the tagging tool}
+  \includegraphics[width=\textwidth]{img/thesis-tagger-interface.png}
+  \caption{Screen capture of the interface of the tagging tool}
 \label{fig:thesis-tagger-interface}
 \end{figure}
 
@@ -146,12 +128,11 @@ The precision of such system is \textquote{the proportion of retrieved material 
     \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 \end{equation}
 
-This
 
 As both, high precision and recall, are important for an robust information retrieval system they are typically combined into a single measure such as the F-measure, also referred to as F-score. The F-score is the weighted harmonic mean between precision and recall, derived from the measure of effectiveness proposed in~\cite{Rijsbergen:1979aa}. The most common form is the $F_1$ score  where precision and recall are assigned equal weight:
 \begin{equation}
   \label{f1measure}
-  F_1 = 2 * \frac{\text{Precision} * \text{Recall}}{\text{Precision} + \text{Recall}}
+  F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
 \end{equation}
 
 The $F_1$ score has the advantage of its intuitive interpretability as both precision and recall are well understood measures and, analogous to recall, precision and accuracy, as it lives in the range $[0,1]$, giving a single number that can express the effectiveness of the system in terms of percentage.
@@ -215,7 +196,7 @@ Multi-class classification refers to a generalization of the binary case where w
 
 \subsubsection{Averaging for Multi-class Recall, Precision and F1-Score}
 
-
+A way to evaluate
 
 
 \subsubsection{Matthews Correlation Coefficient for K classes}
@@ -224,6 +205,61 @@ Multi-class classification refers to a generalization of the binary case where w
 
 \subsection{Multi-label classification}
 
+
+
+
+
+\section{Statistical Language Modeling}
+\label{sec:vector-space-models}
+
+
+Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
+
+\subsection{N-gram language models}
+\label{subs:n-gram-language-models}
+
+N-gram language models are based on co-occurrences of word or character sequences, so-called N-grams or $k$-shingles as they are referred to in the Data Mining literature~\cite[Chapter 3.2, p.~72]{Leskovec:2014aa}. Formally an N-gram is defined as a sequence of $n$ items, each of which consist of $n$ characters or words, effectively used to capture sub-sequences of text. Common choices are N-grams of size 1, 2 or 3 --- called \emph{unigrams}, \emph{bigrams} and ``trigrams'' respectively --- and the definition can be extended to using a window size $[\textit{w}_{\text{min}}, \textit{w}_{\text{max}}]$, employing all combinations of N-grams in this interval.
+
+N-grams are usually used to create a vector-space model by representing each document in a dataset as a \textit{bag-of-words} or \textit{bag-of-N-grams} vector so that each dimension of the vector represents statistics about the corresponding N-gram. Specifically, a common way to compute the word count vectors for a document is the following:
+
+\begin{equation}
+  \text{TF}_{ij} = \frac{f_{ij}}{\max_k f_{kj}}
+\end{equation}
+
+Where $f_{ij}$ is \textquote{the \emph{frequency} (number of occurences) of a term (word) $i$ in document $j$} and $\text{TF}_{if}$ is the \emph{term frequency}, i.e.   \textquote{$f_{ij}$ normalized by dividing it by the maximum number of occurrences of any term [\ldots] in the same document}~\cite[Chapter 1.3.1, p.~8]{Leskovec:2014aa}.
+
+As this approach has been studied for decades \todo{citation for first or review paper here?} there is quite an extensive amount of variants and thus hyper-parameters to tune. The most important ones will be explained in the following sections:
+
+\paragraph{Words vs. Characters} The first choice when building an N-gram language model is to use characters or words as the atomic unit. In practically every case there are less characters than words in a dataset, but to capture expressive substrings usually larger N-gram window sizes or ranges have to be chosen, which leads to a combinatorial explosion. In case of word-based models on the other hand the maximal size of the feature space is the size of the vocabulary $\mathcal{V}$ in the case of unigrams or $V^k$ in case of $k$-grams.
+
+\paragraph{Stop words} For creating N-gram models, so-called stop word lists are often used which are lists of frequent words that will be excluded as they do not carry much meaning~\cite[Chapter 1.3.1, p.~7]{Leskovec:2014aa}. The stop-word list used in these experiments is the standard list used for the Scikit-learn framework \cite{Pedregosa:2011aa} which is a list gathered by the University of Glasgow Information Retrieval group \footnote{\url{http://www.gla.ac.uk/schools/computing/research/researchoverview/informationretrieval/}. The full stop word list can be found at \url{http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words} and in the appendix in section \ref{sec:appendix-stopwords}.}.
+
+\paragraph{N-gram range} The N-gram range, also known as window size or shingle size, refers to combinations of the atomic units of the model (words or characters) and defines an upper and lower limit for these combinations. For example a range of $[1,1]$ specifies a unigram model, $[2,2]$ a bigram model and $[1,2]$ a combination of both including all unigrams and all bigrams.
+A larger range allows the model to capture an increasing amount of word order and thus context, but again leads to a combinatorial explosion in terms of feature space.
+
+\paragraph{Vector size} The vector size imposes an upper limit to the vector size and therefor the number of N-grams that can be encoded in the feature space. Commonly this simply uses the words with the highest frequency to reduce the vector size from the full length --- the size of the vocabulary --- to the desired size.
+
+\paragraph{TF.IDF weighting}
+
+- TF.IDF vs simple wordcounts
+- sublinear TF
+- norm
+
+- show T-SNE embeddings of doc2vec vectors
+
+\todo{stemming}
+
+Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}.
+
+Notable shortcomings of this method are it's inability to capture word-order
+
+\begin{itemize}
+  \item vector space models
+  \item bag of words
+  \item \textquote{The most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
+\end{itemize}
+
+\section{Classification Approaches}
 
 \subsection{Discriminant Functions for Multi-class Classification}
 
@@ -250,42 +286,6 @@ These extensions though have major drawbacks as pointed out by~\cite[Chapter 5.2
 \end{figure}
 
 \cite{Bishop:2006aa}
-
-
-\section{Vector-Space Models}
-\label{sec:vector-space-models}
-
-
-Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
-
-\subsection{N-gram language models}
-
-N-gram language models are based on co-occurrences of word or character sequences, so-called N-grams or $k$-shingles as they are referred to in the Data Mining literature~\cite[Chapter 3.2, p.~72]{Leskovec:2014aa}. Formally an N-gram is defined as a sequence of $n$ items, each of which consist of $n$ characters or words, effectively used to capture sub-sequences of text. Common choices are N-grams of size 1, 2 or 3 --- called ``unigrams'', ``bigrams'' and ``trigrams'' respectively --- and the definition can be extended to using a window size $[\textit{w}_{\text{min}}, \textit{w}_{\text{max}}]$, employing all combinations of N-grams in this interval.
-
-N-grams are usually used to create a vector-space model by representing each document in a dataset as a \textit{bag-of-words} or \textit{bag-of-N-grams} vector so that each dimension of the vector represents statistics about the corresponding N-gram. For unigrams
-
-parameters
-- words vs chars
-- stop words
-- ngram range
-- max features
-- TF.IDF vs simple wordcounts
-- sublinear TF
-- norm
-
-- show T-SNE embeddings of doc2vec vectors
-
-Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}.
-
-Notable shortcomings of this method are it's inability to capture word-order
-
-\begin{itemize}
-  \item vector space models
-  \item bag of words
-  \item \textquote{The most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
-\end{itemize}
-
-
 
 % \subsection{Collecting Data}
 %

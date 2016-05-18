@@ -5,6 +5,17 @@
 \contentsline {todo}{show embedding visualizations}{5}{section*.15}
 \contentsline {todo}{explain suervised classifiaction and binaty vs multi}{9}{section*.20}
 \contentsline {todo}{citation for Confusion Matrix?}{11}{section*.22}
-\contentsline {todo}{say why using the sentence dataset here}{14}{section*.25}
-\contentsline {todo}{reference jupyter notebook here}{14}{section*.26}
-\contentsline {todo}{actually discuss time and memory requirements}{14}{section*.27}
+\contentsline {todo}{citation for first or review paper here?}{12}{section*.24}
+\contentsline {todo}{stemming}{13}{section*.30}
+\contentsline {todo}{Comparison one-vs-rest and one-vs-one against linear machine}{15}{section*.32}
+\contentsline {todo}{Visualizations and embeddings of data in 2D (and decision boundaries?)}{15}{section*.33}
+\contentsline {todo}{show T-SNE embeddings of doc2vec vectors}{15}{section*.34}
+\contentsline {todo}{say why using the sentence dataset here}{15}{section*.35}
+\contentsline {todo}{reference jupyter notebook here}{15}{section*.36}
+\contentsline {todo}{actually discuss time and memory requirements}{15}{section*.37}
+\contentsline {todo}{reference section here}{15}{section*.38}
+\contentsline {todo}{link to logistic regression classifier explanation here}{15}{section*.39}
+\contentsline {todo}{link MCC multi here}{15}{section*.40}
+\contentsline {todo}{citation for first or review paper here?}{16}{section*.42}
+\contentsline {todo}{show influence of each parameter on the performance by fixing it to each value it can take and measuring the variance of the results? or by just showing the mean when fixing to one value}{16}{section*.44}
+\contentsline {todo}{Add list of english stop words used for ngrams (sklearn list)}{21}{section*.47}

@@ -55,6 +55,14 @@ Mikolov, T. (2012).
 \newblock {\em Statistical {Language} {Models} {Based} on {Neural} {Networks}}.
 \newblock PhD thesis, Ph. D. thesis, Brno University of Technology.
 
+\bibitem[Pedregosa et~al., 2011]{Pedregosa:2011aa}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J.,
+  Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, {\'E}.
+  (2011).
+\newblock Scikit-learn: {Machine} {Learning} in {Python}.
+\newblock {\em Journal of Machine Learning Research}, 12:2825−2830.
+
 \bibitem[Powers, 2011]{Powers:2011aa}
 Powers, D.~M. (2011).
 \newblock Evaluation: from precision, recall and {F}-measure to {ROC},

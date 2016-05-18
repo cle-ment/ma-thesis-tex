@@ -1,2 +1,10 @@
+*.log
 /literature/papers/*
 .DS_Store
+*.aux
+*.fls
+*.out
+*.blg
+*.fdb_latexmk
+*.gz(busy)
+*.synctex.gz
