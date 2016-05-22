@@ -66,7 +66,8 @@ Figure~\ref{fig:exp-vector-space-conf-matrix-guessing} shows the confusion matri
 
 The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in section~\ref{subs:n-gram-language-models}. As mentioned earlier this type of model relies on simple statistics makes for straightforward computation but at the same time comes at cost of expressiveness in terms of temporal dependencies between words.
 
-As this approach has been studied for decades \todo{citation for first or review paper here?} there is quite an extensive amount of variants and thus hyper-parameters to tune. To compare the effects of these hyper-parameters for the different N-gram models a grid search was performed, searching over a large parameter space.
+
+ To compare the effects of these hyper-parameters for the different N-gram models a grid search was performed, searching over a large parameter space.
 
 \begin{center}
   \begin{table}[h]
@@ -87,6 +88,7 @@ As this approach has been studied for decades \todo{citation for first or review
   \end{table}
 \end{center}
 
+\todo{show T-SNE embeddings of doc2vec vectors}
 
 
 \todo{show influence of each parameter on the performance by fixing it to each value it can take and measuring the variance of the results? or by just showing the mean when fixing to one value}

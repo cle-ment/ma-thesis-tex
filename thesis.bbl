@@ -20,6 +20,17 @@
 \newblock Node.js.
 \newblock \url{https://nodejs.org/en/}.
 
+\bibitem[Bengio and Bengio, 2000]{Bengio:2000aa}
+Bengio, S. and Bengio, Y. (2000).
+\newblock Taking on the curse of dimensionality in joint distributions using
+  neural networks.
+\newblock {\em IEEE Transactions on Neural Networks}, 11(3):550--557.
+
+\bibitem[Bengio et~al., 2003]{bengio2003neural}
+Bengio, Y., Ducharme, R., and Vincent, P. (2003).
+\newblock A neural probabilistic language model.
+\newblock {\em Journal of Machine Learning Research}, 3:1137--1155.
+
 \bibitem[Bishop, 2006]{Bishop:2006aa}
 Bishop, C.~M. (2006).
 \newblock {\em Pattern {Recognition} and {Machine} {Learning} ({Information}
@@ -43,6 +54,17 @@ Leskovec, J., Rajaraman, A., and Ullman, J.~D. (2014).
 \newblock {\em Mining of massive datasets}.
 \newblock Cambridge University Press.
 
+\bibitem[Lodhi et~al., 2002]{Lodhi:2002aa}
+Lodhi, H., Saunders, C., Shawe-Taylor, J., Cristianini, N., and Watkins, C.
+  (2002).
+\newblock Text {Classification} {Using} {String} {Kernels}.
+\newblock {\em J. Mach. Learn. Res.}, 2:419--444.
+
+\bibitem[Manning et~al., 2008]{Manning:2008aa}
+Manning, C.~D., Raghavan, P., Sch{\"u}tze, H., and {others} (2008).
+\newblock {\em Introduction to information retrieval}, volume~1.
+\newblock Cambridge university press Cambridge.
+
 \bibitem[Matthews, 1975]{Matthews:1975aa}
 Matthews, B.~W. (1975).
 \newblock Comparison of the predicted and observed secondary structure of {T}4
@@ -55,13 +77,32 @@ Mikolov, T. (2012).
 \newblock {\em Statistical {Language} {Models} {Based} on {Neural} {Networks}}.
 \newblock PhD thesis, Ph. D. thesis, Brno University of Technology.
 
+\bibitem[Mikolov et~al., 2013a]{Mikolov:2013aa}
+Mikolov, T., Le, Q.~V., and Sutskever, I. (2013a).
+\newblock Exploiting similarities among languages for machine translation.
+\newblock {\em arXiv preprint arXiv:1309.4168}.
+
+\bibitem[Mikolov et~al., 2013b]{Mikolov:2013ab}
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
+\newblock Distributed {Representations} of {Words} and {Phrases} and their
+  {Compositionality}.
+\newblock In Burges, C. J.~C., Bottou, L., Welling, M., Ghahramani, Z., and
+  Weinberger, K.~Q., editors, {\em Advances in {Neural} {Information}
+  {Processing} {Systems} 26}, pages 3111--3119. Curran Associates, Inc.
+
+\bibitem[Mikolov et~al., 2013c]{Mikolov:2013ac}
+Mikolov, T., Yih, W.-t., and Zweig, G. (2013c).
+\newblock Linguistic {Regularities} in {Continuous} {Space} {Word}
+  {Representations}.
+\newblock In {\em {HLT}-{NAACL}}, pages 746--751.
+
 \bibitem[Pedregosa et~al., 2011]{Pedregosa:2011aa}
 Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
   O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J.,
   Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, {\'E}.
   (2011).
 \newblock Scikit-learn: {Machine} {Learning} in {Python}.
-\newblock {\em Journal of Machine Learning Research}, 12:2825−2830.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830.
 
 \bibitem[Powers, 2011]{Powers:2011aa}
 Powers, D.~M. (2011).

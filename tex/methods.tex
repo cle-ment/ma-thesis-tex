@@ -115,6 +115,8 @@ An intuitive choice towards classification is to simply ask which data points we
 
 This choice can give a good intuition and it does capture the effectiveness on both true positives as well as true negatives, but it is strongly influenced by bias of the true and predicted class distribution (known as prevalence RP/N and label bias) as pointed out by \cite{Powers:2011aa}. For example given a population of 900 positive and 100 negative examples, a predictor that simply always chooses a positive assignment can achieve accuracy of 90\% while it obviously is not a great predictor.
 
+\textquote{There is a good reason why accuracy is not an appropriate measure for information retrieval problems. In almost all circumstances, the data is ex- tremely skewed: normally over 99.9\% of the documents are in the nonrele- vant category. A system tuned to maximize accuracy can appear to perform well by simply deeming all documents nonrelevant to all queries. Even if the system is quite good, trying to label some documents as relevant will almost always lead to a high rate of false positives. However, labeling all documents as nonrelevant is completely unsatisfying to an information retrieval system user. }\cite[Chapter 8.3, p.~155]{Manning:2008aa}
+
 \subsubsection{Precision, Recall and F1 Score}
 \label{subs:precision-recall-f1score}
 
@@ -206,17 +208,25 @@ A way to evaluate
 \subsection{Multi-label classification}
 
 
-
-
-
-\section{Statistical Language Modeling}
+\section{Vector Space Language Models}
 \label{sec:vector-space-models}
 
+\todo{write vector space models introduction}
+
+\todo{explain language modeling as approach for text classification}
+
+\textquote{Contiguity hypothesis. Documents in the same class form a contiguous region and regions of different classes do not overlap.}~\cite[Chapter 14, p.~289]{Manning:2008aa}
+
+Vector space model \cite[Chapter 6.3, p.~120]{Manning:2008aa}
+
+\textquote{the document `Mary is quicker than John' is, in this view, identical to the document `John is quicker than Mary'}\cite[Chapter 6.2, p.~117]{Manning:2008aa}
 
 Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
 
 \subsection{N-gram language models}
 \label{subs:n-gram-language-models}
+
+\todo{is the term language model right for ngram vector space models?}
 
 N-gram language models are based on co-occurrences of word or character sequences, so-called N-grams or $k$-shingles as they are referred to in the Data Mining literature~\cite[Chapter 3.2, p.~72]{Leskovec:2014aa}. Formally an N-gram is defined as a sequence of $n$ items, each of which consist of $n$ characters or words, effectively used to capture sub-sequences of text. Common choices are N-grams of size 1, 2 or 3 --- called \emph{unigrams}, \emph{bigrams} and ``trigrams'' respectively --- and the definition can be extended to using a window size $[\textit{w}_{\text{min}}, \textit{w}_{\text{max}}]$, employing all combinations of N-grams in this interval.
 
@@ -227,6 +237,10 @@ N-grams are usually used to create a vector-space model by representing each doc
 \end{equation}
 
 Where $f_{ij}$ is \textquote{the \emph{frequency} (number of occurences) of a term (word) $i$ in document $j$} and $\text{TF}_{if}$ is the \emph{term frequency}, i.e.   \textquote{$f_{ij}$ normalized by dividing it by the maximum number of occurrences of any term [\ldots] in the same document}~\cite[Chapter 1.3.1, p.~8]{Leskovec:2014aa}.
+
+\todo{example with 2 vectors and showing what they encode?}
+
+\subsubsection{Variants}
 
 As this approach has been studied for decades \todo{citation for first or review paper here?} there is quite an extensive amount of variants and thus hyper-parameters to tune. The most important ones will be explained in the following sections:
 
@@ -239,25 +253,63 @@ A larger range allows the model to capture an increasing amount of word order an
 
 \paragraph{Vector size} The vector size imposes an upper limit to the vector size and therefor the number of N-grams that can be encoded in the feature space. Commonly this simply uses the words with the highest frequency to reduce the vector size from the full length --- the size of the vocabulary --- to the desired size.
 
-\paragraph{TF.IDF weighting}
+\paragraph{TF.IDF weighting} A common extension to using word-counts is to weight the term frequencies by the so-called inverse document frequency, i.e. the inverse of the frequency of an term or N-gram in all documents. This method is commonly referred to as \emph{TF.IDF} and specifically the inverse document frequency is defined as $\text{IDF}_i = \log_2 (N/n_i)$, where logarithmic smoothing is applied. The TF.IDF value for a term or N-gram is then computed as $\text{TF}_{ij} \cdot \text{IDF}_i$.
 
-- TF.IDF vs simple wordcounts
-- sublinear TF
-- norm
+\paragraph{Sublinear TF scaling} As \cite[Chapter 6.4.1, p.~126]{Manning:2008aa} suggests \textquote{[it] seems unlikely that twenty occurrences of a term in a document truly carry twenty times the significance of a single occurrence}. Hence a common variant is \emph{sublinear scaling} where we down-weigh the increase in term importance by applying a logarithmic function to it, resulting in the sub-linear term frequency $\text{subTF}_{ij}$:
 
-- show T-SNE embeddings of doc2vec vectors
+\begin{displaymath}
+  \text{subTF}_{ij} = \left\{ \begin{array}{l l} 1+\log \text{TF}_{ij} & \text{TF}_{ij} > 0 \\
+  0 & \text{otherwise}
+\end{array} \right\}
+\end{displaymath}
 
-\todo{stemming}
+\paragraph{Normalization} Often the term vectors are globally normalized using the $L_1$ or $L_2$ norm to remove the effect of statistical differences between the terms.
 
-Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}.
+There are, of course, various other variants and modifications to the N-gram model, but within the scope of this thesis only the most notable ones were introduced and will be used for experiments later. For further material on this subject refer for example to \cite{Manning:2008aa}.
 
-Notable shortcomings of this method are it's inability to capture word-order
+\subsubsection{Shortcomings}
+\label{subs:shortcomings-ngrams}
 
-\begin{itemize}
-  \item vector space models
-  \item bag of words
-  \item \textquote{The most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
-\end{itemize}
+Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}. As~\cite{Mikolov:2012aa} points out further \textquote{[the] most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs [Language Models] is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
+
+\subsection{Language Models using Distributed Representations}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{img/word2vec-google-trends.pdf}
+  \end{center}
+  \caption{Google Trends statistics on relative search interest in the term ``word2vec''. Retrieved on 22.05.2016.}
+  \label{fig:word2vec-google-trends}
+\end{wrapfigure}
+
+To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community but also from open source community (Figure \ref{fig:word2vec-google-trends} shows the search relevance of the term ``word2vec'' in the recent years). His work builds on ideas introduced in \cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in \cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
+
+\begin{enumerate}
+  \item Associate with each word in the vocabulary a distributed \emph{word feature vector} (a real-valued vector in $\mathbb{R}^m$),
+  \item Express the joint \emph{probability function} of word sequences in terms of the feature vectors of these words in the sequence, and
+  \item Learn simultaneously the \emph{word feature vectors} and the parameters of that \emph{probability function}.
+\end{enumerate}
+
+To achieve this, a feedforward neural network model is trained to learn these \emph{word feature vectors} or \emph{word embeddings}. As input a sequence of $n$ words is given, each encoded using one-hot encoding or one-of-$V$ encoding where the corresponding indicator vectors for each word have the size of the vocabulary $V$. The input word vectors are then projected linearly into a projection layer of significantly lower dimensionality $D$, using a global projection matrix for across all words, and concatenated, forming the input of size $D \times N$ to a hidden layer of size $H$. The hidden layer then feeds non-linearly into the output layer that is again of size $V$, modeling the probability distribution for a word given its context $P(w_t \mid w_{t - n}, \ldots, w_{t - 2}, w_{t - 1})$. 
+
+for his PhD thesis~\cite{Mikolov:2012aa} and in his follow-up publications, e.g. \cite{Mikolov:2013ab}, \cite{Mikolov:2013ac}, \cite{Mikolov:2013aa}, whose approach dubbed ``word2vec''
+
+Building on ideas of \cite{Bengio:2000aa}
+
+
+
+\subsection{Word2Vec}
+\label{sub:Word2Vec}
+
+\todo{mention GloVe}
+
+\cite{}
+
+
+\subsection{Doc2Vec}
+\label{sub:Doc2Vec}
+
+
 
 \section{Classification Approaches}
 
