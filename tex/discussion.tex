@@ -10,7 +10,7 @@
 \begin{itemize}
   \item As in many areas of machine learning much work has been going into feature engineering but it seems that feature learning, while much more computationally expensive, surpasses the potential of engineered feature representations. Deep learning and meta-learning are mature enough to make up for the gap that has been there for years: To achieve performance that is good enough to make an algorithmic system usable in production, huge amounts of research and engineering went into feature engineering and finally the performance of these methods can be matched and even surpassed by automated methods or learning features. (link here NG's transfer learning work, also Schmidhubers work of meta-learning and on function prediction etc)
   \item There is more need to understand the representations of such feature learning systems though, statistics are quite easy to understand but weights of a neural network don't tell much. There is however potential for learning ``better statistics'' ourselves, e.g. how to efficiently learn a language (by looking at explicit indermediate representations of the states of a NN)
-  \item 
+  \item
 \end{itemize}
 
 
@@ -28,6 +28,8 @@
 \begin{itemize}
   \item how well do word2vec and comparable methods generalize: e.g.\ initialize a text corpus with word vectors from a bigger corpus (Google News), then train an RNN to predict the next word vector using the small corpus but use the bigger corpus to validate and see if words in bigger corpus can be inferred
   \item trajectory based algorithms (word trajectory through space for a sentence)
+  \item Compare with standard benchmarks (TREC etc)
+  \item Meta- / Transfer-learning: OCR with simultaneous LM learning (e.g. predict next character) 
 \end{itemize}
 
 

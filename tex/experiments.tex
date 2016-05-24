@@ -8,7 +8,9 @@
 \todo{Visualizations and embeddings of data in 2D (and decision boundaries?)}
 \todo{show T-SNE embeddings of doc2vec vectors}
 
-\subsection{Effectiveness and Expressiveness of Statistical (Vector Space) Language Models}
+\subsection{Classification of paragraph dataset}
+
+\subsection{Vector Space Models compared}
 
 \todo{say why using the sentence dataset here}
 \todo{reference jupyter notebook here}
@@ -66,8 +68,14 @@ Figure~\ref{fig:exp-vector-space-conf-matrix-guessing} shows the confusion matri
 
 The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in section~\ref{subs:n-gram-language-models}. As mentioned earlier this type of model relies on simple statistics makes for straightforward computation but at the same time comes at cost of expressiveness in terms of temporal dependencies between words.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/paragraph-data-tSNE.pdf}
+    \caption{t-SNE Embedding}
+  \label{fig:paragraph-data-tSNE}
+\end{figure}
 
- To compare the effects of these hyper-parameters for the different N-gram models a grid search was performed, searching over a large parameter space.
+To compare the effects of these hyper-parameters for the different N-gram models a grid search was performed, searching over a large parameter space. Table~\ref{tab:ngram-parameters} lists the hyper-parameter space that was systematically evaluated.
 
 \begin{center}
   \begin{table}[h]
@@ -84,9 +92,11 @@ The first class of language models that was investigated for the task of multi-c
     \hline
   \end{tabular}
   \caption{Parameter search space for word and character level N-gram models}
-\label{table:name}
+\label{tab:ngram-parameters}
   \end{table}
 \end{center}
+
+
 
 \todo{show T-SNE embeddings of doc2vec vectors}
 

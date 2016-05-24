@@ -37,6 +37,13 @@ Bishop, C.~M. (2006).
   {Science} and {Statistics})}.
 \newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA.
 
+\bibitem[Collobert and Weston, 2008]{Collobert:2008aa}
+Collobert, R. and Weston, J. (2008).
+\newblock A {Unified} {Architecture} for {Natural} {Language} {Processing}:
+  {Deep} {Neural} {Networks} with {Multitask} {Learning}.
+\newblock In {\em Proceedings of the 25th {International} {Conference} on
+  {Machine} {Learning}}, {ICML} '08, pages 160--167, New York, NY, USA. ACM.
+
 \bibitem[Do and Ng, 2006]{Do:2006aa}
 Do, C.~B. and Ng, A.~Y. (2006).
 \newblock Transfer learning for text classification.
@@ -77,21 +84,15 @@ Mikolov, T. (2012).
 \newblock {\em Statistical {Language} {Models} {Based} on {Neural} {Networks}}.
 \newblock PhD thesis, Ph. D. thesis, Brno University of Technology.
 
-\bibitem[Mikolov et~al., 2013a]{Mikolov:2013aa}
-Mikolov, T., Le, Q.~V., and Sutskever, I. (2013a).
-\newblock Exploiting similarities among languages for machine translation.
-\newblock {\em arXiv preprint arXiv:1309.4168}.
+\bibitem[Mikolov et~al., 2013a]{Mikolov:2013ad}
+Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
+\newblock Efficient {Estimation} of {Word} {Representations} in {Vector}
+  {Space}.
+\newblock {\em arXiv:1301.3781 [cs]}.
+\newblock arXiv: 1301.3781.
 
-\bibitem[Mikolov et~al., 2013b]{Mikolov:2013ab}
-Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
-\newblock Distributed {Representations} of {Words} and {Phrases} and their
-  {Compositionality}.
-\newblock In Burges, C. J.~C., Bottou, L., Welling, M., Ghahramani, Z., and
-  Weinberger, K.~Q., editors, {\em Advances in {Neural} {Information}
-  {Processing} {Systems} 26}, pages 3111--3119. Curran Associates, Inc.
-
-\bibitem[Mikolov et~al., 2013c]{Mikolov:2013ac}
-Mikolov, T., Yih, W.-t., and Zweig, G. (2013c).
+\bibitem[Mikolov et~al., 2013b]{Mikolov:2013ac}
+Mikolov, T., Yih, W.-t., and Zweig, G. (2013b).
 \newblock Linguistic {Regularities} in {Continuous} {Space} {Word}
   {Representations}.
 \newblock In {\em {HLT}-{NAACL}}, pages 746--751.

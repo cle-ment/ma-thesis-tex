@@ -3,7 +3,7 @@
 
 %% In a thesis, every section starts a new page, hence \clearpage
 \clearpage
-\section{Context}
+\section{Context*}
 
 This thesis
 
@@ -13,16 +13,33 @@ This thesis
   predict the most likely class for the test document.}\cite{Do:2006aa}
 
 
-\subsection{Need Statement}
+\subsection{Need Statement*}
 
-\subsection{Problem Statement}
+\subsection{Problem Statement*}
 
-\subsection{Research objectives}
+\subsection{Research objectives*}
 
-\subsection{Related work}
+\subsection{Related work (*)}
 
-\cite{Lodhi:2002aa} string kernels 
+ % \emph{information retrieval} (IR)  - 90's
+
+Algorithmic \emph{text categorization} (TC --- also known as \emph{text classification}) into a fixed set of categories has been of a topic of growing interest during the last decades, boosted by the increasingly vast amounts of data available today. The applications are various, from document filtering, automated metadata generation such as language classification to automatic email labeling, spam identification and sentiment detection, amongst others.
+
+Unsupervised techniques for topic discovery have been investigated widely, such as LSA
+
+Vector Space models are a
+
+- feature learning for text
+- multitask learning
+
+
+\cite{Collobert:2008aa} showed how both multitask learning and semi-supervised learning improve the generalization of the shared tasks on text data. They describe \textquote{a single convolutional neural network architecture that, given a sentence, outputs [\ldots] part-of-speech tags, chunks, named entity tags, semantic roles, semantically similar words and the likelihood that the sentence makes sense (grammatically and semantically) using a language model}.
+
+
+
+\cite{Lodhi:2002aa} string kernels
 
 \todo{section on transfer learning and feature learning}
 \todo{text classification}
+\todo{Multitask learning}
 \todo{explicit vs implicit feature representation}
