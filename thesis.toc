@@ -8,71 +8,82 @@
 \contentsline {subsection}{\numberline {1.2}Structure of the thesis*}{2}{subsection.1.2}
 \contentsline {section}{\numberline {2}Context *}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Background *}{3}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Corporate Partner *}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Corporate Partner}{3}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Need Statement *}{3}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Problem Statement *}{3}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Research objectives *}{3}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}Related work *-}{3}{subsection.2.6}
-\contentsline {section}{\numberline {3}Research Process and Design Development (*)}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Crowdsourced Data Collection (*)}{4}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Explorative Paragraph Dataset}{4}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Sentence Data Collection}{5}{subsubsection.3.1.2}
-\contentsline {section}{\numberline {4}Background}{9}{section.4}
-\contentsline {subsection}{\numberline {4.1}Evaluation}{9}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Binary Classification}{9}{subsubsection.4.1.1}
-\contentsline {paragraph}{Precision, Recall and F1 Score}{10}{section*.29}
-\contentsline {paragraph}{Informedness, Markedness and Matthews Correlation Coefficient}{10}{section*.30}
-\contentsline {paragraph}{Cross-entropy Loss}{11}{section*.31}
-\contentsline {subsubsection}{\numberline {4.1.2}Multi-class classification}{12}{subsubsection.4.1.2}
-\contentsline {paragraph}{Averaging for Multi-class Recall, Precision and F1-Score *}{13}{section*.35}
-\contentsline {paragraph}{Matthews Correlation Coefficient for K classes}{13}{section*.36}
-\contentsline {paragraph}{Categorical Cross-entropy *}{14}{section*.37}
-\contentsline {subsubsection}{\numberline {4.1.3}Multi-label classification *}{14}{subsubsection.4.1.3}
-\contentsline {subsection}{\numberline {4.2}Language Modeling}{14}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Vector Space Language Models}{14}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}N-gram language models}{15}{subsubsection.4.2.2}
-\contentsline {paragraph}{Variants}{15}{section*.42}
-\contentsline {subparagraph}{Words vs. Characters}{15}{section*.44}
-\contentsline {subparagraph}{Stop words}{15}{section*.45}
-\contentsline {subparagraph}{N-gram range}{16}{section*.46}
-\contentsline {subparagraph}{Vector size}{16}{section*.47}
-\contentsline {subparagraph}{TF.IDF weighting}{16}{section*.48}
-\contentsline {subparagraph}{Sublinear TF scaling}{16}{section*.49}
-\contentsline {subparagraph}{Normalization}{16}{section*.50}
-\contentsline {paragraph}{Shortcomings}{16}{section*.52}
-\contentsline {subsubsection}{\numberline {4.2.3}Language Models using Distributed Representations}{17}{subsubsection.4.2.3}
-\contentsline {paragraph}{Simplified Continuous Models}{18}{section*.54}
-\contentsline {subparagraph}{Negative Sampling}{19}{section*.58}
-\contentsline {subparagraph}{Hierarchical Sampling}{19}{section*.59}
-\contentsline {subparagraph}{Frequent word sub-sampling}{19}{section*.60}
-\contentsline {paragraph}{Distributed representations for documents}{19}{section*.62}
-\contentsline {subsection}{\numberline {4.3}Classification Approaches}{19}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Approaches to Multi-class Classification}{19}{subsubsection.4.3.1}
-\contentsline {section}{\numberline {5}Explorative Experiments with Paragraph Dataset}{21}{section.5}
-\contentsline {section}{\numberline {6}Experiments with Sentence Dataset}{21}{section.6}
-\contentsline {subsection}{\numberline {6.1}Vector Space Models compared}{21}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Baselines Classifiers: Uniform and Stratified Guessing}{21}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}N-gram Language Models}{21}{subsubsection.6.1.2}
-\contentsline {subsubsection}{\numberline {6.1.3}Bag-of-Means -word2Vec averaged}{23}{subsubsection.6.1.3}
-\contentsline {subsubsection}{\numberline {6.1.4}Doc2Vec --- Distributed representations of documents}{23}{subsubsection.6.1.4}
-\contentsline {paragraph}{Vector Size}{23}{section*.81}
-\contentsline {paragraph}{Frequeword Sub-Sampling}{23}{section*.82}
-\contentsline {paragraph}{Hierarchical Sampling}{23}{section*.83}
-\contentsline {paragraph}{Negative Sampling}{23}{section*.84}
-\contentsline {paragraph}{Window Size}{23}{section*.85}
-\contentsline {paragraph}{CBOW versus PM-DV}{24}{section*.86}
-\contentsline {paragraph}{Evaluating the best hyper-parameter setting}{24}{section*.87}
-\contentsline {subsubsection}{\numberline {6.1.5}Doc2Vec using pre-initialized weights}{24}{subsubsection.6.1.5}
-\contentsline {subsubsection}{\numberline {6.1.6}Doc2Vec using context sentences}{24}{subsubsection.6.1.6}
-\contentsline {subsubsection}{\numberline {6.1.7}Results and Discussion}{24}{subsubsection.6.1.7}
-\contentsline {subsection}{\numberline {6.2}Finding the best Classifier using Vector Space Models}{24}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Advanced and experimental approaches}{24}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}Inversion of Distributed Language Representations}{24}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}LSTM Multi-task learner}{24}{subsubsection.6.3.2}
-\contentsline {section}{\numberline {7}Discussion and Conclusions}{26}{section.7}
-\contentsline {subsection}{\numberline {7.1}Discussion of Experimental Results}{26}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Conclusions}{26}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Contributions}{26}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Proposal for Future Research}{26}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}Learnings}{27}{subsection.7.5}
-\contentsline {section}{References}{28}{section*.89}
+\contentsline {section}{\numberline {3}Research Process and Design Development (*)}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Crowdsourced Data Collection (*)}{5}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Explorative Paragraph Dataset}{5}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Sentence Data Collection}{6}{subsubsection.3.1.2}
+\contentsline {section}{\numberline {4}Background}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Evaluation}{10}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Binary Classification}{10}{subsubsection.4.1.1}
+\contentsline {paragraph}{Accuracy}{10}{section*.32}
+\contentsline {paragraph}{Precision, Recall and F1 Score}{11}{section*.33}
+\contentsline {paragraph}{Informedness, Markedness and Matthews Correlation Coefficient}{12}{section*.34}
+\contentsline {paragraph}{Cross-Entropy}{12}{section*.35}
+\contentsline {subsubsection}{\numberline {4.1.2}Multi-class Classification}{13}{subsubsection.4.1.2}
+\contentsline {paragraph}{Averaging for Multi-class Recall, Precision and F1-Score}{13}{section*.38}
+\contentsline {paragraph}{Matthews Correlation Coefficient for K classes}{14}{section*.39}
+\contentsline {paragraph}{Categorical Cross-Entropy}{15}{section*.40}
+\contentsline {subsubsection}{\numberline {4.1.3}Multi-label Classification *}{15}{subsubsection.4.1.3}
+\contentsline {subsection}{\numberline {4.2}Language Modeling}{15}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Vector Space Language Models}{15}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}N-gram language models}{16}{subsubsection.4.2.2}
+\contentsline {paragraph}{Variants}{16}{section*.46}
+\contentsline {subparagraph}{Words vs. Characters}{16}{section*.48}
+\contentsline {subparagraph}{Stop words}{16}{section*.49}
+\contentsline {subparagraph}{N-gram range}{17}{section*.50}
+\contentsline {subparagraph}{Vector size}{17}{section*.51}
+\contentsline {subparagraph}{TF.IDF weighting}{17}{section*.52}
+\contentsline {subparagraph}{Sublinear TF scaling}{17}{section*.53}
+\contentsline {subparagraph}{Normalization}{17}{section*.54}
+\contentsline {paragraph}{Shortcomings}{17}{section*.56}
+\contentsline {subsubsection}{\numberline {4.2.3}Language Models using Distributed Representations}{18}{subsubsection.4.2.3}
+\contentsline {paragraph}{Simplified Continuous Models}{19}{section*.58}
+\contentsline {subparagraph}{Negative Sampling}{20}{section*.62}
+\contentsline {subparagraph}{Hierarchical Sampling}{20}{section*.63}
+\contentsline {subparagraph}{Frequent word sub-sampling}{20}{section*.64}
+\contentsline {paragraph}{Distributed representations for documents}{20}{section*.65}
+\contentsline {subparagraph}{Bag-of-Means}{20}{section*.66}
+\contentsline {subparagraph}{Parse Trees}{20}{section*.67}
+\contentsline {subparagraph}{Paragraph Vectors}{20}{section*.68}
+\contentsline {subsection}{\numberline {4.3}Classification Approaches}{21}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Approaches to Multi-class Classification}{21}{subsubsection.4.3.1}
+\contentsline {section}{\numberline {5}Explorative Experiments with Paragraph Dataset}{22}{section.5}
+\contentsline {section}{\numberline {6}Experiments with Sentence Dataset}{22}{section.6}
+\contentsline {subsection}{\numberline {6.1}Vector Space Models compared}{22}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Baselines Classifiers: Uniform and Stratified Guessing}{22}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}N-gram Language Models}{22}{subsubsection.6.1.2}
+\contentsline {paragraph}{Type}{23}{section*.80}
+\contentsline {paragraph}{Range}{24}{section*.81}
+\contentsline {paragraph}{Stop Words}{24}{section*.82}
+\contentsline {paragraph}{Size (matters)}{25}{section*.83}
+\contentsline {paragraph}{IDF}{25}{section*.84}
+\contentsline {paragraph}{Norm}{25}{section*.85}
+\contentsline {paragraph}{Sub-linear TF}{25}{section*.86}
+\contentsline {subsubsection}{\numberline {6.1.3}Bag-of-Means -word2Vec averaged *}{26}{subsubsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.4}Doc2Vec --- Distributed representations of documents *}{26}{subsubsection.6.1.4}
+\contentsline {paragraph}{Vector Size *}{26}{section*.90}
+\contentsline {paragraph}{Frequent word Sub-Sampling *}{26}{section*.91}
+\contentsline {paragraph}{Hierarchical Sampling *}{26}{section*.92}
+\contentsline {paragraph}{Negative Sampling *}{27}{section*.93}
+\contentsline {paragraph}{Window Size *}{27}{section*.94}
+\contentsline {paragraph}{CBOW versus PM-DV *}{27}{section*.95}
+\contentsline {paragraph}{Evaluating the best hyper-parameter setting *}{27}{section*.96}
+\contentsline {subsubsection}{\numberline {6.1.5}Doc2Vec using pre-initialized weights *}{27}{subsubsection.6.1.5}
+\contentsline {subsubsection}{\numberline {6.1.6}Doc2Vec using context sentences *}{27}{subsubsection.6.1.6}
+\contentsline {subsubsection}{\numberline {6.1.7}Results and Discussion *}{27}{subsubsection.6.1.7}
+\contentsline {subsection}{\numberline {6.2}Finding the best Classifier using Vector Space Models}{27}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Advanced and experimental approaches}{27}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Inversion of Distributed Language Representations}{27}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}LSTM Multi-task learner}{27}{subsubsection.6.3.2}
+\contentsline {section}{\numberline {7}Discussion and Conclusions}{28}{section.7}
+\contentsline {subsection}{\numberline {7.1}Discussion of Experimental Results}{28}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Conclusions}{28}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Contributions}{28}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Proposal for Future Research}{28}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Learnings}{29}{subsection.7.5}
+\contentsline {section}{References}{30}{section*.97}
