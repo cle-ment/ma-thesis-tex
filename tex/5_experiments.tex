@@ -134,6 +134,8 @@ The 5 best results of these exhaustive grid searches can be seen in Table~\ref{t
 \end{center}
 \end{table}
 
+\todo{Why are the grid scores lower than the latter scores on the train/test split? Because they're averaged and only on the training data?}
+
 Across all classifiers the following results on the hyper-parameters can be observed:
 
 \paragraph{Type}
@@ -168,9 +170,9 @@ Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier usi
 
 \begin{table}[h]
   \begin{center}
-  \begin{tabular}{ r | *3l | *3l }
+  \begin{tabular}{ r | *2l | *2l }
     \toprule
-     & \multicolumn{3}{c|}{Training} & \multicolumn{3}{|c}{Validation}\\
+     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{|c}{Validation}\\
     Classifier & Accuracy & MCC & Accuracy & MCC \\
     \midrule
     Logistic Regression & 0.824 & 0.761 & 0.787 & 0.708 \\
@@ -186,23 +188,24 @@ Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier usi
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-logreg-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-ngram-logreg-normalized.pdf}
         \caption{Logistic Regression}
-        \label{fig:exp-vector-space-conf-matrix-logreg-normalized}
+        \label{fig:exp-vector-space-conf-matrix-ngram-logreg-normalized}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-naivebayes-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-ngram-naivebayes-normalized.pdf}
         \caption{Naive Bayes}
-        \label{fig:exp-vector-space-conf-matrix-naivebayes-normalized}
+        \label{fig:exp-vector-space-conf-matrix-ngram-naivebayes-normalized}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-svm-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-ngram-svm-normalized.pdf}
         \caption{SVM}
-        \label{fig:exp-vector-space-conf-matrix-svm-normalized}
+        \label{fig:exp-vector-space-conf-matrix-ngram-svm-normalized}
     \end{subfigure}
-    \caption{Confusion matrices all three classifiers using the best N-gram model found via cross-validated grid search. Both Naive Bayes as well as SVM show label bias towards the prevalent class \emph{candidate}.}
-  \label{fig:exp-vector-space-conf-matrix-guessing}
+    \caption{Normalized confusion matrices all three classifiers using the best N-gram model found via cross-validated grid search. Both Naive Bayes as well as SVM show label bias towards the prevalent class \emph{candidate}.}
+  \label{fig:exp-vector-space-conf-matrix-ngram}
 \end{figure}
+\todo{properly align visualization}
 
 Figure~\ref{fig:exp-vector-space-ngram} shows projections of the of the constructed feature space using the best model that was optimized with Logistic Regression. This visualization shows the separability of the classes in this space. Especially the PCA projection here reveals that it is clearly possible to separate the classes until a certain point.
 
@@ -225,11 +228,72 @@ Figure~\ref{fig:exp-vector-space-ngram} shows projections of the of the construc
   \label{fig:exp-vector-space-ngram}
 \end{figure}
 
-\subsubsection{Bag-of-Means -word2Vec averaged *}
+\subsubsection{Bag-of-Means - An Averaged Word2Vec Model}
 
+Next a Bag-of-Means model as described in Section~\ref{subp:Bag-of-Means} was evaluated with the same set of classifiers. The model was evaluated on the same test and training data split as used for the N-gram model above. As a basis the pre-trained word-vectors from the Google News dataset\footnote{The dataset contains contains 300-dimensional vectors for 3 million words and phrases. The phrases were obtained using a simple data-driven approach described in~\cite{Mikolov:2013ab}. The dataset can be obtained on the following website: \url{https://code.google.com/archive/p/word2vec/}} were used and then for each document all word vectors were average to obtain the document vector. The results can be seen in Table~\ref{tab:Bag-Of-Means Results}.
 
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ r | *2l | *2l }
+    \toprule
+     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{|c}{Validation}\\
+    Classifier & Accuracy & MCC & Accuracy & MCC \\
+    \midrule
+    Logistic Regression & 0.797 & 0.722 & 0.784 & 0.702 \\
+    Naive Bayes         & 0.337 & 0.271 & 0.320 & 0.251 \\
+    SVM                 & 0.545 & 0.356 & 0.562 & 0.379 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Performance base classifiers using the Bag-of-Means model}
+\label{tab:Bag-Of-Means Results}
+\end{center}
+\end{table}
 
-\subsubsection{Doc2Vec --- Distributed representations of documents *}
+The model performs well using Logistic Regression and is almost on par with the best N-gram model. This is surprising as performance previously reported to be rather poor as mention in Section~\ref{subp:Bag-of-Means}. On the other hand the variance in results between the classifiers is huge and especially Naive Bayes seems to perform extremely poor. Further investigation into the use of different classifiers could shed light into these diverging results which are not observed using the N-gram models in the section above. The confusion matrices in Figure~\ref{fig:exp-vector-space-conf-matrix-bom} reveal strong label bias in the case of Naive Bayes and SVM, although it is unclear where this stems from. Figure~\ref{fig:exp-vector-space-bom} makes clear though that there is a somewhat meaningful mapping into the feature space. \todo{mention one-vs-all scheme for log reg? also for ngrams above}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-bom-logreg-normalized.pdf}
+        \caption{Logistic Regression}
+        \label{fig:exp-vector-space-conf-matrix-bom-logreg-normalized}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-bom-naivebayes-normalized.pdf}
+        \caption{Naive Bayes}
+        \label{fig:exp-vector-space-conf-matrix-bom-naivebayes-normalized}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-bom-svm-normalized.pdf}
+        \caption{SVM}
+        \label{fig:exp-vector-space-conf-matrix-bom-svm-normalized}
+    \end{subfigure}
+    \caption{Normalized confusion matrices of all three classifiers using the Bag-of-Means model.}
+  \label{fig:exp-vector-space-conf-matrix-bom}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space-bom-pca.pdf}
+      \caption{PCA projection}
+      \label{fig:exp-vector-space-bom-pca}
+    \end{subfigure}
+    ~
+    %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space-bom-tsne.pdf}
+      \caption{t-SNE projection}
+      \label{fig:exp-vector-space-bom-tsne}
+    \end{subfigure}
+    \caption{Document vectors produced by Bag-of-Means model (optimized w.r.t. Logistic Regression) projected onto the first 2 principal components (left) and projected using t-SNE projection. It is clear that even though the vectors are simply obtained by averaging they do indeed produce somewhat seperable manifolds.}
+  \label{fig:exp-vector-space-bom}
+\end{figure}
+
+\subsubsection{Paragraph Vectors using Distributed Representations}
+
+Following the 
 
 \paragraph{Vector Size *}
 
@@ -245,9 +309,9 @@ Figure~\ref{fig:exp-vector-space-ngram} shows projections of the of the construc
 
 \paragraph{Evaluating the best hyper-parameter setting *}
 
-\subsubsection{Doc2Vec using pre-initialized weights *}
+\subsubsection{Paragraph Vectors using pre-initialized weights *}
 
-\subsubsection{Doc2Vec using context sentences *}
+\subsubsection{Paragraph Vectors using context sentences *}
 
 \subsubsection{Results and Discussion *}
 

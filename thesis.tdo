@@ -21,11 +21,13 @@
 \contentsline {todo}{example with 2 vectors and showing what they encode?}{16}{section*.45}
 \contentsline {todo}{citation for first or review paper here?}{16}{section*.47}
 \contentsline {todo}{mention smoothing techniques \cite {Chen:1996aa}}{17}{section*.55}
-\contentsline {todo}{mention GloVe}{20}{section*.61}
-\contentsline {todo}{doc2vec}{20}{section*.69}
-\contentsline {todo}{say why using the sentence dataset here}{22}{section*.71}
-\contentsline {todo}{reference jupyter notebook here}{22}{section*.72}
-\contentsline {todo}{actually discuss time and memory requirements}{22}{section*.73}
-\contentsline {todo}{reference section here}{22}{section*.74}
-\contentsline {todo}{link to logistic regression classifier explanation here}{22}{section*.75}
-\contentsline {todo}{link accuracy?}{22}{section*.76}
+\contentsline {todo}{doc2vec}{21}{section*.68}
+\contentsline {todo}{say why using the sentence dataset here}{22}{section*.70}
+\contentsline {todo}{reference jupyter notebook here}{22}{section*.71}
+\contentsline {todo}{actually discuss time and memory requirements}{22}{section*.72}
+\contentsline {todo}{reference section here}{22}{section*.73}
+\contentsline {todo}{link to logistic regression classifier explanation here}{22}{section*.74}
+\contentsline {todo}{link accuracy?}{22}{section*.75}
+\contentsline {todo}{Why are the grid scores lower than the latter scores on the train/test split? Because they're averaged and only on the training data?}{23}{section*.79}
+\contentsline {todo}{properly align visualization}{25}{section*.89}
+\contentsline {todo}{mention one-vs-all scheme for log reg? also for ngrams above}{27}{section*.92}

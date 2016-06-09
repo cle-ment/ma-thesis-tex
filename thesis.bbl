@@ -119,8 +119,16 @@ Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
 \newblock {\em arXiv:1301.3781 [cs]}.
 \newblock arXiv: 1301.3781.
 
-\bibitem[Mikolov et~al., 2013b]{Mikolov:2013ac}
-Mikolov, T., Yih, W.-t., and Zweig, G. (2013b).
+\bibitem[Mikolov et~al., 2013b]{Mikolov:2013ab}
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
+\newblock Distributed {Representations} of {Words} and {Phrases} and their
+  {Compositionality}.
+\newblock In Burges, C. J.~C., Bottou, L., Welling, M., Ghahramani, Z., and
+  Weinberger, K.~Q., editors, {\em Advances in {Neural} {Information}
+  {Processing} {Systems} 26}, pages 3111--3119. Curran Associates, Inc.
+
+\bibitem[Mikolov et~al., 2013c]{Mikolov:2013ac}
+Mikolov, T., Yih, W.-t., and Zweig, G. (2013c).
 \newblock Linguistic {Regularities} in {Continuous} {Space} {Word}
   {Representations}.
 \newblock In {\em {HLT}-{NAACL}}, pages 746--751.
@@ -137,6 +145,11 @@ Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
   (2011).
 \newblock Scikit-learn: {Machine} {Learning} in {Python}.
 \newblock {\em Journal of Machine Learning Research}, 12:2825--2830.
+
+\bibitem[Pennington et~al., 2014]{Pennington:2014aa}
+Pennington, J., Socher, R., and Manning, C.~D. (2014).
+\newblock Glove: {Global} {Vectors} for {Word} {Representation}.
+\newblock In {\em {EMNLP}}, volume~14, pages 1532--1543.
 
 \bibitem[Powers, 2011]{Powers:2011aa}
 Powers, D.~M. (2011).

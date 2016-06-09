@@ -232,7 +232,7 @@ Vector space model \cite[Chapter 6.3, p.~120]{Manning:2008aa}
 
 Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
 
-\subsubsection{N-gram language models}
+\subsubsection{N-gram Language Models}
 \label{subs:n-gram-language-models}
 
 \todo{is the term language model right for ngram vector space models?}
@@ -341,15 +341,15 @@ To achieve this, a feedforward neural network model is trained to learn these \e
 
 These models have been shown to outperform state of the art N-gram models on various tasks (see e.g. \cite{bengio2003neural} or \cite{Mikolov:2012aa}). An interesting outcome of this research is the fact that these \emph{word vectors} capture many interesting and often subtle semantic regularities and that these can be exploited explicitly in an algebraic manner. When trained on an extensive dataset, one can perform calculations as $v(Paris) - v(France) + v(Germany)$ and the closest vector to the result turns out to be $v(Berlin)$ where $v(\cdot)$ denotes the \emph{word vector} of a word. Figure \ref{fig:word2vec-cities} shows a PCA projection of Skip-gram trained vectors of countries and their capital cities.
 
-A notable \todo{mention GloVe}
+A notable alternative to these models was developed by~\cite{Pennington:2014aa}. In their model called \emph{GloVe}, which stands for global vectors, they construct a vector space model with similar properties as the models introduced above, which instead relies global word-word co-occurrence counts. This method thus operates directly in the co-occurrence statistics of the corpus compared to the Neural Network based methods that \textquote{fail[\ldots] to take advantage of the vast amount of repetition in the data}~\cite{Pennington:2014aa}.
 
-Various extensions and variants to such models have been proposed, including architectures based on Recurrent Neural Networks (\cite{Mikolov:2012aa}). Some of the most important variations will are discussed in the following section as they were evaluated in the experiments:
+There have been various extensions and variants to the Neural Network based language models especially, including architectures based on Recurrent Neural Networks (see \cite{Mikolov:2012aa}). Some of the most important variations will are discussed in the following section as they were evaluated in the experiments:
+
+\subparagraph{Hierarchical Sampling}
+The architectures proposed
 
 \subparagraph{Negative Sampling}
 
-
-
-\subparagraph{Hierarchical Sampling}
 
 \subparagraph{Frequent word sub-sampling}
 
@@ -357,7 +357,9 @@ Various extensions and variants to such models have been proposed, including arc
 
 The models explained above are defined on words as the atomic unit. Therefore several ways have been proposed to extend these to sequences of words in order to obtain a vector space of sentences or documents. A few of these will be briefly outlined here:
 
-\subparagraph{Bag-of-Means} The term \emph{Bag-of-Means} refers to simply averaging over the word embedding vectors of all words in a document. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by \cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
+\subparagraph{Bag-of-Means}
+\label{subp:Bag-of-Means}
+The term \emph{Bag-of-Means} refers to simply averaging over the word embedding vectors of all words in a document. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by \cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
 
 \subparagraph{Parse Trees} \cite{Le:2014aa} also mention a more sophisticated approach by \textquote{combining the word vectors in an order given by a parse tree of a sentence.} as done in \cite{Socher:2011aa}, with the disadvantage that this method \textquote{has been shown to work for only sentences because it relies on parsing}~\cite{Le:2014aa}.
 
