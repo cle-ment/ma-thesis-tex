@@ -124,7 +124,7 @@ where $\mathbb{H}(p)$ is the regular entropy, i.e. the lower bound on the number
 In the case of binary classification we can rewrite the cross-entropy into the following error or loss function of the learned weight vector:
 
 \begin{equation}
-  E(\mathbf{w}) =  -\ln p(\mathbf{T} \mid \mathbf{w}) = - \sum_{n=1}^N {t_n \ln y_n + (1 - t_n) \ln (1 - y_n)}
+  E(\mathbf{w}) =  -\log p(\mathbf{T} \mid \mathbf{w}) = - \sum_{n=1}^N {t_n \log y_n + (1 - t_n) \log (1 - y_n)}
 \end{equation}
 
 where $y_n$ denotes $y(x_n, \mathbf{w})$, the predicted output for datapoint $x_n$, $t_n$ denotes the $n$-th true label and $\mathbf{w}$ denotes the trained weight vector of the model, as in \cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa}. This form is also known as the \emph{log loss} and it is commonly used with generalized linear models and neural networks (see e.g. \cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa} and \cite[Chapter 10.7, p.~251 ]{Alpaydin:2014aa}).
@@ -230,7 +230,7 @@ Vector space model \cite[Chapter 6.3, p.~120]{Manning:2008aa}
 
 \textquote{the document `Mary is quicker than John' is, in this view, identical to the document `John is quicker than Mary'}\cite[Chapter 6.2, p.~117]{Manning:2008aa}
 
-Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification metho
+Thus each document document vector has the same dimensionality its dimensions can be used as features to be fed into most popular classification method.
 
 \subsubsection{N-gram Language Models}
 \label{subs:n-gram-language-models}
@@ -345,13 +345,26 @@ A notable alternative to these models was developed by~\cite{Pennington:2014aa}.
 
 There have been various extensions and variants to the Neural Network based language models especially, including architectures based on Recurrent Neural Networks (see \cite{Mikolov:2012aa}). Some of the most important variations will are discussed in the following section as they were evaluated in the experiments:
 
-\subparagraph{Hierarchical Sampling}
-The architectures proposed
+\subparagraph{Hierarchical Softmax}
+The architectures proposed in \cite{Bengio:2000aa}, \cite{bengio2003neural} and follow-up work use a \emph{softmax} activation function at the output layer in order to obtain valid probabilities for each word to be predicted:
+
+\begin{equation}
+  \operatorname{softmax}(\mathbf{x}_j) = \frac{\exp(\mathbf{x}_j)}{\sum_k \exp(\mathbf{x}_k)}
+\end{equation}
+
+\emph{Hierarchical Softmax} uses a binary tree to encode the output which leads to an efficient approximation of the full softmax and speeds up training and inference. Details can be found in~\cite{Mikolov:2013ab}.
 
 \subparagraph{Negative Sampling}
+Another technique applied by~\cite{Mikolov:2013ab} \emph{Negative Sampling} which is a simplified version of Noise Contrastive Estimation (NCE) introduced by~\cite{Gutmann:2012aa}. Based on the insight that a good model should be able separate noise from signal, this method mixes samples from a noise distribution into the signal to be learned, in this case random words that are not in the context window, which is shown to approximately maximize the log probability of the softmax. Free parameters of this technique are the number of negative samples $k$ per data sample and the noise distribution $P_n(w)$
 
+\subparagraph{Sub-sampling of Frequent Words}
+As there the difference between frequent and infrequent words in large corpora can be huge and the frequent words often don't carry as much meaning, in \cite{Mikolov:2013ab} a simple sub-sampling technique is used to counter this imbalance by discarding words with a probability computed as follows:
 
-\subparagraph{Frequent word sub-sampling}
+\begin{equation}
+  P(w_i) = 1 - \sqrt{\frac{t}{f(w_f)}}
+\end{equation}
+
+with $f(w_i)$ denoting the frequency of word $w_i$ and $t$ denoting a threshold. \cite{Mikolov:2013ab} state that this method, while chosen heuristically, \textquote{accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words}.
 
 \paragraph{Distributed representations for documents}
 
@@ -366,11 +379,15 @@ The term \emph{Bag-of-Means} refers to simply averaging over the word embedding 
 \subparagraph{Paragraph Vectors}
 In \cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model.
 
-\todo{doc2vec}
 
-\subsection{Classification Approaches}
 
-\subsubsection{Approaches to Multi-class Classification}
+\subsection{Approaches to Text Classification *}
+
+- Text as a signal
+- Resolution: character, word, document
+- Explicit feature space construction versus implicit models
+
+\subsection{Multi-class Classification Approaches *}
 
 A simple approach to multi-class classification is to pose the learning problem as a combination of binary classification problems as described in~\cite[Chapter 4.1.2, p.~182]{Bishop:2006aa}. This can be done by using $K$ separate classifiers, each of which predicts one of the classes against all $K-1$ other classes, which is known as the \textit{one-versus-the-rest} classification scheme. An alternative approach is to train $K (K - 1) / 2$ binary classifiers for each possible pair of classes, referred to as \textit{one-versus-one} classification.
 
@@ -394,13 +411,16 @@ These extensions though have major drawbacks as pointed out by~\cite[Chapter 5.2
     \label{fig:Bishop2006aa-p182-ch4-fig4-1}
 \end{figure}
 
-\cite{Bishop:2006aa}
+\subsection{Classification Algorithms}
 
-% \subsection{Collecting Data}
-%
-% \begin{itemize}
-%
-% \item Document data extraction for crowdflower:
-http://localhost:8888/notebooks/thesis/sandbox/crowdflower-data-collection/extract-data-crowdflower.ipynb
-%
-% \end{itemize}
+- Generalized Linear models (Logistic regression)
+- Random Forest (Boosting)
+- Bayesian methods (Naive Bayes)
+- SVMs
+- Neural Networks
+
+\subsection{Advanced models (CNNs & RNNs)}
+\label{sub:Advanced models (CNNs & RNNs)}
+
+% \subsection{Text as a signal: Character-level models}
+% \label{sub:Text as a signal: Character-level models}

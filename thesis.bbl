@@ -73,6 +73,12 @@ Gorodkin, J. (2004).
   coefficient.
 \newblock {\em Computational Biology and Chemistry}, 28(5--6):367--374.
 
+\bibitem[Gutmann and Hyv{\"a}rinen, 2012]{Gutmann:2012aa}
+Gutmann, M.~U. and Hyv{\"a}rinen, A. (2012).
+\newblock Noise-contrastive {Estimation} of {Unnormalized} {Statistical}
+  {Models}, with {Applications} to {Natural} {Image} {Statistics}.
+\newblock {\em J. Mach. Learn. Res.}, 13(1):307--361.
+
 \bibitem[Jurman and Furlanello, 2012]{Jurman:2012aa}
 Jurman, G. and Furlanello, C. (2012).
 \newblock A unifying view for performance measures in multi-class prediction.
