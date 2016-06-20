@@ -293,21 +293,135 @@ The model performs well using Logistic Regression and is almost on par with the 
 
 \subsubsection{Paragraph Vectors using Distributed Representations}
 
-Following the 
+Next a vector space model was build using the approach proposed by  \cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation. The next sections will briefly outline the results of these tests:
 
-\paragraph{Vector Size *}
+\paragraph{Vector Size}
+As was to expect the vector size of the model correlates with the performance. Again the highest chosen dimensionality was 300 which yielded the best results with a Matthews Correlation Coefficient of 0.53, however the difference to a 100-dimensional model was marginal with 1\% absolute improvement. Surprisingly even a 10-dimensional vector space model is capable of achieving almost best results with a difference of only 2\% to the 300-dimensional model. Even a 2-dimensional model could achieve a MCC score of 14\%.
 
-\paragraph{Frequent word Sub-Sampling *}
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 2 & 2   & 3 & 1 & 0 & 0.536 \\
+    PV-DM & 2 & 10  & 3 & 1 & 0 & 0.522 \\
+    PV-DM & 2 & 100 & 3 & 1 & 0 & 0.514 \\
+    PV-DM & 2 & 300 & 3 & 1 & 0 & 0.144 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient with varying vector size. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+\label{tab:Paragraph Vector Parameter Results Size}
+\end{center}
+\end{table}
 
-\paragraph{Hierarchical Sampling *}
+\paragraph{Frequent Word Sub-Sampling}
+Frequent word sub-sampling can boost performance quite much, but again choosing the right value for this hyper-parameter is key. The training behavior with different sampling thresholds differs quite much. Figure~\ref{fig:exp-vector-space-doc2vec-param-sample} shows the training with different values with 100 passes over the dataset. A good value seems to be $10^{-5}$ which achieves an MCC score of 0.697 and is on-par with the best N-gram model. Interestingly not using sub-sampling in this setup seemed to be overfitting as the score decreases quite drastically with more training passes. A similar effect is observed with a higher threshold of $10^{-4}$ but much less strong. Choosing a lower threshold of $10^{-6}$ leads to very poor performance with an MCC score of only 0.07.
 
-\paragraph{Negative Sampling *}
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 300 & 10 & 3 & 1 & 0 & 0.244 \\
+    PV-DM & 300 & 10 & 3 & 1 & 1e-4 & 0.556 \\
+    PV-DM & 300 & 10 & 3 & 1 & 1e-5 & 0.698 \\
+    PV-DM & 300 & 10 & 3 & 1 & 1e-6 & 0.071 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient with varying frequent word sub-sampling threshold. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+\label{tab:Paragraph Vector Parameter Results Sample}
+\end{center}
+\end{table}
 
-\paragraph{Window Size *}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/exp-vector-space-doc2vec-param-sample.pdf}
+    \caption{Training of document vectors with different sub-sampling thresholds.}
+  \label{fig:exp-vector-space-doc2vec-param-sample}
+\end{figure}
 
-\paragraph{CBOW versus PM-DV *}
+\paragraph{Hierarchical Softmax}
+Using hierarchical softmax increased the performance, leading to a 12\% absolute difference in terms of MCC score.
 
-\paragraph{Evaluating the best hyper-parameter setting *}
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 100 & 10 & 3 & 0 & 0 & 0.398 \\
+    PV-DM & 100 & 10 & 3 & 1 & 0 & 0.520 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient with and without using hierarchical softmax. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+\label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
+\end{center}
+\end{table}
+
+\paragraph{Negative Sampling}
+Negative Sampling generally increased the performance of the model and smaller values actually worked best out of the tested settings from 0 to 6. Choosing the number of negative samples to be 2 resulted in the best performance, but the absolute difference in performance was only about 6\% of achieved MMC score.
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 100 & 10 & 0 & 1 & 0 & 0.530 \\
+    PV-DM & 100 & 10 & 1 & 1 & 0 & 0.541 \\
+    PV-DM & 100 & 10 & 2 & 1 & 0 & 0.536 \\
+    PV-DM & 100 & 10 & 3 & 1 & 0 & 0.524 \\
+    PV-DM & 100 & 10 & 4 & 1 & 0 & 0.516 \\
+    PV-DM & 100 & 10 & 5 & 1 & 0 & 0.498 \\
+    PV-DM & 100 & 10 & 6 & 1 & 0 & 0.482 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient with varying negative sampling value. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+\label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
+\end{center}
+\end{table}
+
+\paragraph{Window Size}
+Window sizes of 5, 10 and 15 were experimented with which increase or decrease the width of context the model is trained on. Here a window size of 10 showed best results. It is safe to assume that increasing the window size much further does not lead to any improvement in the model as the correlation with the word should become weaker the farther we move away from it in a document or text.
+
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 100 & 5 & 3 & 1 & 0 & 0.508 \\
+    PV-DM & 100 & 10 & 3 & 1 & 0 & 0.523 \\
+    PV-DM & 100 & 15 & 3 & 1 & 0 & 0.510 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient with varying window size. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+\label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
+\end{center}
+\end{table}
+
+\paragraph{PV-DBOW versus PM-DV}
+Both models for paragraph vectors proposed in \cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vec- tor (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 100 & 10 & 3 & 1 & 0 & 0.521 \\
+    PV-BBOW & 100 & 10 & 3 & 1 & 0 & 0.667 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient with varying window size. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+\label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
+\end{center}
+\end{table}
+
+\paragraph{Evaluating the best hyper-parameter setting}
 
 \subsubsection{Paragraph Vectors using pre-initialized weights *}
 

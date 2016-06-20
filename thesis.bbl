@@ -62,11 +62,6 @@ Collobert, R. and Weston, J. (2008).
 \newblock In {\em Proceedings of the 25th {International} {Conference} on
   {Machine} {Learning}}, {ICML} '08, pages 160--167, New York, NY, USA. ACM.
 
-\bibitem[Duda et~al., 1973]{Duda:1973aa}
-Duda, R.~O., Hart, P.~E., and {others} (1973).
-\newblock {\em Pattern classification and scene analysis}, volume~3.
-\newblock Wiley New York.
-
 \bibitem[Gorodkin, 2004]{Gorodkin:2004aa}
 Gorodkin, J. (2004).
 \newblock Comparing two {K}-category assignments by a {K}-category correlation
@@ -166,6 +161,11 @@ Powers, D.~M. (2011).
 Rijsbergen, C. J.~V. (1979).
 \newblock {\em Information {Retrieval}}.
 \newblock Butterworth-Heinemann, London ; Boston, 2nd edition edition.
+
+\bibitem[Sebastiani, 2002]{Sebastiani:2002aa}
+Sebastiani, F. (2002).
+\newblock Machine {Learning} in {Automated} {Text} {Categorization}.
+\newblock {\em ACM Comput. Surv.}, 34(1):1--47.
 
 \bibitem[Shannon, 2001]{Shannon:2001aa}
 Shannon, C.~E. (2001).
