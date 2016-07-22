@@ -4,7 +4,7 @@
 %% In a thesis, every section starts a new page, hence \clearpage
 \clearpage
 
-\section{Research Process and Design Development (*)}
+\section{Exploration (*)}
 
 \subsection{Crowdsourced Data Collection (*)}
 
@@ -56,34 +56,3 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
 \todo{Comparison one-vs-rest and one-vs-one against linear machine}
 \todo{Visualizations and embeddings of data in 2D (and decision boundaries?)}
 \todo{show T-SNE embeddings of doc2vec vectors}
-
-\subsubsection{Sentence Data Collection}
-
-\begin{figure}[h]
- % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
-    \centering
-    \begin{subfigure}[b]{0.46\textwidth}
-        \includegraphics[width=\textwidth]{img/sentence-data-judgement-confidence.pdf}
-        \caption{Confidence}
-      \label{fig:sentence-data-judgement-confidence}
-    \end{subfigure}
-    ~
-    %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.43\textwidth}
-        \includegraphics[width=\textwidth]{img/sentence-data-judgement-confidence-cumulative.pdf}
-        \caption{Cumulative Confidence}
-        \label{fig:sentence-data-judgement-confidence-cumulative}
-    \end{subfigure}
-    \caption{Amount of label judgements versus label confidence of the sentence label data collected via crowdflower}
-  \label{fig:sentence-data-judgements}
-\end{figure}
-
-
-\begin{figure}[h]
-  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
-    \centering
-    \includegraphics[width=\textwidth]{img/sentence-data-label-dist.pdf}
-    \caption{Distribution of labels in sentence data}
-  \label{fig:sentence-data-label-dist}
-\end{figure}

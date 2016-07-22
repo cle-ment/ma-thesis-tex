@@ -3,12 +3,42 @@
 
 \clearpage
 
-\section{Explorative Experiments with Paragraph Dataset}
+\section{The Meat}
 
-\section{Experiments with Sentence Dataset}
+\subsection{Problem definition}
 
-\subsection{Vector Space Models compared}
+\subsection{Data Collection}
 
+\begin{figure}[h]
+ % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
+    \centering
+    \begin{subfigure}[b]{0.46\textwidth}
+        \includegraphics[width=\textwidth]{img/sentence-data-judgement-confidence.pdf}
+        \caption{Confidence}
+      \label{fig:sentence-data-judgement-confidence}
+    \end{subfigure}
+    ~
+    %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.43\textwidth}
+        \includegraphics[width=\textwidth]{img/sentence-data-judgement-confidence-cumulative.pdf}
+        \caption{Cumulative Confidence}
+        \label{fig:sentence-data-judgement-confidence-cumulative}
+    \end{subfigure}
+    \caption{Amount of label judgements versus label confidence of the sentence label data collected via crowdflower}
+  \label{fig:sentence-data-judgements}
+\end{figure}
+
+
+\begin{figure}[h]
+  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
+    \centering
+    \includegraphics[width=\textwidth]{img/sentence-data-label-dist.pdf}
+    \caption{Distribution of labels in sentence data}
+  \label{fig:sentence-data-label-dist}
+\end{figure}
+
+\subsection{Evaluation of Vector Space Models}
 
 \todo{say why using the sentence dataset here}
 \todo{reference jupyter notebook here}
@@ -293,7 +323,8 @@ The model performs well using Logistic Regression and is almost on par with the 
 
 \subsubsection{Paragraph Vectors using Distributed Representations}
 
-Next a vector space model was build using the approach proposed by  \cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation. The next sections will briefly outline the results of these tests:
+Next a vector space model was build using the approach proposed by  \cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation.
+The next sections will briefly outline the results of these tests:\footnote{All tables in this section will use the following abbreviations: \emph{type}: Model Type, i.e. PV-DM vs. PV-DBOW; \emph{size}: Vector Size; \emph{window}: Window Size; \emph{negative}: Negative Sampling value $k$; \emph{hs}: Hierarchical Softmax used; \emph{sample}: Frequent word sub-sampling threshold; \emph{MCC}: Matthews Correlation Coefficient}
 
 \paragraph{Vector Size}
 As was to expect the vector size of the model correlates with the performance. Again the highest chosen dimensionality was 300 which yielded the best results with a Matthews Correlation Coefficient of 0.53, however the difference to a 100-dimensional model was marginal with 1\% absolute improvement. Surprisingly even a 10-dimensional vector space model is capable of achieving almost best results with a difference of only 2\% to the 300-dimensional model. Even a 2-dimensional model could achieve a MCC score of 14\%.
@@ -304,13 +335,13 @@ As was to expect the vector size of the model correlates with the performance. A
     \toprule
     type & size & window & negative & hs & sample & MCC  \\
     \midrule
-    PV-DM & 2 & 2   & 3 & 1 & 0 & 0.536 \\
-    PV-DM & 2 & 10  & 3 & 1 & 0 & 0.522 \\
-    PV-DM & 2 & 100 & 3 & 1 & 0 & 0.514 \\
-    PV-DM & 2 & 300 & 3 & 1 & 0 & 0.144 \\
+    PV-DM & 2   & 10 & 3 & 1 & 0 & 0.536 \\
+    PV-DM & 10  & 10 & 3 & 1 & 0 & 0.522 \\
+    PV-DM & 100 & 10 & 3 & 1 & 0 & 0.514 \\
+    PV-DM & 300 & 10 & 3 & 1 & 0 & 0.144 \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying vector size. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+  \caption{Matthews Correlation Coefficient with varying vector size.}
 \label{tab:Paragraph Vector Parameter Results Size}
 \end{center}
 \end{table}
@@ -330,7 +361,7 @@ Frequent word sub-sampling can boost performance quite much, but again choosing 
     PV-DM & 300 & 10 & 3 & 1 & 1e-6 & 0.071 \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying frequent word sub-sampling threshold. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+  \caption{Matthews Correlation Coefficient with varying frequent word sub-sampling threshold.}
 \label{tab:Paragraph Vector Parameter Results Sample}
 \end{center}
 \end{table}
@@ -343,7 +374,7 @@ Frequent word sub-sampling can boost performance quite much, but again choosing 
 \end{figure}
 
 \paragraph{Hierarchical Softmax}
-Using hierarchical softmax increased the performance, leading to a 12\% absolute difference in terms of MCC score.
+Using hierarchical softmax increased the performance, leading to a 12\% absolute difference in terms of MCC score. This result is counter-intuitive as using the hierarchical softmax should as an approximation be less performant. However it might simply mitigate overfitting of the model.
 
 \begin{table}[h]
   \begin{center}
@@ -355,7 +386,7 @@ Using hierarchical softmax increased the performance, leading to a 12\% absolute
     PV-DM & 100 & 10 & 3 & 1 & 0 & 0.520 \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with and without using hierarchical softmax. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+  \caption{Matthews Correlation Coefficient with and without using hierarchical softmax.}
 \label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
 \end{center}
 \end{table}
@@ -378,7 +409,7 @@ Negative Sampling generally increased the performance of the model and smaller v
     PV-DM & 100 & 10 & 6 & 1 & 0 & 0.482 \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying negative sampling value. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+  \caption{Matthews Correlation Coefficient with varying negative sampling value.}
 \label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
 \end{center}
 \end{table}
@@ -398,13 +429,13 @@ Window sizes of 5, 10 and 15 were experimented with which increase or decrease t
     PV-DM & 100 & 15 & 3 & 1 & 0 & 0.510 \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying window size. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+  \caption{Matthews Correlation Coefficient with varying window size.}
 \label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
 \end{center}
 \end{table}
 
 \paragraph{PV-DBOW versus PM-DV}
-Both models for paragraph vectors proposed in \cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vec- tor (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
+Both models for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vec- tor (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
 
 \begin{table}[h]
   \begin{center}
@@ -416,14 +447,39 @@ Both models for paragraph vectors proposed in \cite{Le:2014aa} were tried, namel
     PV-BBOW & 100 & 10 & 3 & 1 & 0 & 0.667 \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying window size. The abbreviations are as follows: Model Type, i.e. PV-DM vs. PV-DBOW (type),  Vector Size (size), Window Size (size), Negative Sampling value $k$ (negative), Hierarchical Softmax used (hs), Frequent word sub-sampling threshold (sample).}
+  \caption{Matthews Correlation Coefficient using the two models proposed in \cite{Le:2014aa}.}
 \label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
 \end{center}
 \end{table}
 
 \paragraph{Evaluating the best hyper-parameter setting}
 
+Taking the learnings about the effects of the different hyper-parameters to the performance of the model a subset of models were tested in search of the best hyper-parameter selection. The results of these experiments can be seen in Table~\ref{tab:Paragraph Vector Parameter Results Best}.
+
+A few interesting observations can be made here. First, as indicated before, the model is highly sensitive to the settings of the hyper-parameters. Secondly we can see that the hyper-parameters interact quite strongly in some combinations. This leads to a different behavior in performance for some of the hyper-parameters than identified in the above sections, depending on what the other hyper-parameters settings are.
+
+For instance using hierarchical softmax decreases performance when setting all other parameters to individually optimal settings, as opposed to in the previous experiment above.
+\todo{write a bit more here}
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ *6l | l }
+    \toprule
+    type & size & window & negative & hs & sample & MCC  \\
+    \midrule
+    PV-DM & 300 & 10 & 3 & 0 & 1e-5 & 0.707 \\
+    PV-BBOW & 300 & 10 & 3 & 0 & 1e-5 & 0.724 \\
+    PV-BBOW & 300 & 10 & 3 & 1 & 1e-5 & 0.665 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Matthews Correlation Coefficient of different models when trying to find the best hyper-parameter setting.}
+\label{tab:Paragraph Vector Parameter Results Best}
+\end{center}
+\end{table}
+
 \subsubsection{Paragraph Vectors using pre-initialized weights *}
+
+In another experiment the weight matrix for the words was initialized with pre-trained weights from from the Google News dataset.
 
 \subsubsection{Paragraph Vectors using context sentences *}
 
