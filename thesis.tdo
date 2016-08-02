@@ -1,38 +1,32 @@
-\contentsline {todo}{some numbers here?}{2}{section*.9}
-\contentsline {todo}{source, e.g. http://www.journalism.org/2015/04/29/state-of-the-news-media-2015/}{2}{section*.10}
-\contentsline {todo}{example, e.g. fb usage compared to newspaper}{2}{section*.11}
-\contentsline {todo}{section on transfer learning and feature learning}{3}{section*.12}
-\contentsline {todo}{text classification}{3}{section*.13}
-\contentsline {todo}{Multitask learning}{3}{section*.14}
-\contentsline {todo}{explicit vs implicit feature representation}{3}{section*.15}
-\contentsline {todo}{some numbers here?}{4}{section*.16}
-\contentsline {todo}{source, e.g. http://www.journalism.org/2015/04/29/state-of-the-news-media-2015/}{4}{section*.17}
-\contentsline {todo}{example, e.g. fb usage compared to newspaper}{4}{section*.18}
-\contentsline {todo}{section on transfer learning and feature learning}{5}{section*.19}
-\contentsline {todo}{text classification}{5}{section*.20}
-\contentsline {todo}{Multitask learning}{5}{section*.21}
-\contentsline {todo}{explicit vs implicit feature representation}{5}{section*.22}
-\contentsline {todo}{example with 2 vectors and showing what they encode?}{7}{section*.23}
-\contentsline {todo}{citation for first or review paper here?}{7}{section*.25}
-\contentsline {todo}{mention smoothing techniques \cite {Chen:1996aa}}{8}{section*.33}
-\contentsline {todo}{citation for Confusion Matrix?}{16}{section*.52}
-\contentsline {todo}{more detail?}{18}{section*.57}
-\contentsline {todo}{Describe data format}{19}{section*.58}
-\contentsline {todo}{Picture of software setup?}{19}{section*.59}
-\contentsline {todo}{Describe data: Different characteristics}{20}{section*.61}
-\contentsline {todo}{show distribution?}{20}{section*.62}
-\contentsline {todo}{show embedding visualizations}{20}{section*.63}
-\contentsline {todo}{Comparison one-vs-rest and one-vs-one against linear machine}{20}{section*.66}
-\contentsline {todo}{Visualizations and embeddings of data in 2D (and decision boundaries?)}{20}{section*.67}
-\contentsline {todo}{show T-SNE embeddings of doc2vec vectors}{20}{section*.68}
-\contentsline {todo}{say why using the sentence dataset here}{23}{section*.71}
-\contentsline {todo}{reference jupyter notebook here}{23}{section*.72}
-\contentsline {todo}{actually discuss time and memory requirements}{24}{section*.73}
-\contentsline {todo}{reference section here}{24}{section*.74}
-\contentsline {todo}{link to logistic regression classifier explanation here}{24}{section*.75}
-\contentsline {todo}{link accuracy?}{24}{section*.76}
-\contentsline {todo}{Why are the grid scores lower than the latter scores on the train/test split? Because they're averaged and only on the training data?}{25}{section*.80}
-\contentsline {todo}{properly align visualization}{27}{section*.90}
-\contentsline {todo}{mention one-vs-all scheme for log reg? also for ngrams above}{29}{section*.93}
-\contentsline {todo}{write a bit more here}{33}{section*.110}
-\contentsline {todo}{reference here}{36}{section*.113}
+\contentsline {todo}{link section}{3}{section*.9}
+\contentsline {todo}{section on transfer learning and feature learning}{4}{section*.10}
+\contentsline {todo}{text classification}{4}{section*.11}
+\contentsline {todo}{Multitask learning}{4}{section*.12}
+\contentsline {todo}{explicit vs implicit feature representation}{4}{section*.13}
+\contentsline {todo}{reference}{6}{section*.15}
+\contentsline {todo}{example with 2 vectors and showing what they encode?}{7}{section*.16}
+\contentsline {todo}{citation for first or review paper here?}{8}{section*.18}
+\contentsline {todo}{mention smoothing techniques \cite {Chen:1996aa}}{9}{section*.26}
+\contentsline {todo}{citation for Confusion Matrix?}{17}{section*.45}
+\contentsline {todo}{more detail?}{19}{section*.50}
+\contentsline {todo}{Describe data format}{20}{section*.51}
+\contentsline {todo}{Picture of software setup?}{20}{section*.52}
+\contentsline {todo}{Describe data: Different characteristics}{21}{section*.54}
+\contentsline {todo}{show distribution?}{21}{section*.55}
+\contentsline {todo}{show embedding visualizations}{21}{section*.56}
+\contentsline {todo}{Comparison one-vs-rest and one-vs-one against linear machine}{21}{section*.59}
+\contentsline {todo}{Visualizations and embeddings of data in 2D (and decision boundaries?)}{21}{section*.60}
+\contentsline {todo}{show T-SNE embeddings of doc2vec vectors}{21}{section*.61}
+\contentsline {todo}{say why using the sentence dataset here}{26}{section*.64}
+\contentsline {todo}{reference jupyter notebook here}{26}{section*.65}
+\contentsline {todo}{actually discuss time and memory requirements}{26}{section*.66}
+\contentsline {todo}{reference section here}{26}{section*.67}
+\contentsline {todo}{link to logistic regression classifier explanation here}{26}{section*.68}
+\contentsline {todo}{link accuracy?}{26}{section*.69}
+\contentsline {todo}{Why are the grid scores lower than the latter scores on the train/test split? Because they're averaged and only on the training data?}{27}{section*.73}
+\contentsline {todo}{properly align visualization}{29}{section*.83}
+\contentsline {todo}{mention one-vs-all scheme for log reg? also for ngrams above}{31}{section*.86}
+\contentsline {todo}{write a bit more here}{35}{section*.103}
+\contentsline {todo}{This section in further research? Because it would have to be done for N-grams as well (building a model with the context around a sentence) and it doesn't fit the task (only sentence given). Could also go into exploration}{36}{section*.105}
+\contentsline {todo}{if this is described here it has to go into background as well}{36}{section*.106}
+\contentsline {todo}{reference here}{38}{section*.108}

@@ -3,16 +3,40 @@
 
 \clearpage
 
-\section{Background: Text Classification}
-\label{sec:Background: Text Classification}
+\section{Background}
+\label{sec:Background}
 
-This chapter will provide the necessary background on text classification, assuming the reader is familiar with the basic concepts of Machine Learning. First the problem will be defined,
+This chapter will provide the necessary background on text classification, assuming the reader is familiar with the basic concepts of Machine Learning and related fields. First the research problem will be defined. Then
 
-\subsection{Problem Formalism}
-\label{sub:Problem Formalism}
+\subsection{Text classification}
+\label{sub:Text classification}
 
-Text classification, also known as text categorization, is the task to assign classes from a set $\mathcal{C}$ to a set of documents $\mathcal{D}$. In other words we are trying to approximate the true mapping between documents and the true classes for each document via a model function $\Phi : \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{C} $. We usually assume that no additional knowledge such as metadata is available besides the text input itself. As the definition of this task is very broad additional constraints or assumptions are often imposed.
+\subsubsection{Problem Formalism}
+\label{subs:Problem Formalism}
 
+Text classification, also known as text categorization, is the task of predicting a \emph{mapping} $\widetilde{\Phi} : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$ between a set of documents $\mathcal{D}$ and a set of classes or categories $\mathcal{C}$ using a model function $\Phi : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$. This means that were are trying to predict as good as possible the categories that each document belongs into, or vice versa the documents associated with each category. This mapping can thus be represented as a bipartite graph between the sets of documents $\mathcal{D}$ and categories $\mathcal{C}$ as shown in Figure~\ref{fig:bipartite-graph-text-classification}. In this representation vertices in the graph indicate a $True$ value in the mapping, indicating that the document and category are associated with each other, while missing vertices indicate that they are not ($False$).
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{img/bipartite-graph-text-classification}
+  \end{center}
+  \caption{Text classification visualized as a bipartite graph. Here the multi-label setting is shown where no additional constraints are enforced on the problem and hence each document can be assigned to multiple categories}
+\label{fig:bipartite-graph-text-classification}
+\end{wrapfigure}
+
+Categories $\mathcal{C}$ are given as symbolic labels and documents $\mathcal{D}$ as chunks of text with variable length. We usually assume that no additional information such as metadata or other \emph{exogenous knowledge} is available on neither labels nor documents.
+As~\cite{Sebastiani:2002aa} points out a consequence of relying solely on \emph{endogenous knowledge}, especially the semantics of a text, is that there is no objective ground truth to this task in most settings since semantics are a \emph{subjective} notion: \textquote{This is exemplified by the phenomenon of inter-indexer inconsistency [Cleverdon 1984]\todo{reference}: when two human experts decide whether to classify document $d_j$ under category $c_i$, they may disagree, and this in fact happens with relatively high frequency. A news article on Clinton attending Dizzy Gillespie’s funeral could be filed under Politics, or under Jazz, or under both, or even under neither, depending on the subjective judgment of the expert.}~\cite{Sebastiani:2002aa}
+
+Additional constraints can be imposed on the problem to adapt it for different application scenarios. Firstly text classification can be either framed as \emph{single-label} classification where each document is assigned to only one single category or \emph{multi-label} classification where an assignment to several categories or also no category is possible. The multi-label case can also be formulated as $|\mathcal{C}|$ individual binary classification problems which of course assumes statistical independence between these prediction tasks.
+
+In order to measure how successfully we are tackling the problem of text classification we need metrics that measure the effectiveness of our algorithm given a dataset. These will be discussed in Section~\ref{sub:Evaluation}.
+
+\subsubsection{Approaches to Text Classification}
+
+% \subsubsection{Text as a Sequential Signal}
+% \label{par:Text as a Sequential Signal}
+
+% Text can be seen as a sequential signal like any other. Depending on the task at hand the resolution of this signal can be chosen more or less fine-grained, ranging from single characters to words, sentences, paragraphs or whole documents. The more fine-grained we choose our model to operate, the more sequential correlation we usually find, as characters, words tend to follow linguistic rules that constrain in which order combinations they can be used, and even sentences and paragraphs are often semantically related. This observation motivates the use of language models for the text classification task as will be discussed in Section \todo{reference}.
 
 \subsection{Vector Space Models *}
 
@@ -21,7 +45,7 @@ Text documents cannot be used directly as input to a classifier, and are thus us
 
 \textquote{Contiguity hypothesis. Documents in the same class form a contiguous region and regions of different classes do not overlap.}~\cite[Chapter 14, p.~289]{Manning:2008aa}
 
-Vector space model \cite[Chapter 6.3, p.~120]{Manning:2008aa}
+Vector space model~\cite[Chapter 6.3, p.~120]{Manning:2008aa}
 
 \textquote{the document `Mary is quicker than John' is, in this view, identical to the document `John is quicker than Mary'}\cite[Chapter 6.2, p.~117]{Manning:2008aa}
 
@@ -49,7 +73,7 @@ As this approach has been studied for decades \todo{citation for first or review
 
 \subparagraph{Stop words}
 \label{subp:Stop words}
-For creating N-gram models, so-called stop word lists are often used which are lists of frequent words that will be excluded as they do not carry much meaning~\cite[Chapter 1.3.1, p.~7]{Leskovec:2014aa}. The stop-word list used in these experiments is the standard list used for the Scikit-learn framework \cite{Pedregosa:2011aa} which is a list gathered by the University of Glasgow Information Retrieval group \footnote{\url{http://www.gla.ac.uk/schools/computing/research/researchoverview/informationretrieval/}. The full stop word list can be found at \url{http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words} and in the appendix in section \ref{sec:appendix-stopwords}.}.
+For creating N-gram models, so-called stop word lists are often used which are lists of frequent words that will be excluded as they do not carry much meaning~\cite[Chapter 1.3.1, p.~7]{Leskovec:2014aa}. The stop-word list used in these experiments is the standard list used for the Scikit-learn framework~\cite{Pedregosa:2011aa} which is a list gathered by the University of Glasgow Information Retrieval group\footnote{\url{http://www.gla.ac.uk/schools/computing/research/researchoverview/informationretrieval/}. The full stop word list can be found at \url{http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words} and in the appendix in Section~\ref{sec:appendix-stopwords}.}.
 
 \subparagraph{N-gram range} The N-gram range, also known as window size or shingle size, refers to combinations of the atomic units of the model (words or characters) and defines an upper and lower limit for these combinations. For example a range of $[1,1]$ specifies a unigram model, $[2,2]$ a bigram model and $[1,2]$ a combination of both including all unigrams and all bigrams.
 A larger range allows the model to capture an increasing amount of word order and thus context, but again leads to a combinatorial explosion in terms of feature space.
@@ -58,11 +82,11 @@ A larger range allows the model to capture an increasing amount of word order an
 
 \subparagraph{TF.IDF weighting}
 \label{subp:TF.IDF weighting}
-A common extension to using word-counts is to weight the term frequencies by the so-called inverse document frequency, i.e. the inverse of the frequency of an term or N-gram in all documents. This method is commonly referred to as \emph{TF.IDF} and specifically the inverse document frequency is defined as $\text{IDF}_i = \log_2 (N/n_i)$, where logarithmic smoothing is applied. The TF.IDF value for a term or N-gram is then computed as $\text{TF}_{ij} \cdot \text{IDF}_i$.
+A common extension to using word-counts is to weight the term frequencies by the so-called inverse document frequency, i.e.\ the inverse of the frequency of an term or N-gram in all documents. This method is commonly referred to as \emph{TF.IDF} and specifically the inverse document frequency is defined as $\text{IDF}_i = \log_2 (N/n_i)$, where logarithmic smoothing is applied. The TF.IDF value for a term or N-gram is then computed as $\text{TF}_{ij} \cdot \text{IDF}_i$.
 
 \subparagraph{Sublinear TF scaling}
 \label{subp:Sublinear TF scaling}
- As \cite[Chapter 6.4.1, p.~126]{Manning:2008aa} suggests \textquote{[it] seems unlikely that twenty occurrences of a term in a document truly carry twenty times the significance of a single occurrence}. Hence a common variant is \emph{sublinear scaling} where we down-weigh the increase in term importance by applying a logarithmic function to it, resulting in the sub-linear term frequency $\text{subTF}_{ij}$:
+ As~\cite[Chapter 6.4.1, p.~126]{Manning:2008aa} suggests \textquote{[it] seems unlikely that twenty occurrences of a term in a document truly carry twenty times the significance of a single occurrence}. Hence a common variant is \emph{sublinear scaling} where we down-weigh the increase in term importance by applying a logarithmic function to it, resulting in the sub-linear term frequency $\text{subTF}_{ij}$:
 
 \begin{displaymath}
   \text{subTF}_{ij} = \left\{ \begin{array}{l l} 1+\log \text{TF}_{ij} & \text{TF}_{ij} > 0 \\
@@ -174,12 +198,8 @@ The term \emph{Bag-of-Means} refers to simply averaging over the word embedding 
 \subparagraph{Paragraph Vectors *}
 In \cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
 
-\subsubsection{Text as a Sequential Signal}
-\label{par:Text as a Sequential Signal}
-
-% Text can be seen as a sequential signal like any other. Depending on the task at hand the resolution of this signal can be chosen more or less fine-grained, ranging from single characters to words, sentences, paragraphs or whole documents. The more fine-grained we choose our model to operate, the more sequential correlation we usually find, as characters, words tend to follow linguistic rules that constrain in which order combinations they can be used, and even sentences and paragraphs are often semantically related. This observation motivates the use of language models for the text classification task as will be discussed in Section \todo{reference}.
-
-\subsection{Classification Approaches *}
+\subsection{Classification Algorithms for Vector Space Models}
+\label{sub:Classification Algorithms for Vector Space Models}
 
 \paragraph{Classification Schemes}
 \label{par:Classification Schemes}
@@ -230,6 +250,8 @@ As will be discussed later in Section~\ref{sub:Evaluation}, there are three comm
 \subsubsection{Neural Networks}
 \label{subs:Neural Networks}
 
+\subsection{Sequential Text Classification}
+\label{sub:Sequential Text Classification}
 
 \subsection{Evaluation}
 \label{sub:Evaluation}
@@ -437,3 +459,11 @@ where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of ta
 
 \subsubsection{Multi-label Classification *}
 \label{subs:Multi-label Classification}
+
+\subsection{Visualization}
+
+\subsubsection{PCA}
+\label{sub:PCA}
+
+\subsubsection{t-SNE}
+\label{sub:t-SNE}

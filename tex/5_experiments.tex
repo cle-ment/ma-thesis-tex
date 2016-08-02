@@ -3,11 +3,12 @@
 
 \clearpage
 
-\section{The Meat}
+\section{Multi-class Prediction of Semantic Categories for Text in Job Advertisements}
+\label{sec:Multi-class Prediction of Semantic Categories for Text in Job Advertisements}
 
 \subsection{Problem definition}
 
-\subsection{Data Collection}
+\subsection{Dataset}
 
 \begin{figure}[h]
  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
@@ -39,6 +40,10 @@
 \end{figure}
 
 \subsection{Evaluation of Vector Space Models}
+
+\subsubsection{Experimental Setup}
+\label{subs:Experimental Setup}
+
 
 \todo{say why using the sentence dataset here}
 \todo{reference jupyter notebook here}
@@ -191,6 +196,7 @@ There is no consensus between the classifiers on whether or not to weigh the N-g
 \paragraph{Norm}
 \label{par:Norm}
 Is seems that normalizing the vectors in most cases does not lead to any performance gains. Again this is an often recommended practice but here it does not seem to add any value to the model.
+
 
 \paragraph{Sub-linear TF}
 \label{par:Sub-linear TF}
@@ -483,16 +489,44 @@ In another experiment the weight matrix for the words was initialized with pre-t
 
 \subsubsection{Paragraph Vectors using context sentences *}
 
-\subsubsection{Results and Discussion *}
+\todo{This section in further research? Because it would have to be done for N-grams as well (building a model with the context around a sentence) and it doesn't fit the task (only sentence given). Could also go into exploration}
+
+\subsubsection{Inversion of Distributed Language Representations (??)}
+
+\todo{if this is described here it has to go into background as well}
+
+\subsubsection{Discussion}
 
 
+\subsection{Evaluation of Classification Algorithms for Vector Space Models}
+
+\subsubsection{Experimental Setup}
+
+\subsubsection{Logistic Regression}
+
+\subsubsection{Decision Tree}
+
+\subsubsection{Naive Bayes}
+
+\subsubsection{SVM}
+\subsubsection{KNN}
+\subsubsection{Random Forest}
+\subsubsection{Neural Networks}
+\subsubsection{Convolutional Neural Networks}
 
 
-\subsection{Finding the best Classifier using Vector Space Models}
+\subsubsection{Discussion}
 
-\subsection{Advanced and experimental approaches}
 
-\subsubsection{Inversion of Distributed Language Representations}
+\subsection{Evaluation of Sequential Text Classification}
 
-\subsubsection{LSTM Multi-task learner}
-\label{subs:LSTM Multi-task learner}
+
+\subsubsection{Experimental Setup}
+
+\subsubsection{Character-based LSTM}
+
+\subsubsection{Character-based Multi-task LSTM}
+
+\subsubsection{Discussion}
+
+\subsection{Results and Discussion}

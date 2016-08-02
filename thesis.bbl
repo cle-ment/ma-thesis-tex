@@ -1,10 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[mus, 2016]{mustache}
- (2016).
-\newblock {{ mustache }}.
-\newblock \url{https://mustache.github.io}.
-
 \bibitem[cro, 2016]{crowdflower}
  (2016).
 \newblock Crowdflower.
@@ -91,6 +86,11 @@ Lodhi, H., Saunders, C., Shawe-Taylor, J., Cristianini, N., and Watkins, C.
 \newblock Text {Classification} {Using} {String} {Kernels}.
 \newblock {\em J. Mach. Learn. Res.}, 2:419--444.
 
+\bibitem[Mahoney, 1999]{Mahoney:1999aa}
+Mahoney, M.~V. (1999).
+\newblock Text compression as a test for artificial intelligence.
+\newblock In {\em {AAAI}/{IAAI}}, page 970.
+
 \bibitem[Manning et~al., 2008]{Manning:2008aa}
 Manning, C.~D., Raghavan, P., Sch{\"u}tze, H., and {others} (2008).
 \newblock {\em Introduction to information retrieval}, volume~1.
@@ -173,5 +173,10 @@ Socher, R., Lin, C.~C., Manning, C., and Ng, A.~Y. (2011).
   networks.
 \newblock In {\em Proceedings of the 28th international conference on machine
   learning ({ICML}-11)}, pages 129--136.
+
+\bibitem[Turing, 1950]{Turing:1950aa}
+Turing, A.~M. (1950).
+\newblock Computing {Machinery} and {Intelligence}.
+\newblock {\em Mind}, 59(236):433--460.
 
 \end{thebibliography}
