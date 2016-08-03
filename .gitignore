@@ -8,3 +8,7 @@
 *.fdb_latexmk
 *.gz(busy)
 *.synctex.gz
+*.bbl
+*.tdo
+*.toc
+*.pdf
