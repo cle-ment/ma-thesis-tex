@@ -1,117 +1,122 @@
-\contentsline {section}{Abstract{} }{ii}{section*.1}
-\contentsline {section}{Preface}{iii}{section*.2}
-\contentsline {section}{Contents}{iv}{section*.3}
-\contentsline {section}{Symbols and abbreviations*}{vi}{section*.5}
+\contentsline {section}{Abstract{} }{iii}{section*.1}
+\contentsline {section}{Preface}{iv}{section*.2}
+\contentsline {section}{Contents}{v}{section*.3}
+\contentsline {section}{Symbols and abbreviations*}{viii}{section*.5}
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
 \contentsline {subsection}{\numberline {1.1}Need Statement and Motivation}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Problem Statement}{3}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Research Objectives and Scope}{3}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Related work *}{3}{subsection.1.4}
-\contentsline {subsection}{\numberline {1.5}Structure of the thesis*}{4}{subsection.1.5}
-\contentsline {section}{\numberline {2}Background}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Text classification}{6}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Problem Formalism}{6}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Approaches to Text Classification}{7}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Vector Space Models *}{7}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}N-gram Models}{7}{subsubsection.2.2.1}
-\contentsline {paragraph}{Variants}{8}{section*.17}
-\contentsline {subparagraph}{Words vs. Characters}{8}{section*.19}
-\contentsline {subparagraph}{Stop words}{8}{section*.20}
-\contentsline {subparagraph}{N-gram range}{8}{section*.21}
-\contentsline {subparagraph}{Vector size}{8}{section*.22}
-\contentsline {subparagraph}{TF.IDF weighting}{8}{section*.23}
-\contentsline {subparagraph}{Sublinear TF scaling}{9}{section*.24}
-\contentsline {subparagraph}{Normalization}{9}{section*.25}
-\contentsline {paragraph}{Shortcomings}{9}{section*.27}
-\contentsline {subsubsection}{\numberline {2.2.2}Language Models using Distributed Representations}{9}{subsubsection.2.2.2}
-\contentsline {paragraph}{Simplified Continuous Models}{10}{section*.29}
-\contentsline {subparagraph}{Hierarchical Softmax}{12}{section*.32}
-\contentsline {subparagraph}{Negative Sampling}{12}{section*.33}
-\contentsline {subparagraph}{Sub-sampling of Frequent Words}{12}{section*.34}
-\contentsline {paragraph}{Distributed representations for documents}{12}{section*.35}
-\contentsline {subparagraph}{Bag-of-Means}{12}{section*.36}
-\contentsline {subparagraph}{Parse Trees}{13}{section*.37}
-\contentsline {subparagraph}{Paragraph Vectors *}{13}{section*.38}
-\contentsline {subsection}{\numberline {2.3}Classification Algorithms for Vector Space Models}{13}{subsection.2.3}
-\contentsline {paragraph}{Classification Schemes}{13}{section*.39}
-\contentsline {subsubsection}{\numberline {2.3.1}Generalized Linear Models}{13}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Baysian Classifiers}{13}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Decision Trees}{13}{subsubsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}Example-Based Classifiers}{13}{subsubsection.2.3.4}
-\contentsline {subsubsection}{\numberline {2.3.5}Ensemble Methods}{13}{subsubsection.2.3.5}
-\contentsline {subsubsection}{\numberline {2.3.6}Support Vector Machines}{13}{subsubsection.2.3.6}
-\contentsline {subsubsection}{\numberline {2.3.7}Neural Networks}{13}{subsubsection.2.3.7}
-\contentsline {subsection}{\numberline {2.4}Sequential Text Classification}{13}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Evaluation}{13}{subsection.2.5}
+\contentsline {subsection}{\numberline {1.3}Related work *}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Research Objectives and Scope}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Approach}{4}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Results}{4}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Structure of the thesis}{4}{subsection.1.7}
+\contentsline {section}{\numberline {2}Background}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Text classification}{5}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Problem Formalism}{5}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Approaches to Text Classification}{6}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Vector Space Models *}{6}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}N-gram Models}{6}{subsubsection.2.2.1}
+\contentsline {paragraph}{Variants}{7}{section*.13}
+\contentsline {subparagraph}{Words vs. Characters}{7}{section*.15}
+\contentsline {subparagraph}{Stop words}{7}{section*.16}
+\contentsline {subparagraph}{N-gram range}{7}{section*.17}
+\contentsline {subparagraph}{Vector size}{7}{section*.18}
+\contentsline {subparagraph}{TF.IDF weighting}{7}{section*.19}
+\contentsline {subparagraph}{Sublinear TF scaling}{8}{section*.20}
+\contentsline {subparagraph}{Normalization}{8}{section*.21}
+\contentsline {paragraph}{Shortcomings}{8}{section*.23}
+\contentsline {subsubsection}{\numberline {2.2.2}Language Models using Distributed Representations}{8}{subsubsection.2.2.2}
+\contentsline {paragraph}{Simplified Continuous Models}{9}{section*.25}
+\contentsline {subparagraph}{Hierarchical Softmax}{11}{section*.28}
+\contentsline {subparagraph}{Negative Sampling}{11}{section*.29}
+\contentsline {subparagraph}{Sub-sampling of Frequent Words}{11}{section*.30}
+\contentsline {paragraph}{Distributed representations for documents}{11}{section*.31}
+\contentsline {subparagraph}{Bag-of-Means}{11}{section*.32}
+\contentsline {subparagraph}{Parse Trees}{12}{section*.33}
+\contentsline {subparagraph}{Paragraph Vectors *}{12}{section*.34}
+\contentsline {subsection}{\numberline {2.3}Classification Algorithms for Vector Space Models}{12}{subsection.2.3}
+\contentsline {paragraph}{Classification Schemes}{12}{section*.35}
+\contentsline {subsubsection}{\numberline {2.3.1}Generalized Linear Models}{12}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Baysian Classifiers}{12}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Decision Trees}{12}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Example-Based Classifiers}{12}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Ensemble Methods}{12}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Support Vector Machines}{12}{subsubsection.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.7}Neural Networks}{12}{subsubsection.2.3.7}
+\contentsline {subsection}{\numberline {2.4}Sequential Text Classification}{12}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Evaluation}{12}{subsection.2.5}
 \contentsline {subsubsection}{\numberline {2.5.1}Binary Classification}{13}{subsubsection.2.5.1}
-\contentsline {paragraph}{Accuracy}{14}{section*.41}
-\contentsline {paragraph}{Precision, Recall and F1 Score}{14}{section*.42}
-\contentsline {paragraph}{Informedness, Markedness and Matthews Correlation Coefficient}{15}{section*.43}
-\contentsline {paragraph}{Cross-Entropy}{16}{section*.44}
-\contentsline {subsubsection}{\numberline {2.5.2}Multi-class Classification}{17}{subsubsection.2.5.2}
-\contentsline {paragraph}{Averaging for Multi-class Recall, Precision and F1-Score}{17}{section*.47}
-\contentsline {paragraph}{Matthews Correlation Coefficient for K classes}{18}{section*.48}
-\contentsline {paragraph}{Categorical Cross-Entropy}{19}{section*.49}
-\contentsline {subsubsection}{\numberline {2.5.3}Multi-label Classification *}{19}{subsubsection.2.5.3}
-\contentsline {subsection}{\numberline {2.6}Visualization}{19}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}PCA}{19}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}t-SNE}{19}{subsubsection.2.6.2}
-\contentsline {section}{\numberline {3}Exploration}{20}{section.3}
-\contentsline {subsection}{\numberline {3.1}Project Brief}{20}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Approach}{20}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Understanding structure of job ads}{20}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Crowdsourced Data Collection (*)}{20}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Explorative Paragraph Dataset}{20}{subsubsection.3.4.1}
-\contentsline {section}{\numberline {4}Experimental Evaluation of Approaches to Multi-class Prediction of Semantic Categories for Text in Job Advertisements}{25}{section.4}
-\contentsline {subsection}{\numberline {4.1}Problem definition}{25}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Dataset}{25}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Evaluation of Vector Space Models}{26}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Experimental Setup}{26}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Baselines Classifiers: Uniform and Stratified Guessing}{26}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}N-gram Language Models}{26}{subsubsection.4.3.3}
-\contentsline {paragraph}{Type}{28}{section*.75}
-\contentsline {paragraph}{Range}{28}{section*.76}
-\contentsline {paragraph}{Stop Words}{29}{section*.77}
-\contentsline {paragraph}{Size (matters)}{29}{section*.78}
-\contentsline {paragraph}{IDF}{29}{section*.79}
-\contentsline {paragraph}{Norm}{29}{section*.80}
-\contentsline {paragraph}{Sub-linear TF}{29}{section*.81}
-\contentsline {subsubsection}{\numberline {4.3.4}Bag-of-Means --- An Averaged Word2Vec Model}{30}{subsubsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.5}Paragraph Vectors using Distributed Representations}{32}{subsubsection.4.3.5}
-\contentsline {paragraph}{Vector Size}{32}{section*.90}
-\contentsline {paragraph}{Frequent Word Sub-Sampling}{33}{section*.92}
-\contentsline {paragraph}{Hierarchical Softmax}{34}{section*.95}
-\contentsline {paragraph}{Negative Sampling}{34}{section*.97}
-\contentsline {paragraph}{Window Size}{34}{section*.99}
-\contentsline {paragraph}{PV-DBOW versus PM-DV}{34}{section*.101}
-\contentsline {paragraph}{Evaluating the best hyper-parameter setting}{35}{section*.103}
-\contentsline {subsubsection}{\numberline {4.3.6}Paragraph Vectors using pre-initialized weights *}{35}{subsubsection.4.3.6}
+\contentsline {paragraph}{Accuracy}{13}{section*.37}
+\contentsline {paragraph}{Precision, Recall and F1 Score}{13}{section*.38}
+\contentsline {paragraph}{Informedness, Markedness and Matthews Correlation Coefficient}{14}{section*.39}
+\contentsline {paragraph}{Cross-Entropy}{15}{section*.40}
+\contentsline {subsubsection}{\numberline {2.5.2}Multi-class Classification}{16}{subsubsection.2.5.2}
+\contentsline {paragraph}{Averaging for Multi-class Recall, Precision and F1-Score}{16}{section*.43}
+\contentsline {paragraph}{Matthews Correlation Coefficient for K classes}{17}{section*.44}
+\contentsline {paragraph}{Categorical Cross-Entropy}{18}{section*.45}
+\contentsline {subsubsection}{\numberline {2.5.3}Multi-label Classification *}{18}{subsubsection.2.5.3}
+\contentsline {subsection}{\numberline {2.6}Visualization}{18}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}PCA}{18}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}t-SNE}{18}{subsubsection.2.6.2}
+\contentsline {section}{\numberline {3}Exploration}{19}{section.3}
+\contentsline {subsection}{\numberline {3.1}Project Brief}{19}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Approach}{19}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Understanding structure of job ads}{19}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Crowdsourced Data Collection (*)}{19}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Explorative Paragraph Dataset}{19}{subsubsection.3.4.1}
+\contentsline {section}{\numberline {4}Experimental Evaluation of Approaches to Multi-class Prediction of Semantic Categories for Text in Job Advertisements}{24}{section.4}
+\contentsline {subsection}{\numberline {4.1}Problem definition}{24}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Dataset}{24}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Evaluation of Vector Space Models}{25}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Experimental Setup}{25}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Baselines Classifiers: Uniform and Stratified Guessing}{25}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}N-gram Language Models}{25}{subsubsection.4.3.3}
+\contentsline {paragraph}{Type}{27}{section*.71}
+\contentsline {paragraph}{Range}{27}{section*.72}
+\contentsline {paragraph}{Stop Words}{28}{section*.73}
+\contentsline {paragraph}{Size (matters)}{28}{section*.74}
+\contentsline {paragraph}{IDF}{28}{section*.75}
+\contentsline {paragraph}{Norm}{28}{section*.76}
+\contentsline {paragraph}{Sub-linear TF}{28}{section*.77}
+\contentsline {subsubsection}{\numberline {4.3.4}Bag-of-Means --- An Averaged Word2Vec Model}{29}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Paragraph Vectors using Distributed Representations}{30}{subsubsection.4.3.5}
+\contentsline {paragraph}{Vector Size}{31}{section*.86}
+\contentsline {paragraph}{Frequent Word Sub-Sampling}{31}{section*.88}
+\contentsline {paragraph}{Hierarchical Softmax}{32}{section*.91}
+\contentsline {paragraph}{Negative Sampling}{33}{section*.93}
+\contentsline {paragraph}{Window Size}{33}{section*.95}
+\contentsline {paragraph}{PV-DBOW versus PM-DV}{34}{section*.97}
+\contentsline {paragraph}{Evaluating the best hyper-parameter setting}{34}{section*.99}
+\contentsline {subsubsection}{\numberline {4.3.6}Paragraph Vectors using pre-initialized weights *}{34}{subsubsection.4.3.6}
 \contentsline {subsubsection}{\numberline {4.3.7}Paragraph Vectors using context sentences *}{35}{subsubsection.4.3.7}
-\contentsline {subsubsection}{\numberline {4.3.8}Inversion of Distributed Language Representations (??)}{36}{subsubsection.4.3.8}
-\contentsline {subsubsection}{\numberline {4.3.9}Discussion}{36}{subsubsection.4.3.9}
-\contentsline {subsection}{\numberline {4.4}Evaluation of Classification Algorithms for Vector Space Models}{36}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Experimental Setup}{36}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Logistic Regression}{36}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.3}Decision Tree}{36}{subsubsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.4}Naive Bayes}{36}{subsubsection.4.4.4}
-\contentsline {subsubsection}{\numberline {4.4.5}SVM}{36}{subsubsection.4.4.5}
-\contentsline {subsubsection}{\numberline {4.4.6}KNN}{36}{subsubsection.4.4.6}
-\contentsline {subsubsection}{\numberline {4.4.7}Random Forest}{36}{subsubsection.4.4.7}
-\contentsline {subsubsection}{\numberline {4.4.8}Neural Networks}{36}{subsubsection.4.4.8}
-\contentsline {subsubsection}{\numberline {4.4.9}Convolutional Neural Networks}{36}{subsubsection.4.4.9}
-\contentsline {subsubsection}{\numberline {4.4.10}Discussion}{36}{subsubsection.4.4.10}
-\contentsline {subsection}{\numberline {4.5}Evaluation of Sequential Text Classification}{36}{subsection.4.5}
-\contentsline {subsubsection}{\numberline {4.5.1}Experimental Setup}{36}{subsubsection.4.5.1}
-\contentsline {subsubsection}{\numberline {4.5.2}Character-based LSTM}{36}{subsubsection.4.5.2}
-\contentsline {subsubsection}{\numberline {4.5.3}Character-based Multi-task LSTM}{36}{subsubsection.4.5.3}
-\contentsline {subsubsection}{\numberline {4.5.4}Discussion}{36}{subsubsection.4.5.4}
-\contentsline {subsection}{\numberline {4.6}Results and Discussion}{36}{subsection.4.6}
-\contentsline {section}{\numberline {5}Discussion and Conclusions}{37}{section.5}
-\contentsline {subsection}{\numberline {5.1}Discussion of Experimental Results}{37}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Conclusions}{37}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Contributions}{37}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Proposal for Future Research}{37}{subsection.5.4}
-\contentsline {paragraph}{Trajectory -Based Algorithms on Text}{38}{section*.108}
-\contentsline {subsection}{\numberline {5.5}Learnings}{38}{subsection.5.5}
-\contentsline {section}{References}{39}{section*.110}
+\contentsline {subsubsection}{\numberline {4.3.8}Inversion of Distributed Language Representations (??)}{35}{subsubsection.4.3.8}
+\contentsline {subsubsection}{\numberline {4.3.9}Discussion}{35}{subsubsection.4.3.9}
+\contentsline {subsection}{\numberline {4.4}Evaluation of Classification Algorithms for Vector Space Models}{35}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Experimental Setup}{35}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Logistic Regression}{35}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Decision Tree}{35}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Naive Bayes}{35}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}SVM}{35}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}KNN}{35}{subsubsection.4.4.6}
+\contentsline {subsubsection}{\numberline {4.4.7}Random Forest}{35}{subsubsection.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}Neural Networks}{35}{subsubsection.4.4.8}
+\contentsline {subsubsection}{\numberline {4.4.9}Convolutional Neural Networks}{35}{subsubsection.4.4.9}
+\contentsline {subsubsection}{\numberline {4.4.10}Discussion}{35}{subsubsection.4.4.10}
+\contentsline {subsection}{\numberline {4.5}Evaluation of Sequential Text Classification}{35}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Experimental Setup}{35}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}Character-based LSTM}{35}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.3}Character-based Multi-task LSTM}{35}{subsubsection.4.5.3}
+\contentsline {subsubsection}{\numberline {4.5.4}Discussion}{35}{subsubsection.4.5.4}
+\contentsline {subsection}{\numberline {4.6}Results and Discussion}{35}{subsection.4.6}
+\contentsline {section}{\numberline {5}Discussion and Conclusions}{36}{section.5}
+\contentsline {subsection}{\numberline {5.1}Discussion of Experimental Results}{36}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Conclusions}{36}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Contributions}{36}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Proposal for Future Research}{36}{subsection.5.4}
+\contentsline {paragraph}{Trajectory -Based Algorithms on Text}{37}{section*.104}
+\contentsline {subsection}{\numberline {5.5}Learnings}{37}{subsection.5.5}
+\contentsline {section}{References}{38}{section*.106}
+\contentsline {section}{\numberline {A}Appendix }{41}{appendix.A}
+\contentsline {section}{\numberline {B}Stopwords for N-grams}{41}{appendix.B}
+\contentsline {section}{\numberline {C}Appendix : Experiments}{42}{appendix.C}

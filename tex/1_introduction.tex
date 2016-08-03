@@ -4,6 +4,12 @@
 %% Leave first page empty
 \thispagestyle{empty}
 
+% - what (problem statement)
+% - why (need statement)
+% - how (approach)
+% - related
+% - results
+
 \section{Introduction}
 
 Language is one of the most complex behaviors our species has developed. Humans use it to communicate even the most abstract concepts and it is considered one of the pillars of modern civilization. It takes children years to learn to communicate their thoughts and the subtle nuances of one's language give a glimpse one's cultural environment and upbringing, one's emotional state and one's intellect.
@@ -13,11 +19,7 @@ Not surprisingly in the field of Artificial Intelligence (AI) building computer 
 This thesis explores the specific task of predicting the semantic structure of job advertisements as a specific example of such a language-based task that turns out to be difficult even for humans to do.
 The work was done in close collaboration with the Helsinki-based media and learning company \emph{Sanoma}\footnote{\textquote{Sanoma is a front running consumer media and learning company in Europe. In Finland and the Netherlands we are the market leading media company with a broad presence across multiple platforms. In Belgium we are among the Top 5. Our main markets in learning are Belgium, Finland, the Netherlands, Poland and Sweden. We entertain, inform, educate and inspire millions of people every day. We employ some 7,500 professional employees operating in Europe.}, Source: \url{http://www.sanoma.com/en/who-we-are}, visited 06.06.2016} and the research motivation was thus constantly tied back into real world challenges in the scope of Sanoma's business needs.
 
-% - what (problem statement)
-% - why (need statement)
-% - how (approach)
-% - related
-% - results
+
 
 \subsection{Need Statement and Motivation}
 
@@ -35,39 +37,93 @@ From my perspective this offered many interesting research possibilities while a
 The problem addressed during with this thesis to better understand the structure of job advertisements. In particular job postings typically consist of several parts with a certain function or theme: Usually company is introduced, the job is described with it's tasks and responsibilities, the requirements for the job are listed, then benefits and offerings by the company are named and the reader is asked to apply in a specified way he or she is interested.
 Almost all of the text\footnote{Only 4\% of the sentences collected for evaluating the final experiments in this thesis were sorted into the category \emph{other} while the rest falls into either of the categories described. This is described in more detail in Section }\todo{link section} of a job description falls into these categories and the task can thus be posed as predicting a category for each sentence in a job advertisement, that corresponds with this sentence belonging to one of the job ads' parts as described above. This is a challenging problem in itself but can further be used to extract certain functional parts of each job ad, to study a possible correlation between structural patterns and the reach and success of an ad and so forth. The problem therefore can be labelled as \emph{text categorization} or \emph{text classification} as referred to in the scientific literature.
 
+
+\subsection{Related work *}
+
+Text classification, also referred to as text categorization, has been of a topic of interest for decades.
+
+Boosted by the increasingly vast amounts of data available today. The applications are various, from document filtering, automated metadata generation such as language classification to automatic email labeling, spam identification and sentiment detection, amongst others.
+
+% ## bigger context
+%
+% # NLP
+% \cite{Clark:2013aa} - The Handbook of Computational Linguistics and Natural Language Processing
+%
+% \emph{information retrieval} (IR)  - 90's
+%
+% ## related fields
+%
+% # NER
+% \cite{Baluja:2000aa} - Applying Machine Learning for High-Performance Named-Entity Extraction
+% \cite{Zhang:2004aa} - Zhang-Focused Named Entity Recognition Using
+% \cite{Strzalkowski:1996aa} - A Self-learning Universal Concept Spotter
+% \cite{Alfonseca:2002aa} - An unsupervised method for general named entity recognition and automated concept discovery
+% \cite{Nadeau:2007aa} - A survey of named entity recognition and classification.
+%
+% # Topic modeling
+% \cite{Blei:2012aa} - Probabilistic Topic Models
+%
+%
+% # Ngram models
+% \cite{Jagadish:1998aa} - Optimal histograms with quality guarantees
+%
+% # language modeling
+% \cite{Bengio:2006aa} - Neural Probabilistic Language Models.
+% \cite{Mikolov:2013aa} - Exploiting similarities among languages for machine translation.
+% \cite{Mikolov:2012aa} - Statistical Language Models Based on Neural Networks
+%
+%
+%
+% # CNNs
+% \cite{Kim:2014aa} - Convolutional neural networks for sentence classification
+% \cite{Cheng:2014aa} - Investigating the role of prior disambiguation in deep-learning compositional models of meaning
+% \cite{Kalchbrenner:2014aa} - A convolutional neural network for modelling sentences
+% \cite{Johnson:2014aa} - Effective Use of Word Order for Text Categorization with Convolutional Neural Networks
+%
+%
+%
+% # sequential modeling
+% \cite{Lafferty:2001aa} - Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data
+%
+% # \cite{Lewis:1992aa} - Feature selection and feature extraction for text categorization
+%
+%
+% Unsupervised techniques for topic discovery have been investigated widely, such as LSA
+%
+% Vector Space models are a
+%
+% - feature learning for text
+% - multitask learning
+%
+% \cite{Bastian:2014aa} - ontology learning, topic extraction approach
+%
+%
+% \cite{Collobert:2008aa} showed how both multitask learning and semi-supervised learning improve the generalization of the shared tasks on text data. They describe \textquote{a single convolutional neural network architecture that, given a sentence, outputs [\ldots] part-of-speech tags, chunks, named entity tags, semantic roles, semantically similar words and the likelihood that the sentence makes sense (grammatically and semantically) using a language model}.
+%
+% \cite{Lodhi:2002aa} string kernels
+%
+% \todo{section on transfer learning and feature learning}
+% \todo{text classification}
+% \todo{Multitask learning}
+% \todo{explicit vs implicit feature representation}
+
+
 \subsection{Research Objectives and Scope}
+
 
 - study vector space models and new approaches
 - study sequential and multi-task approaches
 - mu
 
+\subsection{Approach}
 
-\subsection{Related work *}
+asd
 
- % \emph{information retrieval} (IR)  - 90's
+\subsection{Results}
 
-Algorithmic text categorization into a fixed set of categories has been of a topic of interest for decades.
+asdasd
 
- Boosted by the increasingly vast amounts of data available today. The applications are various, from document filtering, automated metadata generation such as language classification to automatic email labeling, spam identification and sentiment detection, amongst others.
-
-Unsupervised techniques for topic discovery have been investigated widely, such as LSA
-
-Vector Space models are a
-
-- feature learning for text
-- multitask learning
-
-
-\cite{Collobert:2008aa} showed how both multitask learning and semi-supervised learning improve the generalization of the shared tasks on text data. They describe \textquote{a single convolutional neural network architecture that, given a sentence, outputs [\ldots] part-of-speech tags, chunks, named entity tags, semantic roles, semantically similar words and the likelihood that the sentence makes sense (grammatically and semantically) using a language model}.
-
-\cite{Lodhi:2002aa} string kernels
-
-\todo{section on transfer learning and feature learning}
-\todo{text classification}
-\todo{Multitask learning}
-\todo{explicit vs implicit feature representation}
-
-\subsection{Structure of the thesis*}
+\subsection{Structure of the thesis}
 
 The first section of this thesis gave a brief introduction into the topic of this work, outlined the motivation and the research problem approached and showed the research objectives, the scope of the thesis as well as related work.
 
@@ -76,4 +132,5 @@ The following subsection then briefly presents several of the most known classif
 
 Section~\ref{sec:Exploration}:~\nameref{sec:Exploration} gives an overview of the exploration of the wider topic space at the start of the thesis project as well as the experimentation with different techniques and the data given for the project. It aims to lay out to the reader the process, insights and learnings leading towards the final problem formulation and evaluation of methods to solve this problem.
 
-The following Section~\ref{sec:Multi-class Prediction of Semantic Categories for Text in Job Advertisements}:~\nameref{sec:Multi-class Prediction of Semantic Categories for Text in Job Advertisements} then presents the main results of the thesis. The exact problem definition is given that is used as a basis to evaluate the experiments and the dataset used for these experiments is described. Subsequently the evaluation of the different approaches to Vector Space Models, the classification algorithms using the most successful of these models and the sequential modeling approach are documented. Each of these subsections first describes the experimental setup, followed by results of the different approaches and closes with a brief discussion on the results presented. Then
+The following Section~\ref{sec:Experimental Evaluation of Multi-class Prediction of Semantic Categories for Text in Job Advertisements}:~\nameref{sec:Experimental Evaluation of Multi-class Prediction of Semantic Categories for Text in Job Advertisements} then presents the main results of the thesis. The exact problem definition is given that is used as a basis to evaluate the experiments and the dataset used for these experiments is described.
+Subsequently the evaluation of the different approaches to Vector Space Models, the classification algorithms using the most successful of these models and the sequential modeling approach are documented. Each of these subsections first describes the experimental setup, followed by results of the different approaches and closes with a brief discussion on the outcomes presented.

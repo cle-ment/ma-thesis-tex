@@ -89,16 +89,16 @@ A common extension to using word-counts is to weight the term frequencies by the
  As~\cite[Chapter 6.4.1, p.~126]{Manning:2008aa} suggests \textquote{[it] seems unlikely that twenty occurrences of a term in a document truly carry twenty times the significance of a single occurrence}. Hence a common variant is \emph{sublinear scaling} where we down-weigh the increase in term importance by applying a logarithmic function to it, resulting in the sub-linear term frequency $\text{subTF}_{ij}$:
 
 \begin{displaymath}
-  \text{subTF}_{ij} = \left\{ \begin{array}{l l} 1+\log \text{TF}_{ij} & \text{TF}_{ij} > 0 \\
+  \text{subTF}_{ij} = \left \{ \begin{array}{l l} 1+\log \text{TF}_{ij} & \text{TF}_{ij} > 0 \\
   0 & \text{otherwise}
-\end{array} \right\}
+\end{array} \right \}
 \end{displaymath}
 
 \subparagraph{Normalization} Often the term vectors are globally normalized using the $L_1$ or $L_2$ norm to remove the effect of statistical differences between the terms.
 
-There are, of course, various other variants and modifications to the N-gram model, but within the scope of this thesis only the most notable ones were introduced and will be used for experiments later. For further material on this subject refer for example to \cite{Manning:2008aa}.
+There are, of course, various other variants and modifications to the N-gram model, but within the scope of this thesis only the most notable ones were introduced and will be used for experiments later. For further material on this subject refer for example to~\cite{Manning:2008aa}.
 
-\todo{mention smoothing techniques \cite{Chen:1996aa}}
+\todo{mention smoothing techniques~\cite{Chen:1996aa}}
 
 \paragraph{Shortcomings}
 \label{subs:shortcomings-ngrams}
@@ -114,10 +114,10 @@ Today N-gram models are still in wide use and considered as state of the art \te
     \includegraphics[width=0.48\textwidth]{img/word2vec-google-trends.pdf}
   \end{center}
   \caption{Google Trends statistics on relative search interest in the term ``word2vec''. Retrieved on 22.05.2016.}
-  \label{fig:word2vec-google-trends}
+\label{fig:word2vec-google-trends}
 \end{wrapfigure}
 
-To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community but also from open source community (Figure \ref{fig:word2vec-google-trends} shows the search relevance of the term ``word2vec'' in the recent years). His work builds on ideas introduced in \cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in \cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
+To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community but also from open source community (Figure~\ref{fig:word2vec-google-trends} shows the search relevance of the term ``word2vec'' in the recent years). His work builds on ideas introduced in~\cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in~\cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
 
 \begin{enumerate}
   \item Associate with each word in the vocabulary a distributed \emph{word feature vector} (a real-valued vector in $\mathbb{R}^m$),
@@ -129,42 +129,42 @@ To achieve this, a feedforward neural network model is trained to learn these \e
 
 \paragraph{Simplified Continuous Models}
 
-\cite{Mikolov:2013ad} then introduced two simplified models, removing the hidden layer and only using a projection layer, with shared weights for all words. The Continuous Bag-of-Words Model (CBOW) model is trained to predict the current word $w_t$ given the $k$ words around it. Its name is due to the fact that the word order does not influence the projection as the word vectors are summed or averaged. The Continuous Skip-gram Model works the other way around, predicting the most likely $k$ words around a given word $w_t$. Figure \ref{fig:cbow-skip-gram} illustrates both models.
+\cite{Mikolov:2013ad} then introduced two simplified models, removing the hidden layer and only using a projection layer, with shared weights for all words. The Continuous Bag-of-Words Model (CBOW) model is trained to predict the current word $w_t$ given the $k$ words around it. Its name is due to the fact that the word order does not influence the projection as the word vectors are summed or averaged. The Continuous Skip-gram Model works the other way around, predicting the most likely $k$ words around a given word $w_t$. Figure~\ref{fig:cbow-skip-gram} illustrates both models.
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/cbow_vert2.pdf}
         \caption{Continuous Bag-of-Words Model}
-        \label{fig:cbow}
+\label{fig:cbow}
     \end{subfigure}
     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/skip-gram_vert2.pdf}
         \caption{Continuous Skip-gram Model}
-        \label{fig:skip-gram}
+\label{fig:skip-gram}
     \end{subfigure}
-    \caption{Architectures for learning continouus distributed word vectors, adapted from \cite{Mikolov:2013ad}}
-    \label{fig:cbow-skip-gram}
+    \caption{Architectures for learning continouus distributed word vectors, adapted from~\cite{Mikolov:2013ad}}
+\label{fig:cbow-skip-gram}
 \end{figure}
 
 \begin{wrapfigure}{l}{0.6\textwidth}
   \begin{center}
     \includegraphics[width=0.58\textwidth]{img/word2vec_cities.pdf}
   \end{center}
-  \caption{Two-dimensional PCA projection of the 1000-dimensional Skip-gram vectors of countries and their capital cities. The figure illustrates ability of the model to automatically organize concepts and learn implicitly the relationships between them, as during the training we did not provide any supervised information about what a capital city means. (Adapted from \cite{Mikolov:2013ac})}
-  \label{fig:word2vec-cities}
+  \caption{Two-dimensional PCA projection of the 1000-dimensional Skip-gram vectors of countries and their capital cities. The figure illustrates ability of the model to automatically organize concepts and learn implicitly the relationships between them, as during the training we did not provide any supervised information about what a capital city means. (Adapted from~\cite{Mikolov:2013ac})}
+\label{fig:word2vec-cities}
 \end{wrapfigure}
 
-These models have been shown to outperform state of the art N-gram models on various tasks (see e.g. \cite{bengio2003neural} or \cite{Mikolov:2012aa}). An interesting outcome of this research is the fact that these \emph{word vectors} capture many interesting and often subtle semantic regularities and that these can be exploited explicitly in an algebraic manner. When trained on an extensive dataset, one can perform calculations as $v(Paris) - v(France) + v(Germany)$ and the closest vector to the result turns out to be $v(Berlin)$ where $v(\cdot)$ denotes the \emph{word vector} of a word. Figure \ref{fig:word2vec-cities} shows a PCA projection of Skip-gram trained vectors of countries and their capital cities.
+These models have been shown to outperform state of the art N-gram models on various tasks (see e.g.~\cite{bengio2003neural} or~\cite{Mikolov:2012aa}). An interesting outcome of this research is the fact that these \emph{word vectors} capture many interesting and often subtle semantic regularities and that these can be exploited explicitly in an algebraic manner. When trained on an extensive dataset, one can perform calculations as $v(Paris) - v(France) + v(Germany)$ and the closest vector to the result turns out to be $v(Berlin)$ where $v(\cdot)$ denotes the \emph{word vector} of a word. Figure~\ref{fig:word2vec-cities} shows a PCA projection of Skip-gram trained vectors of countries and their capital cities.
 
 A notable alternative to these models was developed by~\cite{Pennington:2014aa}. In their model called \emph{GloVe}, which stands for global vectors, they construct a vector space model with similar properties as the models introduced above, which instead relies global word-word co-occurrence counts. This method thus operates directly in the co-occurrence statistics of the corpus compared to the Neural Network based methods that \textquote{fail[\ldots] to take advantage of the vast amount of repetition in the data}~\cite{Pennington:2014aa}.
 
-There have been various extensions and variants to the Neural Network based language models especially, including architectures based on Recurrent Neural Networks (see \cite{Mikolov:2012aa}). Some of the most important variations will are discussed in the following section as they were evaluated in the experiments:
+There have been various extensions and variants to the Neural Network based language models especially, including architectures based on Recurrent Neural Networks (see~\cite{Mikolov:2012aa}). Some of the most important variations will are discussed in the following section as they were evaluated in the experiments:
 
 \subparagraph{Hierarchical Softmax}
-The architectures proposed in \cite{Bengio:2000aa}, \cite{bengio2003neural} and follow-up work use a \emph{softmax} activation function at the output layer in order to obtain valid probabilities for each word to be predicted:
+The architectures proposed in~\cite{Bengio:2000aa},~\cite{bengio2003neural} and follow-up work use a \emph{softmax} activation function at the output layer in order to obtain valid probabilities for each word to be predicted:
 
 \begin{equation}
   \operatorname{softmax}(\mathbf{x}_j) = \frac{\exp(\mathbf{x}_j)}{\sum_k \exp(\mathbf{x}_k)}
@@ -176,13 +176,13 @@ The architectures proposed in \cite{Bengio:2000aa}, \cite{bengio2003neural} and 
 Another technique applied by~\cite{Mikolov:2013ab} \emph{Negative Sampling} which is a simplified version of Noise Contrastive Estimation (NCE) introduced by~\cite{Gutmann:2012aa}. Based on the insight that a good model should be able separate noise from signal, this method mixes samples from a noise distribution into the signal to be learned, in this case random words that are not in the context window, which is shown to approximately maximize the log probability of the softmax. Free parameters of this technique are the number of negative samples $k$ per data sample and the noise distribution $P_n(w)$
 
 \subparagraph{Sub-sampling of Frequent Words}
-As there the difference between frequent and infrequent words in large corpora can be huge and the frequent words often don't carry as much meaning, in \cite{Mikolov:2013ab} a simple sub-sampling technique is used to counter this imbalance by discarding words with a probability computed as follows:
+As there the difference between frequent and infrequent words in large corpora can be huge and the frequent words often don't carry as much meaning, in~\cite{Mikolov:2013ab} a simple sub-sampling technique is used to counter this imbalance by discarding words with a probability computed as follows:
 
 \begin{equation}
   P(w_i) = 1 - \sqrt{\frac{t}{f(w_f)}}
 \end{equation}
 
-with $f(w_i)$ denoting the frequency of word $w_i$ and $t$ denoting a threshold. \cite{Mikolov:2013ab} state that this method, while chosen heuristically, \textquote{accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words}.
+with $f(w_i)$ denoting the frequency of word $w_i$ and $t$ denoting a threshold.~\cite{Mikolov:2013ab} state that this method, while chosen heuristically, \textquote{accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words}.
 
 \paragraph{Distributed representations for documents}
 \label{par:Distributed representations for documents}
@@ -191,12 +191,12 @@ The models explained above are defined on words as the atomic unit. Therefore se
 
 \subparagraph{Bag-of-Means}
 \label{subp:Bag-of-Means}
-The term \emph{Bag-of-Means} refers to simply averaging over the word embedding vectors of all words in a document. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by \cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
+The term \emph{Bag-of-Means} refers to simply averaging over the word embedding vectors of all words in a document. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by~\cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
 
-\subparagraph{Parse Trees} \cite{Le:2014aa} also mention a more sophisticated approach by \textquote{combining the word vectors in an order given by a parse tree of a sentence.} as done in \cite{Socher:2011aa}, with the disadvantage that this method \textquote{has been shown to work for only sentences because it relies on parsing}~\cite{Le:2014aa}.
+\subparagraph{Parse Trees}~\cite{Le:2014aa} also mention a more sophisticated approach by \textquote{combining the word vectors in an order given by a parse tree of a sentence.} as done in~\cite{Socher:2011aa}, with the disadvantage that this method \textquote{has been shown to work for only sentences because it relies on parsing}~\cite{Le:2014aa}.
 
 \subparagraph{Paragraph Vectors *}
-In \cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
+In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
 
 \subsection{Classification Algorithms for Vector Space Models}
 \label{sub:Classification Algorithms for Vector Space Models}
@@ -253,6 +253,8 @@ As will be discussed later in Section~\ref{sub:Evaluation}, there are three comm
 \subsection{Sequential Text Classification}
 \label{sub:Sequential Text Classification}
 
+\cite{Gers:1999aa} - Learning to forget: continual prediction with LSTM.
+
 \subsection{Evaluation}
 \label{sub:Evaluation}
 
@@ -283,7 +285,7 @@ To evaluate such a predictor it is useful to present the results in form of a co
 
 An intuitive choice towards classification is to simply ask which data points were correctly classified to belong to the class or not. In terms of the contingency table above the ratio of $(\text{TP} + \text{FP}) / (\text{N})$, commonly referred to as the ``accuracy'' of the classifier.
 
-This choice can give a good intuition and it does capture the effectiveness on both true positives as well as true negatives, but it is strongly influenced by bias of the true and predicted class distribution (known as prevalence RP/N and label bias) as pointed out by \cite{Powers:2011aa}. For example given a population of 900 positive and 100 negative examples, a predictor that simply always chooses a positive assignment can achieve accuracy of 90\% while it obviously is not a great predictor.
+This choice can give a good intuition and it does capture the effectiveness on both true positives as well as true negatives, but it is strongly influenced by bias of the true and predicted class distribution (known as prevalence RP/N and label bias) as pointed out by~\cite{Powers:2011aa}. For example given a population of 900 positive and 100 negative examples, a predictor that simply always chooses a positive assignment can achieve accuracy of 90\% while it obviously is not a great predictor.
 
 \textquote{There is a good reason why accuracy is not an appropriate measure for information retrieval problems. In almost all circumstances, the data is ex- tremely skewed: normally over 99.9\% of the documents are in the nonrele- vant category. A system tuned to maximize accuracy can appear to perform well by simply deeming all documents nonrelevant to all queries. Even if the system is quite good, trying to label some documents as relevant will almost always lead to a high rate of false positives. However, labeling all documents as nonrelevant is completely unsatisfying to an information retrieval system user. }\cite[Chapter 8.3, p.~155]{Manning:2008aa}
 
@@ -315,7 +317,7 @@ It is however important to point out that any version of the F-measure is a bias
 \paragraph{Informedness, Markedness and Matthews Correlation Coefficient}
 \label{par:Informedness, Markedness and Matthews Correlation Coefficient}
 
-\cite{Powers:2011aa} introduces unbiased analogue measures to Recall and Precision, called ``Informedness'' and ``Markedness'' respectively. As \cite{Powers:2011aa} lays out, \blockquote{Informedness quantifies how informed a predictor is for the specified condition, and specifies the probability that a prediction is informed in relation to the condition (versus chance).}:
+\cite{Powers:2011aa} introduces unbiased analogue measures to Recall and Precision, called ``Informedness'' and ``Markedness'' respectively. As~\cite{Powers:2011aa} lays out, \blockquote{Informedness quantifies how informed a predictor is for the specified condition, and specifies the probability that a prediction is informed in relation to the condition (versus chance).}:
 
 \begin{equation}
   \begin{split}
@@ -336,7 +338,7 @@ Further he defines:
   \end{split}
 \end{equation}
 
-Based on Informedness and Markedness we can then see that \emph{Matthews Correlation Coefficient} $r_{G}$, first proposed by \cite{Matthews:1975aa}, is a score that balances these two measures:
+Based on Informedness and Markedness we can then see that \emph{Matthews Correlation Coefficient} $r_{G}$, first proposed by~\cite{Matthews:1975aa}, is a score that balances these two measures:
 
 \begin{equation}
   \begin{split}
@@ -356,7 +358,7 @@ Another common way to evaluate classifiers is the \emph{cross-entropy} loss func
   \mathbb{H}(p,q) = - \sum_n^N p_n \log q_n
 \end{equation}
 
-where $p$ and $q$ are discrete probability distributions. The \emph{cross-entropy} can be derived from the \emph{KL-divergence} as in \cite[Chapter 2.8.2, p.~57]{Murphy:2012aa}:
+where $p$ and $q$ are discrete probability distributions. The \emph{cross-entropy} can be derived from the \emph{KL-divergence} as in~\cite[Chapter 2.8.2, p.~57]{Murphy:2012aa}:
 
 \begin{equation}
   \begin{split}
@@ -366,7 +368,7 @@ where $p$ and $q$ are discrete probability distributions. The \emph{cross-entrop
 \end{split}
 \end{equation}
 
-where $\mathbb{H}(p)$ is the regular entropy, i.e. the lower bound on the number of bits needed to transmit the state of a random variable (as in \cite{Shannon:2001aa}), and $\mathbb{H}(p,q)$ is the cross-entropy, i.e. \textquote{the average number of bits needed to encode data coming from a source distribution $p$ when we use model $q$ to define our codebook}~\cite[Chapter 2.8.2, p.~57]{Murphy:2012aa}.
+where $\mathbb{H}(p)$ is the regular entropy, i.e.\ the lower bound on the number of bits needed to transmit the state of a random variable (as in~\cite{Shannon:2001aa}), and $\mathbb{H}(p,q)$ is the cross-entropy, i.e. \textquote{the average number of bits needed to encode data coming from a source distribution $p$ when we use model $q$ to define our codebook}~\cite[Chapter 2.8.2, p.~57]{Murphy:2012aa}.
 
 In the case of binary classification we can rewrite the cross-entropy into the following error or loss function of the learned weight vector:
 
@@ -374,14 +376,14 @@ In the case of binary classification we can rewrite the cross-entropy into the f
   E(\mathbf{w}) =  -\log p(\mathbf{T} \mid \mathbf{w}) = - \sum_{n=1}^N {t_n \log y_n + (1 - t_n) \log (1 - y_n)}
 \end{equation}
 
-where $y_n$ denotes $y(x_n, \mathbf{w})$, the predicted output for datapoint $x_n$, $t_n$ denotes the $n$-th true label and $\mathbf{w}$ denotes the trained weight vector of the model, as in \cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa}. This form is also known as the \emph{log loss} and it is commonly used with generalized linear models and neural networks (see e.g. \cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa} and \cite[Chapter 10.7, p.~251 ]{Alpaydin:2014aa}).
+where $y_n$ denotes $y(x_n, \mathbf{w})$, the predicted output for datapoint $x_n$, $t_n$ denotes the $n$-th true label and $\mathbf{w}$ denotes the trained weight vector of the model, as in~\cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa}. This form is also known as the \emph{log loss} and it is commonly used with generalized linear models and neural networks (see e.g.~\cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa} and~\cite[Chapter 10.7, p.~251 ]{Alpaydin:2014aa}).
 
 Thus, cross-entropy is a measure which is well-motivated from a information-theoretic perspective. On the downside it does not have an upper bound which makes it hard to interpret, as compared other scores that fall into [0, 1] or similar intervals.
 
 \subsubsection{Multi-class Classification}
 \label{subs:Multi-class Classification}
 
-Multi-class classification refers to a generalization of the binary case where we aim to predict for each datapoint $x_i$ one of $K$ labels for the classes at hand. The target space $\mathcal{Y}$ can be represented with each $y_i \in \{0,1\}^k$, known as \emph{one-hot encoding}, where each target is $c$-dimensional vector. Alternatively we can encode the targets as categorical variables $y_i \in {c_1, c_2, \ldots, c_k}$. The contingency table from the binary case can be extended as in table~\ref{table:contingency-table-k}, which is then commonly known as \emph{Confusion Matrix} or \emph{Error Matrix} \todo{citation for Confusion Matrix?}.
+Multi-class classification refers to a generalization of the binary case where we aim to predict for each datapoint $x_i$ one of $K$ labels for the classes at hand. The target space $\mathcal{Y}$ can be represented with each $y_i \in \{ 0,1 \}^k$, known as \emph{one-hot encoding}, where each target is $c$-dimensional vector. Alternatively we can encode the targets as categorical variables $y_i \in {c_1, c_2, \ldots, c_k}$. The contingency table from the binary case can be extended as in table~\ref{table:contingency-table-k}, which is then commonly known as \emph{Confusion Matrix} or \emph{Error Matrix} \todo{citation for Confusion Matrix?}.
 
 \begin{center}
   \begin{table}[h]
@@ -401,7 +403,7 @@ Multi-class classification refers to a generalization of the binary case where w
 \paragraph{Averaging for Multi-class Recall, Precision and F1-Score}
 \label{par:Averaging for Multi-class Recall, Precision and F1-Score}
 
-By definition, Recall, Precision and thus also the F-measure are defined for the dichotomous classification case, however they can be extended towards multiple classes by averaging. Two common methods are described in \cite[Chapter 13.6, p.~280]{Manning:2008aa}: \textquote{Macroaveraging computes a simple average over classes. Microaveraging pools per-document decisions across classes, and then computes an effectiveness measure on the pooled contingency table.}
+By definition, Recall, Precision and thus also the F-measure are defined for the dichotomous classification case, however they can be extended towards multiple classes by averaging. Two common methods are described in~\cite[Chapter 13.6, p.~280]{Manning:2008aa}: \textquote{Macroaveraging computes a simple average over classes. Microaveraging pools per-document decisions across classes, and then computes an effectiveness measure on the pooled contingency table.}
 It is important to note that \textquote{macroaveraging gives equal weight to each class, whereas microaveraging gives equal weight to each per-document classification decision. Because the F1 measure ignores true negatives and its magnitude is mostly determined by the number of true positives, large classes dominate small classes in microaveraging.}~\cite[Chapter 13.6, p.~280]{Manning:2008aa}. Formally these averaging schemes can be defined as follows, with R denoting the Recall and P the Precision.
 
 \begin{equation}
@@ -436,7 +438,7 @@ Where $\text{COV}$ is the covariance function:
   &= \frac{1}{K} \sum_{n=1}^N \sum_{k=1}^K (X_{nk} - \overline{X_k})(Y_{nk} - \overline{Y_k})
 \end{align}
 
-Similar extensions have been proposed, such as the Confusion Entropy (CEN) as described in \cite{Jurman:2012aa}. The article concludes:
+Similar extensions have been proposed, such as the Confusion Entropy (CEN) as described in~\cite{Jurman:2012aa}. The article concludes:
 
 \blockquote{Confusion Entropy [\ldots] is probably the finest measure and it shows an extremely high level of discriminancy even between very similar confusion matrices. However, this feature is not always welcomed, because it makes the interpre- tation of its value quite harder, expecially when considering sit- uations that are naturally very similar (e.g, all the cases with MCC=0). Moreover, CEN may show erratic behaviour in the binary case.
 
@@ -449,13 +451,13 @@ Thus Matthews Correlation Coefficient is the preferred measure when possible.
 \paragraph{Categorical Cross-Entropy}
 \label{par:Categorical Cross-Entropy}
 
-The \emph{cross-entropy} loss function as defined above in Section \ref{par:Cross-Entropy} extends to the multi-class case quite naturally:
+The \emph{cross-entropy} loss function as defined above in Section~\ref{par:Cross-Entropy} extends to the multi-class case quite naturally:
 
 \begin{equation}
   E(\mathbf{w}_1, \ldots, \mathbf{w}_k) = -\ln p(\mathbf{T} \mid \mathbf{w}_1, \ldots, \mathbf{w}_k) = - \sum_{n=1}^N \sum_{k=1}^K t_{nk} \ln y_{nk}
 \end{equation}
 
-where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of target variables with elements $t_{nk}$ (see as in \cite[Chapter 4.3.4, p.~209 ]{Bishop:2006aa}). This form is also referred to as \emph{multi-class log loss} and gives an aggregated loss over all classes. \todo{more detail?}
+where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of target variables with elements $t_{nk}$ (see as in~\cite[Chapter 4.3.4, p.~209 ]{Bishop:2006aa}). This form is also referred to as \emph{multi-class log loss} and gives an aggregated loss over all classes. \todo{more detail?}
 
 \subsubsection{Multi-label Classification *}
 \label{subs:Multi-label Classification}
