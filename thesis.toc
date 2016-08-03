@@ -63,31 +63,31 @@
 \contentsline {subsection}{\numberline {3.3}Understanding structure of job ads}{20}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Crowdsourced Data Collection (*)}{20}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Explorative Paragraph Dataset}{20}{subsubsection.3.4.1}
-\contentsline {section}{\numberline {4}Multi-class Prediction of Semantic Categories for Text in Job Advertisements}{25}{section.4}
+\contentsline {section}{\numberline {4}Experimental Evaluation of Approaches to Multi-class Prediction of Semantic Categories for Text in Job Advertisements}{25}{section.4}
 \contentsline {subsection}{\numberline {4.1}Problem definition}{25}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Dataset}{25}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Evaluation of Vector Space Models}{26}{subsection.4.3}
 \contentsline {subsubsection}{\numberline {4.3.1}Experimental Setup}{26}{subsubsection.4.3.1}
 \contentsline {subsubsection}{\numberline {4.3.2}Baselines Classifiers: Uniform and Stratified Guessing}{26}{subsubsection.4.3.2}
 \contentsline {subsubsection}{\numberline {4.3.3}N-gram Language Models}{26}{subsubsection.4.3.3}
-\contentsline {paragraph}{Type}{27}{section*.74}
-\contentsline {paragraph}{Range}{28}{section*.75}
-\contentsline {paragraph}{Stop Words}{28}{section*.76}
-\contentsline {paragraph}{Size (matters)}{29}{section*.77}
-\contentsline {paragraph}{IDF}{29}{section*.78}
-\contentsline {paragraph}{Norm}{29}{section*.79}
-\contentsline {paragraph}{Sub-linear TF}{29}{section*.80}
-\contentsline {subsubsection}{\numberline {4.3.4}Bag-of-Means - An Averaged Word2Vec Model}{30}{subsubsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.5}Paragraph Vectors using Distributed Representations}{31}{subsubsection.4.3.5}
-\contentsline {paragraph}{Vector Size}{32}{section*.89}
-\contentsline {paragraph}{Frequent Word Sub-Sampling}{32}{section*.91}
-\contentsline {paragraph}{Hierarchical Softmax}{33}{section*.94}
-\contentsline {paragraph}{Negative Sampling}{33}{section*.96}
-\contentsline {paragraph}{Window Size}{34}{section*.98}
-\contentsline {paragraph}{PV-DBOW versus PM-DV}{34}{section*.100}
-\contentsline {paragraph}{Evaluating the best hyper-parameter setting}{35}{section*.102}
+\contentsline {paragraph}{Type}{28}{section*.75}
+\contentsline {paragraph}{Range}{28}{section*.76}
+\contentsline {paragraph}{Stop Words}{29}{section*.77}
+\contentsline {paragraph}{Size (matters)}{29}{section*.78}
+\contentsline {paragraph}{IDF}{29}{section*.79}
+\contentsline {paragraph}{Norm}{29}{section*.80}
+\contentsline {paragraph}{Sub-linear TF}{29}{section*.81}
+\contentsline {subsubsection}{\numberline {4.3.4}Bag-of-Means --- An Averaged Word2Vec Model}{30}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Paragraph Vectors using Distributed Representations}{32}{subsubsection.4.3.5}
+\contentsline {paragraph}{Vector Size}{32}{section*.90}
+\contentsline {paragraph}{Frequent Word Sub-Sampling}{33}{section*.92}
+\contentsline {paragraph}{Hierarchical Softmax}{34}{section*.95}
+\contentsline {paragraph}{Negative Sampling}{34}{section*.97}
+\contentsline {paragraph}{Window Size}{34}{section*.99}
+\contentsline {paragraph}{PV-DBOW versus PM-DV}{34}{section*.101}
+\contentsline {paragraph}{Evaluating the best hyper-parameter setting}{35}{section*.103}
 \contentsline {subsubsection}{\numberline {4.3.6}Paragraph Vectors using pre-initialized weights *}{35}{subsubsection.4.3.6}
-\contentsline {subsubsection}{\numberline {4.3.7}Paragraph Vectors using context sentences *}{36}{subsubsection.4.3.7}
+\contentsline {subsubsection}{\numberline {4.3.7}Paragraph Vectors using context sentences *}{35}{subsubsection.4.3.7}
 \contentsline {subsubsection}{\numberline {4.3.8}Inversion of Distributed Language Representations (??)}{36}{subsubsection.4.3.8}
 \contentsline {subsubsection}{\numberline {4.3.9}Discussion}{36}{subsubsection.4.3.9}
 \contentsline {subsection}{\numberline {4.4}Evaluation of Classification Algorithms for Vector Space Models}{36}{subsection.4.4}
@@ -112,6 +112,6 @@
 \contentsline {subsection}{\numberline {5.2}Conclusions}{37}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Contributions}{37}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}Proposal for Future Research}{37}{subsection.5.4}
-\contentsline {paragraph}{Trajectory -Based Algorithms on Text}{38}{section*.107}
+\contentsline {paragraph}{Trajectory -Based Algorithms on Text}{38}{section*.108}
 \contentsline {subsection}{\numberline {5.5}Learnings}{38}{subsection.5.5}
-\contentsline {section}{References}{39}{section*.109}
+\contentsline {section}{References}{39}{section*.110}

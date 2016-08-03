@@ -1,20 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[cro, 2016]{crowdflower}
- (2016).
-\newblock Crowdflower.
-\newblock \url{https://www.crowdflower.com}.
-
-\bibitem[mon, 2016]{mongodb}
- (2016).
-\newblock Mongodb.
-\newblock \url{https://www.mongodb.com}.
-
-\bibitem[nod, 2016]{nodejs}
- (2016).
-\newblock Node.js.
-\newblock \url{https://nodejs.org/en/}.
-
 \bibitem[Alpaydin, 2014]{Alpaydin:2014aa}
 Alpaydin, E. (2014).
 \newblock {\em Introduction to machine learning}.
