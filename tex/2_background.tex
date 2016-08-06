@@ -8,6 +8,17 @@
 
 This chapter will provide the necessary background on text classification, assuming the reader is familiar with the basic concepts of Machine Learning and related fields. First the research problem will be defined. Then
 
+Concepts:
+\begin{itemize}
+  \item likelihood
+  \item function estimation
+  \item linear algebra
+  \item basic probabilistic and baysian terms (posteriors and priors)
+  \item decision theory
+  \item information theory
+\end{itemize}
+
+
 \subsection{Text classification}
 \label{sub:Text classification}
 
@@ -201,9 +212,13 @@ In~\cite{Le:2014aa} a different approach is shown that builds on the same idea a
 \subsection{Classification Algorithms for Vector Space Models *}
 \label{sub:Classification Algorithms for Vector Space Models}
 
-\paragraph{Classification Schemes}
-\label{par:Classification Schemes}
-As will be discussed later in Section~\ref{sub:Evaluation}, there are three common schemes for classification: In \emph{binary classification} there is only a single class and for each document we decide whether or not it belongs to this class. A classic example is email spam detection where we predict if a given email is spam or not. \emph{Multi-class classification} assumes the existence of more than one class and can be sub-categorized into \emph{single-label classification} where the labels are mutually exclusive and and \emph{multi-label classificaion} where they are not and thus multiple labels can be assigned to a single document at the same time.
+Many classical machine learning algorithms assume data to be in a fixed-dimensional vector format and can thus be applied to a vector space model as described in the previous section. Here a set of well-known algorithms will be briefly introduced, each representing a family of approaches with different model assumptions.
+
+% \paragraph{Classification Schemes}
+% \label{par:Classification Schemes}
+% There are three common schemes for classification: In \emph{binary classification} there is only a single class and for each document we decide whether or not it belongs to this class. A classic example is email spam detection where we predict if a given email is spam or not. \emph{Multi-class classification} assumes the existence of more than one class and can be sub-categorized into \emph{single-label classification} where the labels are mutually exclusive and and \emph{multi-label classificaion} where they are not and thus multiple labels can be assigned to a single document at the same time. These settings also need be evaluated differently which will be discussed in Section~\ref{sub:Evaluation}.
+
+
 
 
 % A simple approach to multi-class classification is to pose the learning problem as a combination of binary classification problems as described in~\cite[Chapter 4.1.2, p.~182]{Bishop:2006aa}. This can be done by using $K$ separate classifiers, each of which predicts one of the classes against all $K-1$ other classes, which is known as the \textit{one-versus-the-rest} classification scheme. An alternative approach is to train $K (K - 1) / 2$ binary classifiers for each possible pair of classes, referred to as \textit{one-versus-one} classification.
@@ -228,15 +243,70 @@ As will be discussed later in Section~\ref{sub:Evaluation}, there are three comm
 %     \label{fig:Bishop2006aa-p182-ch4-fig4-1}
 % \end{figure}
 
-\subsubsection{Generalized Linear Models}
-\label{subs:Generalized Linear Models}
+\subsubsection{Logistic Regression}
+\label{subs:Logistic Regression}
 
+Logistic Regression belongs to the family of Generalized Linear Models, an extension of linear discriminant functions. Whereas discriminant functions and ordinary linear regression models produce linear decision boundaries in the input space (\emph{linear-response model}), Generalized Linear Models apply a non-linear \emph{link function} or \emph{basis function} to the input, making it possible for the model to achieve non-linear decision boundaries in the original input space while corresponding to a linear decision boundary in the feature space.
 
-\subsubsection{Baysian Classifiers}
-\label{subs:Probabilistic Classifiers}
+Logistic Regression uses the \emph{logistic sigmoid} function as a basis function defined by:
+
+\begin{equation}
+  \sigma (a) = \frac{1}{1 + \exp(-a)}
+\end{equation}
+
+This yields posterior class probabilities of:
+
+\begin{equation}
+  p(\mathcal{C}_n \mid \phi) = y(\phi) = \sigma(w^T  \phi)
+\end{equation}
+
+where $w$ is the learned \emph{weight vector} with the free parameters of the model, $\phi$ is the \emph{feature vector} of inputs transformed through the basis function $\sigma$ and $y$ is the model function that we use to infer class predictions from our data.
+
+Using a the maximum likelihood method we can now find a set of parameters for our model function $y$ that gives us the predictions with the lowest error. For a dataset $\{ \phi_n, t_n \}$, where $t_m \in {0, 1}$ and $\phi_n = \phi(x_n)$, with $n = 1, . . ., N$ denoting the amount of data points:
+
+\begin{equation}
+  p(\mathbf{t} | w) = \prod_{n=1}^N y_n^{t_n} \{ 1 - y_n \}^{1-t_n}
+\end{equation}
+
+where $\mathbf{t} = (t_1, \ldots, t_N)^T$ and $y_n = p(\mathcal{C}_n \mid \phi)$. We can now define an error function by taking the negative logatirhm of the likelihood, which is called the \emph{cross-entropy} error function:
+
+\begin{equation}
+  E(\mathbf(w)) = - \ln p(\mathbf{t} | w) = - \sum_{n=1}^N \{ t_n \ln y_n + (1 - t_n) \ln (1-y_n) \}
+\end{equation}
+
+where $y_n = \sigma(a_n)$ and $a_n = \mathbf{w}^T \phi_n$. When taking the gradient we with resepect to $\mathbf{w}$ we obtain:
+
+\begin{equation}
+  \nabla E(\mathbf{w}) = \sum_{n=1}^N (y_n - t_n) \phi_n
+\end{equation}
+
+From here we can apply an optimization procedure such as gradient descent to arrive at a weight vector $\mathbf{w}$ that minimizes the error function above. A deeper treatment of the Logistic Regression and Generalized Linear Models can be found in many introductory textbooks such as~\cite[Chapter 4.3.2, p.~205]{Bishop:2006aa}.
+
+\todo{extension to multinomial?}
+
+\subsubsection{Naive Bayes}
+\label{subs:Naive Bayes}
+
+Naive Bayes is a simple class-conditional generative model which builds on the assumption that all data points are conditionally independent given the classes $\mathcal{C}_n$. For each class $c_j$ we can predict it's probability given an input vector $\mathbf{x}$ as:
+
+\begin{equation}
+  p(\mathbf{x}) = p(c_j) \prod_{i=D}^D p(x_i \mid c_j)
+\end{equation}
+
+We can then use Bayes' rule to form a classifier for each class:
+
+\begin{equation}
+  p(c_j \mid \mathbf{x}) = \frac{p(\mathbf{x} \mid c_j ) p(c_j)}{ p (\mathbf{x})} = \frac{p(\mathbf{x} \mid c_j ) p(c_j)}{ \sum_c p(\mathbf{x \mid c} p(c)) }
+\end{equation}
+
+We can then choose the class with the highest class probability as our prediction. Again there are numerous variants and related models to Naive Bayes and it can be regarded as a simple \emph{graphical model}, a family of techniques which are covered e.g. in~\cite{Barber:2012aa} or~\cite{Bishop:2006aa}.
+
+\todo{more on ML estimation?}
 
 \subsubsection{Decision Trees}
 \label{subs:Decision Trees}
+
+
 
 \subsubsection{Example-Based Classifiers}
 \label{subs:Example-Based Classifiers}
