@@ -9,54 +9,6 @@
 
 This chapter will outline how with initial objectives and how I went all the way from an initial project start with exploration over collecting data and iterating the problem framing to learn from about the problem to designing the final task and collecting an appropriate dataset including quality control in a crowdsourced fashion. \todo{rewrite when chapter is done}
 
-\subsection{Research Objectives}
-\label{sub:Research Objectives}
-
-This thesis was initiated as a research project for Sanoma's recruitment platform \emph{Oikotie Työpaikat} with the intention of exploring interesting and novel ways to use the various data generated through the use of this service. The research objectives were stated as follows:
-
-\blockquote{Find an application of data mining / machine learning to the customer-generated data on the recruitment platform Oikotie Työpaikat which has the potential of bringing value to the user of the platform and is technically feasible in the scope of a master’s thesis. Further define and investigate a research problem that is essential to this application by researching literature and previous work on similar problems trying different approaches based on the literature using the results and learnings to create an improved approach.}
-
-
-% --------
-
-\subsection{Methodological Approach}
-\label{sub:Methodological Approach}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{img/double-diamond.pdf}
-    \caption{Design process for this thesis, adapted from the \emph{Double Diamond Process} developed by the British Design Council (see~\cite{Council:2007aa})}
-\label{fig:double-diamond}
-\end{figure}
-
-The design and development process of the project was adapted from the double diamond approach that was developed by the by the British Design Council in 2005 (see ~\cite{Council:2007aa}). A design process is \textquote{the specific series of events, actions or methods by which a procedure or set of procedures are followed, in order to achieve an intended purpose, goal or outcome.}~\cite{Best:2006aa}.
-
-\paragraph{Discover}
-\label{par:Discover}
-
-In the first stage of the project an initial idea, motivation or inspiration is given.
-
-- prototyping
-- interviews
-- market research
--
-
-
-
-
-
-- double diamond approach
-- initial exploration of topics
-- topic decision for structured text prediction
-- design choice for fixing chunks (making it a supervised multi-class prediction)
-- explorative data collection
-- learnings and design choice for 6 mutually exclusive labels + sentence as atomic unit => final problem setting
-- dataset collection through crowdflower with iterations
-
-
-
-
-
 
 
 % - brief
@@ -180,6 +132,3 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
     \caption{Distribution of labels in sentence data}
 \label{fig:sentence-data-label-dist}
 \end{figure}
-
-\section{Problem Definition: Text Classification}
-\label{sec:Problem Definition: Text Classification}
