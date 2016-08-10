@@ -2,19 +2,16 @@
 % !TEX spellcheck = en-US
 
 
-\clearpage
+% doc2vec: highest value is highlighted
 
-\section{Methods}
-\label{sec:Methods}
+\subsection{Problem definition}
 
 % How did I approach the problem, what methods did I evaluate
 
 \clearpage
 
-\section{Experimental Evaluation}
-\label{sec:Experimental Evaluation of Multi-class Prediction of Semantic Categories for Text in Job Advertisements}
-
-\subsection{Problem definition}
+\section{Results}
+\label{sec:Results}
 
 \subsection{Evaluation of Vector Space Models}
 
@@ -39,40 +36,40 @@ In order to compare the effectiveness for the sentence classification task as di
 As a baseline for comparing the performance of classification two different guessing strategies were used, namely uniform and stratified guessing.
 Uniform guessing refers to a predictor that samples from the given classes assuming a uniform distribution whereas stratified guessing takes the label distribution in the data as the underlying probability distribution.
 Then both methods just sample from these distributions to produce ``predictions'', while ignoring the actual input data. Both, uniform and stratified guessing achieve a Matthews Correlation Coefficient score of around 0 (averaged over 1000 runs) as expected for guessing strategies (see Section~\ref{subs:informedness-markedness-mcc}). On the other hand the accuracy for uniform guessing is around 0.16 which corresponds to $1/\text{K}$ for the K classes and around 0.26 for stratified guessing which reflects the skew of the label distribution.
-Figure~\ref{fig:exp-vector-space-conf-matrix-guessing} shows the confusion matrices for these baseline variants in absolute and normalized form, revealing the properties of these guessing strategies.
+Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these baseline variants in absolute and normalized form, revealing the properties of these guessing strategies.
 
 \begin{figure}[h]
  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Baseline:-Guessing-Strategies
     \centering
     \begin{subfigure}[b]{0.47\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-guessing-uniform.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-uniform.pdf}
         \caption{Uniform, absolute}
-\label{fig:exp-vector-space-conf-matrix-guessing-uniform}
+\label{fig:guessing-conf-matrix-uniform}
     \end{subfigure}
 ~
     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-guessing-uniform-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-uniform-normalized.pdf}
         \caption{Uniform, normalized}
-\label{fig:exp-vector-space-conf-matrix-guessing-uniform-normalized}
+\label{fig:guessing-conf-matrix-uniform-normalized}
     \end{subfigure}
 ~
     \begin{subfigure}[b]{0.47\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-guessing-stratified.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-stratified.pdf}
         \caption{Stratified, absolute}
-\label{fig:exp-vector-space-conf-matrix-guessing-stratified}
+\label{fig:guessing-conf-matrix-stratified}
     \end{subfigure}
 ~
     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-guessing-stratified-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-stratified-normalized.pdf}
         \caption{Stratified, normalized}
-\label{fig:exp-vector-space-conf-matrix-guessing-stratified-normalized}
+\label{fig:guessing-stratified-normalized}
     \end{subfigure}
     \caption{Confusion matrices of uniform and stratified guessing strategies. }
-\label{fig:exp-vector-space-conf-matrix-guessing}
+\label{fig:guessing-conf-matrix}
 \end{figure}
 
 \subsubsection{N-gram Language Models}
@@ -202,44 +199,44 @@ Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier usi
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-ngram-logreg-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-logreg-normalized.pdf}
         \caption{Logistic Regression}
-\label{fig:exp-vector-space-conf-matrix-ngram-logreg-normalized}
+\label{fig:ngram-conf-matrix-logreg-normalized}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-ngram-naivebayes-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-naivebayes-normalized.pdf}
         \caption{Naive Bayes}
-\label{fig:exp-vector-space-conf-matrix-ngram-naivebayes-normalized}
+\label{fig:ngram-conf-matrix-naivebayes-normalized}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-ngram-svm-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-svm-normalized.pdf}
         \caption{SVM}
-\label{fig:exp-vector-space-conf-matrix-ngram-svm-normalized}
+\label{fig:ngram-conf-matrix-svm-normalized}
     \end{subfigure}
     \caption{Normalized confusion matrices all three classifiers using the best N-gram model found via cross-validated grid search. Both Naive Bayes as well as SVM show label bias towards the prevalent class \emph{candidate}.}
-\label{fig:exp-vector-space-conf-matrix-ngram}
+\label{fig:ngram-conf-matrix}
 \end{figure}
 \todo{properly align visualization}
 
-Figure~\ref{fig:exp-vector-space-ngram} shows projections of the of the constructed feature space using the best model that was optimized with Logistic Regression. This visualization shows the separability of the classes in this space. Especially the PCA projection here reveals that it is clearly possible to separate the classes until a certain point.
+Figure~\ref{fig:ngram} shows projections of the of the constructed feature space using the best model that was optimized with Logistic Regression. This visualization shows the separability of the classes in this space. Especially the PCA projection here reveals that it is clearly possible to separate the classes until a certain point.
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space-ngram-pca.pdf}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-pca.pdf}
       \caption{PCA projection}
-\label{fig:exp-vector-space-ngram-pca}
+\label{fig:ngram-pca}
     \end{subfigure}
 ~
     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.48\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space-ngram-tsne.pdf}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-tsne.pdf}
       \caption{t-SNE projection}
-\label{fig:exp-vector-space-ngram-tsne}
+\label{fig:ngram-tsne}
     \end{subfigure}
     \caption{Document vectors produced by the best N-gram model (optimized w.r.t. Logistic Regression) projected onto the first 2 principal components (left) and project using t-SNE projection.}
-\label{fig:exp-vector-space-ngram}
+\label{fig:ngram}
 \end{figure}
 
 \subsubsection{Bag-of-Means --- An Averaged Word2Vec Model}
@@ -263,46 +260,46 @@ Next a Bag-of-Means model as described in Section~\ref{subp:Bag-of-Means} was ev
 \end{center}
 \end{table}
 
-The model performs well using Logistic Regression and is almost on par with the best N-gram model. This is surprising as performance previously reported to be rather poor as mention in Section~\ref{subp:Bag-of-Means}. On the other hand the variance in results between the classifiers is huge and especially Naive Bayes seems to perform extremely poor. Further investigation into the use of different classifiers could shed light into these diverging results which are not observed using the N-gram models in the section above. The confusion matrices in Figure~\ref{fig:exp-vector-space-conf-matrix-bom} reveal strong label bias in the case of Naive Bayes and SVM, although it is unclear where this stems from. Figure~\ref{fig:exp-vector-space-bom} makes clear though that there is a somewhat meaningful mapping into the feature space. \todo{mention one-vs-all scheme for log reg? also for ngrams above}
+The model performs well using Logistic Regression and is almost on par with the best N-gram model. This is surprising as performance previously reported to be rather poor as mention in Section~\ref{subp:Bag-of-Means}. On the other hand the variance in results between the classifiers is huge and especially Naive Bayes seems to perform extremely poor. Further investigation into the use of different classifiers could shed light into these diverging results which are not observed using the N-gram models in the section above. The confusion matrices in Figure~\ref{fig:bom-conf-matrix} reveal strong label bias in the case of Naive Bayes and SVM, although it is unclear where this stems from. Figure~\ref{fig:bom} makes clear though that there is a somewhat meaningful mapping into the feature space. \todo{mention one-vs-all scheme for log reg? also for ngrams above}
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-bom-logreg-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/bom-conf-matrix-logreg-normalized.pdf}
         \caption{Logistic Regression}
-\label{fig:exp-vector-space-conf-matrix-bom-logreg-normalized}
+\label{fig:bom-conf-matrix-logreg-normalized}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-bom-naivebayes-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/bom-conf-matrix-naivebayes-normalized.pdf}
         \caption{Naive Bayes}
-\label{fig:exp-vector-space-conf-matrix-bom-naivebayes-normalized}
+\label{fig:bom-conf-matrix-naivebayes-normalized}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{img/exp-vector-space-conf-matrix-bom-svm-normalized.pdf}
+        \includegraphics[width=\textwidth]{img/exp-vector-space/bom-conf-matrix-svm-normalized.pdf}
         \caption{SVM}
-\label{fig:exp-vector-space-conf-matrix-bom-svm-normalized}
+\label{fig:bom-conf-matrix-svm-normalized}
     \end{subfigure}
     \caption{Normalized confusion matrices of all three classifiers using the Bag-of-Means model.}
-\label{fig:exp-vector-space-conf-matrix-bom}
+\label{fig:bom-conf-matrix}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space-bom-pca.pdf}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/bom-pca.pdf}
       \caption{PCA projection}
-\label{fig:exp-vector-space-bom-pca}
+\label{fig:bom-pca}
     \end{subfigure}
 ~
     %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.48\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space-bom-tsne.pdf}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/bom-tsne.pdf}
       \caption{t-SNE projection}
-\label{fig:exp-vector-space-bom-tsne}
+\label{fig:bom-tsne}
     \end{subfigure}
     \caption{Document vectors produced by Bag-of-Means model (optimized w.r.t. Logistic Regression) projected onto the first 2 principal components (left) and projected using t-SNE projection. It is clear that even though the vectors are simply obtained by averaging they do indeed produce somewhat seperable manifolds.}
-\label{fig:exp-vector-space-bom}
+\label{fig:bom}
 \end{figure}
 
 \subsubsection{Paragraph Vectors using Distributed Representations}
@@ -320,24 +317,45 @@ As was to expect the vector size of the model correlates with the performance. A
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Vector Size & Trained & Inferred & Trained & Inferred \\
       \midrule
-      2 & 0.324 & 0.265 & 0.189 & 0.257 \\
-      10 & 0.467 & 0.411 & 0.319 & \textbf{0.404} \\
-      100 & 0.510 & 0.399 & 0.357 & 0.400 \\
-      300 & 0.572 & 0.362 & 0.344 & 0.398 \\
+      2   & 0.302 & 0.255 & 0.173 & 0.251 \\
+      10  & 0.457 & 0.417 & 0.296 & \textbf{0.405} \\
+      100 & 0.535 & 0.358 & 0.341 & 0.384 \\
+      300 & 0.575 & 0.363 & 0.347 & 0.393 \\
       \bottomrule
     \end{tabular}
   \caption{Matthews Correlation Coefficient with varying vector size.}
 \label{tab:Paragraph Vector Parameter Results Size}
 \end{center}
-% Previous results:
-% PV-DM & 2   & 10 & 3 & 1 & 0 & 0.536 \\
-% PV-DM & 10  & 10 & 3 & 1 & 0 & 0.522 \\
-% PV-DM & 100 & 10 & 3 & 1 & 0 & 0.514 \\
-% PV-DM & 300 & 10 & 3 & 1 & 0 & 0.144 \\
 \end{table}
 
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_2}
+      \caption{Vector Size: 2}
+\label{fig:doc2vec_vector_size_2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_10}
+      \caption{Vector Size: 10}
+\label{fig:doc2vec_vector_size_10}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_100}
+      \caption{Vector Size: 100}
+\label{fig:doc2vec_vector_size_100}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_300}
+    \caption{Vector Size: 300}
+\label{fig:doc2vec_vector_size_300}
+  \end{subfigure}
+\caption{test}
+\label{fig:doc2vec_vector_size}
+\end{figure}
+
 \paragraph{Frequent Word Sub-Sampling}
-Frequent word sub-sampling can boost performance quite much, but again choosing the right value for this hyper-parameter is key. The training behavior with different sampling thresholds differs quite much. Figure~\ref{fig:exp-vector-space-doc2vec-param-sample} shows the training with different values with 100 passes over the dataset. A good value seems to be $10^{-5}$ which achieves an MCC score of 0.697 and is on-par with the best N-gram model. Interestingly not using sub-sampling in this setup seemed to be overfitting as the score decreases quite drastically with more training passes. A similar effect is observed with a higher threshold of $10^{-4}$ but much less strong. Choosing a lower threshold of $10^{-6}$ leads to very poor performance with an MCC score of only 0.07.
+Frequent word sub-sampling can boost performance quite much, but again choosing the right value for this hyper-parameter is key. The training behavior with different sampling thresholds differs quite much. Figure~\ref{fig:doc2vec-param-sample} shows the training with different values with 100 passes over the dataset. A good value seems to be $10^{-5}$ which achieves an MCC score of 0.697 and is on-par with the best N-gram model. Interestingly not using sub-sampling in this setup seemed to be overfitting as the score decreases quite drastically with more training passes. A similar effect is observed with a higher threshold of $10^{-4}$ but much less strong. Choosing a lower threshold of $10^{-6}$ leads to very poor performance with an MCC score of only 0.07.
 
 \begin{table}[h]
   \begin{center}
@@ -346,28 +364,41 @@ Frequent word sub-sampling can boost performance quite much, but again choosing 
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Sub-sampling threshold & Trained & Inferred & Trained & Inferred \\
       \midrule
-      No sub-sampling & 0.531 & 0.364 & 0.340 & 0.380 \\
-      1e-4 & 0.628 & 0.372 & 0.3151 & \textbf{0.401} \\
-      1e-5 & 0.608 & 0.248 & 0.180 & 0.250 \\
-      1e-6 & 0.583 & 0.156 & 0.107 & 0.128 \\
+      No sub-sampling & 0.536 & 0.363 & 0.336 & 0.384 \\
+      1e-4 & 0.627 & 0.377 & 0.315 & \textbf{0.397} \\
+      1e-5 & 0.599 & 0.250 & 0.173 & 0.247 \\
+      1e-6 & 0.431 & 0.147 & 0.106 & 0.129 \\
     \bottomrule
   \end{tabular}
   \caption{Matthews Correlation Coefficient with varying frequent word sub-sampling threshold.}
 \label{tab:Paragraph Vector Parameter Results Sample}
 \end{center}
-% Previous results:
-% PV-DM & 300 & 10 & 3 & 1 & 0 & 0.244 \\
-% PV-DM & 300 & 10 & 3 & 1 & 1e-4 & 0.556 \\
-% PV-DM & 300 & 10 & 3 & 1 & 1e-5 & 0.698 \\
-% PV-DM & 300 & 10 & 3 & 1 & 1e-6 & 0.071 \\
 \end{table}
 
-
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{img/exp-vector-space-doc2vec-param-sample.pdf}
-    \caption{Training of document vectors with different sub-sampling thresholds.}
-  \label{fig:exp-vector-space-doc2vec-param-sample}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_0}
+      \caption{No Sub-Sampling}
+\label{fig:doc2vec_sample_0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_1e-4}
+    \caption{Sub-Sampling Threshold: 1e-4}
+\label{fig:doc2vec_vector_size_1e-4}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_1e-5}
+      \caption{Sub-Sampling Threshold: 1e-5}
+\label{fig:doc2vec_vector_size_1e-5}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_1e-6}
+    \caption{Sub-Sampling Threshold: 1e-6}
+\label{fig:doc2vec_sample_1e-6}
+  \end{subfigure}
+\caption{test}
+\label{fig:doc2vec_sample}
 \end{figure}
 
 \paragraph{Hierarchical Softmax}
@@ -380,17 +411,30 @@ Using hierarchical softmax increased the performance, leading to a 12\% absolute
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Hierarchical Softmax & Trained & Inferred & Trained & Inferred \\
       \midrule
-      Used & 0.374 & 0.279 & 0.202 & 0.299 \\
-      Not used & 0.519 & 0.404 & 0.366 & \textbf{0.408} \\
+      Not used & 0.364 & 0.195 & 0.201 & 0.236 \\
+      Used     & 0.534 & 0.365 & 0.340 & \textbf{0.387} \\
     \bottomrule
   \end{tabular}
   \caption{Matthews Correlation Coefficient with and without using hierarchical softmax.}
 \label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
 \end{center}
-% Previous results:
-% PV-DM & 100 & 10 & 3 & 0 & 0 & 0.398 \\
-% PV-DM & 100 & 10 & 3 & 1 & 0 & 0.520 \\
 \end{table}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_hs_0}
+      \caption{Without Hierarchical Softmax}
+\label{fig:doc2vec_hs_0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_hs_1}
+    \caption{With Hierarchical Softmax}
+\label{fig:doc2vec_hs_1}
+    \end{subfigure}
+\caption{test}
+\label{fig:doc2vec_hs}
+\end{figure}
 
 \paragraph{Negative Sampling}
 Negative Sampling generally increased the performance of the model and smaller values actually worked best out of the tested settings from 0 to 6. Choosing the number of negative samples to be 2 resulted in the best performance, but the absolute difference in performance was only about 6\% of achieved MMC score.
@@ -402,28 +446,46 @@ Negative Sampling generally increased the performance of the model and smaller v
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Negative Sampling Value & Trained & Inferred & Trained & Inferred \\
       \midrule
-      0 & 0.422 & 0.322 & 0.251 & 0.310 \\
-      2 & 0.565 & 0.367 & 0.342 & 0.395 \\
-      4 & 0.470 & 0.386 & 0.348 & \textbf{0.398} \\
-      6 & 0.481 & 0.340 & 0.320 & 0.360 \\
+      0 & 0.581 & 0.221 & 0.332 & 0.343 \\
+      2 & 0.555 & 0.338 & 0.363 & \textbf{0.399} \\
+      4 & 0.517 & 0.336 & 0.350 & 0.378 \\
+      6 & 0.489 & 0.317 & 0.338 & 0.363 \\
     \bottomrule
   \end{tabular}
   \caption{Matthews Correlation Coefficient with varying negative sampling value.}
 \label{tab:Paragraph Vector Parameter Results Negative Sampling}
 \end{center}
-% Previous results:
-% PV-DM & 100 & 10 & 0 & 1 & 0 & 0.530 \\
-% PV-DM & 100 & 10 & 1 & 1 & 0 & 0.541 \\
-% PV-DM & 100 & 10 & 2 & 1 & 0 & 0.536 \\
-% PV-DM & 100 & 10 & 3 & 1 & 0 & 0.524 \\
-% PV-DM & 100 & 10 & 4 & 1 & 0 & 0.516 \\
-% PV-DM & 100 & 10 & 5 & 1 & 0 & 0.498 \\
-% PV-DM & 100 & 10 & 6 & 1 & 0 & 0.482 \\
+
 \end{table}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_0}
+      \caption{Negative Sampling Value: 2}
+\label{fig:doc2vec_negative_0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_2}
+    \caption{Negative Sampling Value: 2}
+\label{fig:doc2vec_vector_size_2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_4}
+      \caption{Negative Sampling Value: 4}
+\label{fig:doc2vec_vector_size_4}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_6}
+    \caption{Negative Sampling Value: 6}
+\label{fig:doc2vec_negative_6}
+  \end{subfigure}
+\caption{test}
+\label{fig:doc2vec_negative}
+\end{figure}
 
 \paragraph{Window Size}
 Window sizes of 5, 10 and 15 were experimented with which increase or decrease the width of context the model is trained on. Here a window size of 10 showed best results. It is safe to assume that increasing the window size much further does not lead to any improvement in the model as the correlation with the word should become weaker the farther we move away from it in a document or text.
-
 
 \begin{table}[h]
   \begin{center}
@@ -432,22 +494,40 @@ Window sizes of 5, 10 and 15 were experimented with which increase or decrease t
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Window size & Trained & Inferred & Trained & Inferred \\
       \midrule
-      5 & 0.537 & 0.363 & 0.375 & \textbf{0.412} \\
-      10 & 0.523 & 0.363 & 0.402 & 0.404 \\
-      15 & 0.518 & 0.359 & 0.390 & 0.405 \\
+      5 & 0.534 & 0.358 & 0.380 & \textbf{0.411} \\
+      10 & 0.540 & 0.347 & 0.366 & 0.393 \\
+      15 & 0.536 & 0.317 & 0.339 & 0.373 \\
     \bottomrule
     \end{tabular}
   \caption{Matthews Correlation Coefficient with varying window size.}
 \label{tab:Paragraph Vector Parameter Results Window Size}
 \end{center}
-% Previous results:
-% PV-DM & 100 & 5 & 3 & 1 & 0 & 0.508 \\
-% PV-DM & 100 & 10 & 3 & 1 & 0 & 0.523 \\
-% PV-DM & 100 & 15 & 3 & 1 & 0 & 0.510 \\
 \end{table}
 
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_window_5}
+      \caption{Window Size: 5}
+\label{fig:doc2vec_window_5}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_window_10}
+    \caption{Window Size: 10}
+\label{fig:doc2vec_window_10}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_window_15}
+      \caption{Window Size: 15}
+\label{fig:doc2vec_window_15}
+  \end{subfigure}
+\caption{test}
+\label{fig:window}
+\end{figure}
+
+
 \paragraph{PV-DBOW versus PM-DV}
-Both models for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vec- tor (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
+Both models for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vector (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
 
 \begin{table}[h]
   \begin{center}
@@ -456,17 +536,32 @@ Both models for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namel
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Window size & Trained & Inferred & Trained & Inferred \\
       \midrule
-      PV-BBOW & 0.626 & 0.610 & 0.543 & \textbf{0.580} \\
-      PV-DM & 0.519 & 0.405 & 0.366 & 0.411 \\
+      PV-BBOW & 0.627 & 0.610 & 0.544 & \textbf{0.582} \\
+      PV-DM   & 0.534 & 0.365 & 0.341 & 0.391 \\
     \bottomrule
     \end{tabular}
     \caption{Matthews Correlation Coefficient using the two models proposed in~\cite{Le:2014aa}.}
 \label{tab:Paragraph Vector Parameter Results PV-DBOW versus PM-DV}
 \end{center}
-% Previous results:
-% PV-DM & 100 & 10 & 3 & 1 & 0 & 0.521 \\
-% PV-BBOW & 100 & 10 & 3 & 1 & 0 & 0.667 \\
 \end{table}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_dm_0}
+      \caption{PV-DBOW Model}
+\label{fig:doc2vec_dm_0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_dm_1}
+    \caption{PV-DM Model}
+\label{fig:doc2vec_dm_1}
+    \end{subfigure}
+  \caption{test}
+\label{fig:doc2vec_doc2vec_dm}
+\end{figure}
+
+\todo{show computation time?}
 
 \paragraph{Evaluating the best hyper-parameter setting}
 
@@ -492,6 +587,7 @@ For instance using hierarchical softmax decreases performance when setting all o
 \label{tab:Paragraph Vector Parameter Results Best}
 \end{center}
 \end{table}
+
 
 \subsubsection{Paragraph Vectors using pre-initialized weights *}
 

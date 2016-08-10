@@ -9,6 +9,8 @@
 \subsection{Conclusions}
 \label{subs:conclusions}
 
+- lower vector size and overfitting for continous representations: I would have needed more data => could have trained the model with all ads I have and then only do supervised training on labelled data
+
 \begin{itemize}
   \item As in many areas of machine learning much work has been going into feature engineering but it seems that feature learning, while much more computationally expensive, surpasses the potential of engineered feature representations. Deep learning and meta-learning are mature enough to make up for the gap that has been there for years: To achieve performance that is good enough to make an algorithmic system usable in production, huge amounts of research and engineering went into feature engineering and finally the performance of these methods can be matched and even surpassed by automated methods or learning features. (link here NG's transfer learning work, also Schmidhubers work of meta-learning and on function prediction etc)
   \item There is more need to understand the representations of such feature learning systems though, statistics are quite easy to understand but weights of a neural network don't tell much. There is however potential for learning ``better statistics'' ourselves, e.g. how to efficiently learn a language (by looking at explicit indermediate representations of the states of a NN)
