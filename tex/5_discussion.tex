@@ -27,12 +27,14 @@
 \subsection{Proposal for Future Research}
 \label{sub:further-research}
 
+Make this a structured prediction task: Closer to the original task of finding the semantic structure of a job ad. Predict a whole job, automatically chop it into categories. The knowledge about the context of the sentence carries strong prior knowledge for deciding a sentence category. Using hierarchical models or priors might make a big difference. Also in the sequential modeling setting this will most probably improve performance significantly.
+
 \begin{itemize}
   \item how well do word2vec and comparable methods generalize: e.g.\ initialize a text corpus with word vectors from a bigger corpus (Google News), then train an RNN to predict the next word vector using the small corpus but use the bigger corpus to validate and see if words in bigger corpus can be inferred
   \item trajectory based algorithms (word trajectory through space for a sentence)
   \item Compare with standard benchmarks (TREC etc)
   \item Meta- / Transfer-learning: OCR with simultaneous LM learning (e.g. predict next character)
-  \item Try on Finnish data
+  \item Try on Finnish data !!!
   \item Try longer parts again maybe with better seperation (paragraphs). Doc2vec gets way better accuracy when documents are longer
   \item Doc2Vec, evaluate how close inferred vectors are to trained vectors
   \item combine sequential approaches with representations gained from external knowledge or trained simultaneously (learning embeddings for semantic concepts)
@@ -51,4 +53,8 @@ As shown in \cite{Mikolov:2013ac} and related work that was outlined in Section\
 \begin{itemize}
   \item focusing on both, building a working system (engineering) and exploring new directions (science), is hard
   \item problem framing is hard
+  \item Learned AWS
+  \item building pipelines
+  \item deep learning
+  \item collecting data
 \end{itemize}

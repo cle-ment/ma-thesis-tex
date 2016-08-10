@@ -3,8 +3,8 @@
 
 \clearpage
 
-\section{Background}
-\label{sec:Background}
+\section{Approaches to Text Classification }
+\label{sec:Approaches to Text Classification }
 
 This chapter will provide the necessary background on text classification, assuming the reader is familiar with the basic concepts of Machine Learning and related fields. First the research problem will be defined. Then
 
@@ -19,17 +19,14 @@ Concepts:
 \end{itemize}
 
 
-\subsection{Text classification}
-\label{sub:Text classification}
-
-\subsubsection{Problem Formalism}
+\subsection{Problem Formalism}
 \label{subs:Problem Formalism}
 
 Text classification, also known as text categorization, is the task of predicting a \emph{mapping} $\widetilde{\Phi} : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$ between a set of documents $\mathcal{D}$ and a set of classes or categories $\mathcal{C}$ using a model function $\Phi : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$. This means that were are trying to predict as good as possible the categories that each document belongs into, or vice versa the documents associated with each category. This mapping can thus be represented as a bipartite graph between the sets of documents $\mathcal{D}$ and categories $\mathcal{C}$ as shown in Figure~\ref{fig:bipartite-graph-text-classification}. In this representation vertices in the graph indicate a $True$ value in the mapping, indicating that the document and category are associated with each other, while missing vertices indicate that they are not ($False$).
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.6\textwidth}
   \begin{center}
-    \includegraphics[width=0.5\textwidth]{img/bipartite-graph-text-classification}
+    \includegraphics[width=0.6\textwidth]{img/bipartite-graph-text-classification}
   \end{center}
   \caption{Text classification visualized as a bipartite graph. Here the multi-label setting is shown where no additional constraints are enforced on the problem and hence each document can be assigned to multiple categories}
 \label{fig:bipartite-graph-text-classification}
@@ -42,14 +39,14 @@ Additional constraints can be imposed on the problem to adapt it for different a
 
 In order to measure how successfully we are tackling the problem of text classification we need metrics that measure the effectiveness of our algorithm given a dataset. These will be discussed in Section~\ref{sub:Evaluation}.
 
-\subsubsection{Approaches to Text Classification *}
+% \subsection{Approaches to Text Classification *}
 
 % \subsubsection{Text as a Sequential Signal}
 % \label{par:Text as a Sequential Signal}
 
 % Text can be seen as a sequential signal like any other. Depending on the task at hand the resolution of this signal can be chosen more or less fine-grained, ranging from single characters to words, sentences, paragraphs or whole documents. The more fine-grained we choose our model to operate, the more sequential correlation we usually find, as characters, words tend to follow linguistic rules that constrain in which order combinations they can be used, and even sentences and paragraphs are often semantically related. This observation motivates the use of language models for the text classification task as will be discussed in Section \todo{reference}.
 
-\subsection{Vector Space Models *}
+\subsection{Vector Space Model Approach}
 
 Text documents cannot be used directly as input to a classifier, and are thus usually mapped into a vector space so that each document can be represented by a vector $\mathbf{v} \in \mathbb{R}^d$. This procedure is also known as \emph{Document Indexing}~\cite{Sebastiani:2002aa}.
 
@@ -209,7 +206,7 @@ The term \emph{Bag-of-Means} refers to simply averaging over the word embedding 
 \subparagraph{Paragraph Vectors *}
 In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
 
-\subsection{Classification Algorithms for Vector Space Models *}
+\subsubsection{Classification Algorithms for Vector Space Models *}
 \label{sub:Classification Algorithms for Vector Space Models}
 
 Many classical machine learning algorithms assume data to be in a fixed-dimensional vector format and can thus be applied to a vector space model as described in the previous section. Here a set of well-known algorithms will be briefly introduced, each representing a family of approaches with different model assumptions.
@@ -243,8 +240,8 @@ Many classical machine learning algorithms assume data to be in a fixed-dimensio
 %     \label{fig:Bishop2006aa-p182-ch4-fig4-1}
 % \end{figure}
 
-\subsubsection{Logistic Regression}
-\label{subs:Logistic Regression}
+\paragraph{Logistic Regression}
+\label{par:Logistic Regression}
 
 Logistic Regression belongs to the family of Generalized Linear Models, an extension of linear discriminant functions. Whereas discriminant functions and ordinary linear regression models produce linear decision boundaries in the input space (\emph{linear-response model}), Generalized Linear Models apply a non-linear \emph{link function} or \emph{basis function} to the input, making it possible for the model to achieve non-linear decision boundaries in the original input space while corresponding to a linear decision boundary in the feature space.
 
@@ -284,8 +281,8 @@ From here we can apply an optimization procedure such as gradient descent to arr
 
 \todo{extension to multinomial?}
 
-\subsubsection{Naive Bayes}
-\label{subs:Naive Bayes}
+\paragraph{Naive Bayes}
+\label{par:Naive Bayes}
 
 Naive Bayes is a simple class-conditional generative model which builds on the assumption that all data points are conditionally independent given the classes $\mathcal{C}_n$. For each class $c_j$ we can predict it's probability given an input vector $\mathbf{x}$ as:
 
@@ -303,25 +300,74 @@ We can then choose the class with the highest class probability as our predictio
 
 \todo{more on ML estimation?}
 
-\subsubsection{Decision Trees}
-\label{subs:Decision Trees}
+\paragraph{Decision Trees}
+\label{par:Decision Trees}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.48\textwidth]{img/decision-tree.pdf}
+  \caption{A simple Decision Tree to determine whether a building is located in New York (NY) or San Francisco (SF). Adapted from R2D3's outstanding visual introduction to Machine Learning at \url{http://www.r2d3.us/visual-intro-to-machine-learning-part-1/}}
+\label{fig:decision-tree}
+\end{wrapfigure}
+
+A simple but widely used classification as well as regression method are Decision Trees which work by recursively partitioning the input space into dichotomous subregions, producing a binary decision tree. At inference time the resulting tree can then be used to produce an output by navigating through a path from its root to a leaf, answering a binary questions at each node to determine which child node to query next. Figure~\ref{fig:decision-tree} shows the visualization of an exemplified such a tree. Every node represents a threshold in the input space that  the input data is compared against, corresponding to a decision such as ``Is the elevation of this building higher than or equal to 91.9 feet?''. If the answer is ``Yes'' the left child node is queried next, otherwise the right. This procedure is repeated until a leaf with a final answer is reached.
+
+The technique was first introduced by~\cite{Breiman:1984ab} under the term \emph{Classification And Regression Tree (CART)} but exists in many variants. Learning such a model involves specifying the structure of the tree, including which input variable to query at each node in the graph and what each of the nodes' threshold values are. Since commonly it is computationally infeasible to generate and evaluate all possible decision trees for a given problem, a greedy procedure is usually chosen. We start with determining a first split in the data that represents the root node and grow the tree one node at a time, each node in the tree being determined by choosing splits that minimize an error measure.
+
+Let $p_{\tau k}$ be the proportion of data points in region $R_{\tau}$ that are assigned to class $k$. Then we define the error as the negative cross-entropy:
+
+\begin{equation}
+  Q_{\tau}(T) = \sum_{k=1}^K p_{\tau k} \ln p_{\tau k}
+\end{equation}
+
+A common alternative for the classification error is the \emph{Gini index}:
+
+\begin{equation}
+  Q_{\tau}(T) = \sum_{k=1}^K p_{\tau k} (1 - p_{\tau k})
+\end{equation}
+
+Both measures vanish for $p_{\tau k} = 0$ and $p_{\tau k} = 1$ and are maximal at $p_{\tau k} = 0.5$, thus rewarding regions with a high proportion of data points assigned to one class. As~\cite[Chapter 14.4, p.~664]{Bishop:2006aa} notices \textquote{cross entropy and the Gini index are better measures than misclassification rate for growing the trees because they are more sensitive to the node probabilities. Also, unlike misclassification rate, they are differentiable and hence better suited to gradient based optimization methods}.
+
+Decision trees are often chosen because they introduces next to no inductive model bias, but one has to be aware that this leads to high variance due to the Bias-Variance Dilemma. The algorithm is this prone to overfitting which is often countered by pruning, using a criterion that balances error with model complexity, such as:
+
+\begin{equation}
+  C(T) = \sum_{\tau=1}^{|T|} Q_{\tau}(T) + \lambda |T|
+\end{equation}
+
+Where $\lambda$ is a regularization parameter. Pruning happens after training a full tree as evidence shows that sometimes several splits occur that do not significantly reduce the error, followed by one that does~\cite[Chapter 14.4, p.~664]{Bishop:2006aa}.
+
+\paragraph{Random Forests}
+\label{par:Random Forests}
+
+The Random Forests learning algorithm is an \emph{ensemble method} introduced by~\cite{Breiman:aa}. It is based on the concept of Decision Trees as explained above, but instead of a single decision tree a set of trees (a forest) is grown on sets of bootstrapped samples from the input space. Specifically the algorithm grows $b = 1 \ldots B$ random trees by repeating the following steps for $b$ iterations:
+
+\begin{enumerate}
+  \item A \emph{bootstrapped sample} $S_i$ of data points is generated by drawing samples uniformly at random with replacement from the original data $D$. The sample is of smaller size than the dataset and is thus based on a subset of the input data. Notice that data can be sampled multiple times.
+  \item A decision tree $T_i$ is trained on the bootstrapped data sample and is usually pruned at a certain limit of nodes.
+\end{enumerate}
+
+Then the resulting forest of trees ${T_1, \ldots, T_b}$ is used as an ensemble of classifiers using a majority vote over the predictions:
+
+\begin{equation}
+  C(X) = \frac{1}{B} \argmax_i \sum_{b = 1}^B \mathcal{I}(y_{T_b} = i)
+\end{equation}
+
+Where $\mathcal{I}(\cdot)$ is the indicator function. Other voting schemes are of course possible as well.
+
+\paragraph{K Nearest Neighbors}
+\label{par:K Nearest Neighbors}
+
+Example-Based Classifiers
 
 
+\paragraph{Support Vector Machines}
+\label{par:Support Vector Machines}
 
-\subsubsection{Example-Based Classifiers}
-\label{subs:Example-Based Classifiers}
+\paragraph{Neural Networks}
+\label{par:Neural Networks}
 
-\subsubsection{Ensemble Methods}
-\label{subs:Ensemble Methods}
-
-\subsubsection{Support Vector Machines}
-\label{subs:Support Vector Machines}
-
-\subsubsection{Neural Networks}
-\label{subs:Neural Networks}
-
-\subsection{Sequential Text Classification}
-\label{sub:Sequential Text Classification}
+\subsection{Sequential Modeling Approach}
+\label{sub:Sequential Modeling Approach}
 
 \cite{Gers:1999aa} - Learning to forget: continual prediction with LSTM.
 
