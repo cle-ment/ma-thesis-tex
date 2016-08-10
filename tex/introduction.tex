@@ -19,9 +19,16 @@ Not surprisingly in the field of Artificial Intelligence (AI) building computer 
 This thesis explores the specific task of predicting the semantic structure of job advertisements as a specific example of such a language-based task that turns out to be difficult even for humans to do.
 The work was done in close collaboration with the Helsinki-based media and learning company \emph{Sanoma}\footnote{\textquote{Sanoma is a front running consumer media and learning company in Europe. In Finland and the Netherlands we are the market leading media company with a broad presence across multiple platforms. In Belgium we are among the Top 5. Our main markets in learning are Belgium, Finland, the Netherlands, Poland and Sweden. We entertain, inform, educate and inspire millions of people every day. We employ some 7,500 professional employees operating in Europe.}, Source: \url{http://www.sanoma.com/en/who-we-are}, visited 06.06.2016} and the research motivation was thus constantly tied back into real world challenges in the scope of Sanoma's business needs.
 
+\subsection{Problem Statement}
+
+The problem addressed during with this thesis to better understand the structure of job advertisements. In particular job postings typically consist of several parts with a certain function or theme: Usually the company is introduced, the job is described with it's tasks and responsibilities, the requirements for the job are listed, then benefits and offerings by the company are named and the reader is asked to apply in a specified way he or she is interested.
+Almost all of the text\footnote{Only 4\% of the sentences collected for evaluating the final experiments in this thesis were sorted into the category \emph{other} while the rest falls into either of the categories described. This is described in more detail in Section }\todo{link section} of a job description falls into these categories and the task can thus be posed as predicting a category for each sentence in a job advertisement, that corresponds with this sentence belonging to one of the job ads' parts as described above.
+This is a challenging problem in itself but can further be used to extract certain functional parts of each job ad, to study a possible correlation between structural patterns and the reach and success of an ad and so forth. The problem therefore can be labelled as \emph{Text Categorization} or \emph{Text Classification} as referred to in the scientific literature.
 
 
 \subsection{Motivation}
+
+% -- need statement
 
 Today's media and education, the basis of Sanoma's core businesses, are undergoing drastic and fundamental transformations that are currently disrupting whole industries.
 
@@ -30,13 +37,12 @@ Usage of digital media as a source of information has long surpassed print media
 Sanoma provides a recruitment platform named \emph{Oikotie Työpaikat}. The service is in direct competition several other international players in the recruitment industry. Through this and other services Sanoma's collects large amounts of user-generated data, offering the potential to be leveraged for machine learning solutions to provide value for their users and innovate and enrich the company's offerings.
 This was the company's initial motivation for this thesis project --- To explore ways to leverage user-generated data to potentially.
 
+% -- research motivation
+
+% -- personal motivation
+
 From my personal perspective this offered many interesting research possibilities while at the same time being relevant for a real business. Natural Language Processing and Computer Linguistics had always been of strong interest to me for the complex nature and yet high interpretability of problems and their proximity and relatedness to progress in universal machine intelligence. This presented me with the challenge position to balance pursuing research objectives and yet exploring potential business and user needs, learn on new fronts and deepen my knowledge in others as well as combining my experience in Product Innovation, thus made for a great project to mark the competition of my studies as a Master's student.
 
-\subsection{Problem Statement}
-
-The problem addressed during with this thesis to better understand the structure of job advertisements. In particular job postings typically consist of several parts with a certain function or theme: Usually the company is introduced, the job is described with it's tasks and responsibilities, the requirements for the job are listed, then benefits and offerings by the company are named and the reader is asked to apply in a specified way he or she is interested.
-Almost all of the text\footnote{Only 4\% of the sentences collected for evaluating the final experiments in this thesis were sorted into the category \emph{other} while the rest falls into either of the categories described. This is described in more detail in Section }\todo{link section} of a job description falls into these categories and the task can thus be posed as predicting a category for each sentence in a job advertisement, that corresponds with this sentence belonging to one of the job ads' parts as described above.
-This is a challenging problem in itself but can further be used to extract certain functional parts of each job ad, to study a possible correlation between structural patterns and the reach and success of an ad and so forth. The problem therefore can be labelled as \emph{Text Categorization} or \emph{Text Classification} as referred to in the scientific literature.
 
 \subsection{Related work *}
 
@@ -112,22 +118,56 @@ Machine learning approaches have since been developed in countless variations. M
 % \todo{explicit vs implicit feature representation}
 
 
-\subsection{Research Objectives and Scope *}
+\subsection{Research Scope and Objectives}
+\label{sub:Research Objectives}
+
+This thesis was initiated as a research project for Sanoma's recruitment platform \emph{Oikotie Työpaikat} with the intention of exploring interesting and novel ways to use the various data generated through the use of this service. The research objectives were stated as follows:
+
+\blockquote{Find an application of data mining / machine learning to the customer-generated data on the recruitment platform Oikotie Työpaikat which has the potential of bringing value to the user of the platform and is technically feasible in the scope of a master’s thesis. Further define and investigate a research problem that is essential to this application by researching literature and previous work on similar problems trying different approaches based on the literature using the results and learnings to create an improved approach.}
+
+% % old research objective ideas
+% - study vector space models and new approaches
+% - study sequential and multi-task approaches
 
 
-- study vector space models and new approaches
-- study sequential and multi-task approaches
-- mu
+\subsection{Methodological Approach}
+\label{sub:Methodological Approach}
 
-\subsection{Approach *}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/double-diamond.pdf}
+    \caption{Design process for this thesis, adapted from the \emph{Double Diamond Process} developed by the British Design Council (see~\cite{Council:2007aa})}
+\label{fig:double-diamond}
+\end{figure}
 
-asd
+The design and development process of the project was adapted from the double diamond approach that was developed by the by the British Design Council in 2005 (see ~\cite{Council:2007aa}). A design process is \textquote{the specific series of events, actions or methods by which a procedure or set of procedures are followed, in order to achieve an intended purpose, goal or outcome.}~\cite{Best:2006aa}.
+
+\paragraph{Discover}
+\label{par:Discover}
+
+In the first stage of the project an initial idea, motivation or inspiration is given.
+
+- prototyping
+- interviews
+- market research
+-
+
+approach to experiemtns 
+
+
 
 \subsection{Results *}
 
 asdasd
 
 \subsection{Structure of the thesis @}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/double-diamond-with-structure}
+    \caption{Structure of this thesis mapped to the \emph{Double Diamond Process} design process }
+\label{fig:double-diamond-with-structure}
+\end{figure}
 
 The first section of this thesis gave a brief introduction into the topic of this work, outlined the motivation and the research problem approached and showed the research objectives, the scope of the thesis as well as related work.
 

@@ -11,6 +11,17 @@ This chapter will outline how with initial objectives and how I went all the way
 
 
 
+- initial exploration of topics
+- topic decision for structured text prediction
+- design choice for fixing chunks (making it a supervised multi-class prediction)
+- explorative data collection
+- learnings and design choice for 6 mutually exclusive labels + sentence as atomic unit => final problem setting
+- dataset collection through crowdflower with iterations
+
+
+
+
+
 % - brief
 % - given data
 % - interest?
@@ -31,11 +42,28 @@ This chapter will outline how with initial objectives and how I went all the way
 
 
 
-\subsection{Approach}
-\label{sub:Approach}
+\subsection{Discover: Exploring the Problem Scope}
+\label{sub:Discover}
 
-\subsection{data sections}
-\label{sub:data sections}
+- early prototypes
+- interviews
+- problem mapping
+- data exploration
+
+\subsection{Define: Framing the Problem}
+\label{sub:Discover}
+
+\subsubsection{Structure inference}
+\label{subs:Structure inference}
+
+\subsubsection{Multi-class Paragraph Classification}
+\label{subs:Multi-class Paragraph Classification}
+
+\subsubsection{Multi-label Sentence Classification}
+\label{subs:Multi-class Paragraph Classification}
+
+% ----------- Data Sections
+
 
 % # personnel selection
 % \cite{Chien:2008aa} - improving personnel selection with data mining
@@ -55,7 +83,8 @@ This chapter will outline how with initial objectives and how I went all the way
 % \cite{Luhn:1958aa} - A Business Intelligence System
 
 
-\subsubsection{Explorative Paragraph Dataset1}
+% ----------- Explorative Paragraph Dataset1
+
 
 \todo{Picture of software setup?}
 
@@ -102,7 +131,7 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
 \todo{show T-SNE embeddings of doc2vec vectors}
 
 
-\subsection{Dataset 2}
+% ----------- Dataset2
 
 \begin{figure}[h]
  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
