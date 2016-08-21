@@ -6,3 +6,46 @@
 
 \section{Experiments}
 \label{sec:Experiments}
+
+
+\todo{Doc2Vec model is evaluated in 2 ways (normal and trained on inferred vectors)}
+
+\subsection{Text Classification with Vector Space Models}
+\label{Text Classification with Vector Space Models}
+
+As Section~\ref{sec:vector-space-models} explains, a popular way to approach text classification and other tasks in natural language processing is to build a language model by creating explicit representations of the objects or entities to be processed in a vector space. Such vectors can be used as features for a learning algorithm. Depending on the representation they can also carry further meaning, such as to encode notions of similarity of associativity between the objects.
+
+In order to determine effective vector space representations for the task of sentence classification, a set of experiments was carried out to study and compare different approaches. Each method was studied with regards to the effect of its hyper-parameters on effectiveness when producing an input space to different classifiers, but also time and memory requirements at training and inference time are taken into account \todo{actually discuss time and memory requirements}.
+
+In order to compare the effectiveness for the sentence classification task as discussed in Section\todo{reference section here} each labelled document was transformed into a vector space representation using the different methods and then used for classification with a simple logistic regression classifier (\todo{link to logistic regression classifier explanation here}). Performance was then compared with regards to Matthews Correlation Coefficient for K classes (Section~\ref{par:Matthews Correlation Coefficient for K classes}) and the Accuracy \todo{link accuracy?} of the classifier.
+
+\paragraph{Baselines: Uniform and Stratified Guessing}
+\label{par:Baselines: Uniform and Stratified Guessing}
+
+As a baseline for comparing the performance of classification two different guessing strategies were used, namely uniform and stratified guessing.
+Uniform guessing refers to a predictor that samples from the given classes assuming a uniform distribution whereas stratified guessing takes the label distribution in the data as the underlying probability distribution.
+Then both methods just sample from these distributions to produce ``predictions'', while ignoring the actual input data.
+
+The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in Section~\ref{subs:n-gram-language-models}. As mentioned, in essence this type of model relies on simple statistics which makes for straightforward computation but at the same time comes at cost of expressiveness, especially in terms of temporal dependencies between words.
+
+\paragraph{N-gram Models}
+\label{par:N-gram Models}
+
+As N-grams models come in a variety of variants the most important ones were used as hyper-parameters to the model and a grid search was carried out over a wide range of combinations over these. The specific hyper-parameter settings are listed in Table~\ref{tab:ngram-parameters}. The grid search was optimized with regards to \emph{Matthews Correlation Coefficient} (see Section~\ref{par:Matthews Correlation Coefficient for K classes}) using 5-fold cross-validated with three standard classifiers: Logistic Regression and Naive Bayes and SVM.
+
+\paragraph{Bag-of-Means: An Averaged Word2Vec Model}
+\label{par:Bag-of-Means: An Averaged Word2Vec Model}
+
+Next a Bag-of-Means model as described in Section~\ref{subp:Bag-of-Means} was evaluated with the same set of classifiers. The model was evaluated on the same test and training data split as used for the N-gram model above. As a basis the pre-trained word-vectors from the Google News dataset\footnote{The dataset contains contains 300-dimensional vectors for 3 million words and phrases. The phrases were obtained using a simple data-driven approach described in~\cite{Mikolov:2013ab}. The dataset can be obtained on the following website: \url{https://code.google.com/archive/p/word2vec/}} were used and then for each document all word vectors were average to obtain the document vector.
+
+\paragraph{Paragraph Vectors using Distributed Representations}
+\label{par:Paragraph Vectors using Distributed Representations}
+
+Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation.
+
+\paragraph{Classification Algorithms for Vector Space Models}
+\label{par:Classification Algorithms for Vector Space Models}
+
+\subsection{Sequential Text Classification *}
+
+\subsection{Comparison of Approaches *}

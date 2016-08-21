@@ -3,8 +3,8 @@
 
 \clearpage
 
-\section{Approaches}
-\label{sec:Approaches}
+\section{Methods for Text Classification}
+\label{sec:Methods for Text Classification}
 
 This chapter will provide the necessary background on text classification, assuming the reader is familiar with the basic concepts of Machine Learning and related fields. First the research problem will be defined. Then
 
@@ -18,7 +18,12 @@ Concepts:
   \item information theory
 \end{itemize}
 
+\subsection{Overview}
+\label{sub:Overview}
 
+
+% - vector space models: same principle as feature space construction in other typical ML pipelines
+% - sequential approach more direct?
 
 % \subsection{Approaches to Text Classification *}
 
@@ -27,7 +32,7 @@ Concepts:
 
 % Text can be seen as a sequential signal like any other. Depending on the task at hand the resolution of this signal can be chosen more or less fine-grained, ranging from single characters to words, sentences, paragraphs or whole documents. The more fine-grained we choose our model to operate, the more sequential correlation we usually find, as characters, words tend to follow linguistic rules that constrain in which order combinations they can be used, and even sentences and paragraphs are often semantically related. This observation motivates the use of language models for the text classification task as will be discussed in Section \todo{reference}.
 
-\subsection{Text Classification with Vector Space Models}
+\subsection{Vector Space Models}
 
 Text documents cannot be used directly as input to a classifier, and are thus usually mapped into a vector space so that each document can be represented by a vector $\mathbf{v} \in \mathbb{R}^d$. This procedure is also known as \emph{Document Indexing}~\cite{Sebastiani:2002aa}.
 
@@ -94,8 +99,8 @@ There are, of course, various other variants and modifications to the N-gram mod
 
 Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}. As~\cite{Mikolov:2012aa} points out further \textquote{[the] most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs [Language Models] is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
 
-\subsubsection{Language Models using Distributed Representations @}
-\label{subs:Language Models using Distributed Representations}
+\subsubsection{Distributed Representations}
+\label{subs:Distributed Representations}
 
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -187,10 +192,10 @@ The term \emph{Bag-of-Means} refers to simply averaging over the word embedding 
 \subparagraph{Paragraph Vectors *}
 In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
 
-\subsubsection{Classification Algorithms for Vector Space Models *}
-\label{sub:Classification Algorithms for Vector Space Models}
+\subsection{Text Classification with Vector Space Models}
+\label{sub:Text Classification with Vector Space Models}
 
-Many classical machine learning algorithms assume data to be in a fixed-dimensional vector format and can thus be applied to a vector space model as described in the previous section. Here a set of well-known algorithms will be briefly introduced, each representing a family of approaches with different model assumptions.
+Many classical machine learning algorithms work on data in a fixed-dimensional vector format and can thus be applied to a vector space model as described in the previous section. Here a set of well-known algorithms will be briefly introduced, each representing a family of approaches with different model assumptions. It should be pointed out that there exist a plethora of other models and algorithms that can be used, the ones chosen here though are widely considered standard methods and have proven successfully in the past for a wide range of problems.
 
 % \paragraph{Classification Schemes}
 % \label{par:Classification Schemes}
@@ -221,12 +226,12 @@ Many classical machine learning algorithms assume data to be in a fixed-dimensio
 %     \label{fig:Bishop2006aa-p182-ch4-fig4-1}
 % \end{figure}
 
-\paragraph{Logistic Regression}
-\label{par:Logistic Regression}
+\subsubsection{Generalized Linear Models}
+\label{subs:Generalized Linear Modelsl}
 
-Logistic Regression belongs to the family of Generalized Linear Models, an extension of linear discriminant functions. Whereas discriminant functions and ordinary linear regression models produce linear decision boundaries in the input space (\emph{linear-response model}), Generalized Linear Models apply a non-linear \emph{link function} or \emph{basis function} to the input, making it possible for the model to achieve non-linear decision boundaries in the original input space while corresponding to a linear decision boundary in the feature space.
+Generalized Linear Models are an extension of linear discriminant functions. Whereas discriminant functions and ordinary linear regression models produce linear decision boundaries in the input space (\emph{linear-response model}), Generalized Linear Models apply a non-linear \emph{link function} or \emph{basis function} to the input, making it possible for the model to achieve non-linear decision boundaries in the original input space while corresponding to a linear decision boundary in the feature space.
 
-Logistic Regression uses the \emph{logistic sigmoid} function as a basis function defined by:
+The most prominent algorithm in this class is \emph{Logistic Regression} which uses the \emph{logistic sigmoid} function as a basis function:
 
 \begin{equation}
   \sigma (a) = \frac{1}{1 + \exp(-a)}
@@ -262,10 +267,24 @@ From here we can apply an optimization procedure such as gradient descent to arr
 
 \todo{extension to multinomial?}
 
-\paragraph{Naive Bayes}
-\label{par:Naive Bayes}
+\subsubsection{Bayesian Classifiers}
+\label{subs:Bayesian Classifiers}
 
-Naive Bayes is a simple class-conditional generative model which builds on the assumption that all data points are conditionally independent given the classes $\mathcal{C}_n$. For each class $c_j$ we can predict it's probability given an input vector $\mathbf{x}$ as:
+Bayesian Classifiers are a family of probabilistic models derived from Bayes' Theorem, which itself is a simple application of the rule conditional probability:
+
+\begin{equation}
+  p(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}
+\end{equation}
+
+Where $P(A)$ is the probability of A and $P(A \mid B)$ conditional probability of A given B. In the Bayesian interpretation probabilities represent a degree of belief that changes under the observation of evidence. The following form is usually referred to as Bayes' rule and expresses this interpretation:
+
+\begin{equation}
+  \underbrace{p(A \mid B)}_{posterior}  \propto \underbrace{P(B \mid A)}_{likelihood} \underbrace{P(A)}_{prior}
+\end{equation}
+
+where $P(B)$ is marginalized out as a normalization constant of the probabilities. This simple rule forms the basis of a whole subfield of Bayesian Inference (see e.g.\ the textbook~\cite{Barber:2012aa} for a good coverage of the topic).
+
+The most known Bayesian classification algorithm is the \emph{Naive Bayes} classifier, a simple class-conditional generative model which builds on the assumption that all data points are conditionally independent given the classes $\mathcal{C}_n$. For each class $c_j$ we can predict it's probability given an input vector $\mathbf{x}$ as:
 
 \begin{equation}
   p(\mathbf{x}) = p(c_j) \prod_{i=D}^D p(x_i \mid c_j)
@@ -277,21 +296,22 @@ We can then use Bayes' rule to form a classifier for each class:
   p(c_j \mid \mathbf{x}) = \frac{p(\mathbf{x} \mid c_j ) p(c_j)}{ p (\mathbf{x})} = \frac{p(\mathbf{x} \mid c_j ) p(c_j)}{ \sum_c p(\mathbf{x \mid c} p(c)) }
 \end{equation}
 
-We can then choose the class with the highest class probability as our prediction. Again there are numerous variants and related models to Naive Bayes and it can be regarded as a simple \emph{graphical model}, a family of techniques which are covered e.g. in~\cite{Barber:2012aa} or~\cite{Bishop:2006aa}.
+We can then choose the class with the highest class probability as our prediction. Again there are numerous variants and related models to Naive Bayes and it can be regarded as a simple \emph{graphical model}, a family of techniques which are covered e.g.\ in~\cite{Barber:2012aa} or~\cite{Bishop:2006aa}.
 
 \todo{more on ML estimation?}
 
-\paragraph{Decision Trees}
-\label{par:Decision Trees}
+\subsubsection{Tree Based Methods}
+\label{subs:Tree Based Methods}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \centering
   \includegraphics[width=0.48\textwidth]{img/decision-tree.pdf}
-  \caption{A simple Decision Tree to determine whether a building is located in New York (NY) or San Francisco (SF). Adapted from R2D3's outstanding visual introduction to Machine Learning at \url{http://www.r2d3.us/visual-intro-to-machine-learning-part-1/}}
+  \caption{A simple Decision Tree to determine whether a building is located in New York (NY) or San Francisco (SF).}
 \label{fig:decision-tree}
 \end{wrapfigure}
 
-A simple but widely used classification as well as regression method are Decision Trees which work by recursively partitioning the input space into dichotomous subregions, producing a binary decision tree. At inference time the resulting tree can then be used to produce an output by navigating through a path from its root to a leaf, answering a binary questions at each node to determine which child node to query next. Figure~\ref{fig:decision-tree} shows the visualization of an exemplified such a tree. Every node represents a threshold in the input space that  the input data is compared against, corresponding to a decision such as ``Is the elevation of this building higher than or equal to 91.9 feet?''. If the answer is ``Yes'' the left child node is queried next, otherwise the right. This procedure is repeated until a leaf with a final answer is reached.
+A simple but widely used classification as well as regression method are \emph{Decision Trees} which work by recursively partitioning the input space into dichotomous subregions, producing a binary decision tree. At inference time the resulting tree can then be used to produce an output by navigating through a path from its root to a leaf, answering a binary questions at each node to determine which child node to query next. Figure~\ref{fig:decision-tree} shows the visualization of an exemplified such a tree\footnote{Adapted from R2D3's great visual introduction to Machine Learning at \url{http://www.r2d3.us/visual-intro-to-machine-learning-part-1/}}.
+Every node represents a threshold in the input space that  the input data is compared against, corresponding to a decision such as ``Is the elevation of this building's elevation higher than or equal to 91.9 feet?''. If the answer is ``Yes'' the left child node is queried next, otherwise the right. This procedure is repeated until a leaf with a final answer is reached.
 
 The technique was first introduced by~\cite{Breiman:1984ab} under the term \emph{Classification And Regression Tree (CART)} but exists in many variants. Learning such a model involves specifying the structure of the tree, including which input variable to query at each node in the graph and what each of the nodes' threshold values are. Since commonly it is computationally infeasible to generate and evaluate all possible decision trees for a given problem, a greedy procedure is usually chosen. We start with determining a first split in the data that represents the root node and grow the tree one node at a time, each node in the tree being determined by choosing splits that minimize an error measure.
 
@@ -315,12 +335,14 @@ Decision trees are often chosen because they introduces next to no inductive mod
   C(T) = \sum_{\tau=1}^{|T|} Q_{\tau}(T) + \lambda |T|
 \end{equation}
 
-Where $\lambda$ is a regularization parameter. Pruning happens after training a full tree as evidence shows that sometimes several splits occur that do not significantly reduce the error, followed by one that does~\cite[Chapter 14.4, p.~664]{Bishop:2006aa}.
+Where $\lambda$ is a regularization parameter. Pruning of the tree happens after training a full tree as evidence shows that sometimes several splits occur that do not significantly reduce the error, followed by one that does~\cite[Chapter 14.4, p.~664]{Bishop:2006aa}.
 
-\paragraph{Random Forests}
-\label{par:Random Forests}
+\subsubsection{Ensemble Methods}
+\label{subs:Ensemble Methods}
 
-The Random Forests learning algorithm is an \emph{ensemble method} introduced by~\cite{Breiman:aa}. It is based on the concept of Decision Trees as explained above, but instead of a single decision tree a set of trees (a forest) is grown on sets of bootstrapped samples from the input space. Specifically the algorithm grows $b = 1 \ldots B$ random trees by repeating the following steps for $b$ iterations:
+Another approach to machine learning algorithms are so-called \glspl{Ensemble Method}. These methods use different strategies to combine a set of classifiers, often employing techniques of \glspl{Randomized Algorithm}. There is a variety of such algorithms including \gls{Bagging}, \gls{Boosting} and \gls{Voting} methods which are covered in most of the popular introductory books to machine learning, e.g.~\cite{Bishop:2006aa}.
+
+The Random Forests learning algorithm is a popular \gls{Ensemble Method} introduced by~\cite{Breiman:aa}. It is based on the concept of Decision Trees explained above, but instead of a single decision tree a set of trees, i.e.\ a forest, is grown on sets of bootstrapped samples from the input space. Specifically the algorithm grows $b = 1 \ldots B$ random trees by repeating the following steps for $b$ iterations:
 
 \begin{enumerate}
   \item A \emph{bootstrapped sample} $S_i$ of data points is generated by drawing samples uniformly at random with replacement from the original data $D$. The sample is of smaller size than the dataset and is thus based on a subset of the input data. Notice that data can be sampled multiple times.
@@ -333,27 +355,32 @@ Then the resulting forest of trees ${T_1, \ldots, T_b}$ is used as an ensemble o
   C(X) = \frac{1}{B} \argmax_i \sum_{b = 1}^B \mathcal{I}(y_{T_b} = i)
 \end{equation}
 
-Where $\mathcal{I}(\cdot)$ is the indicator function. Other voting schemes are of course possible as well.
+Where $\mathcal{I}(\cdot)$ is the indicator function. Other voting schemes have been proposed as well \todo{such as \ldots}.
 
-\paragraph{K Nearest Neighbors}
-\label{par:K Nearest Neighbors}
+\subsubsection{Instance-based Methods}
+\label{subs:Instance-based Methods}
 
-Example-Based Classifiers
+Another common class of learning algorithms are \emph{instance-based learning methods}, also known as \emph{example-based methods} or \emph{memory-based learning methods}. These methods directly use the given training examples and comparing new unseen examples with the training data at inference time, thus constructing the hypothesis directly from the data.
 
+One of the most prominent instance-based classification methods is the \gls{knn} algorithm which simply makes a class prediction based on the majority class amongst its $k$ nearest neighbors in the input space.
 
-\paragraph{Support Vector Machines}
-\label{par:Support Vector Machines}
+The choice for the parameter $k$ depends on the type of problem and is often determined empirically via hyper-parameter optimization\todo{glossary?} or based on heuristics. The \gls{knn} algorithm is highly prone to the curse of dimensionality as when a metric such as the Euclidean Distance is used as a metric for the \gls{knn} algorithm to determine the nearest neighbors to the query vector there is little difference in the distance between samples in very high-dimensional spaces. Thus often \gls{Feature Extraction} or \gls{Dimensionality Reduction} techniques are employed before applying the \gls{knn} algorithm.
 
-\paragraph{Neural Networks}
-\label{par:Neural Networks}
+\subsubsection{Kernel Methods}
+\label{subs:Kernel Methods}
+
+Kernel Methods can be seen as a set of instance-based methods which are explained in Section~\ref{par:Instance-based Methods}. The best known member of is the \gls{svm}.
+
+\subsubsection{Neural Networks}
+\label{subs:Neural Networks}
 
 \subsection{Sequential Text Classification}
 \label{sub:Sequential Modeling Approach}
 
-\cite{Gers:1999aa} - Learning to forget: continual prediction with LSTM.
+\cite{Gers:1999aa} --- Learning to forget: continual prediction with LSTM.
 
-\subsection{Evaluation}
-\label{sub:Evaluation}
+\subsection{Evaluation of Text Classification Methods}
+\label{sub:Evaluation of Text Classification Methods}
 
 In this section the basics of evaluating classification models for the given problem will be laid out. First the different evaluation schemes and their advantages or disadvantages are explained in the dichotomous case where only one class is to be predicted in terms of being active or not. Then these are generalized to the multi-label case where $K$ mutually exclusive classes are given. The last section extends this concept again towards so-called multi-label multi-output classification where several output labels can be predicted at the same time.
 
@@ -373,7 +400,7 @@ To evaluate such a predictor it is useful to present the results in form of a co
       Predicted Negatives (PN) & False Negatives (FN) & True Negatives (TN) \\
     \end{tabular}
   \caption{Contingency table for binary classification}
-  \label{table:contingency-table-2}
+\label{table:contingency-table-2}
   \end{center}
 \end{table}
 
@@ -473,14 +500,15 @@ In the case of binary classification we can rewrite the cross-entropy into the f
   E(\mathbf{w}) =  -\log p(\mathbf{T} \mid \mathbf{w}) = - \sum_{n=1}^N {t_n \log y_n + (1 - t_n) \log (1 - y_n)}
 \end{equation}
 
-where $y_n$ denotes $y(x_n, \mathbf{w})$, the predicted output for datapoint $x_n$, $t_n$ denotes the $n$-th true label and $\mathbf{w}$ denotes the trained weight vector of the model, as in~\cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa}. This form is also known as the \emph{log loss} and it is commonly used with generalized linear models and neural networks (see e.g.~\cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa} and~\cite[Chapter 10.7, p.~251 ]{Alpaydin:2014aa}).
+where $y_n$ denotes $y(x_n, \mathbf{w})$, the predicted output for datapoint $x_n$, $t_n$ denotes the $n$-th true label and $\mathbf{w}$ denotes the trained weight vector of the model, as in~\cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa}. This form is also known as the \emph{log loss} and it is commonly used with generalized linear models and \glspl{ann} (see e.g.~\cite[Chapter 4.3.2, p.~205 ]{Bishop:2006aa} and~\cite[Chapter 10.7, p.~251 ]{Alpaydin:2014aa}).
 
-Thus, cross-entropy is a measure which is well-motivated from a information-theoretic perspective. On the downside it does not have an upper bound which makes it hard to interpret, as compared other scores that fall into [0, 1] or similar intervals.
+Thus, cross-entropy is a measure which is well-motivated from a information-theoretic perspective. On the downside it does not have an upper bound which makes it hard to interpret, as compared other scores that fall into $[0, 1]$ or similar intervals.
 
 \subsubsection{Multi-class Classification}
 \label{subs:Multi-class Classification}
 
-Multi-class classification refers to a generalization of the binary case where we aim to predict for each datapoint $x_i$ one of $K$ labels for the classes at hand. The target space $\mathcal{Y}$ can be represented with each $y_i \in \{ 0,1 \}^k$, known as \emph{one-hot encoding}, where each target is $c$-dimensional vector. Alternatively we can encode the targets as categorical variables $y_i \in {c_1, c_2, \ldots, c_k}$. The contingency table from the binary case can be extended as in table~\ref{table:contingency-table-k}, which is then commonly known as \emph{Confusion Matrix} or \emph{Error Matrix} \todo{citation for Confusion Matrix?}.
+Multi-class classification refers to a generalization of the binary case where we aim to predict for each datapoint $wowx_i$ one of $K$ labels for the classes at hand. The target space $\mathcal{Y}$ can be represented with each $y_i \in \{ 0,1 \}^k$, known as \emph{one-hot encoding}, where each target is $c$-dimensional vector. Alternatively we can encode the targets as categorical variables $y_i \in {c_1, c_2, \ldots, c_k}$. The contingency table from the binary case can be extended as in table~\ref{table:contingency-table-k}, which is then commonly known as
+\gls{confusion matrix} or \gls{error matrix}.
 
 \begin{center}
   \begin{table}[h]
@@ -559,10 +587,10 @@ where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of ta
 \subsubsection{Multi-label Classification *}
 \label{subs:Multi-label Classification}
 
-\subsection{Visualization}
-
-\subsubsection{PCA}
-\label{sub:PCA}
-
-\subsubsection{t-SNE}
-\label{sub:t-SNE}
+% \subsection{Visualization}
+%
+% \subsubsection{PCA}
+% \label{sub:PCA}
+%
+% \subsubsection{t-SNE}
+% \label{sub:t-SNE}

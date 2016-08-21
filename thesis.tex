@@ -14,6 +14,10 @@
 
 % \includeonly{./tex/preamble, ./tex/background }
 
+% Load Glossary and Acronyms
+\include{./tex/_glossary}
+\glsaddall % add all glossary entries, even if not used.
+
 \begin{document}
 
 \include{./tex/preamble}
@@ -29,13 +33,12 @@
 \include{./tex/introduction}
 \include{./tex/exploration}
 \include{./tex/problem_definition}
-\include{./tex/approaches(background)}
+\include{./tex/approaches}
 \include{./tex/experiments}
 \include{./tex/results}
 \include{./tex/discussion}
 
 %% Bibliography
-
 \clearpage
 %% The \phantomsection command is nessesary for hyperref to jump to the
 %% correct page, in other words it puts a hyper marker on the page.
@@ -46,8 +49,17 @@
 \bibliographystyle{apalike}
 %\nocite{*}
 
+%% Glossary and Acronyms
+
+\clearpage
+
+
+\printglossary[type=\acronymtype]
+\printglossary[type=main]
+
 %% Appendix
 
 \include{./tex/appendix}
+
 
 \end{document}

@@ -4,7 +4,13 @@
 \clearpage
 \section{Discussion and Conclusions}
 
-\subsection{Discussion of Experimental Results}
+\subsection{Discussion}
+
+\begin{itemize}
+  \item For complex models need more data (NNs)
+  \item can do much more parameter tuning for NNs
+  \item small documents like sentences are hard to learn as a representation
+\end{itemize}
 
 \subsection{Conclusions}
 \label{subs:conclusions}
@@ -32,6 +38,7 @@
 Make this a structured prediction task: Closer to the original task of finding the semantic structure of a job ad. Predict a whole job, automatically chop it into categories. The knowledge about the context of the sentence carries strong prior knowledge for deciding a sentence category. Using hierarchical models or priors might make a big difference. Also in the sequential modeling setting this will most probably improve performance significantly.
 
 \begin{itemize}
+	\item pretrain doc vectors with the whole corpus (since it can be done unsupervised)
   \item how well do word2vec and comparable methods generalize: e.g.\ initialize a text corpus with word vectors from a bigger corpus (Google News), then train an RNN to predict the next word vector using the small corpus but use the bigger corpus to validate and see if words in bigger corpus can be inferred
   \item trajectory based algorithms (word trajectory through space for a sentence)
   \item Compare with standard benchmarks (TREC etc)
@@ -41,6 +48,7 @@ Make this a structured prediction task: Closer to the original task of finding t
   \item Doc2Vec, evaluate how close inferred vectors are to trained vectors
   \item combine sequential approaches with representations gained from external knowledge or trained simultaneously (learning embeddings for semantic concepts)
   \item for complex models like CNNs and RNNs need more data!
+  \
 \end{itemize}
 
 

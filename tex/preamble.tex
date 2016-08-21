@@ -18,11 +18,11 @@
 %% Do not hyphenate titles.
 %%
 % \thesistitle{From a fragmented process towards integrated end-to-end learning: An explorative study of the evolution of text classification approaches towards Deep Learning}
-\thesistitle{Something something}
+\thesistitle{Deep Learning and Representation Learning versus Feature Construction for Multi-class Sentence Classification in Job Advertisements}
 
-\place{Espoo}
+\place{Shanghai}
 
-\date{16.1.2015}
+\date{18.08.2016}
 
 %% B.Sc. or M.Sc. thesis supervisor
 %% Note the "\" after the comma. This forces the following space to be
@@ -37,9 +37,9 @@
 %% this template. Check with your supervisor how many official advisors
 %% you can have.
 %%
-\advisor{Clemens Westrup}
-% \advisor{Michael Mathioudakis, Ph.D.}
-%\advisor{M.Sc.\ Polli Pohjaaja}
+% \advisor{Clemens Westrup}
+\advisor{Michael Mathioudakis, Ph.D.}
+% \advisor{M.Sc.\ Mikko Takkunen}
 
 %% Aalto logo: syntax:
 %% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
@@ -104,62 +104,29 @@ Helsinki, 30.08.2016
 
 %% Table of contents.
 \thesistableofcontents
+\clearpage
 
+\mysection{Notation}
 
-%% Symbols and abbreviations
-\mysection{Symbols and abbreviations*}
-
-% \subsection*{Symbols*}
-%
-% \begin{tabular}{ll}
-% $\mathbf{B}$  & magnetic flux density  \\
-% $c$              & speed of light in vacuum $\approx 3\times10^8$ [m/s]\\
-% $\omega_{\mathrm{D}}$    & Debye frequency \\
-% $\omega_{\mathrm{latt}}$ & average phonon frequency of lattice \\
-% $\uparrow$       & electron spin direction up\\
-% $\downarrow$     & electron spin direction down
-% \end{tabular}
-
-% \subsection*{Operators*}
-
-% \begin{tabular}{ll}
-% $\nabla \times \mathbf{A}$              & curl of vectorin $\mathbf{A}$\\
-% $\displaystyle\frac{\mbox{d}}{\mbox{d} t}$ & derivative with respect to
-% variable $t$\\[3mm]
-% $\displaystyle\frac{\partial}{\partial t}$  & partial derivative with respect
-% to variable $t$ \\[3mm]
-% $\sum_i $                       & sum over index $i$\\
-% $\mathbf{A} \cdot \mathbf{B}$    & dot product of vectors $\mathbf{A}$ and
-% $\mathbf{B}$
-% \end{tabular}
-
-\subsection*{Abbreviations*}
+\subsection*{Numbers and Arrays}
 
 \begin{tabular}{ll}
-kNN & k-Nearest Neighbors \\
-SVM & Support Vector Machine \\
-NN & Neural Network \\
-RNN & Recurrent Neural Network \\
-LSTM & Long Short-Term Memory \\
-MCC & Matthews Correlation Coefficient, see Section~\ref{par:Informedness, Markedness and Matthews Correlation Coefficient}
+  $a$                 & A scalar (integer or real) \\
+  $\mathbi{a}$        & A vector \\
+  $\mathbi{A}$        & A matrix \\
 \end{tabular}
 
-\subsection*{Glossary*}
+\subsection*{Sets and Graphs}
+
 \begin{tabular}{ll}
-one-hot-encoding & TODO \\
-grid search & TODO \\
-Crowdflower & TODO \\
-Mturk & see \emph{Mechanical Turk} \\
-Mechanical Turk & TODO \\
-API & TODO \\
-MongoDB & TODO \\
-Mongoose & TODO \\
-GitHub & TODO \\
-decision boundary  & TODO \\
-discriminant function & TODO \\
-gradient descent & TODO\\
-Bias-Variance Dilemma & TODO\\
+  $\mathbb{A}$        & A set \\
+  $\mathbb{R}$        & The set of real numbers \\
+  $\{0, 1\}$          & The set containing 0 and 1 \\
+  $\{0,1,\ldots,n\}$  & The set of all integers between 0 and n \\
+  $[a, b]$            & The real interval including a and b \\
+  $(a, b]$            & The real interval excluding a but including b \\
 \end{tabular}
+
 
 
 %% Tweaks the page numbering to meet the requirement of the thesis format:
