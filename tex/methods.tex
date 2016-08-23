@@ -3,8 +3,8 @@
 
 \clearpage
 
-\section{Methods for Text Classification}
-\label{sec:Methods for Text Classification}
+\section{Methods}
+\label{sec:Methods}
 
 This chapter will provide the necessary background on text classification, assuming the reader is familiar with the basic concepts of Machine Learning and related fields. First the research problem will be defined. Then
 
@@ -20,6 +20,22 @@ Concepts:
 
 \subsection{Overview}
 \label{sub:Overview}
+
+\paragraph{Feature Space Construction}
+\label{par:Space Construction Pipeline}
+
+- vector space models with ngrams
+
+\paragraph{Representation Learning}
+\label{par:Representation Learning for Feature Spaces}
+
+- learning embeddings via distributed representations
+
+\paragraph{End-to-End Learning}
+\label{par:End-to-End Learning}
+
+- learning embeddings on the fly
+- sequential modeling
 
 
 % - vector space models: same principle as feature space construction in other typical ML pipelines
@@ -99,8 +115,8 @@ There are, of course, various other variants and modifications to the N-gram mod
 
 Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}. As~\cite{Mikolov:2012aa} points out further \textquote{[the] most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs [Language Models] is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
 
-\subsubsection{Distributed Representations}
-\label{subs:Distributed Representations}
+\subsubsection{Distributed Continuous Representations}
+\label{subs:Distributed Continuous Representations}
 
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -369,7 +385,17 @@ The choice for the parameter $k$ depends on the type of problem and is often det
 \subsubsection{Kernel Methods}
 \label{subs:Kernel Methods}
 
-Kernel Methods can be seen as a set of instance-based methods which are explained in Section~\ref{par:Instance-based Methods}. The best known member of is the \gls{svm}.
+\todo{rewrite a bit}
+
+Kernel Methods can be seen as a set of instance-based methods (see Section~\ref{subs:Instance-based Methods}, as they construct the hypothesis using based on the training data. To achieve predictions on unseen data a similarity function $k$ between the training examples and the unseen data points is used. This function is called the \emph{kernel function} or simply \emph{kernel}, giving rise to the name of this class of these methods. The kernel function is chosen to be expressible as the inner product in another vector space $\mathcal{V}$. With a function adhering to this property a feature map $\varphi \colon {\mathcal {X}}\to {\mathcal {V}}$ can be constructed, satisfying:
+
+\begin{equation}
+  k(\mathbf {x} ,\mathbf {x'} )=\langle \varphi (\mathbf {x} ),\varphi (\mathbf {x'} )\rangle _{\mathcal {V}}.
+\end{equation}
+
+This avoids the explicit mapping that is needed to get linear learning algorithms to learn a nonlinear function or decision boundary.
+
+The best known member of is the \gls{svm}.
 
 \subsubsection{Neural Networks}
 \label{subs:Neural Networks}

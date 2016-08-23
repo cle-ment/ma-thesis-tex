@@ -13,7 +13,7 @@
 \subsection{Text Classification with Vector Space Models}
 \label{Text Classification with Vector Space Models}
 
-\subsubsection{Baselines Classifiers: Uniform and Stratified Guessing}
+\subsubsection{Baseline: Uniform and Stratified Guessing}
 \label{subs:baselines-classifiers}
 
 Both, uniform and stratified guessing achieve a Matthews Correlation Coefficient score of around 0 (averaged over 1000 runs) as expected for guessing strategies (see Section~\ref{subs:informedness-markedness-mcc}). On the other hand the accuracy for uniform guessing is around 0.16 which corresponds to $1/\text{K}$ for the K classes and around 0.26 for stratified guessing which reflects the skew of the label distribution.
@@ -52,7 +52,7 @@ Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these bas
 \label{fig:guessing-conf-matrix}
 \end{figure}
 
-\subsubsection{N-gram Language Models}
+\subsubsection{N-gram Models}
 
 \todo{intro here}
 
@@ -217,7 +217,7 @@ Figure~\ref{fig:ngram} shows projections of the of the constructed feature space
 \label{fig:ngram}
 \end{figure}
 
-\subsubsection{Bag-of-Means --- An Averaged Word2Vec Model}
+\subsubsection{Bag-of-Means Model}
 
  The results can be seen in Table~\ref{tab:Bag-Of-Means Results}.
 
@@ -567,22 +567,22 @@ For instance using hierarchical softmax decreases performance when setting all o
 \end{table}
 
 
-\subsubsection{Paragraph Vectors using pre-initialized weights *}
+% \subsubsection{Paragraph Vectors using pre-initialized weights *}
+%
+% In another experiment the weight matrix for the words was initialized with pre-trained weights from from the Google News dataset.
 
-In another experiment the weight matrix for the words was initialized with pre-trained weights from from the Google News dataset.
+% \subsubsection{Paragraph Vectors using context sentences *}
+%
+% \todo{This section in further research? Because it would have to be done for N-grams as well (building a model with the context around a sentence) and it doesn't fit the task (only sentence given). Could also go into exploration}
 
-\subsubsection{Paragraph Vectors using context sentences *}
+% \subsubsection{Inversion of Distributed Language Representations (??)}
+%
+% \todo{if this is described here it has to go into background as well}
 
-\todo{This section in further research? Because it would have to be done for N-grams as well (building a model with the context around a sentence) and it doesn't fit the task (only sentence given). Could also go into exploration}
-
-\subsubsection{Inversion of Distributed Language Representations (??)}
-
-\todo{if this is described here it has to go into background as well}
-
-\subsubsection{Discussion *}
+% \subsubsection{Discussion *}
 
 
-\subsubsection{Evaluation of Classification Algorithms for Vector Space Models *}
+\subsubsection{Classification Algorithms using Vector Space Models *}
 
 \paragraph{Logistic Regression *}
 
