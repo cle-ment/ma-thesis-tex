@@ -6,11 +6,10 @@
 \section{Problem Definition}
 \label{sec:Problem Definition}
 
+This section will formally and mathematically define the research problem that was chosen as a focus for this thesis. First the more general problem known in the machine learning literature as \emph{Text Classification} is defined, then the research problem of this thesis termed \emph{Multi-class Sentence Classification} is formalized as a special case of text classification. Finally the dataset used as a basis to investigate problem is described in detail.
+
 \subsection{Text Classification}
 \label{subs:Text Classification}
-
-Text classification, also known as text categorization, is the task of predicting a \emph{mapping} $\widetilde{\Phi} : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$ between a set of documents $\mathcal{D}$ and a set of classes or categories $\mathcal{C}$ using a model function $\Phi : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$. This means that were are trying to predict as good as possible the categories that each document belongs into, or vice versa the documents associated with each category. This mapping can thus be represented as a bipartite graph between the sets of documents $\mathcal{D}$ and categories $\mathcal{C}$ as shown in Figure~\ref{fig:bipartite-graph-text-classification}. In this representation vertices in the graph indicate a $True$ value in the mapping, indicating that the document and category are associated with each other, while missing vertices indicate that they are not ($False$).
-
 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{center}
@@ -20,18 +19,25 @@ Text classification, also known as text categorization, is the task of predictin
 \label{fig:bipartite-graph-text-classification}
 \end{wrapfigure}
 
-Categories $\mathcal{C}$ are given as symbolic labels and documents $\mathcal{D}$ as chunks of text with variable length. We usually assume that no additional information such as metadata or other \emph{exogenous knowledge} is available on neither labels nor documents.
-As~\cite{Sebastiani:2002aa} points out a consequence of relying solely on \emph{endogenous knowledge}, especially the semantics of a text, is that there is no objective ground truth to this task in most settings since semantics are a \emph{subjective} notion: \textquote{This is exemplified by the phenomenon of inter-indexer inconsistency \cite{Cleverdon:1984aa}: when two human experts decide whether to classify document $d_j$ under category $c_i$, they may disagree, and this in fact happens with relatively high frequency. A news article on Clinton attending Dizzy Gillespie’s funeral could be filed under Politics, or under Jazz, or under both, or even under neither, depending on the subjective judgment of the expert.}~\cite{Sebastiani:2002aa}
+Text classification, also known as text categorization, is the task of predicting a \emph{mapping} $\widetilde{\Phi} : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False\}$ between a set of \emph{documents} $\mathcal{D}$ and a set of \emph{classes} or \emph{categories} $\mathcal{C}$ using a model function $\Phi : \mathcal{D} \times \mathcal{C} \rightarrow \{True, False \}$.
+We thus aim to predict as well as possible the documents associated with each category or vice versa the categories that each document belongs into. The former is called \emph{category-pivoted} text classification whereas the latter is referred to as \emph{document-pivoted} text classification --- the setting that we shall focus on from here onwards.
+The mapping $\widetilde{\Phi}$ can be represented as a bipartite graph between the set of documents $\mathcal{D}$ and the set of categories $\mathcal{C}$ as shown in Figure~\ref{fig:bipartite-graph-text-classification}. In this representation vertices in the graph represent a $True$ value in the mapping, indicating that the document and category are associated with each other, while missing vertices indicate that they are not which corresponds to a $False$ value in the mapping.
 
-Additional constraints can be imposed on the problem to adapt it for different application scenarios. Firstly text classification can be either framed as \emph{single-label} classification where each document is assigned to only one single category or \emph{multi-label} classification where an assignment to several categories or also no category is possible. The multi-label case can also be formulated as $|\mathcal{C}|$ individual binary classification problems which of course assumes statistical independence between these prediction tasks.
+Categories $\mathcal{C}$ are given as symbolic labels and documents $\mathcal{D}$ as sequences of text with variable length. It is usually assumed that no additional information such as metadata or other \emph{exogenous knowledge} is available on neither labels nor documents.
+As the survey on automatic text classification by~\cite{Sebastiani:2002aa} points, out a consequence of relying solely on \emph{endogenous knowledge}, especially the semantics of a text, is that there is no objective ground truth to this task in most settings since semantics are a \emph{subjective} notion: \textquote{This is exemplified by the phenomenon of inter-indexer inconsistency~\cite{Cleverdon:1984aa}: when two human experts decide whether to classify document $d_j$ under category $c_i$, they may disagree, and this in fact happens with relatively high frequency. A news article on Clinton attending Dizzy Gillespie’s funeral could be filed under Politics, or under Jazz, or under both, or even under neither, depending on the subjective judgment of the expert.}
+
+Additional constraints can be imposed on the problem to adapt it for different application scenarios. Firstly text classification can be either framed as \emph{single-label} classification where each document is assigned to only one single category or \emph{multi-label} classification where an assignment to several categories or also no category is possible. The single-label case can be further separated into \emph{dichotomous} or \emph{binary} classification where the presence or absence of only a single class is predicted and \emph{multi-class} classification where one of multiple, mutually exclusive classes is predicted for each document.
+Multi-class classification can thus be seen as multi-label classification with the additional constraint of classes being mutually exclusive.
+If labels are assumed to be statistically independent multi-label classification can also be reformulated as $|\mathcal{C}|$ individual binary classification problems, potentially allowing much simpler modeling at the cost of introducing inductive bias through a strong assumption.
 
 % In order to measure how successfully we are tackling the problem of text classification we need metrics that measure the effectiveness of our algorithm given a dataset. These will be discussed in Section~\ref{sub:Evaluation}.
 
 \subsection{Multi-class Sentence Classification}
 \label{subs:Multi-class Sentence Classification}
 
-\subsection{Research Objectives}
-\label{subs:Research Objective}
+The prediction task in the scope of this thesis is \emph{Multi-class Sentence Classification} which shall be formulated as a special case of Text Classification defined above. Specifically the goal is to perform \emph{document-pivoted Multi-class Text Classification} where the documents $\mathcal{D}$ are the set of all sentences $S$ drawn \emph{uniformly and independently} at random from a set of job advertisements $\mathcal{J}$, and the classes $\mathcal{C}$ are set to be the following set of mutually exclusive labels $\mathcal{L} = \{ \text{benefits}, \text{candidate}, \text{company}, \text{job}, \text{nextsteps}, \text{other} \}$. We thus allow for no knowledge to be used regarding the origin of a sentence $s_i$, meaning that the prediction of each sentence is independent must assume the same prior information. The task can hence be expressed as predicting true label $l_i$ for a sentence $s_i$, i.e.\ finding the mapping $\widetilde{\Phi} : \mathcal{S} \rightarrow \mathcal{L}$.
 
 \subsection{Dataset}
 \label{subs:Dataset}
+
+The performance of approaching the research problem will be evaluated using a dataset that was designed and created specifically for the purpose of this work. For detailed information on the process and design decisions involved please refer to Section~\ref{sub:Definition Phase: Framing the Problem} (\nameref{sub:Definition Phase: Framing the Problem}).
