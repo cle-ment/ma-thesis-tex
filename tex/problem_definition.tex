@@ -40,4 +40,38 @@ The prediction task in the scope of this thesis is \emph{Multi-class Sentence Cl
 \subsection{Dataset}
 \label{subs:Dataset}
 
-The performance of approaching the research problem will be evaluated using a dataset that was designed and created specifically for the purpose of this work. For detailed information on the process and design decisions involved please refer to Section~\ref{sub:Definition Phase: Framing the Problem} (\nameref{sub:Definition Phase: Framing the Problem}).
+The performance of approaching the research problem will be evaluated using a dataset that was designed and created specifically for the purpose of this work. For detailed information on the process and design decisions involved please refer to Section~\ref{sub:Definition Phase: Framing the Problem} (\nameref{sub:Definition Phase: Framing the Problem}). Here the key characteristics of the data will be shown.
+
+The data from this set stems from job advertisements created by companies using the \gls{Sanoma}'s service \gls{Oikotie Tyopaikat} in Finland. The dataset consists of 118780 job ads published between the September 01, 2012 and December 01, 2015. Each job posting contains many fields of associated metadata such as the title of the job posting, the time of creation and many more. Of these only the \emph{job description} was chosen as a basis for this task since --- as pointed out previously in Section~\ref{subs:Text Classification}\nameref{subs:Text Classification} --- the task of interest was pure text classification without exogenous knowledge with the motivation to better understand unstructured data such as the job description which does not follow a specific format.
+
+Using the tool \gls{langdetect} 9928 of these job ads were identified to be written in English language which is about 8.4\% as opposed 75\% of postings that are written in Finnish.
+In order to form the sentence dataset 400 job english listings were then selected at random and converted into a set all 9948 sentences occurring in these listings using the \emph{Punkt Sentence Tokenizer}\footnote{See \url{http://www.nltk.org/api/nltk.tokenize.html\#module-nltk.tokenize.punkt}} of the \gls{NLTK}. Afterwards the sentences were converted from HTML into raw text using the \gls{Beautiful Soup} software package and labels were collected using the \gls{crowd sourcing} service \gls{CrowdFlower} as described in Section~\ref{subs:Multi-class Sentence Classification} using the fixed six labels from the problem definition above: \emph{benefits, candidate, company, job, nextsteps, other}. Each label with a description that was given when collecting the data and an example sentence can be seen in Table~\ref{tab:Labels, Description, Example Sentences}.
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabularx}{\textwidth}{l | X | X}
+    \toprule
+    Label & Description & Example Sentence \\
+    \midrule
+    benefits & \textbf{Benefits}: Rewards, opportunities, reasons to apply, \ldots & And we like to think we’ll give you an enjoyable and inspiring place to spend your working day. \\
+    candidate & \textbf{Candidate requirements}: Requirements, skills, experience, education, personality, \ldots & To succeed in this position it is essential to have strong experience of at least 5 years in international business development and/or international B2B sales and marketing. \\
+    company & \textbf{Company information}: Company name, story, mission, structure, market share, \ldots & Progman is software house specialising in the development of software for Building Services. \\
+    job & \textbf{Job description}: Role, responsibilities, location of work, type of employment, \ldots & Your main objective is to maximize Core Fleet, Dealer B2B, municipality and governmental orders and sales for PC and LCV range to local Fleets and businesses within defined geographical area. \\
+    nextsteps & \textbf{Next steps}: Call to action, application procedure, contact, further information, \ldots & 040 75 67 316, Mon-Fri 10-14, or peas@temp-team.fi. \\
+    other & \textbf{Other}: Does not fit into the above categories & URS’ \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Labels used for the task with their description that was given for the participants labelling the data and a sentence example for each label.}
+\label{tab:Labels, Description, Example Sentences}
+\end{center}
+\end{table}
+
+The resulting distribution of the labels is strongly skewed towards higher prevalence of several labels as shown in Figure~\ref{fig:sentence-data-label-dist}. For this reason the use of an unbiased evaluation metric was especially important and Matthews Correlation Coefficient met this criterion and was thus chosen (see Section~\ref{sub:Evaluation of Text Classification Methods} for more information on the chosen evaluation methods).
+
+\begin{figure}[h]
+  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
+    \centering
+    \includegraphics[width=\textwidth]{img/sentence-data-label-dist.pdf}
+    \caption{Distribution of labels in sentence data}
+\label{fig:sentence-data-label-dist}
+\end{figure}
