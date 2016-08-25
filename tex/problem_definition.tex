@@ -6,10 +6,10 @@
 \section{Problem Definition}
 \label{sec:Problem Definition}
 
-This section will formally and mathematically define the research problem that was chosen as a focus for this thesis. First the more general problem known in the machine learning literature as \emph{Text Classification} is defined, then the research problem of this thesis termed \emph{Multi-class Sentence Classification} is formalized as a special case of text classification. Finally the dataset used as a basis to investigate problem is described in detail.
+This section will formally and mathematically define the research problem that was chosen as a focus for this thesis. First the more general problem known in the machine learning literature as \emph{Text Classification} is defined, then the research problem of this thesis termed \emph{Multi-class Sentence Classification} is formalized as a special case of text classification. Finally the dataset used as a basis to evaluate problem is described in detail.
 
-\subsection{Text Classification}
-\label{subs:Text Classification}
+\subsection{Context: Definition of Text Classification}
+\label{subs:Context: Definition of Text Classification}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{center}
@@ -32,17 +32,25 @@ If labels are assumed to be statistically independent multi-label classification
 
 % In order to measure how successfully we are tackling the problem of text classification we need metrics that measure the effectiveness of our algorithm given a dataset. These will be discussed in Section~\ref{sub:Evaluation}.
 
-\subsection{Multi-class Sentence Classification}
-\label{subs:Multi-class Sentence Classification}
+\subsection{Problem Formalism: Multi-class Sentence Classification}
+\label{subs:Problem Formalism: Multi-class Sentence Classification}
 
 The prediction task in the scope of this thesis is \emph{Multi-class Sentence Classification} which shall be formulated as a special case of Text Classification defined above. Specifically the goal is to perform \emph{document-pivoted Multi-class Text Classification} where the documents $\mathcal{D}$ are the set of all sentences $S$ drawn \emph{uniformly and independently} at random from a set of job advertisements $\mathcal{J}$, and the classes $\mathcal{C}$ are set to be the following set of mutually exclusive labels $\mathcal{L} = \{ \text{benefits}, \text{candidate}, \text{company}, \text{job}, \text{nextsteps}, \text{other} \}$. We thus allow for no knowledge to be used regarding the origin of a sentence $s_i$, meaning that the prediction of each sentence is independent must assume the same prior information. The task can hence be expressed as predicting true label $l_i$ for a sentence $s_i$, i.e.\ finding the mapping $\widetilde{\Phi} : \mathcal{S} \rightarrow \mathcal{L}$.
 
-\subsection{Dataset}
-\label{subs:Dataset}
+\subsection{Dataset Used for Evaluation}
+\label{subs:Dataset Used for Evaluation}
 
 The performance of approaching the research problem will be evaluated using a dataset that was designed and created specifically for the purpose of this work. For detailed information on the process and design decisions involved please refer to Section~\ref{sub:Definition Phase: Framing the Problem} (\nameref{sub:Definition Phase: Framing the Problem}). Here the key characteristics of the data will be shown.
 
-The data from this set stems from job advertisements created by companies using the \gls{Sanoma}'s service \gls{Oikotie Tyopaikat} in Finland. The dataset consists of 118780 job ads published between the September 01, 2012 and December 01, 2015. Each job posting contains many fields of associated metadata such as the title of the job posting, the time of creation and many more. Of these only the \emph{job description} was chosen as a basis for this task since --- as pointed out previously in Section~\ref{subs:Text Classification}\nameref{subs:Text Classification} --- the task of interest was pure text classification without exogenous knowledge with the motivation to better understand unstructured data such as the job description which does not follow a specific format.
+\begin{figure}[h]
+  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
+    \centering
+    \includegraphics[width=\textwidth]{img/sentence-data-label-dist.pdf}
+    \caption{Distribution of labels in sentence data}
+\label{fig:sentence-data-label-dist}
+\end{figure}
+
+The data from this set stems from job advertisements created by companies using the \gls{Sanoma}'s service \gls{Oikotie Tyopaikat} in Finland. The dataset consists of 118780 job ads published between the September 01, 2012 and December 01, 2015. Each job posting contains many fields of associated metadata such as the title of the job posting, the time of creation and many more. Of these only the \emph{job description} was chosen as a basis for this task since --- as pointed out previously in Section~\ref{subs:Context: Definition of Text Classification} --- the task of interest was pure text classification without exogenous knowledge with the motivation to better understand unstructured data such as the job description which does not follow a specific format.
 
 Using the tool \gls{langdetect} 9928 of these job ads were identified to be written in English language which is about 8.4\% as opposed 75\% of postings that are written in Finnish.
 In order to form the sentence dataset 400 job english listings were then selected at random and converted into a set all 9948 sentences occurring in these listings using the \emph{Punkt Sentence Tokenizer}\footnote{See \url{http://www.nltk.org/api/nltk.tokenize.html\#module-nltk.tokenize.punkt}} of the \gls{NLTK}. Afterwards the sentences were converted from HTML into raw text using the \gls{Beautiful Soup} software package and labels were collected using the \gls{crowd sourcing} service \gls{CrowdFlower} as described in Section~\ref{subs:Multi-class Sentence Classification} using the fixed six labels from the problem definition above: \emph{benefits, candidate, company, job, nextsteps, other}. Each label with a description that was given when collecting the data and an example sentence can be seen in Table~\ref{tab:Labels, Description, Example Sentences}.
@@ -67,11 +75,3 @@ In order to form the sentence dataset 400 job english listings were then selecte
 \end{table}
 
 The resulting distribution of the labels is strongly skewed towards higher prevalence of several labels as shown in Figure~\ref{fig:sentence-data-label-dist}. For this reason the use of an unbiased evaluation metric was especially important and Matthews Correlation Coefficient met this criterion and was thus chosen (see Section~\ref{sub:Evaluation of Text Classification Methods} for more information on the chosen evaluation methods).
-
-\begin{figure}[h]
-  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
-    \centering
-    \includegraphics[width=\textwidth]{img/sentence-data-label-dist.pdf}
-    \caption{Distribution of labels in sentence data}
-\label{fig:sentence-data-label-dist}
-\end{figure}

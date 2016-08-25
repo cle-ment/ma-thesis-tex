@@ -14,8 +14,8 @@
 \todo{Doc2Vec model is evaluated in 2 ways (normal and trained on inferred vectors)}
 
 
-\subsection{Text Classification with Vector Space Models}
-\label{Text Classification with Vector Space Models}
+\subsection{Text Classification Using Vector Space Models}
+\label{Text Classification Using Vector Space Models}
 
 As Section~\ref{sec:vector-space-models} explains, a popular way to approach text classification and other tasks in natural language processing is to build a language model by creating explicit representations of the objects or entities to be processed in a vector space. Such vectors can be used as features for a learning algorithm. Depending on the representation they can also carry further meaning, such as to encode notions of similarity of associativity between the objects.
 
@@ -47,9 +47,7 @@ Next a Bag-of-Means model as described in Section~\ref{subp:Bag-of-Means} was ev
 
 Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation.
 
-\paragraph{Classification Algorithms for Vector Space Models}
-\label{par:Classification Algorithms for Vector Space Models}
+\paragraph{Classification Methods using Vector Space Models}
+\label{par:Classification Methods using Vector Space Models}
 
-\subsection{Sequential Text Classification *}
-
-\subsection{Comparison of Approaches *}
+\subsection{Sequential Text Classification}

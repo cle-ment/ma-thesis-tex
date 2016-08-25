@@ -31,8 +31,8 @@ Concepts:
 
 - learning embeddings via distributed representations
 
-\paragraph{End-to-End Learning}
-\label{par:End-to-End Learning}
+\paragraph{Deep Sequential Learning}
+\label{par:Deep Sequential Learning}
 
 - learning embeddings on the fly
 - sequential modeling
@@ -118,16 +118,7 @@ Today N-gram models are still in wide use and considered as state of the art \te
 \subsubsection{Distributed Continuous Representations}
 \label{subs:Distributed Continuous Representations}
 
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-  \begin{center}
-    \includegraphics[width=0.48\textwidth]{img/word2vec-google-trends.pdf}
-  \end{center}
-  \caption{Google Trends statistics on relative search interest in the term ``word2vec''. Retrieved on 22.05.2016.}
-\label{fig:word2vec-google-trends}
-\end{wrapfigure}
-
-To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community but also from open source community (Figure~\ref{fig:word2vec-google-trends} shows the search relevance of the term ``word2vec'' in the recent years). His work builds on ideas introduced in~\cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in~\cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
+To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community. His work builds on ideas introduced in~\cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in~\cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
 
 \begin{enumerate}
   \item Associate with each word in the vocabulary a distributed \emph{word feature vector} (a real-valued vector in $\mathbb{R}^m$),
@@ -208,8 +199,8 @@ The term \emph{Bag-of-Means} refers to simply averaging over the word embedding 
 \subparagraph{Paragraph Vectors *}
 In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
 
-\subsection{Text Classification with Vector Space Models}
-\label{sub:Text Classification with Vector Space Models}
+\subsection{Classification Methods using Vector Space Models}
+\label{sub:Classification Methods using Vector Space Models}
 
 Many classical machine learning algorithms work on data in a fixed-dimensional vector format and can thus be applied to a vector space model as described in the previous section. Here a set of well-known algorithms will be briefly introduced, each representing a family of approaches with different model assumptions. It should be pointed out that there exist a plethora of other models and algorithms that can be used, the ones chosen here though are widely considered standard methods and have proven successfully in the past for a wide range of problems.
 
@@ -405,8 +396,8 @@ The best known member of is the \gls{svm}.
 
 \cite{Gers:1999aa} --- Learning to forget: continual prediction with LSTM.
 
-\subsection{Evaluation of Text Classification Methods}
-\label{sub:Evaluation of Text Classification Methods}
+\subsection{Evaluation Methods for Text Classification}
+\label{sub:Evaluation Methods for Text Classification}
 
 In this section the basics of evaluating classification models for the given problem will be laid out. First the different evaluation schemes and their advantages or disadvantages are explained in the dichotomous case where only one class is to be predicted in terms of being active or not. Then these are generalized to the multi-label case where $K$ mutually exclusive classes are given. The last section extends this concept again towards so-called multi-label multi-output classification where several output labels can be predicted at the same time.
 
@@ -610,7 +601,7 @@ The \emph{cross-entropy} loss function as defined above in Section~\ref{par:Cros
 
 where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of target variables with elements $t_{nk}$ (see as in~\cite[Chapter 4.3.4, p.~209 ]{Bishop:2006aa}). This form is also referred to as \emph{multi-class log loss} and gives an aggregated loss over all classes. \todo{more detail?}
 
-\subsubsection{Multi-label Classification *}
+\subsubsection{Multi-label Classification}
 \label{subs:Multi-label Classification}
 
 % \subsection{Visualization}
