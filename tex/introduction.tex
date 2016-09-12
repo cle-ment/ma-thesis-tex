@@ -12,11 +12,18 @@
 
 \section{Introduction}
 
-Language is one of the most complex behaviors our species has developed. Humans use it to communicate even the most abstract concepts and it is considered one of the pillars of modern civilization. It takes children years to learn to communicate their thoughts and the subtle nuances of one's language give a glimpse one's cultural environment and upbringing, one's emotional state and one's intellect.
+Language is one of the most complex behaviors our species has developed. We humans use it to efficiently transport knowledge between individuals and communicate even the most abstract concepts with it. It takes children years to learn to learn express their thoughts and the subtle nuances of one's language give a glimpse one's cultural environment and upbringing, one's emotional state and one's intellect.
 
-Not surprisingly in the field of Artificial Intelligence (AI) building computer systems with linguistic capabilities and solving language-based problems poses one of the hardest challenges and has motivated decades of research in Computational Linguistics. In fact many of the famous test for universal machine intelligence are based on linguistic capabilities, among them the famous \emph{Turing test} by~\cite{Turing:1950aa} where the task is for a human judge to determine whether he is having a conversation with a human or a machine in order to determine if the machine can be called intelligent, or the \emph{compression test} proposed by~\cite{Mahoney:1999aa}, where a human's and machine's capability to predict missing words given a context is tested.
+Not surprisingly in the field of \gls{AI} and especially \gls{ML} building computer systems with linguistic capabilities and solving language-based problems poses one of the hardest challenges and has motivated decades of research in Computational Linguistics. In fact many of the famous test for universal machine intelligence are based on linguistic capabilities, among them the famous \emph{Turing test} by~\cite{Turing:1950aa} where the task is for a human judge to determine whether he is having a conversation with a human or a machine in order to determine if the machine can be called intelligent, or the \emph{compression test} proposed by~\cite{Mahoney:1999aa}, where a human's and machine's capability to predict missing words given a context is tested.
 
-This thesis explores the specific task of predicting the semantic structure of job advertisements as a specific example of such a language-based task that turns out to be difficult even for humans to do.
+This thesis explores the specific task of predicting the semantic structure of job advertisements as a specific example of such a language-based task that turns out to be difficult even for humans to do. The title of this work ``An \emph{Exploration} of \emph{Recent Connectionist Advances} for \emph{Supervised Topic Prediction in Job Advertisements}'' can be broken down into three pieces that captures the essence of it:
+
+\begin{itemize}
+  \item Exploration: The nature of this work is explorative in 2 ways: First a problem has been researched to find well-defined and well-motivated application of machine learning on job advertisement data. Second a solution space was explored approach this problem with special emphasis at recent progress in research.
+  \item Recent Connectionist Advances: The work
+\end{itemize}
+
+
 The work was done in close collaboration with the Helsinki-based media and learning company \emph{Sanoma}\footnote{\textquote{Sanoma is a front running consumer media and learning company in Europe. In Finland and the Netherlands we are the market leading media company with a broad presence across multiple platforms. In Belgium we are among the Top 5. Our main markets in learning are Belgium, Finland, the Netherlands, Poland and Sweden. We entertain, inform, educate and inspire millions of people every day. We employ some 7,500 professional employees operating in Europe.}, Source: \url{http://www.sanoma.com/en/who-we-are}, visited 06.06.2016} and the research motivation was thus constantly tied back into real world challenges in the scope of Sanoma's business needs.
 
 \subsection{Problem Statement}
@@ -66,10 +73,16 @@ Various extensions of these models exist for dimensionality reduction or feature
 
 Recently approaches from the field of \emph{Representation Learning}, have found their way into and gained tremendous traction in the \gls{NLP} research community. Traditional \emph{feature engineering} techniques such as N-gram models, use prior domain or expert knowledge in order to build data representations that are effective in combination with a classifier. But as~\cite{Bengio:2013aa} point out this is a laborious and time-consuming task that only exposes the weakness from a Machine Learning point of view by not automatically learning such representations --- a challenge representation learning aims to address.
 
+
 - distributed representations beating ngrams
 - deep learning: CNNs
 - multitask / transfer learning
--
+- character level text classification
+% # CNNs
+% \cite{Kim:2014aa} - Convolutional neural networks for sentence classification
+% \cite{Cheng:2014aa} - Investigating the role of prior disambiguation in deep-learning compositional models of meaning
+% \cite{Kalchbrenner:2014aa} - A convolutional neural network for modelling sentences
+% \cite{Johnson:2014aa} - Effective Use of Word Order for Text Categorization with Convolutional Neural Networks
 
 
 % ## related fields
@@ -130,16 +143,17 @@ Recently approaches from the field of \emph{Representation Learning}, have found
 
 
 \subsection{Research Scope and Objectives}
-\label{sub:Research Objectives}
+\label{sub:Research Scope and Objectives}
 
 This thesis was initiated as a research project for Sanoma's recruitment platform \emph{Oikotie Työpaikat} with the intention of exploring interesting and novel ways to use the various data generated through the use of this service. The research objectives were stated as follows:
 
 \blockquote{Find an application of data mining / machine learning to the customer-generated data on the recruitment platform Oikotie Työpaikat which has the potential of bringing value to the user of the platform and is technically feasible in the scope of a master’s thesis. Further define and investigate a research problem that is essential to this application by researching literature and previous work on similar problems trying different approaches based on the literature using the results and learnings to create an improved approach.}
 
-% % old research objective ideas
-% - study vector space models and new approaches
-% - study sequential and multi-task approaches
-
+\todo{write this out}
+on the research side
+- define a good topic and scope
+- evaluate solutions to that problem scope to find the best possible way of solving it, i.e. try cutting edge methods
+- try to possibly built on ideas to adapt these methods for the problem to make them more effective or advance certain ideas
 
 \subsection{Methodological Approach}
 \label{sub:Methodological Approach}
@@ -171,7 +185,7 @@ approach to experiemtns
 
 asdasd
 
-\subsection{Structure of the thesis}
+\subsection{Structure of the Thesis}
 
 \begin{figure}[h]
     \centering

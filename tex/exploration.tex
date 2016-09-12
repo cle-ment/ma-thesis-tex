@@ -7,85 +7,119 @@
 \section{Exploration}
 \label{sec:Exploration}
 
-This chapter will outline how with initial objectives and how I went all the way from an initial project start with exploration over collecting data and iterating the problem framing to learn from about the problem to designing the final task and collecting an appropriate dataset including quality control in a crowdsourced fashion. \todo{rewrite when chapter is done}
-
-
-
-- initial exploration of topics
-- topic decision for structured text prediction
-- design choice for fixing chunks (making it a supervised multi-class prediction)
-- explorative data collection
-- learnings and design choice for 6 mutually exclusive labels + sentence as atomic unit => final problem setting
-- dataset collection through crowdflower with iterations
-
-
-
-
-
-% - brief
-% - given data
-% - interest?
-% - approach
-% - found problem: predicting audience and popularity of job ads
-% - in order to do so: learn about structure of job ads
-% - problem setting as supervised task,
-% - get data by free collection:
-%   - to predict paragraphs
-%   - to learn about how humans interpret and carry out this task
-% - experiments: grouping tags automatically vs manually
-% - predicting with tf.idf
-% - reading up on how to write good job ads
-% - can be grouped into 6 categories
-% - framed as new mulit-class problem and setting up data collection
-% - results: distribution and statistics, most of the data can somewhat go into these categories (other is the smallest amount)
-% - then trying to evaluate the best method or combination of methods
-
-
+The first part of this thesis project was dedicated to exploration of the problem space. Driven by the research objectives the goal was twofold: At once to find an approachable yet challenging research problem in the context of data from a recruitment platform while simultaneously evaluating the potential for creating value through an enhanced user experience or new use cases for the service.
 
 \subsection{Discovery Phase: Exploring the Problem Scope}
 \label{Discovery Phase: Exploring the Problem Scope}
 
-During the \emph{discover phase} of the project, also referred to as the \gls{ffe}, the problem space was explored from various perspectives to understand which opportunities could potentially fulfill the criteria set for the thesis: First to be an approachable yet challenging research problem in the scope of a Master's thesis, second to be of interest from a business point of iew
+During the discovery phase the problem space was first opened up through exploration of user needs and initial field research better understand the problem context. Additionally literature research and benchmarking of approaches helped getting a picture of related scientific work. It should be noted though that quantitative user research was rather minimal due to time constraints and the scientific nature of this thesis.
 
-- early prototypes
-- interviews
-- problem mapping
-- data exploration
+Initially a set of early interviews with stakeholders from Product Management to Marketing and Engineering and as well potential users helped getting a good idea about the service offerings of a recruitment platform and the current trends in the industry. Exploring the various data that the platform generates the first learning was that large parts of the data are in form of written language and much of it in a more or less unstructured way.
+
+Exploration was therefore focused on language related problems. Literature research revealed a strong interest from the research community in tasks related language modeling using neural networks and other connectionist approaches that had gained traction through the latest advances of \gls{Deep Learning}. Several methods were then tested as quick prototypes, also leading to the learning that real data is often noisy and inconsistent. In addition ideas for focusing the problem search were evaluated, ranging from practical ideas such as predicting trends in the job marking to wilder ones such as digitalizing the complete Sanoma archive to analyze how written language evolves over time in order to predict when a text was written or to identify trending terms or even writing styles.
+
+Through further experimentation, research and discussions the problem of better utilizing the implicit knowledge in the main text body of job listings was deemed a good fit for further focus. It was both an interesting and challenging research problem and could potentially be of practical use, e.g. when identifying the requirements for a job inside this text or other applications. This decision set the course for the definition phase to begin with more a stronger focus on converging the problem space.
 
 \subsection{Definition Phase: Framing the Problem}
 \label{sub:Definition Phase: Framing the Problem}
 
-\subsubsection*{Inferring Structure of Job Advertisements}
+The definition phase of the design process is characterized by explorative convergence of the problem space through iterative reframing and refinement of the problem definition that goes hand in hand with further experimentation and learning within the new scope. For this research project it is marked by three main decision points where the problem definition was reformulated. These three iterations of converging towards a problem definition are described in the next sections in terms of rationale for the chosen direction, the experimental approach and testing metrics to learn within this new scope and the results and learnings obtained.
+
+\subsubsection{Inferring Structure of Job Advertisements}
 \label{subs:Inferring Structure in Job Advertisements}
 
-\subsubsection*{Multi-label Paragraph Classification}
+\paragraph{Rationale}
+\label{par:Rationale}
+
+During the discovery phase it became apparent that a there is large amounts of unstructured and implicit knowledge in the data of job advertisements. This knowledge is difficult to access and process in a systematic and automized way, making it hard to employ for providing increased value to users. The majority of this knowledge is given in free-form natural language, e.g. making up the text body of a job advertisement. This part --- analogous to the content of a job listing in print media --- contains all the information about a job position that a company wants to communicate to a potential applicant. \todo{example?}
+
+Certain parts of this unstructured text are of particular interest to the company, e.g. the section describing the requirements for a job because being able to utilize this knowledge enables the service platform to potentially match users with more relevant job advertisements.
+Another interesting application of machine learning to enhance the user experience is to study and potentially predict successfulness of job advertisements.
+The need to understand what makes a successful job ad arrises especially for recruiters writing these ads as they might be interested to better reach the talent they need. In order to design a better algorithm to analyze the success factors if job ads it is useful to first understand the structure and content of the job ad.
+It has to be noted that success in this context leaves much room for interpretation as different measures of success could be incorporated, such popularity measured by \gls{click-through rate} or \gls{page views}. Such a measure has the shortcoming of not taking into account the demographics and degree of specialization of the job and other factors that are expected to have a strong influence on the target audience.
+
+\paragraph{Experimental Approach and Metrics}
+\label{par:Experimental Approach and Metrics}
+
+This prototype was carried out in order to understand better how humans interpret structure and content of job ads and what they consider a good structural representation of the topics and information contained. In this context of facilitating applications by better understanding and representing the structure of job advertisements a first series of experiments was designed.
+
+Five participants from various professional background were asked to highlight sections of the text of a job ad presented to them and label these sections by describing what the section “talks about”. Afterwards they were asked to restructure the job ad into a bullet-point list based on these highlighted sections.
+
+There were no specific metrics as this prototype was purely open to gain a basic understanding how “structure” and “content” or “topics” are interpreted.
+The goal was to get a better understanding how users would structure job applications, leaving the interpretation of the verb ``structure'' completely open.
+
+Participants were provided with a \gls{Google Docs} document given with one random job advertisement in English and the task was to first highlight parts they felt belonged to a certain part and then to structure these parts. The exact formulation was as follows:
+
+\blockquote{Cheers for helping out with this little experiment for my thesis! My aim here is to find out how people would structure job ads to help find the relevant information faster.
+
+You'll work with the job advertisement below. Your task is the following:
+\begin{enumerate}
+  \item First tag the job advertisement below into parts. Mark sections of it and use a word or two to categorize this section using the comment tool. You can tag the ad into sections however you want and even make the sections overlap. The goal here is to tag the content of the job ad that you think belongs to different categories, properties or topics. To tag the text, use the comment tool like this: ``We're looking for a Quality Buzzword Engineer.''
+  \item Now fill the bullet-point list in the last section of this document with the tagged sections/categories/topics you found. It should roughly contain the same information as the ad but in a structured way using your tags. You can use sub-points categories if you want.
+\end{enumerate}
+In total try to spend no more than 30 minutes on this. Don't worry about it too much, the key is to just do it how it makes sense to you.}
+
+A full example of this task as it was provided for the participants can be found in the Appendix in Section~\ref{sub:Understanding How Humans Structure Text}.
+
+\paragraph{Results}
+\label{par:Results}
+
+Only 2 participants fully carried out the task. 2 other participants only highlighted and labelled the sections. The last participant did not even start.
+
+All participants reported being confused about the task and after providing some helping advise by providing analogous examples (e.g. labelling the description of a car and which parts talk about the components while others talk about the owner etc.) the participants still perceived the task as very difficult as it leaves much room for interpretation.
+
+The results quite various, especially in the following ways:
+
+Level of abstraction: “Requirements” vs. “language requirements”
+Content versus language function: “Job description section indicator” vs. “Job description”, or “Leading question”
+Judgement of content quality: “Empty words”
+Attribute vs. value: “Application period indicator” and “Application period”
+Also some participants built a nested structure in the second part of the task while others formulated rather wide areas to group the information under.
+
+\paragraph{Learnings and Conclusions}
+\label{par:Learnings and Conclusions}
+
+The task needs to be more clearly defined and can be split up many subtasks. Generally it was as open as identifying knowledge and structuring it in some way.
+
+A process learning about the way the prototype was carried out is that while is was a quick way to set up an experiment and a fast way to test it was too much work and too big of a task to ask more people for. The participants were my friends and it seems improbable anyone else would spent this much time and effort for such task.
+
+
+\todo{more conclusions here? check thesis blog}
+
+\todo{objectives and learnings}
+
+\subsubsection{Multi-label Paragraph Classification}
 \label{subs:Multi-label Paragraph Classification}
 
-\subsubsection*{Multi-class Sentence Classification}
-\label{subs:Multi-class Sentence Classification}
+With the initial results the general problem direction to infer structure of job advertisements was deemed promising and an next set up experiments was set up.
 
-% ----------- Data Sections
+In order to classify sections of job ads by their topic in a supervised manner labelled data was needed. Therefore I built a tool so I could ask others to help me tag these sections. The tool consists of a server running a database with the chunked job ad data and a web interface for participants to tag the sections/chunks of a job ad.
 
+\paragraph{Rationale}
+\label{par:Rationale}
 
-% # personnel selection
-% \cite{Chien:2008aa} - improving personnel selection with data mining
-% \cite{Saidi-Mehrabad:2007aa} - The development of an expert system for effective selection and appointment of the jobs applicants in human resource management.
-% \cite{Hokey-Min:2003aa} - Developing the profiles of truck drivers for their successful recruitment and retention: A data mining approach.
-% \cite{Youyou:2015aa} - Computer-based personality judgments are more accurate than those made by humans
-%
-% # careers
-% \cite{Shahaf:2012aa} - metro maps of science
-%
-% # formal vs informal language
-% \cite{Faruqui:2011aa} - I Thou Thee, Thou Traitor": Predicting Formal vs. Informal Address in English Literature.
-% \cite{Brooke:2014aa} -  Computational Approaches to Style and the Lexicon
-%
-% \cite{Lee:2015:RJO:2700171.2791048} - On Recommending Job Openings
-%
-% \cite{Luhn:1958aa} - A Business Intelligence System
+The goal was to produce labelled data that would be more varied (with more participants interpreting the task differently) and therefore less biased than if only I would label it. Also it was carried out leaving the task slightly open to interpretation on purpose, to understand how humans approach the task of tagging paragraphs of a job ad.
+
+\paragraph{Implementation}
+\label{par:Implementation}
+
+\ref{sub:thesis-tagger: A Tool for Tagging Chunked Job Ads}
 
 
-% ----------- Explorative Paragraph Dataset1
+\paragraph{Testing Procedure and Metrics}
+\label{par:Testing Procedure and Metrics}
+
+In a first step the tool was only shown to 3 participants to see if the UI had flows and the task was understood. Based on this feedback the tool was improved (especially an example was provided) and tested with the Data Mining Research group who tagged a bunch of job ads with it. The feedback I got from there was then taken into consideration for the last iteration which then opened to the public (via social media etc.). A few days later the tool was then shared internally with Sanoma employees and set up as a competition (participants could leave their email addresses and the one with the most tagged job ads would win).
+
+\paragraph{Results}
+\label{par:Results}
+
+The participation was a absolutely great and I received 91 tagged ads using almost 400 tags for the different sections.
+
+\paragraph{Learnings}
+\label{par:Learnings}
+
+The main learning was that instructions must be really simple and that it helps a lot to test this in a few rounds before releasing such tool to the public. The second learning was that the competition really helped to collect a lot of data.
 
 
 \todo{Picture of software setup?}
@@ -131,6 +165,14 @@ In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 t
 \todo{Comparison one-vs-rest and one-vs-one against linear machine}
 \todo{Visualizations and embeddings of data in 2D (and decision boundaries?)}
 \todo{show T-SNE embeddings of doc2vec vectors}
+
+
+
+\subsubsection{Multi-class Sentence Classification}
+\label{subs:Multi-class Sentence Classification}
+
+% ----------- Data Sections
+
 
 
 % ----------- Dataset2

@@ -1,7 +1,7 @@
 \glossaryentry{Error Matrix?\glossentry{error matrix}|glsseeformat[Glossary:]{confusion matrix}}{Z}
 \glossaryentry{API?\glossentry{apig}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{$k$-Nearest Neighbors?\glossentry{knng}|setentrycounter[]{page}\glsnumberformat}{i}
-\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{anng}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{langdetect?\glossentry{langdetect}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{i}
@@ -11,36 +11,43 @@
 \glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Fuzzy Front End?\glossentry{ffeg}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Feature Selection?\glossentry{Feature Selection}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Click-through rate?\glossentry{click-through rate}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{page views?\glossentry{page views}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{crowd sourcing?\glossentry{crowd sourcing}|setentrycounter[]{page}\glsnumberformat}{i}
-\glossaryentry{Fuzzy Front End?\glossentry{ffeg}|setentrycounter[]{page}\glsnumberformat}{8}
-\glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{14}
-\glossaryentry{Oikotie Työpaikat?\glossentry{Oikotie Tyopaikat}|setentrycounter[]{page}\glsnumberformat}{14}
-\glossaryentry{langdetect?\glossentry{langdetect}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{crowd sourcing?\glossentry{crowd sourcing}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{26}
-\glossaryentry{$k$-Nearest Neighbors?\glossentry{knng}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{28}
-\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{anng}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{8}
+\glossaryentry{Click-through rate?\glossentry{click-through rate}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{page views?\glossentry{page views}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{18}
+\glossaryentry{Oikotie Työpaikat?\glossentry{Oikotie Tyopaikat}|setentrycounter[]{page}\glsnumberformat}{18}
+\glossaryentry{langdetect?\glossentry{langdetect}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{crowd sourcing?\glossentry{crowd sourcing}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{$k$-Nearest Neighbors?\glossentry{knng}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{35}
+\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{35}
