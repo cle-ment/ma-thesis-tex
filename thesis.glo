@@ -7,6 +7,9 @@
 \glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Oikotie Työpaikat?\glossentry{Oikotie Tyopaikat}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Node.js?\glossentry{Node.js}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{MongoDB?\glossentry{MongoDB}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Mustache?\glossentry{Mustache}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Fuzzy Front End?\glossentry{ffeg}|setentrycounter[]{page}\glsnumberformat}{i}
@@ -27,27 +30,30 @@
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{crowd sourcing?\glossentry{crowd sourcing}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{GitHub?\glossentry{GitHub}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{8}
-\glossaryentry{Click-through rate?\glossentry{click-through rate}|setentrycounter[]{page}\glsnumberformat}{9}
-\glossaryentry{page views?\glossentry{page views}|setentrycounter[]{page}\glsnumberformat}{9}
-\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{Oikotie Työpaikat?\glossentry{Oikotie Tyopaikat}|setentrycounter[]{page}\glsnumberformat}{18}
-\glossaryentry{langdetect?\glossentry{langdetect}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{crowd sourcing?\glossentry{crowd sourcing}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{$k$-Nearest Neighbors?\glossentry{knng}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{35}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{Node.js?\glossentry{Node.js}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{MongoDB?\glossentry{MongoDB}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{Mustache?\glossentry{Mustache}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{GitHub?\glossentry{GitHub}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{Oikotie Työpaikat?\glossentry{Oikotie Tyopaikat}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{langdetect?\glossentry{langdetect}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{crowd sourcing?\glossentry{crowd sourcing}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{$k$-Nearest Neighbors?\glossentry{knng}|setentrycounter[]{page}\glsnumberformat}{28}
+\glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{28}
+\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{28}
+\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsnumberformat}{29}
+\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{32}
