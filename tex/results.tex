@@ -10,11 +10,8 @@
 \section{Results}
 \label{sec:Results}
 
-\subsection{Text Classification Using Vector Space Models}
-\label{sub:Text Classification Using Vector Space Models}
-
-\subsubsection{Baseline: Uniform and Stratified Guessing}
-\label{subs:baselines-classifiers}
+\subsection{Baseline}
+\label{sub:Baseline}
 
 Both, uniform and stratified guessing achieve a Matthews Correlation Coefficient score of around 0 (averaged over 1000 runs) as expected for guessing strategies (see Section~\ref{subs:informedness-markedness-mcc}). On the other hand the accuracy for uniform guessing is around 0.16 which corresponds to $1/\text{K}$ for the K classes and around 0.26 for stratified guessing which reflects the skew of the label distribution.
 Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these baseline variants in absolute and normalized form, revealing the properties of these guessing strategies.
@@ -51,6 +48,9 @@ Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these bas
     \caption{Confusion matrices of uniform and stratified guessing strategies. }
 \label{fig:guessing-conf-matrix}
 \end{figure}
+
+\subsection{Text Classification Using Vector Space Models}
+\label{sub:Text Classification Using Vector Space Models}
 
 \subsubsection{N-gram Models}
 
@@ -601,4 +601,4 @@ For instance using hierarchical softmax decreases performance when setting all o
 
 \subsubsection{Character-based Multi-task LSTM *}
 
-\subsection{Discussion and Comparison of Approaches}
+\subsection{Comparison of Approaches}

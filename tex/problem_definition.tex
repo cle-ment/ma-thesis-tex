@@ -37,8 +37,8 @@ If labels are assumed to be statistically independent multi-label classification
 
 The prediction task in the scope of this thesis is \emph{Multi-class Sentence Classification} which shall be formulated as a special case of Text Classification defined above. Specifically the goal is to perform \emph{document-pivoted Multi-class Text Classification} where the documents $\mathcal{D}$ are the set of all sentences $S$ drawn \emph{uniformly and independently} at random from a set of job advertisements $\mathcal{J}$, and the classes $\mathcal{C}$ are set to be the following set of mutually exclusive labels $\mathcal{L} = \{ \text{benefits}, \text{candidate}, \text{company}, \text{job}, \text{nextsteps}, \text{other} \}$. We thus allow for no knowledge to be used regarding the origin of a sentence $s_i$, meaning that the prediction of each sentence is independent must assume the same prior information. The task can hence be expressed as predicting true label $l_i$ for a sentence $s_i$, i.e.\ finding the mapping $\widetilde{\Phi} : \mathcal{S} \rightarrow \mathcal{L}$.
 
-\subsection{Dataset Used for Evaluation}
-\label{subs:Dataset Used for Evaluation}
+\subsection{Dataset: Labelled Sentences from Job Advertisements}
+\label{subs:Dataset: Labelled Sentences from Job Advertisements}
 
 The performance of approaching the research problem will be evaluated using a dataset that was designed and created specifically for the purpose of this work. For detailed information on the process and design decisions involved please refer to Section~\ref{sub:Definition Phase: Framing the Problem} (\nameref{sub:Definition Phase: Framing the Problem}). Here the key characteristics of the data will be shown.
 

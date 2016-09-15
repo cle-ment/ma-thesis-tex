@@ -104,8 +104,8 @@ The exact task given to the participants was ``Describe what each section is abo
 
 In a first step the tool was only shown to 3 participants to get immediate feedback if the user interface had flaws and whether the task was understood. Based on this feedback the tool was improved by providing an example for the participants and then tested with a slightly larger group of 12 persons. After correcting a few minor details in the user interface a public link was then shared via social media and other channels with as many people as possible. A few days later the tool was then also shared internally within Sanoma where it was set up as a competition to tag the most possible job ads which greatly increased participation.
 
-\paragraph{Prototype for Multi-label Paragraph Classification}
-\label{par:Prototype for Multi-label Paragraph Classification}
+\paragraph{Experiments for Multi-label Paragraph Classification}
+\label{par:Experiments for Multi-label Paragraph Classification}
 
 To test whether automatic prediction of these obtained labels for paragraphs was possible a small prototype was build. For classification a TF.IDF weighed N-gram model was built that uses the word counts with the words associated with a label to create mappings for these labes in a common vector space (see Section~\ref{subs:N-gram Models} for details). Using this vector space we can then apply various classification algorithms with the assumption that closeness of labels in the vector space translates to similarity of the labels in the real world domain. Since every paragraph was potentially be labelled with multiple labels this problem was set up as multi-label classification where the absence or presence of each label is predicted for a paragraph. Several algorithms were applied, including \gls{knn}, a Naive Bayes Classifier and Decision Trees (see Section~\ref{sub:Classification Methods using Vector Space Models} for details).
 

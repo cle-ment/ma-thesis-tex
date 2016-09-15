@@ -1,5 +1,6 @@
 \glossaryentry{API?\glossentry{api}|glsseeformat[Glossary:]{apig}}{Z}
 \glossaryentry{kNN?\glossentry{knn}|glsseeformat[Glossary:]{knng}}{Z}
+\glossaryentry{MCC?\glossentry{MCC}|glsseeformat[Glossary:]{MCC}}{Z}
 \glossaryentry{ANN?\glossentry{ANN}|glsseeformat[Glossary:]{Artificial Neural Network}}{Z}
 \glossaryentry{NLTK?\glossentry{NLTK}|glsseeformat[Glossary:]{Natural Language Toolkit}}{Z}
 \glossaryentry{FFE?\glossentry{ffe}|glsseeformat[Glossary:]{ffeg}}{Z}
@@ -8,6 +9,7 @@
 \glossaryentry{SVM?\glossentry{svm}|glsseeformat[Glossary:]{Support Vector Machine}}{Z}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{kNN?\glossentry{knn}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{ANN?\glossentry{ANN}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{CL?\glossentry{CL}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{NLP?\glossentry{NLP}|setentrycounter[]{page}\glsnumberformat}{i}
@@ -40,3 +42,6 @@
 \glossaryentry{SVM?\glossentry{svm}|setentrycounter[]{page}\glsnumberformat}{32}
 \glossaryentry{ANN?\glossentry{ANN}|setentrycounter[]{page}\glsnumberformat}{32}
 \glossaryentry{ANN?\glossentry{ANN}|setentrycounter[]{page}\glsnumberformat}{35}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{IR?\glossentry{IR}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{38}

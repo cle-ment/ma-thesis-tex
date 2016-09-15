@@ -7,37 +7,47 @@
 \section{Experiments}
 \label{sec:Experiments}
 
-\subsection{Objectives}
-\label{sub:Objectives}
-
-- Find the most effective method of solving the defined problem
-- in terms of effective/meaningful prediction
-- in terms of time and efficiency 
-
-
 \todo{Doc2Vec model is evaluated in 2 ways (normal and trained on inferred vectors)}
 
+With the final problem definition and dataset in place experiments were set up to evaluate the performance of the different methods to approach this problem that that are explained in Section~\ref{sec:Methods}. In this section the research objectives of these experiments will be defined and the metrics used will be described. Afterwards the experimental setup for each of the methods in the same order as the results for each approach will be presented in Section~\ref{sec:Results}.
 
-\subsection{Text Classification Using Vector Space Models}
-\label{Text Classification Using Vector Space Models}
+\subsection{Objectives and Metrics}
+\label{sub:Objectives and Metrics}
 
-As Section~\ref{sec:vector-space-models} explains, a popular way to approach text classification and other tasks in natural language processing is to build a language model by creating explicit representations of the objects or entities to be processed in a vector space. Such vectors can be used as features for a learning algorithm. Depending on the representation they can also carry further meaning, such as to encode notions of similarity of associativity between the objects.
+The experiments had simple objectives: The goal was to evaluate each method in terms of its effectiveness using a prediction metric well-suited for this problem. Further additional considerations, especially algorithmic time and space complexity were taken into account by comparing methods with regards to their runtime and need for computational resources.
 
-In order to determine effective vector space representations for the task of sentence classification, a set of experiments was carried out to study and compare different approaches. Each method was studied with regards to the effect of its hyper-parameters on effectiveness when producing an input space to different classifiers, but also time and memory requirements at training and inference time are taken into account \todo{actually discuss time and memory requirements}.
+\glsreset{MCC}
 
-In order to compare the effectiveness for the sentence classification task as discussed in Section\todo{reference section here} each labelled document was transformed into a vector space representation using the different methods and then used for classification with a simple logistic regression classifier (\todo{link to logistic regression classifier explanation here}). Performance was then compared with regards to Matthews Correlation Coefficient for K classes (Section~\ref{par:Matthews Correlation Coefficient for K classes}) and the Accuracy \todo{link accuracy?} of the classifier.
+As a metric for predictive performance \gls{MCC} was chosen. This metric is used relatively rarely used as opposed to e.g.\ the F1 score that is common in the \gls{IR} literature where ignoring True Negatives can be tolerated. As an example we do not generally care if a search engine predicts correctly all the billions of website we don't want to see for a search query as long as it retrieves enough relevant ones.
+With the dataset at hand though the needs were different and a metric was needed that can reliably and without bias measure prediction despite a strongly skewed distribution of labels, and stratified sampling to achieve a balanced distribution was not an option since the dataset was too small. \gls{MCC} fulfills these criteria as Section~\ref{sub:Evaluation Metrics for Text Classification} points out and additionally is easy to interpret as it is a correlation score between 1 (absolute correlation) and -1 (absolute anti-correlation) as opposed to e.g.\ the categorical cross-entropy error. In some experiments additionally further metrics were measured.
 
-\paragraph{Baselines: Uniform and Stratified Guessing}
-\label{par:Baselines: Uniform and Stratified Guessing}
+\subsection{Baseline}
+\label{par:Baseline}
 
 As a baseline for comparing the performance of classification two different guessing strategies were used, namely uniform and stratified guessing.
 Uniform guessing refers to a predictor that samples from the given classes assuming a uniform distribution whereas stratified guessing takes the label distribution in the data as the underlying probability distribution.
 Then both methods just sample from these distributions to produce ``predictions'', while ignoring the actual input data.
 
-The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in Section~\ref{subs:n-gram-language-models}. As mentioned, in essence this type of model relies on simple statistics which makes for straightforward computation but at the same time comes at cost of expressiveness, especially in terms of temporal dependencies between words.
+\todo{mention score for baselines being 0 for MCC}
+
+\subsection{Text Classification Using Vector Space Models}
+\label{sub:Text Classification Using Vector Space Models}
+
+A popular way to approach text classification and other tasks in natural language processing is to build a model that maps data into a vector space so that distance between data points in this space translates to similarity between the objects (see Section~\ref{sub:Vector Space Models}). The resulting vector representation of the data can then be fed into various learning algorithms. This section describes the experiments performed to study this approach to the sentence classification problem as defined in Section~\ref{subs:Problem Formalism: Multi-class Sentence Classification}.
+
+First the different approaches to produce such vector representations are compared. Several methods were used to generate vectors from the data while limiting dimensionality to 300 --- a heuristically chosen value as performance for the models did not increase significantly after beyond it. These vectors were then compared in terms of performance using them as input to the very simple classification method Logistic Regression.
+
+Second, the most well-performing candidates to produce vector representations were chosen and a set of more advanced classification techniques was applied to them.
+
+\todo{baseline comparison missing in later experiments?}
+
+\subsubsection*{Evaluation of Vector Space Models}
+\label{subs:Evaluation of Vector Space Models}
 
 \paragraph{N-gram Models}
 \label{par:N-gram Models}
+
+The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in Section~\ref{subs:n-gram-language-models}. As mentioned, in essence this type of model relies on simple statistics which makes for straightforward computation but at the same time comes at cost of expressiveness, especially in terms of temporal dependencies between words.
 
 As N-grams models come in a variety of variants the most important ones were used as hyper-parameters to the model and a grid search was carried out over a wide range of combinations over these. The specific hyper-parameter settings are listed in Table~\ref{tab:ngram-parameters}. The grid search was optimized with regards to \emph{Matthews Correlation Coefficient} (see Section~\ref{par:Matthews Correlation Coefficient for K classes}) using 5-fold cross-validated with three standard classifiers: Logistic Regression and Naive Bayes and SVM.
 
@@ -51,7 +61,36 @@ Next a Bag-of-Means model as described in Section~\ref{subp:Bag-of-Means} was ev
 
 Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation.
 
-\paragraph{Classification Methods using Vector Space Models}
-\label{par:Classification Methods using Vector Space Models}
+\subsubsection*{Evaluation of Classification Methods}
+\label{subs:Evaluation of Classification Methods}
+
+\paragraph{Logistic Regression}
+\label{par:Logistic Regression}
+
+\paragraph{Decision Tree}
+\label{par:Decision Tree}
+
+\paragraph{Naive Bayes}
+\label{par:Naive Bayes}
+
+\paragraph{Support Vector Machine}
+\label{par:Support Vector Machine}
+
+\paragraph{$k$ Nearest Neighbors}
+\label{par:k Nearest Neighbors}
+
+\paragraph{Random Forest}
+\label{par:Random Forest}
+
+\paragraph{Vanilla Neural Network}
+\label{par:Vanilla Neural Network}
+
+\paragraph{Deep Neural Network}
+\label{par:Deep Neural Network}
+
+\paragraph{Convolutional Neural Network}
+\label{par:Convolutional Neural Network}
+
+
 
 \subsection{Sequential Text Classification}
