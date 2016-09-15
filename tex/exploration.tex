@@ -102,25 +102,49 @@ The exact task given to the participants was ``Describe what each section is abo
 \label{fig:thesis-tagger interface}
 \end{figure}
 
-In a first step the tool was only shown to 3 participants to get immediate feedback if the user interface had flaws and whether the task was understood. Based on this feedback the tool was improved by providing an example for the participants and then tested with a slightly larger group of 12 persons. After correcting a few minor details in the user interface a public link was then shared via social media and other channels with as many people as possible. A few days later the tool was then also shared internally within Sanoma where it was set up as a competition to tag the most possible job ads.
-
-In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 tags.
-
+In a first step the tool was only shown to 3 participants to get immediate feedback if the user interface had flaws and whether the task was understood. Based on this feedback the tool was improved by providing an example for the participants and then tested with a slightly larger group of 12 persons. After correcting a few minor details in the user interface a public link was then shared via social media and other channels with as many people as possible. A few days later the tool was then also shared internally within Sanoma where it was set up as a competition to tag the most possible job ads which greatly increased participation.
 
 \paragraph{Prototype for Multi-label Paragraph Classification}
 \label{par:Prototype for Multi-label Paragraph Classification}
 
-To test whether
+To test whether automatic prediction of these obtained labels for paragraphs was possible a small prototype was build. For classification a TF.IDF weighed N-gram model was built that uses the word counts with the words associated with a label to create mappings for these labes in a common vector space (see Section~\ref{subs:N-gram Models} for details). Using this vector space we can then apply various classification algorithms with the assumption that closeness of labels in the vector space translates to similarity of the labels in the real world domain. Since every paragraph was potentially be labelled with multiple labels this problem was set up as multi-label classification where the absence or presence of each label is predicted for a paragraph. Several algorithms were applied, including \gls{knn}, a Naive Bayes Classifier and Decision Trees (see Section~\ref{sub:Classification Methods using Vector Space Models} for details).
 
-- tf.idf similarity with knn
-- clustering similar approach
+As expected this became very difficult as the data was extremely sparse with only a few cases of labels being assigned. The reason of course was that the choice of labels was completely left open and therefore most labels had only one paragraph associated with it.
+To counter this problem the approach chosen was clustering the data once algorithmically and once manually.
+
+Algorithmic clustering was carried out with using \gls{Lloyds Algorithm} for \gls{K-means clustering}, increasing the number of clusters and measuring the \gls{silhouette score} as a measure of how well clusters were separated. The silhouette score did not indicate a clear minimum at any point and the separation of clusters did not follow a trend. Figure~\ref{fig:kmeans_pca} s
+hows an example of the clustering when assuming 6 and 8 clusters respectively and a visualization of the first principal components using \gls{PCA}.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{1\textwidth}
+        \includegraphics[width=1\textwidth]{img/exp-multi-label-paragraphs/kmeans_n=6_pca.pdf}
+        \caption{Confidence}
+\label{fig:kmeans_n=6_pca}
+    \end{subfigure}
+~
+    \begin{subfigure}[b]{1\textwidth}
+        \includegraphics[width=1\textwidth]{img/exp-multi-label-paragraphs/kmeans_n=8_pca.pdf}
+        \caption{Cumulative Confidence}
+\label{fig:kmeans_n=6_pca}
+    \end{subfigure}
+    \caption{Amount of label judgements versus label confidence of the sentence label data collected via crowdflower}
+\label{fig:kmeans_pca}
+\end{figure}
+
+Thus the data was sorted into a hierarchy as a second attempt to counter disambiguate and group labels that are similar.
+
+
+
 
 \paragraph{Results}
 \label{par:Results}
 
+In total 91 job ads were tagged, resulting in 379 tagged text sections and 358 tags.
+
 - data is very varied but could be mapped to 6 big topics
 - prototype somewhat works (at least when data is clustered manually)
-- 
+-
 
 \paragraph{Learnings and Conclusions}
 \label{par:Learnings and Conclusions}
@@ -135,11 +159,15 @@ The main learning was that instructions must be really simple and that it helps 
 \subsubsection{Multi-class Sentence Classification}
 \label{subs:Multi-class Sentence Classification}
 
-% ----------- Data Sections
+To help this process literature for recruiters was consulted on how to write successful job advertisements and which topics to cover. The result of this grouping can be seen in Figure~\ref{fig:job-listing-structure}
 
 
-
-% ----------- Dataset2
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{img/job-listing-structure.pdf}
+  \caption{Structure of job listings inferred from the labels given by participants.}
+\label{fig:job-listing-structure}
+\end{figure}
 
 \begin{figure}[h]
  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Setup
