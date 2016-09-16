@@ -11,12 +11,11 @@
 \label{sec:Results}
 
 \subsection{Baseline}
-\label{sub:Baseline}
+\label{sub:Baseline (Results)}
 
-Both, uniform and stratified guessing achieve a Matthews Correlation Coefficient score of around 0 (averaged over 1000 runs) as expected for guessing strategies (see Section~\ref{subs:informedness-markedness-mcc}). On the other hand the accuracy for uniform guessing is around 0.16 which corresponds to $1/\text{K}$ for the K classes and around 0.26 for stratified guessing which reflects the skew of the label distribution.
-Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these baseline variants in absolute and normalized form, revealing the properties of these guessing strategies.
+As explained in Section~\ref{sub:Baseline (Experiments)}, uniform and stratified guessing were used as baselines for predictive performance. Averaged over 1000 runs both strategies yielded an \gls{MCC} score close to zero. Accuracy by comparison was around 0.16 for uniform guessing and 0.26 for stratified guessing. These results are to be expected and highlight the reason for choosing \gls{MCC} as the principal metric: \gls{MCC} is zero for random predictions for either strategy whereas the accuracy in the uniform setting corresponds simply to a value of $1/k$ where $k = 6$ is the number of labels. The accuracy in the stratified setting reveals improves by taking advantage of knowledge about the skew in the label distribution. Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these baseline variants in absolute and normalized form, revealing the properties these guessing strategies.
 
-\begin{figure}[h]
+\begin{figure}[h!]
  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Baseline:-Guessing-Strategies
     \centering
     \begin{subfigure}[b]{0.47\textwidth}
@@ -24,30 +23,26 @@ Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these bas
         \caption{Uniform, absolute}
 \label{fig:guessing-conf-matrix-uniform}
     \end{subfigure}
-~%add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.48\textwidth}
+~\begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-uniform-normalized.pdf}
         \caption{Uniform, normalized}
 \label{fig:guessing-conf-matrix-uniform-normalized}
     \end{subfigure}
-~
-    \begin{subfigure}[b]{0.47\textwidth}
+~\begin{subfigure}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-stratified.pdf}
         \caption{Stratified, absolute}
 \label{fig:guessing-conf-matrix-stratified}
     \end{subfigure}
-~
-    %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.48\textwidth}
+~\begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-stratified-normalized.pdf}
         \caption{Stratified, normalized}
 \label{fig:guessing-stratified-normalized}
     \end{subfigure}
-    \caption{Confusion matrices of uniform and stratified guessing strategies. }
+    \caption{Confusion matrices of uniform and stratified guessing strategies.}
 \label{fig:guessing-conf-matrix}
 \end{figure}
+
+\clearpage
 
 \subsection{Text Classification Using Vector Space Models}
 \label{sub:Text Classification Using Vector Space Models}

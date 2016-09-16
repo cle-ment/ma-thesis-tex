@@ -22,7 +22,7 @@ As a metric for predictive performance \gls{MCC} was chosen. This metric is used
 With the dataset at hand though the needs were different and a metric was needed that can reliably and without bias measure prediction despite a strongly skewed distribution of labels, and stratified sampling to achieve a balanced distribution was not an option since the dataset was too small. \gls{MCC} fulfills these criteria as Section~\ref{sub:Evaluation Metrics for Text Classification} points out and additionally is easy to interpret as it is a correlation score between 1 (absolute correlation) and -1 (absolute anti-correlation) as opposed to e.g.\ the categorical cross-entropy error. In some experiments additionally further metrics were measured.
 
 \subsection{Baseline}
-\label{par:Baseline}
+\label{sub:Baseline (Experiments)}
 
 As a baseline for comparing the performance of classification two different guessing strategies were used, namely uniform and stratified guessing.
 Uniform guessing refers to a predictor that samples from the given classes assuming a uniform distribution whereas stratified guessing takes the label distribution in the data as the underlying probability distribution.
