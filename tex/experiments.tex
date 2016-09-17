@@ -28,10 +28,9 @@ As a baseline for comparing the performance of classification two different gues
 Uniform guessing refers to a predictor that samples from the given classes assuming a uniform distribution whereas stratified guessing takes the label distribution in the data as the underlying probability distribution.
 Then both methods just sample from these distributions to produce ``predictions'', while ignoring the actual input data.
 
-\todo{mention score for baselines being 0 for MCC}
 
-\subsection{Text Classification Using Vector Space Models}
-\label{sub:Text Classification Using Vector Space Models}
+\subsection{Approach 1: Vector Space Models}
+\label{sub:Approach 1: Vector Space Models (Experiments)}
 
 A popular way to approach text classification and other tasks in natural language processing is to build a model that maps data into a vector space so that distance between data points in this space translates to similarity between the objects (see Section~\ref{sub:Vector Space Models}). The resulting vector representation of the data can then be fed into various learning algorithms. This section describes the experiments performed to study this approach to the sentence classification problem as defined in Section~\ref{subs:Problem Formalism: Multi-class Sentence Classification}.
 
@@ -45,11 +44,30 @@ Second, the most well-performing candidates to produce vector representations we
 \label{subs:Evaluation of Vector Space Models}
 
 \paragraph{N-gram Models}
-\label{par:N-gram Models}
+\label{par:N-gram Models (Experiments)}
 
 The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in Section~\ref{subs:n-gram-language-models}. As mentioned, in essence this type of model relies on simple statistics which makes for straightforward computation but at the same time comes at cost of expressiveness, especially in terms of temporal dependencies between words.
 
-As N-grams models come in a variety of variants the most important ones were used as hyper-parameters to the model and a grid search was carried out over a wide range of combinations over these. The specific hyper-parameter settings are listed in Table~\ref{tab:ngram-parameters}. The grid search was optimized with regards to \emph{Matthews Correlation Coefficient} (see Section~\ref{par:Matthews Correlation Coefficient for K classes}) using 5-fold cross-validated with three standard classifiers: Logistic Regression and Naive Bayes and SVM.
+As N-grams models come in a variety of variants the most important ones were used as hyper-parameters to the model and a grid search was carried out over a wide range of combinations over these. The specific hyper-parameter settings are listed in Table~\ref{tab:N-gram Hyper-parameters Space}. The grid search was optimized with regards to \emph{Matthews Correlation Coefficient} (see Section~\ref{par:Matthews Correlation Coefficient for K classes}) using 5-fold cross-validated with three standard classifiers: Logistic Regression and Naive Bayes and SVM.
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ l l l}
+    \toprule
+    Hyper-Parameter & N-gram Type: Words & N-gram Type: Characters \\
+    \midrule
+    N-gram Range (Range) & [1,1], [1,2], [1,3], [2,3], [3,3] & [1,5], [1,10], [5,10], [5,15] \\
+    Stop Words & English, None & N/A \\
+    Vector Size (Size) & 10, 100, 300 & 10, 100, 300 \\
+    IDF & Yes, No & Yes, No \\
+    Norm & L1, L2, None & L1, L2, None \\
+    Sub-linear TF & Yes, No & Yes, No \\
+    \bottomrule
+  \end{tabular}
+  \caption{Parameter search space word and character level N-gram models}
+\label{tab:N-gram Hyper-parameters Space}
+\end{center}
+\end{table}
 
 \paragraph{Bag-of-Means: An Averaged Word2Vec Model}
 \label{par:Bag-of-Means: An Averaged Word2Vec Model}
@@ -92,5 +110,5 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
 \label{par:Convolutional Neural Network}
 
 
-
-\subsection{Sequential Text Classification}
+\subsection{Approach 2: Sequential Models}
+\label{sub:Approach 2: Sequential Models (Experiments)}

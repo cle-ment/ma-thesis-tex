@@ -44,102 +44,69 @@ As explained in Section~\ref{sub:Baseline (Experiments)}, uniform and stratified
 
 \clearpage
 
-\subsection{Text Classification Using Vector Space Models}
-\label{sub:Text Classification Using Vector Space Models}
+\subsection{Approach 1: Vector Space Models}
+\label{sub:Approach 1: Vector Space Models (Results)}
+
+This section presents the experimental results for the first approach to the sentence classification problem defined in Section~\ref{subs:Problem Formalism: Multi-class Sentence Classification}. Following the structure of experiments outlined in Section~\ref{sub:Approach 1: Vector Space Models (Experiments)}, first the results on for the three different techniques to build Vector Space Models explained are shown and afterwards the outcomes of evaluating the classification algorithms on the with the best vector space models are laid out.
 
 \subsubsection{N-gram Models}
 
-\todo{intro here}
+Not without reason are N-Gram Models still so widely used as these experiments confirm. They are easy to understand, relatively straightforward to train, fast to compute and yield good performance for many problems in \gls{NLP}.
 
-\begin{table}[h]
-  \begin{center}
-  \begin{tabular}{ l l l}
-    \toprule
-    Hyper-Parameter & N-gram Type: Words & N-gram Type: Characters \\
-    \midrule
-    N-gram Range (Range) & [1,1], [1,2], [1,3], [2,3], [3,3] & [1,5], [1,10], [5,10], [5,15] \\
-    Stop Words & English, None & N/A \\
-    Vector Size (Size) & 10, 100, 300 & 10, 100, 300 \\
-    IDF & Yes, No & Yes, No \\
-    Norm & L1, L2, None & L1, L2, None \\
-    Sub-linear TF & Yes, No & Yes, No \\
-    \bottomrule
-  \end{tabular}
-  \caption{Parameter search space word and character level N-gram models}
-\label{tab:Ngram Parameters}
-\end{center}
-\end{table}
-
-The 5 best results of these exhaustive grid searches can be seen in Table~\ref{tab:Ngram Grid Search} below.
+Table~\ref{tab:Ngram Grid Search} shows the five best results of the exhaustive grid search over the search space of hyper-parameters listed in Table~\ref{tab:N-gram Hyper-parameters Space} in Section~\ref{par:N-gram Models (Experiments)} using Logistic Regression, Naive Bayes and SVM as classification algorithms. All models were trained using 5-fold cross-validation on the training data.
 
 \begin{table}[h]
   \begin{center}
   \begin{tabular}{ l l l l l l l l }
     \toprule
-    Type & Range & Stop words & Size & IDF & Norm & Sub-linear TF & MCC Score \\
+    Type & Range & Stop words & Size & IDF & Norm & Sub-linear TF & \gls{MCC} \\
     \midrule
     Word & [1,1] & None & 300 & Yes &  & Yes & 0.689 \\
     Word & [1,1] & None & 300 & Yes &  & No & 0.687 \\
     Word & [1,1] & None & 300 & No &  & Yes & 0.682 \\
     Word & [1,1] & None & 300 & No &  & No & 0.682 \\
     Word & [1,1] & None & 300 & Yes & L2 & Yes & 0.68 \\
-    % Word & [1,1] & None & 300 & Yes & L2 & No & 0.678 \\
-    % Word & [1,2] & None & 300 & No &  & Yes & 0.677 \\
-    % Word & [1,2] & None & 300 & Yes & L2 & Yes & 0.676 \\
-    % Word & [1,2] & None & 300 & Yes & L2 & No & 0.675 \\
-    % Word & [1,2] & None & 300 & No &  & No & 0.675 \\
     \midrule
     Word & [1,1] & None & 300 & No & & Yes & 0.659  \\
     Word & [1,1] & None & 300 & No & & No & 0.656 \\
     Word & [1,2] & None & 300 & No & & Yes & 0.655 \\
     Word & [1,2] & None & 300 & No & & No & 0.655 \\
     Word & [1,3] & None & 300 & No & & No & 0.65 \\
-    % Word & [1,1] & None & 300 & Yes & L2 & Yes & 0.648 \\
-    % Word & [1,1] & None & 300 & Yes & L2 & No & 0.648 \\
-    % Word & [1,3] & None & 300 & No & & Yes & 0.648 \\
-    % Word & [1,2] & None & 300 & Yes & L2 & No & 0.647 \\
-    % Word & [1,2] & None & 300 & Yes & L2 & Yes & 0.646 \\
     \midrule
     Word & [1,1] & None & 300 & Yes & & Yes & 0.689 \\
     Word & [1,1] & None & 300 & Yes & & No  & 0.689 \\
     Word & [1,2] & None & 300 & Yes & & Yes & 0.677 \\
     Word & [1,2] & None & 300 & Yes & & No  & 0.677 \\
     Word & [1,3] & None & 300 & Yes & & Yes & 0.674 \\
-    % Word & [1,3] & None    & 300 & Yes & & No  & 0.673 \\
-    % Word & [1,1] & English & 300 & Yes & & Yes & 0.65 \\
-    % Word & [1,1] & English & 300 & Yes & & No  & 0.65 \\
-    % Word & [1,2] & English & 300 & Yes & & No  & 0.649 \\
-    % Word & [1,2] & English & 300 & Yes & & Yes & 0.648 \\
     \bottomrule
   \end{tabular}
-  \caption{Top 5 results of grid search over hyper-parameter space as listed in Table~\ref{tab:Ngram Parameters} using 5-fold cross-validated Logistic Regression (top), Naive Bayes (middle) and SVM (bottom) classifiers.}
+  \caption{Top 5 results of grid search over hyper-parameter space using 5-fold cross-validation on the training set with Logistic Regression (top), Naive Bayes (middle) and SVM (bottom).}
 \label{tab:Ngram Grid Search}
 \end{center}
 \end{table}
 
-\todo{Why are the grid scores lower than the latter scores on the train/test split? Because they're averaged and only on the training data?}
-
-Across all classifiers the following results on the hyper-parameters can be observed:
+We will next look at the results for each of the hyper-parameters in detail to analyze their effect on the performance of the model:
 
 \paragraph{Type}
 \label{par:Type}
-Words as the atomic unit for N-grams consistently lead to better results. This is understandable as the search space of combinations of characters is significantly larger than the search space of known words.
+Words as the atomic unit for N-grams consistently lead to better results. This is due to the fact that the search space of combinations of characters is significantly larger than the search space of known words, increasing model complexity exponentially.
 
 \paragraph{Range}
 \label{par:Range}
-There are slight differences to be observed between the three classifiers used, but with all three models the best performance is achieved using Unigrams. Also all of the top results across all classifiers include Unigrams in the model while extending the range towards bigrams or trigrams.
+With regards to the range, i.e.\ the interval for possible $N$'s in the N-grams, there are slight differences to be observed between the three classifiers used but with all three models the best performance is achieved using Unigrams. Also all of the top results across all classifiers include Unigrams in the model while extending the range towards bigrams or trigrams.
 
 \paragraph{Stop Words}
 \label{par:Stop Words}
 None of the top results of the performed grid searches used stop words. This is interesting as using stop-words to remove hand-picked, highly frequent words that do not carry much meaning is common practice. It seems there is information carried within these stop words. Of course this outcome is also influenced by the particular stop-list used (see Section~\ref{subp:Stop words}).
 
-\paragraph{Size (matters)}
+\paragraph{Size}
 \label{par:Size}
-For the searched settings the largest vector dimensionality of 300 achieves the best performance. This is not surprising as higher-dimensional vectors can capture more information about N-gram occurrences. However in practice the vector size must be limited as it grows with the vocabulary --- potentially at an exponential rate if N-grams other than Unigrams are used. Also very high dimensionality often leads to decreased performance in terms of generalization of the model.
+For the given settings the highest vector dimensionality of 300 achieves the best performance. Thus we can conclude that size matters and bigger is better as higher-dimensional vectors can capture more information about N-gram occurrences.\todo{Maybe reformulate this, it's not thaat funny :D} However performance gain with increased dimensionality diminishes beyond a certain threshold which depends on the dataset and further models start to overfit, harming generalization performance.
+Also in practice the vector size must always be limited as it grows with the vocabulary, potentially at an exponential rate if N-grams larger than Unigrams are used.
 
 \paragraph{IDF}
 \label{par:IDF}
-There is no consensus between the classifiers on whether or not to weigh the N-gram frequencies by the \emph{inverse document frequency} (see Section~\ref{subp:TF.IDF weighting}). Thus it seems advisable to lead this parameter free for and evaluate both variants with a given classifier. For logistic regression however the performance differences are marginal and so the choice for this parameter seems somewhat arbitrary.
+There is no consensus between the classifiers on whether or not to weigh the N-gram frequencies by the inverse document frequency (see Section~\ref{subp:TF.IDF weighting}). Thus it seems advisable to leave this parameter free for and evaluate both variants with a given classifier. For logistic regression however the performance differences are marginal and so the choice for this parameter seems somewhat arbitrary.j
 
 \paragraph{Norm}
 \label{par:Norm}
@@ -148,15 +115,16 @@ Is seems that normalizing the vectors in most cases does not lead to any perform
 
 \paragraph{Sub-linear TF}
 \label{par:Sub-linear TF}
-Applying sub-linear TF (see Section~\ref{subp:Sublinear TF scaling}) does not seem to affect the results much and the choice of this parameter can hence be chosen almost arbitrarily as well, although here for all three classifiers applying it leads to a marginal improvement.
+Applying sub-linear term frequency scaling (see Section~\ref{subp:Sublinear TF scaling}) does not seem to affect the results much and the choice of this parameter can hence be chosen almost arbitrarily as well, although here for all three classifiers applying it leads to a marginal improvement.
+\bigskip
 
-Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier using the best N-gram model. It is evident that here logistic regression actually performs best as it offers both, a good accuracy as well as the highest score for Matthews Correlation Coefficient.
+Next the best model for each classifier with regards to \gls{MCC} validation score was chosen and trained on the whole training data and tested on the test data set. Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier using these best N-gram models. It is evident that here logistic regression actually performs best as it offers both, a good accuracy as \gls{MCC} well as the highest score for.
 
 \begin{table}[h]
   \begin{center}
   \begin{tabular}{ r | *2l | *2l }
     \toprule
-     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{|c}{Validation}\\
+     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{c}{Validation}\\
     Classifier & Accuracy & MCC & Accuracy & MCC \\
     \midrule
     Logistic Regression & 0.824 & 0.761 & 0.787 & 0.708 \\
@@ -164,24 +132,24 @@ Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier usi
     SVM                 & 0.835 & 0.681 & 0.786 & 0.700 \\
     \bottomrule
   \end{tabular}
-  \caption{Performance of each best N-gram model with Logistic Regression and Naive Bayes on the validation data}
+  \caption{Performance of each best N-gram model with Logistic Regression and Naive Bayes on the test data}
 \label{tab:Ngram Grid Search Scores}
 \end{center}
 \end{table}
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.3595\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-logreg-normalized.pdf}
         \caption{Logistic Regression}
 \label{fig:ngram-conf-matrix-logreg-normalized}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.267\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-naivebayes-normalized.pdf}
         \caption{Naive Bayes}
 \label{fig:ngram-conf-matrix-naivebayes-normalized}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.35\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-svm-normalized.pdf}
         \caption{SVM}
 \label{fig:ngram-conf-matrix-svm-normalized}
@@ -189,7 +157,6 @@ Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier usi
     \caption{Normalized confusion matrices all three classifiers using the best N-gram model found via cross-validated grid search. Both Naive Bayes as well as SVM show label bias towards the prevalent class \emph{candidate}.}
 \label{fig:ngram-conf-matrix}
 \end{figure}
-\todo{properly align visualization}
 
 Figure~\ref{fig:ngram} shows projections of the of the constructed feature space using the best model that was optimized with Logistic Regression. This visualization shows the separability of the classes in this space. Especially the PCA projection here reveals that it is clearly possible to separate the classes until a certain point.
 
@@ -590,7 +557,9 @@ For instance using hierarchical softmax decreases performance when setting all o
 \paragraph{Deep Neural Network}
 \paragraph{Convolutional Neural Network}
 
-\subsection{Sequential Text Classification}
+\subsection{Approach 2: Sequential Models}
+\label{sub:Approach 2: Sequential Models (Results)}
+
 
 \subsubsection{Character-based LSTM *}
 
