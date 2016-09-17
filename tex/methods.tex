@@ -62,7 +62,7 @@ Vector space model~\cite[Chapter 6.3, p.~120]{Manning:2008aa}
 
 
 \subsubsection{N-gram Models}
-\label{subs:N-gram Models}
+\label{subs:N-gram Models (Methods)}
 
 N-gram language models are based on co-occurrences of word or character sequences, so-called N-grams or $k$-shingles as they are referred to in the Data Mining literature~\cite[Chapter 3.2, p.~72]{Leskovec:2014aa}. Formally an N-gram is defined as a sequence of $n$ items, each of which consist of $n$ characters or words, effectively used to capture sub-sequences of text. Common choices are N-grams of size 1, 2 or 3 --- called \emph{unigrams}, \emph{bigrams} and \emph{trigrams} respectively --- and the definition can be extended to using a window size $[\textit{w}_{\text{min}}, \textit{w}_{\text{max}}]$, employing all combinations of N-grams in this interval.
 
@@ -184,18 +184,17 @@ As there the difference between frequent and infrequent words in large corpora c
   P(w_i) = 1 - \sqrt{\frac{t}{f(w_f)}}
 \end{equation}
 
-with $f(w_i)$ denoting the frequency of word $w_i$ and $t$ denoting a threshold.~\cite{Mikolov:2013ab} state that this method, while chosen heuristically, \textquote{accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words}.
+with $f(w_i)$ denoting the frequency of word $w_i$ and $t$ denoting a threshold. \cite{Mikolov:2013ab} state that this method, while chosen heuristically, \textquote{accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words}.
 
 \paragraph{Distributed representations for documents}
 \label{par:Distributed representations for documents}
 
 The models explained above are defined on words as the atomic unit. Therefore several ways have been proposed to extend these to sequences of words in order to obtain a vector space of sentences or documents. A few of these will be briefly outlined here:
 
-\subparagraph{Bag-of-Means}
+\subparagraph{Compositional Models and Bag-of-Means}
 \label{subp:Bag-of-Means}
-The term \emph{Bag-of-Means} refers to simply averaging over the word embedding vectors of all words in a document. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by~\cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
 
-\subparagraph{Parse Trees}~\cite{Le:2014aa} also mention a more sophisticated approach by \textquote{combining the word vectors in an order given by a parse tree of a sentence.} as done in~\cite{Socher:2011aa}, with the disadvantage that this method \textquote{has been shown to work for only sentences because it relies on parsing}~\cite{Le:2014aa}.
+Several approaches of composing document vectors out of word vectors have been studied in \cite{Mitchell:2010aa}. One of the most successful variants evaluated was weighted averaging of word embeddings, a technique also referred to as \emph{Bag-of-Means}. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by~\cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
 
 \subparagraph{Paragraph Vectors *}
 In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:

@@ -1,41 +1,52 @@
 % !TEX root = ../thesis.tex
 % !TEX spellcheck = en-US
 
-% doc2vec: highest value is highlighted
+\thispagestyle{empty}
 
-% How did I approach the problem, what methods did I evaluate
+\section{Experimental Results}
+\label{sec:Experimental Results}
 
-\clearpage
+With the final problem definition and dataset in place a series of experiments were conducted to evaluate the performance of the different approaches explained in Section~\ref{sec:Methods}.
+This part of the thesis lays out these experiments and their results. First the research objectives will be defined and the metrics used for evaluation will be described. Next the experimental setup for each of the methods will be described and the outcomes and observations will be presented.
 
-\section{Results}
-\label{sec:Results}
+\subsection{Objectives and Metrics}
+\label{sub:Objectives and Metrics}
+
+The experiments had simple objectives: The goal was to evaluate each method in terms of its effectiveness using a prediction metric well-suited for this problem. Further additional considerations, especially algorithmic time and space complexity were taken into account by comparing methods with regards to their runtime and need for computational resources.
+
+\glsreset{MCC} % reset MCC in case the reader has forgotten
+
+As a metric for predictive performance \gls{MCC} was chosen. This metric is used relatively rarely used in the machine learning literature as opposed to e.g.\ the F1 score that is common in the \gls{IR} literature where ignoring True Negatives can be tolerated. As an example we do not generally care if a search engine predicts correctly all the billions of website we don't want to see for a search query as long as it retrieves enough relevant ones.
+However, with the dataset at hand a metric was needed that measures prediction reliably and without bias even in case of a strongly skewed distribution of labels. Stratified sampling from the dataset to achieve a balanced distribution was not an option since the dataset was too small. Thus \gls{MCC} was chosen which fulfills these criteria as Section~\ref{sub:Evaluation Metrics} points out and additionally is easy to interpret: It is a correlation score between -1 and 1, denoting anti-correlation and correlation respectively. In some experiments additionally further metrics were measured.
 
 \subsection{Baseline}
-\label{sub:Baseline (Results)}
+\label{sub:Baseline}
 
-As explained in Section~\ref{sub:Baseline (Experiments)}, uniform and stratified guessing were used as baselines for predictive performance. Averaged over 1000 runs both strategies yielded an \gls{MCC} score close to zero. Accuracy by comparison was around 0.16 for uniform guessing and 0.26 for stratified guessing. These results are to be expected and highlight the reason for choosing \gls{MCC} as the principal metric: \gls{MCC} is zero for random predictions for either strategy whereas the accuracy in the uniform setting corresponds simply to a value of $1/k$ where $k = 6$ is the number of labels. The accuracy in the stratified setting reveals improves by taking advantage of knowledge about the skew in the label distribution. Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these baseline variants in absolute and normalized form, revealing the properties these guessing strategies.
+In order to have a reference point for predictive performance that any method should surpass two guessing strategies were used, namely uniform and stratified guessing. Uniform guessing means sampling from a uniform distribution, commonly known as ``rolling dice'', while stratified guessing refers to an estimator that samples a label for a data point using the observed distribution of labels in the data. Both methods effectively ignore the data itself when producing labels and as such any predictive algorithm should do better.
 
-\begin{figure}[h!]
+Averaged over 1000 runs both strategies yielded an \gls{MCC} score close to zero. Accuracy by comparison was around 0.16 for uniform guessing and 0.26 for stratified guessing. These results are within our expectations and further highlight the rationale for choosing \gls{MCC} as the principal metric: \gls{MCC} is zero for uninformed predictions for either strategy whereas the accuracy in the uniform setting corresponds simply to a value of $1/k$ where $k = 6$ is the number of labels. The accuracy in the stratified setting reveals improves by taking advantage of knowledge about the skew in the label distribution. Figure~\ref{fig:guessing-conf-matrix} shows the confusion matrices for these baseline variants in absolute and normalized form, where the described properties these guessing strategies can be observed.
+
+\begin{figure}
  % From http://localhost:8888/notebooks/thesis/experiments/vector-space-models/Vector%20Space%20Models.ipynb#Baseline:-Guessing-Strategies
     \centering
     \begin{subfigure}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-uniform.pdf}
-        \caption{Uniform, absolute}
+        \caption{Uniform guessing}
 \label{fig:guessing-conf-matrix-uniform}
     \end{subfigure}
 ~\begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-uniform-normalized.pdf}
-        \caption{Uniform, normalized}
+        \caption{Uniform guessing (normalized)}
 \label{fig:guessing-conf-matrix-uniform-normalized}
     \end{subfigure}
 ~\begin{subfigure}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-stratified.pdf}
-        \caption{Stratified, absolute}
+        \caption{Stratified guessing}
 \label{fig:guessing-conf-matrix-stratified}
     \end{subfigure}
 ~\begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/guessing-conf-matrix-stratified-normalized.pdf}
-        \caption{Stratified, normalized}
+        \caption{Stratified guessing (normalized)}
 \label{fig:guessing-stratified-normalized}
     \end{subfigure}
     \caption{Confusion matrices of uniform and stratified guessing strategies.}
@@ -44,16 +55,42 @@ As explained in Section~\ref{sub:Baseline (Experiments)}, uniform and stratified
 
 \clearpage
 
-\subsection{Approach 1: Vector Space Models}
-\label{sub:Approach 1: Vector Space Models (Results)}
+\subsection{Classification With Vector Space Models}
+\label{sub:Classification With Vector Space Models}
 
-This section presents the experimental results for the first approach to the sentence classification problem defined in Section~\ref{subs:Problem Formalism: Multi-class Sentence Classification}. Following the structure of experiments outlined in Section~\ref{sub:Approach 1: Vector Space Models (Experiments)}, first the results on for the three different techniques to build Vector Space Models explained are shown and afterwards the outcomes of evaluating the classification algorithms on the with the best vector space models are laid out.
+A popular way to approach text classification and other tasks in natural language processing is to build a model that maps data into a vector space. Distance between data points in this space then translates to similarity between the objects (see Section~\ref{sub:Vector Space Models}).
+The resulting vector representation of the data can then be fed into various learning algorithms. This section describes the experiments performed to evaluate such approaches.
+
+First the different methods to produce such vector spaces are compared. Several methods were used to generate vectors from the data while limiting dimensionality to 300 for comparability --- a heuristically chosen value as performance for the models did not increase significantly beyond it. These vector representations were then compared in terms of performance by using them as input to the simple classification model Logistic Regression.
+Second, the best performing configurations for each type of method were chosen and a set of various classification techniques were applied to them which were described previously in Section~\ref{sub:Methods For Classification With Vector Space Models}.
 
 \subsubsection{N-gram Models}
+\label{subs:N-gram Models (Experimental Results)}
 
-Not without reason are N-Gram Models still so widely used as these experiments confirm. They are easy to understand, relatively straightforward to train, fast to compute and yield good performance for many problems in \gls{NLP}.
+The first class of language models that was investigated for the task of multi-class classification are N-gram models that were explained in Section~\ref{subs:N-gram Models (Methods)}.
+N-gram models come in a variety of forms. In these experiments the most common variants were set up as hyper-parameters to the model as  listed in Table~\ref{tab:N-gram Hyper-parameters Space}.
 
-Table~\ref{tab:Ngram Grid Search} shows the five best results of the exhaustive grid search over the search space of hyper-parameters listed in Table~\ref{tab:N-gram Hyper-parameters Space} in Section~\ref{par:N-gram Models (Experiments)} using Logistic Regression, Naive Bayes and SVM as classification algorithms. All models were trained using 5-fold cross-validation on the training data.
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{ l l l}
+    \toprule
+    Hyper-Parameter & N-gram Type: Words & N-gram Type: Characters \\
+    \midrule
+    N-gram Range (Range) & [1,1], [1,2], [1,3], [2,3], [3,3] & [1,5], [1,10], [5,10], [5,15] \\
+    Stop Words & English, None & N/A \\
+    Vector Size (Size) & 10, 100, 300 & 10, 100, 300 \\
+    IDF & Yes, No & Yes, No \\
+    Norm & L1, L2, None & L1, L2, None \\
+    Sub-linear TF & Yes, No & Yes, No \\
+    \bottomrule
+  \end{tabular}
+  \caption{Parameter search space for word and character level N-gram models}
+\label{tab:N-gram Hyper-parameters Space}
+\end{center}
+\end{table}
+
+A grid search was performed to test all combinations of configurations within this hyper-parameter space. Each configuration was evaluated with regards to its \gls{MCC} score using 5-fold cross-validation on the training data with three standard classifiers: Logistic Regression and Naive Bayes and SVM.
+Table~\ref{tab:Ngram Grid Search} shows the five best results of the exhaustive grid search over the hyper-parameter configurations.
 
 \begin{table}[h]
   \begin{center}
@@ -85,46 +122,45 @@ Table~\ref{tab:Ngram Grid Search} shows the five best results of the exhaustive 
 \end{center}
 \end{table}
 
-We will next look at the results for each of the hyper-parameters in detail to analyze their effect on the performance of the model:
+The following observations can be made from the results of the grid search with regards to each of hyper-parameters:
 
 \paragraph{Type}
 \label{par:Type}
-Words as the atomic unit for N-grams consistently lead to better results. This is due to the fact that the search space of combinations of characters is significantly larger than the search space of known words, increasing model complexity exponentially.
+Words as the atomic unit for N-grams consistently led to better results. This can be explained by the fact that the search space of combinations of characters is significantly larger than the search space of known words, so model complexity increases exponentially.
 
 \paragraph{Range}
 \label{par:Range}
-With regards to the range, i.e.\ the interval for possible $N$'s in the N-grams, there are slight differences to be observed between the three classifiers used but with all three models the best performance is achieved using Unigrams. Also all of the top results across all classifiers include Unigrams in the model while extending the range towards bigrams or trigrams.
+With regards to the range, i.e.\ the interval for possible $N$ in N-grams, there are slight differences to be observed between the three classifiers used, but with all three models the best performance is achieved using Unigrams. Also all of the top results across all classifiers include Unigrams in the model while some extend the range towards bigrams or trigrams.
 
 \paragraph{Stop Words}
 \label{par:Stop Words}
-None of the top results of the performed grid searches used stop words. This is interesting as using stop-words to remove hand-picked, highly frequent words that do not carry much meaning is common practice. It seems there is information carried within these stop words. Of course this outcome is also influenced by the particular stop-list used (see Section~\ref{subp:Stop words}).
+None of the top results of the performed grid searches used stop words. This is interesting as using stop-words to remove hand-picked, highly frequent words that do not carry much meaning is common practice.
 
 \paragraph{Size}
 \label{par:Size}
-For the given settings the highest vector dimensionality of 300 achieves the best performance. Thus we can conclude that size matters and bigger is better as higher-dimensional vectors can capture more information about N-gram occurrences.\todo{Maybe reformulate this, it's not thaat funny :D} However performance gain with increased dimensionality diminishes beyond a certain threshold which depends on the dataset and further models start to overfit, harming generalization performance.
-Also in practice the vector size must always be limited as it grows with the vocabulary, potentially at an exponential rate if N-grams larger than Unigrams are used.
+For the given settings the highest vector dimensionality of 300 achieves the best performance.
 
 \paragraph{IDF}
 \label{par:IDF}
-There is no consensus between the classifiers on whether or not to weigh the N-gram frequencies by the inverse document frequency (see Section~\ref{subp:TF.IDF weighting}). Thus it seems advisable to leave this parameter free for and evaluate both variants with a given classifier. For logistic regression however the performance differences are marginal and so the choice for this parameter seems somewhat arbitrary.j
+There is no consensus between the classifiers on whether or not to weigh the N-gram frequencies by the inverse document frequency (see Section~\ref{subp:TF.IDF weighting}).
 
 \paragraph{Norm}
 \label{par:Norm}
-Is seems that normalizing the vectors in most cases does not lead to any performance gains. Again this is an often recommended practice but here it does not seem to add any value to the model.
-
+In these experiments normalizing vectors decreased performance.
+Only in the fifth best performing configuration when using Logistic Regression vectors were normalized, in this case using the L2 norm.
 
 \paragraph{Sub-linear TF}
 \label{par:Sub-linear TF}
-Applying sub-linear term frequency scaling (see Section~\ref{subp:Sublinear TF scaling}) does not seem to affect the results much and the choice of this parameter can hence be chosen almost arbitrarily as well, although here for all three classifiers applying it leads to a marginal improvement.
+Applying sub-linear term frequency scaling (see Section~\ref{subp:Sublinear TF scaling}) did not seem to affect the results significantly and about half of the top results were obtained using this technique.
 \bigskip
 
-Next the best model for each classifier with regards to \gls{MCC} validation score was chosen and trained on the whole training data and tested on the test data set. Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier using these best N-gram models. It is evident that here logistic regression actually performs best as it offers both, a good accuracy as \gls{MCC} well as the highest score for.
+Finally to the best model for each classifier with regards to \gls{MCC} validation score was chosen and trained on the whole training data and tested on the test data set to estimate the final performance. Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier using these best N-gram models. It is evident that here logistic regression performs best, achieving the highest \gls{MCC} score as well as good accuracy.
 
-\begin{table}[h]
+\begin{table}
   \begin{center}
   \begin{tabular}{ r | *2l | *2l }
     \toprule
-     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{c}{Validation}\\
+     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{c}{Test}\\
     Classifier & Accuracy & MCC & Accuracy & MCC \\
     \midrule
     Logistic Regression & 0.824 & 0.761 & 0.787 & 0.708 \\
@@ -132,12 +168,12 @@ Next the best model for each classifier with regards to \gls{MCC} validation sco
     SVM                 & 0.835 & 0.681 & 0.786 & 0.700 \\
     \bottomrule
   \end{tabular}
-  \caption{Performance of each best N-gram model with Logistic Regression and Naive Bayes on the test data}
+  \caption{Performance of each best N-gram model with Logistic Regression and Naive Bayes on the test data.}
 \label{tab:Ngram Grid Search Scores}
 \end{center}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \begin{subfigure}[b]{0.3595\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/ngram-conf-matrix-logreg-normalized.pdf}
@@ -158,7 +194,7 @@ Next the best model for each classifier with regards to \gls{MCC} validation sco
 \label{fig:ngram-conf-matrix}
 \end{figure}
 
-Figure~\ref{fig:ngram} shows projections of the of the constructed feature space using the best model that was optimized with Logistic Regression. This visualization shows the separability of the classes in this space. Especially the PCA projection here reveals that it is clearly possible to separate the classes until a certain point.
+To understand the mapping of the data in the resulting vector space visualizations were produced using \gls{PCA} and \gls{t-SNE}. The results for best-performing N-gram model can be seen in Figure~\ref{fig:ngram pca and tsne}. Especially the \gls{PCA} visualization shows that a high percentage of the data for each class can be separated from other classes even with a linear model.
 
 \begin{figure}[h]
     \centering
@@ -176,18 +212,19 @@ Figure~\ref{fig:ngram} shows projections of the of the constructed feature space
 \label{fig:ngram-tsne}
     \end{subfigure}
     \caption{Document vectors produced by the best N-gram model (optimized w.r.t. Logistic Regression) projected onto the first 2 principal components (left) and project using t-SNE projection.}
-\label{fig:ngram}
+\label{fig:ngram pca and tsne}
 \end{figure}
 
-\subsubsection{Bag-of-Means Model}
+\subsubsection{Bag-of-Means: An Averaged Word2Vec Model}
+\label{subs:Bag-of-Means: An Averaged Word2Vec Model}
 
- The results can be seen in Table~\ref{tab:Bag-Of-Means Results}.
+Next a Bag-of-Means model as described in Section~\ref{subp:Bag-of-Means} was evaluated with the same set of classifiers. The model was evaluated on the same test and training data split as used for the N-gram model above. The results are shown in Table~\ref{tab:Bag-Of-Means Results}.
 
 \begin{table}[h]
   \begin{center}
   \begin{tabular}{ r | *2l | *2l }
     \toprule
-     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{|c}{Validation}\\
+     & \multicolumn{2}{c|}{Training} & \multicolumn{2}{|c}{Test}\\
     Classifier & Accuracy & MCC & Accuracy & MCC \\
     \midrule
     Logistic Regression & 0.797 & 0.722 & 0.784 & 0.702 \\
@@ -200,21 +237,23 @@ Figure~\ref{fig:ngram} shows projections of the of the constructed feature space
 \end{center}
 \end{table}
 
-The model performs well using Logistic Regression and is almost on par with the best N-gram model. This is surprising as performance previously reported to be rather poor as mention in Section~\ref{subp:Bag-of-Means}. On the other hand the variance in results between the classifiers is huge and especially Naive Bayes seems to perform extremely poor. Further investigation into the use of different classifiers could shed light into these diverging results which are not observed using the N-gram models in the section above. The confusion matrices in Figure~\ref{fig:bom-conf-matrix} reveal strong label bias in the case of Naive Bayes and SVM, although it is unclear where this stems from. Figure~\ref{fig:bom} makes clear though that there is a somewhat meaningful mapping into the feature space. \todo{mention one-vs-all scheme for log reg? also for ngrams above}
+As a basis, pre-trained word vectors from the Google News dataset\footnote{The dataset contains contains 300-dimensional vectors for 3 million words and phrases. The phrases were obtained using a simple data-driven approach described in~\cite{Mikolov:2013ab}. The dataset can be obtained on the following website: \url{https://code.google.com/archive/p/word2vec/}} were extracted for the words that occur in the dataset.
+Then for each sentence in the data a sentence vector was obtained by taking the arithmetic mean over the vectors for all words in the sentence. Labels were again predicted using Logistic Regression, Naive Bayes and SVM.
+We can see that the model performs well using Logistic Regression and it is almost on par with the best N-gram model. On the other hand the variance in results between the classifiers is drastic, and Naive Bayes' score is 0.451 lower that Logistic Regression in absolute terms. The confusion matrices in Figure~\ref{fig:bom-conf-matrix} reveal strong label bias in the case of Naive Bayes and SVM.
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.365\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/bom-conf-matrix-logreg-normalized.pdf}
         \caption{Logistic Regression}
 \label{fig:bom-conf-matrix-logreg-normalized}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.27\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/bom-conf-matrix-naivebayes-normalized.pdf}
         \caption{Naive Bayes}
 \label{fig:bom-conf-matrix-naivebayes-normalized}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.345\textwidth}
         \includegraphics[width=\textwidth]{img/exp-vector-space/bom-conf-matrix-svm-normalized.pdf}
         \caption{SVM}
 \label{fig:bom-conf-matrix-svm-normalized}
@@ -223,7 +262,9 @@ The model performs well using Logistic Regression and is almost on par with the 
 \label{fig:bom-conf-matrix}
 \end{figure}
 
-\begin{figure}[h]
+Figure~\ref{fig:bom} again visualizes a projection of the vectors into a 2 dimensional space, showing that labels tend to cluster.
+
+\begin{figure}[h!]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
       \includegraphics[width=\textwidth]{img/exp-vector-space/bom-pca.pdf}
@@ -243,6 +284,14 @@ The model performs well using Logistic Regression and is almost on par with the 
 \end{figure}
 
 \subsubsection{Paragraph Vectors using Distributed Representations}
+\label{subs:Paragraph Vectors using Distributed Representations}
+
+\todo{Doc2Vec model is evaluated in 2 ways (normal and trained on inferred vectors)}
+
+Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation.
+
+
+%%%%%%%%%%%
 
 
 The next sections will briefly outline the results of these tests:\footnote{All tables in this section will use the following abbreviations: \emph{type}: Model Type, i.e. PV-DM vs. PV-DBOW; \emph{size}: Vector Size; \emph{window}: Window Size; \emph{negative}: Negative Sampling value $k$; \emph{hs}: Hierarchical Softmax used; \emph{sample}: Frequent word sub-sampling threshold; \emph{MCC}: Matthews Correlation Coefficient}
@@ -501,68 +550,42 @@ Both models for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namel
 \label{fig:doc2vec_doc2vec_dm}
 \end{figure}
 
-\todo{show computation time?}
-
-\paragraph{Evaluating the best hyper-parameter setting}
-
-Taking the learnings about the effects of the different hyper-parameters to the performance of the model a subset of models were tested in search of the best hyper-parameter selection. The results of these experiments can be seen in Table~\ref{tab:Paragraph Vector Parameter Results Best}.
-
-A few interesting observations can be made here. First, as indicated before, the model is highly sensitive to the settings of the hyper-parameters. Secondly we can see that the hyper-parameters interact quite strongly in some combinations. This leads to a different behavior in performance for some of the hyper-parameters than identified in the above sections, depending on what the other hyper-parameters settings are.
-
-For instance using hierarchical softmax decreases performance when setting all other parameters to individually optimal settings, as opposed to in the previous experiment above.
-\todo{write a bit more here}
-
-\begin{table}[h]
-  \begin{center}
-  \begin{tabular}{ *6l | l }
-    \toprule
-    type & size & window & negative & hs & sample & MCC  \\
-    \midrule
-    PV-DM & 300 & 10 & 3 & 0 & 1e-5 & 0.707 \\
-    PV-BBOW & 300 & 10 & 3 & 0 & 1e-5 & 0.724 \\
-    PV-BBOW & 300 & 10 & 3 & 1 & 1e-5 & 0.665 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Matthews Correlation Coefficient of different models when trying to find the best hyper-parameter setting.}
-\label{tab:Paragraph Vector Parameter Results Best}
-\end{center}
-\end{table}
-
-
-% \subsubsection{Paragraph Vectors using pre-initialized weights *}
-%
-% In another experiment the weight matrix for the words was initialized with pre-trained weights from from the Google News dataset.
-
-% \subsubsection{Paragraph Vectors using context sentences *}
-%
-% \todo{This section in further research? Because it would have to be done for N-grams as well (building a model with the context around a sentence) and it doesn't fit the task (only sentence given). Could also go into exploration}
-
-% \subsubsection{Inversion of Distributed Language Representations (??)}
-%
-% \todo{if this is described here it has to go into background as well}
-
-% \subsubsection{Discussion *}
-
-
-\subsubsection{Classification Methods Using Vector Space Models}
-\label{subs:subsection label}
+\subsubsection{Evaluation of Classification Methods}
+\label{subs:Evaluation of Classification Methods}
 
 \paragraph{Logistic Regression}
+\label{par:Logistic Regression}
+
 \paragraph{Decision Tree}
+\label{par:Decision Tree}
+
 \paragraph{Naive Bayes}
-\paragraph{SVM}
-\paragraph{KNN}
+\label{par:Naive Bayes}
+
+\paragraph{Support Vector Machine}
+\label{par:Support Vector Machine}
+
+\paragraph{$k$ Nearest Neighbors}
+\label{par:k Nearest Neighbors}
+
 \paragraph{Random Forest}
-\paragraph{Neural Network}
+\label{par:Random Forest}
+
+\paragraph{Vanilla Neural Network}
+\label{par:Vanilla Neural Network}
+
 \paragraph{Deep Neural Network}
+\label{par:Deep Neural Network}
+
 \paragraph{Convolutional Neural Network}
+\label{par:Convolutional Neural Network}
 
-\subsection{Approach 2: Sequential Models}
-\label{sub:Approach 2: Sequential Models (Results)}
 
+\subsection{Classification With Sequential Models}
+\label{sub:Classification With Sequential Models}
 
 \subsubsection{Character-based LSTM *}
 
-\subsubsection{Character-based Multi-task LSTM *}
+\subsubsection{Stacked Character-based LSTM *}
 
-\subsection{Comparison of Approaches}
+\subsubsection{Character-based Multi-task LSTM *}
