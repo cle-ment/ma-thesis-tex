@@ -77,7 +77,7 @@ N-gram models come in a variety of forms. In these experiments the most common v
     Hyper-Parameter & N-gram Type: Words & N-gram Type: Characters \\
     \midrule
     N-gram Range (Range) & [1,1], [1,2], [1,3], [2,3], [3,3] & [1,5], [1,10], [5,10], [5,15] \\
-    Stop Words & English, None & N/A \\
+    Stop Words & English, None & --- \\
     Vector Size (Size) & 10, 100, 300 & 10, 100, 300 \\
     IDF & Yes, No & Yes, No \\
     Norm & L1, L2, None & L1, L2, None \\
@@ -123,6 +123,8 @@ Table~\ref{tab:Ngram Grid Search} shows the five best results of the exhaustive 
 \end{table}
 
 The following observations can be made from the results of the grid search with regards to each of hyper-parameters:
+
+\todo{remove paragraph headers and shorten text}
 
 \paragraph{Type}
 \label{par:Type}
@@ -288,7 +290,7 @@ The visualization in Figure~\ref{fig:bom} shows a projection of the vectors into
 
 \todo{Doc2Vec model is evaluated in 2 ways (normal and trained on inferred vectors)}
 
-Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in detail in Section~\ref{subp:Paragraph Vectors}. There are several variants and hyper-parameters to this model and their effect was experimentally evaluated. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Hence performance effects were measured by varying the hyper-parameters one at a time while keeping the others fixed. In this process Logistic Regression was used with 5-fold cross-validation. All Paragraph Vector models were tested with both the trained vectors as well as vectors inferred at prediction time. The default configuration can be seen in Table ~\ref{tab:Paragraph Vector Defaults}. The next sections will outline the results of these experiments.
+Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in detail in Section~\ref{subp:Paragraph Vectors}. There are several variants and hyper-parameters to this model and their effect was experimentally evaluated. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Hence performance effects were measured by varying the hyper-parameters one at a time while keeping the others fixed. In this process Logistic Regression was used with 5-fold cross-validation. All Paragraph Vector models were tested with both the trained vectors as well as vectors inferred at prediction time. The default configuration can be seen in Table ~\ref{tab:Paragraph Vector Defaults} below.
 
 \begin{table}[h]
   \begin{center}
@@ -300,6 +302,7 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
     Negative Sampling Value & 3 \\
     Window Size & 10 \\
     Model Type & PV-DBOW \\
+    Inference Type & Inferred Vectors \\
     \bottomrule
   \end{tabular}
   \caption{Default hyper-parameter configuration for Paragraph Vectors}
@@ -307,12 +310,11 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
 \end{center}
 \end{table}
 
-
 \begin{table}[h]
   \begin{center}
     \begin{tabular}{ c | c | c | c }
       \toprule
-      Hyper-Parameter & Setting & \gls{MCC} Training & \gls{MCC} Test\\
+      Hyper-Parameter & Setting & Training Score & Test Score \\
       \midrule
       \multirow{4}{*}{Vector Size}
        & 2 & 0.229 & 0.223 \\
@@ -332,9 +334,9 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
       \midrule
       \multirow{4}{*}{Negative Sampling Value}
        & 0 & 0.598 & 0.575 \\
-       & 2 & 0.612 & 0.591 \\
+       & 2 & 0.612 & \textbf{0.591} \\
        & 4 & 0.612 & 0.587 \\
-       & 6 & 0.613 & \textbf{0.590} \\
+       & 6 & 0.613 & 0.590 \\
       \midrule
       \multirow{3}{*}{Window Size}
        & 5  & 0.611 & 0.586 \\
@@ -342,7 +344,7 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
        & 15 & 0.612 & 0.586 \\
       \midrule
       \multirow{2}{*}{Model Type}
-       & PV-DBOW & 0.610 & 0.580 \\
+       & PV-DBOW & 0.610 & \textbf{0.580} \\
        & PV-DM   & 0.405 & 0.411 \\
       \midrule
       \multirow{2}{*}{Inference Type}
@@ -355,209 +357,181 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
 \end{center}
 \end{table}
 
-\paragraph{Vector Size}
-As was to expect the vector size of the model correlates with the performance. Again the highest chosen dimensionality was 300 which yielded the best results with a Matthews Correlation Coefficient of 0.53, however the difference to a 100-dimensional model was marginal with 1\% absolute improvement. Surprisingly even a 10-dimensional vector space model is capable of achieving almost best results with a difference of only 2\% to the 300-dimensional model. Even a 2-dimensional model could achieve a MCC score of 14\%.
+Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} shows the results of the hyper-parameter experiments. Similarly to N-Gram Models the vector size correlates positively with the performance. Again the highest chosen dimensionality was 300 which yielded the highest test score of 0.608. However the difference to a 100-dimensional model is marginal with 2\% absolute improvement and a 10-dimensional representation only leads to an absolute loss of 6\% in performance. Further choosing the representation in only two dimensions yields a test score of 0.223. In comparison the best N-gram model achieved an \gls{MCC} score of 0.151 when limited to two dimensions.
 
-\begin{figure}[h!]
+With regards to frequent word sub-sampling performance was best without its use. Note that this is in contrast with previous work on word vectors where this setting increased performance (see~\cite{Mikolov:2013ab}). Using hierarchical softmax increased the performance, although only leading to a marginal improvement of around 1\% in terms of MCC score. Negative Sampling generally increased performance. However no trend is apparent as the best performing configurations were a sampling value of 2 and 6 while choosing a value of 4 lead to a slightly lower score. The highest score amongst the tested settings for the window size was achieved with a value of 10 while both a window of 5 and a window of 15 words achieved a lower score.
+
+Both model types for paragraph vectors proposed in~\cite{Le:2014aa} were tested, namely the Distributed Bag of Words Model of Paragraph Vectors (PV-DBOW) and the Distributed Memory Model of Paragraph Vectors (PV-DM). The choice of the model type among has a significant influence on the result. As we can see in Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} the \gls{MCC} test score of the PV-DBOW model is 16.9\% higher in absolute terms.
+
+The choice of vectors to train the classifier, i.e.\ the training type, can be seen to have a strong impact on the results as well. When using directly the vectors that are trained with the Paragraph Vector model, performance is notably lower than when inferring new vectors for the training data using the inference procedure described in~\cite{Le:2014aa}. Furthermore when using the model vectors for training the model easily overfits. This effect can be seen in Figure~\ref{fig:doc2vec_training} where the training and test scores are shown over 140 iterations of training. While using the model vectors leads to higher training scores the test scores are significantly lower than when inferring vectors for training.
+
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_2}
-      \caption{Vector Size: 2}
-\label{fig:doc2vec_vector_size_2}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_training_trained}
+      \caption{Training using model vectors}
+\label{fig:doc2vec_training_trained}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_10}
-      \caption{Vector Size: 10}
-\label{fig:doc2vec_vector_size_10}
+      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_training_inferred}
+    \caption{Training using inferred vectors}
+\label{fig:doc2vec_training_inferred}
     \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_100}
-      \caption{Vector Size: 100}
-\label{fig:doc2vec_vector_size_100}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_vector_size_300}
-    \caption{Vector Size: 300}
-\label{fig:doc2vec_vector_size_300}
-  \end{subfigure}
-\caption{test}
-\label{fig:doc2vec_vector_size}
+\caption{Comparison of performance when trained the classifier on the trained vectors of the Paragraph Vector model or when inferring new Paragraph Vector vectors for the training data using the model.}
+\label{fig:doc2vec_training}
 \end{figure}
 
-\paragraph{Frequent Word Sub-Sampling}
-Frequent word sub-sampling can boost performance quite much, but again choosing the right value for this hyper-parameter is key. The training behavior with different sampling thresholds differs quite much. Figure~\ref{fig:doc2vec-param-sample} shows the training with different values with 100 passes over the dataset. A good value seems to be $10^{-5}$ which achieves an MCC score of 0.697 and is on-par with the best N-gram model. Interestingly not using sub-sampling in this setup seemed to be overfitting as the score decreases quite drastically with more training passes. A similar effect is observed with a higher threshold of $10^{-4}$ but much less strong. Choosing a lower threshold of $10^{-6}$ leads to very poor performance with an MCC score of only 0.07.
+Lastly the best configurations of hyper-parameters of these approaches were compared in another experiment. Table~\ref{tab:Paragraph Vector Best Configurations Search} lists the tested settings.
 
 \begin{table}[h]
   \begin{center}
-    \begin{tabular}{ c | *2c | *2c }
-      \toprule
-       & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
-      Sub-sampling threshold & Trained & Inferred & Trained & Inferred \\
-      \midrule
-
+  \begin{tabular}{ l | l }
+    \toprule
+    Vector Size & 300 \\
+    Sub-sampling threshold & No \\
+    Hierarchical Softmax & \{ No, Yes \} \\
+    Negative Sampling Value & \{ 2, 6, 10 \} \\
+    Window Size & \{ 8, 10 \} \\
+    Model Type & PV-DBOW \\
+    Inference Type & Inferred Vectors \\
     \bottomrule
   \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying frequent word sub-sampling threshold.}
-\label{tab:Paragraph Vector Parameter Results Sample}
+  \caption{Tested Hyper-parameter configurations to find the best Paragraph Vectors model}
+  \label{tab:Paragraph Vector Best Configurations Search}
 \end{center}
 \end{table}
 
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_0}
-      \caption{No Sub-Sampling}
-\label{fig:doc2vec_sample_0}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_1e-4}
-    \caption{Sub-Sampling Threshold: 1e-4}
-\label{fig:doc2vec_vector_size_1e-4}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_1e-5}
-      \caption{Sub-Sampling Threshold: 1e-5}
-\label{fig:doc2vec_vector_size_1e-5}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_sample_1e-6}
-    \caption{Sub-Sampling Threshold: 1e-6}
-\label{fig:doc2vec_sample_1e-6}
-  \end{subfigure}
-\caption{test}
-\label{fig:doc2vec_sample}
-\end{figure}
+While a \gls{MCC} test score of 0.574 the lowest amongst the candidates the highest score achieved was 0.618. This setting used a window size of 8, a negative sampling value of 10 and hierarchical softmax.
 
-\paragraph{Hierarchical Softmax}
-Using hierarchical softmax increased the performance, leading to a 12\% absolute difference in terms of MCC score. This result is counter-intuitive as using the hierarchical softmax should as an approximation be less performant. However it might simply mitigate overfitting of the model.
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_hs_0}
-      \caption{Without Hierarchical Softmax}
-\label{fig:doc2vec_hs_0}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_hs_1}
-    \caption{With Hierarchical Softmax}
-\label{fig:doc2vec_hs_1}
-    \end{subfigure}
-\caption{test}
-\label{fig:doc2vec_hs}
-\end{figure}
-
-\paragraph{Negative Sampling}
-Negative Sampling generally increased the performance of the model and smaller values actually worked best out of the tested settings from 0 to 6. Choosing the number of negative samples to be 2 resulted in the best performance, but the absolute difference in performance was only about 6\% of achieved MMC score.
-
-
-\end{table}
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_0}
-      \caption{Negative Sampling Value: 2}
-\label{fig:doc2vec_negative_0}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_2}
-    \caption{Negative Sampling Value: 2}
-\label{fig:doc2vec_vector_size_2}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_4}
-      \caption{Negative Sampling Value: 4}
-\label{fig:doc2vec_vector_size_4}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_negative_6}
-    \caption{Negative Sampling Value: 6}
-\label{fig:doc2vec_negative_6}
-  \end{subfigure}
-\caption{test}
-\label{fig:doc2vec_negative}
-\end{figure}
-
-\paragraph{Window Size}
-Window sizes of 5, 10 and 15 were experimented with which increase or decrease the width of context the model is trained on. Here a window size of 10 showed best results. It is safe to assume that increasing the window size much further does not lead to any improvement in the model as the correlation with the word should become weaker the farther we move away from it in a document or text.
-
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_window_5}
-      \caption{Window Size: 5}
-\label{fig:doc2vec_window_5}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_window_10}
-    \caption{Window Size: 10}
-\label{fig:doc2vec_window_10}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_window_15}
-      \caption{Window Size: 15}
-\label{fig:doc2vec_window_15}
-  \end{subfigure}
-\caption{test}
-\label{fig:window}
-\end{figure}
-
-
-\paragraph{Model Type}
-Both model types for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vector (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
-
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_dm_0}
-      \caption{PV-DBOW Model}
-\label{fig:doc2vec_dm_0}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-      \includegraphics[width=\textwidth]{img/exp-vector-space/doc2vec_dm_1}
-    \caption{PV-DM Model}
-\label{fig:doc2vec_dm_1}
-    \end{subfigure}
-  \caption{test}
-\label{fig:doc2vec_doc2vec_dm}
-\end{figure}
+\clearpage
 
 \subsubsection{Evaluation of Classification Methods}
 \label{subs:Evaluation of Classification Methods}
 
-\paragraph{Logistic Regression}
-\label{par:Logistic Regression}
+% Naive Bayes is Bernoulli
 
-\paragraph{Decision Tree}
-\label{par:Decision Tree}
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ ll cc }
+      \toprule
+      Classifier & Vector Space & Training Score & Test Score \\
+      \midrule
+      \multirow{3}{*}{Logistic Regression}
+       & N-Grams & 0.770 & 0.697 \\
+       & Bag-of-Means & 0.743 & \textbf{0.706} \\
+       & Paragraph Vectors & 0.709 & 0.643 \\
+      \midrule
+      \multirow{3}{*}{Decision Tree}
+       & N-Grams & 0.924 & \textbf{0.625} \\
+       & Bag-of-Means & 0.938 & 0.455 \\
+       & Paragraph Vectors & 0.994 & 0.290 \\
+      \midrule
+      \multirow{3}{*}{Naive Bayes}
+       & N-Grams & 0.668 & \textbf{0.648} \\
+       & Bag-of-Means & 0.498 & 0.491 \\
+       & Paragraph Vectors & 0.603 & 0.573 \\
+      \midrule
+      \multirow{3}{*}{SVM}
+       & N-Grams & 0.882 & \textbf{0.713} \\
+       & Bag-of-Means & --- & --- \\
+       & Paragraph Vectors & 0.831 & 0.683 \\
+      \midrule
+      \multirow{3}{*}{kNN}
+       & N-Grams & 0.929 & 0.642 \\
+       & Bag-of-Means & 0.944 & \textbf{0.685} \\
+       & Paragraph Vectors & 0.993 & 0.579 \\
+      \midrule
+      \multirow{3}{*}{Random Forest}
+       & N-Grams & 0.924 & \textbf{0.701} \\
+       & Bag-of-Means & 0.940 & 0.618 \\
+       & Paragraph Vectors & 0.985 & 0.509 \\
+      \midrule
+      \multirow{3}{*}{Neural Network}
+       & N-Grams & 0.911 & 0.709 \\
+       & Bag-of-Means & 0.930 & \textbf{0.716} \\
+       & Paragraph Vectors & 0.975 & 0.665 \\
+      \midrule
+      \multirow{3}{*}{Deep Neural Network}
+       & N-Grams & 0.913 & 0.708 \\
+       & Bag-of-Means & 0.936 & \textbf{0.715} \\
+       & Paragraph Vectors & 0.989 & 0.679 \\
+      % \midrule
+      % \multirow{3}{*}{Convolutional \gls{ANN}}
+      % & \multirow{3}{*}{---}
+      % & N-Grams & --- & --- \\
+      % & & Bag-of-Means & --- & --- \\
+      % & & Paragraph Vectors & --- & --- \\
+      \bottomrule
+    \end{tabular}
+  \caption{sdf}
+\label{tab:Paragraph Vector Parameter Hyper-Parameter Results}
+\end{center}
+\end{table}
 
-\paragraph{Naive Bayes}
-\label{par:Naive Bayes}
 
-\paragraph{Support Vector Machine}
-\label{par:Support Vector Machine}
+From the previous experiments on vector space models the best performing setting of each type was chosen. Specifically those were the following settings:
 
-\paragraph{$k$ Nearest Neighbors}
-\label{par:k Nearest Neighbors}
+\begin{itemize}
+  \item \textbf{N-Grams}: Unigrams were used with a dimensionality of 300. No stop words filtering and no vector normalization were applied and while using sub-linear TF and IDF.
+  \item \textbf{Bag-Of-Means}: As in the experiments above the approach was simply used with an unweighed arithmetic mean of the word vectors in each sentence.
+  \item \textbf{Paragraph Vectors}: PV-DBOW word vectors were generated using inference on the training data, a window size of 8, a negative sampling value of 10, hierarchical softmax and no frequent word sub-sampling.
+\end{itemize}
 
-\paragraph{Random Forest}
-\label{par:Random Forest}
+The dataset was then split into 5 folds to perform cross-validation. For reproducibility, comparability and to save computational power the vector representations were precomputed for each of the five possible test and training splits on the data. Next a diverse set of established classification algorithms that were described in Section~\ref{sub:Methods For Classification With Vector Space Models} were applied to the data and evaluated on their training and test scores using \gls{MCC}. The results can be seen in Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} and will be discussed next.
 
-\paragraph{Vanilla Neural Network}
-\label{par:Vanilla Neural Network}
+First of all we note that in none of the setups paragraph vectors performed best. Vectors produced with the  Bag-Of-Means approach however did outperform the N-gram model in in combination with some of the classifiers, namely Logistic Regression, \gls{kNN} and the Neural Network models of which the simple Neural Network achieved a test score of 0.716 using this technique, the highest test score of all classifiers. In some cases
 
-\paragraph{Deep Neural Network}
-\label{par:Deep Neural Network}
 
-\paragraph{Convolutional Neural Network}
-\label{par:Convolutional Neural Network}
+
+
+% \paragraph{Logistic Regression}
+% \label{par:Logistic Regression}
+%
+%
+% \paragraph{Decision Tree}
+% \label{par:Decision Tree}
+%
+% \paragraph{Naive Bayes}
+% \label{par:Naive Bayes}
+%
+% \paragraph{Support Vector Machine}
+% \label{par:Support Vector Machine}
+%
+% \paragraph{$k$ Nearest Neighbors}
+% \label{par:k Nearest Neighbors}
+%
+% \paragraph{Random Forest}
+% \label{par:Random Forest}
+%
+% \paragraph{Vanilla Neural Network}
+% \label{par:Vanilla Neural Network}
+%
+% \paragraph{Deep Neural Network}
+% \label{par:Deep Neural Network}
+
+% \paragraph{Convolutional Neural Network}
+% \label{par:Convolutional Neural Network}
 
 
 \subsection{Classification With Sequential Models}
 \label{sub:Classification With Sequential Models}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ l | c | c | c }
+      \toprule
+      Model & Training Loss & Test Loss & Test Score \\
+      \midrule
+      Simple LSTM & 0.733 & 0.767 & 0.689 \\
+      Stacked LSTM & 0.674 & 0.791 & \textbf{0.707} \\
+      Multi-task LSTM & --- & --- & 0.258 \\
+      \bottomrule
+    \end{tabular}
+  \caption{sdf}
+\label{tab:Paragraph Vector Parameter Hyper-Parameter Results}
+\end{center}
+\end{table}
 
 \subsubsection{Character-based LSTM *}
 

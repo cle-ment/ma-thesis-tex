@@ -203,6 +203,10 @@ In~\cite{Le:2014aa} a different approach is shown that builds on the same idea a
 
 Models can be used for prediction either by using the trained vectors or infer vectors at prediction time as done in~\cite{Le:2014aa}.
 
+\todo{Training type}
+\todo{model type}
+\todo{move hyper-parameters into this section}
+
 \subsection{Methods For Classification With Vector Space Models}
 \label{sub:Methods For Classification With Vector Space Models}
 
@@ -276,7 +280,7 @@ where $y_n = \sigma(a_n)$ and $a_n = \mathbf{w}^T \phi_n$. When taking the gradi
 
 From here we can apply an optimization procedure such as gradient descent to arrive at a weight vector $\mathbf{w}$ that minimizes the error function above. A deeper treatment of the Logistic Regression and Generalized Linear Models can be found in many introductory textbooks such as~\cite[Chapter 4.3.2, p.~205]{Bishop:2006aa}.
 
-\todo{extension to multinomial?}
+\todo{mention one-vs-all and multinomial}
 
 \subsubsection{Bayesian Classifiers}
 \label{subs:Bayesian Classifiers}
@@ -373,9 +377,9 @@ Where $\mathcal{I}(\cdot)$ is the indicator function. Other voting schemes have 
 
 Another common class of learning algorithms are \emph{instance-based learning methods}, also known as \emph{example-based methods} or \emph{memory-based learning methods}. These methods directly use the given training examples and comparing new unseen examples with the training data at inference time, thus constructing the hypothesis directly from the data.
 
-One of the most prominent instance-based classification methods is the \gls{knn} algorithm which simply makes a class prediction based on the majority class amongst its $k$ nearest neighbors in the input space.
+One of the most prominent instance-based classification methods is the \gls{kNN} algorithm which simply makes a class prediction based on the majority class amongst its $k$ nearest neighbors in the input space.
 
-The choice for the parameter $k$ depends on the type of problem and is often determined empirically via hyper-parameter optimization\todo{glossary?} or based on heuristics. The \gls{knn} algorithm is highly prone to the curse of dimensionality as when a metric such as the Euclidean Distance is used as a metric for the \gls{knn} algorithm to determine the nearest neighbors to the query vector there is little difference in the distance between samples in very high-dimensional spaces. Thus often \gls{Feature Extraction} or \gls{Dimensionality Reduction} techniques are employed before applying the \gls{knn} algorithm.
+The choice for the parameter $k$ depends on the type of problem and is often determined empirically via hyper-parameter optimization\todo{glossary?} or based on heuristics. The \gls{kNN} algorithm is highly prone to the curse of dimensionality as when a metric such as the Euclidean Distance is used as a metric for the \gls{kNN} algorithm to determine the nearest neighbors to the query vector there is little difference in the distance between samples in very high-dimensional spaces. Thus often \gls{Feature Extraction} or \gls{Dimensionality Reduction} techniques are employed before applying the \gls{kNN} algorithm.
 
 \subsubsection{Kernel Methods}
 \label{subs:Kernel Methods}

@@ -41,6 +41,21 @@ This is surprising as performance previously reported to be rather poor as menti
 % on hyper parameters
 and which turn out to have a huge influence on its performance as the results below indicate
 
+% vector size
+- even in 2 dimensions very expressive
+% frequenct workd subsampling
+- problably doesn't work because dataset small anyway
+- when using PM-DV this significantly improved training score but test score was still poor
+% hs
+This result is counter-intuitive as using the hierarchical softmax should as an approximation be less performant. However it might simply mitigate overfitting of the model.
+% window size
+It is safe to assume that increasing the window size much further does not lead to any improvement in the model as the correlation with the word should become weaker the farther we move away from it in a document or text.
+% Model type dbow better
+This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
+
+- tend to overfit easily
+
+
 
 \todo{show computation time?}
 
@@ -52,22 +67,6 @@ A few interesting observations can be made here. First, as indicated before, the
 
 For instance using hierarchical softmax decreases performance when setting all other parameters to individually optimal settings, as opposed to in the previous experiment above.
 \todo{write a bit more here}
-
-\begin{table}[h]
-  \begin{center}
-  \begin{tabular}{ *6l | l }
-    \toprule
-    type & size & window & negative & hs & sample & MCC  \\
-    \midrule
-    PV-DM & 300 & 10 & 3 & 0 & 1e-5 & 0.707 \\
-    PV-BBOW & 300 & 10 & 3 & 0 & 1e-5 & 0.724 \\
-    PV-BBOW & 300 & 10 & 3 & 1 & 1e-5 & 0.665 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Matthews Correlation Coefficient of different models when trying to find the best hyper-parameter setting.}
-\label{tab:Paragraph Vector Parameter Results Best}
-\end{center}
-\end{table}
 
 
 % \subsubsection{Paragraph Vectors using pre-initialized weights *}

@@ -343,6 +343,108 @@ yourselves
 
 \clearpage
 
+\subsection{Results}
+\label{sub:Results}
+
+\subsubsection{Full Results for Classifiers on Vector Space Models}
+\label{subs:Full Results for Classifiers on Vector Space Models}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ lll cc }
+      \toprule
+      Classifier & Scheme & Vector Space & Training Score & Test Score \\
+      \midrule
+      \multirow{6}{*}{Logistic Regression}
+       & \multirow{3}{*}{One-vs-Rest}
+         & N-Grams & 0.744 & \textbf{0.702} \\
+       & & Bag-of-Means & 0.704 & 0.671 \\
+       & & PV & 0.684 & 0.606 \\
+       \cmidrule(r){2-5}
+       & \multirow{3}{*}{multinomial}
+       & N-Grams & 0.770 & 0.697 \\
+       & & Bag-of-Means & 0.743 & \textbf{0.706} \\
+       & & PV & 0.709 & 0.643 \\
+      \midrule
+      \multirow{6}{*}{Decision Tree}
+       & \multirow{3}{*}{One-vs-Rest}
+         & N-Grams & --- & --- \\
+       & & Bag-of-Means & --- & --- \\
+       & & PV & 0.994 & 0.339 \\
+       \cmidrule(r){2-5}
+       & \multirow{3}{*}{Multinomial}
+       & N-Grams & 0.924 & \textbf{0.625} \\
+       & & Bag-of-Means & 0.938 & 0.455 \\
+       & & PV & 0.994 & 0.290 \\
+      \midrule
+      \multirow{2}{*}{Naive Bayes}
+       & \multirow{1}{*}{One-vs-Rest}
+         & N-Grams & 0.668 & \textbf{0.648} \\
+         & & Bag-of-Means & 0.498 & 0.491 \\
+         & & PV & 0.603 & 0.573 \\
+       \cmidrule(r){2-5}
+       & \multirow{1}{*}{Multinomial}
+       & N-Grams & 0.637 & \textbf{0.618} \\
+       & & Bag-of-Means & 0.479 & 0.472 \\
+       & & PV & 0.594 & 0.562 \\
+      \midrule
+      \multirow{6}{*}{SVM}
+       & \multirow{3}{*}{One-vs-Rest}
+         & N-Grams & 0.882 & 0.713 \\
+       & & Bag-of-Means & --- & --- \\
+       & & PV & 0.831 & 0.683 \\
+       \cmidrule(r){2-5}
+       & \multirow{3}{*}{Multinomial}
+         & N-Grams & 0.759 & 0.692 \\
+       & & Bag-of-Means & 0.751 & 0.704 \\
+       & & PV & 0.722 & 0.635 \\
+      \midrule
+      \multirow{6}{*}{kNN}
+      & \multirow{3}{*}{One-vs-Rest}
+      & N-Grams & 0.929 & 0.642 \\
+      & & Bag-of-Means & 0.944 & \textbf{0.685} \\
+      & & PV & 0.993 & 0.579 \\
+      \cmidrule(r){2-5}
+      & \multirow{3}{*}{Multinomial}
+      & N-Grams & 0.911 & 0.623 \\
+      & & Bag-of-Means & 0.936 & \textbf{0.678} \\
+      & & PV & 0.993 & 0.581 \\
+      \midrule
+      \multirow{6}{*}{Random Forest}
+      & \multirow{3}{*}{One-vs-Rest}
+      & N-Grams & 0.924 & \textbf{0.701} \\
+      & & Bag-of-Means & 0.940 & 0.618 \\
+      & & PV & 0.985 & 0.509 \\
+      \cmidrule(r){2-5}
+      & \multirow{3}{*}{Multinomial}
+      & N-Grams & 0.922 & \textbf{0.696} \\
+      & & Bag-of-Means & 0.937 & 0.616 \\
+      & & PV & 0.993 & 0.515 \\
+      \midrule
+      \multirow{3}{*}{Neural Network}
+      & \multirow{3}{*}{Multinomial}
+      & N-Grams & 0.911 & 0.709 \\
+      & & Bag-of-Means & 0.930 & \textbf{0.716} \\
+      & & PV & 0.975 & 0.665 \\
+      \midrule
+      \multirow{3}{*}{Deep Neural Network}
+      & \multirow{3}{*}{Multinomial}
+      & N-Grams & 0.913 & 0.708 \\
+      & & Bag-of-Means & 0.936 & \textbf{0.715} \\
+      & & PV & 0.989 & 0.679 \\
+      % \midrule
+      % \multirow{3}{*}{Convolutional \gls{ANN}}
+      % & \multirow{3}{*}{---}
+      % & N-Grams & --- & --- \\
+      % & & Bag-of-Means & --- & --- \\
+      % & & PV & --- & --- \\
+      \bottomrule
+    \end{tabular}
+  \caption{sdf}
+\label{tab:Paragraph Vector Parameter Hyper-Parameter Results}
+\end{center}
+\end{table}
 
 % \includepdf[offset=75,-75,scale=0.8,clip,trim=0cm 0cm 0cm 2cm,pages={1},pagecommand={\section{appendix}\subsection{part1}}]{appendix/InferringStructureofJobAdvertisements-experiment-example}
 % \includepdf[scale=0.8,clip,trim=0cm 0cm 0cm 2cm,pages={2-},pagecommand={}]{appendix/InferringStructureofJobAdvertisements-experiment-example}
