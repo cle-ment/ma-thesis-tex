@@ -116,8 +116,8 @@ There are, of course, various other variants and modifications to the N-gram mod
 
 Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}. As~\cite{Mikolov:2012aa} points out further \textquote{[the] most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs [Language Models] is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
 
-\subsubsection{Learned Distributed Continuous Representations}
-\label{subs:Learned Distributed Continuous Representations}
+\subsubsection{Distributed Continuous Representations}
+\label{subs:Distributed Continuous Representations}
 
 To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community. His work builds on ideas introduced in~\cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in~\cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
 
@@ -196,8 +196,12 @@ The models explained above are defined on words as the atomic unit. Therefore se
 
 Several approaches of composing document vectors out of word vectors have been studied in \cite{Mitchell:2010aa}. One of the most successful variants evaluated was weighted averaging of word embeddings, a technique also referred to as \emph{Bag-of-Means}. However this approach \textquote{loses the word order in the same way as the standard bag-of-words models do.}~\cite{Le:2014aa}. This intuitive property was confirmed by~\cite{Zhang:2015aa} where the method consistently performed poorest in comparison to other approaches on a variety on tasks.
 
-\subparagraph{Paragraph Vectors *}
+\subparagraph{Paragraph Vectors}
+\label{subp:Paragraph Vectors}
+
 In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
+
+Models can be used for prediction either by using the trained vectors or infer vectors at prediction time as done in~\cite{Le:2014aa}.
 
 \subsection{Methods For Classification With Vector Space Models}
 \label{sub:Methods For Classification With Vector Space Models}

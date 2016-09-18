@@ -262,7 +262,7 @@ We can see that the model performs well using Logistic Regression and it is almo
 \label{fig:bom-conf-matrix}
 \end{figure}
 
-Figure~\ref{fig:bom} again visualizes a projection of the vectors into a 2 dimensional space, showing that labels tend to cluster.
+The visualization in Figure~\ref{fig:bom} shows a projection of the vectors into a 2 dimensional space. We can visually confirm that labels tend to cluster in this space.
 
 \begin{figure}[h!]
     \centering
@@ -279,7 +279,7 @@ Figure~\ref{fig:bom} again visualizes a projection of the vectors into a 2 dimen
       \caption{t-SNE projection}
 \label{fig:bom-tsne}
     \end{subfigure}
-    \caption{Document vectors produced by Bag-of-Means model (optimized w.r.t. Logistic Regression) projected onto the first 2 principal components (left) and projected using t-SNE projection. It is clear that even though the vectors are simply obtained by averaging they do indeed produce somewhat seperable manifolds.}
+    \caption{Document vectors produced by Bag-of-Means model (optimized w.r.t. Logistic Regression) projected onto the first 2 principal components (left) and projected using t-SNE projection. }
 \label{fig:bom}
 \end{figure}
 
@@ -288,34 +288,75 @@ Figure~\ref{fig:bom} again visualizes a projection of the vectors into a 2 dimen
 
 \todo{Doc2Vec model is evaluated in 2 ways (normal and trained on inferred vectors)}
 
-Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in more detail in Section~\ref{par:Distributed representations for documents}. Again there are several hyper-parameters to this model that are described in Section~\ref{subs:Language Models using Distributed Representations} and turn out to have a huge influence on its performance as the results below indicate. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Thus the effect of the hyper-parameters was studied by just varying them one at a time while keeping the others fixed, using a Logistic Regression classifier with 5-fold cross-validation.
-
-
-%%%%%%%%%%%
-
-
-The next sections will briefly outline the results of these tests:\footnote{All tables in this section will use the following abbreviations: \emph{type}: Model Type, i.e. PV-DM vs. PV-DBOW; \emph{size}: Vector Size; \emph{window}: Window Size; \emph{negative}: Negative Sampling value $k$; \emph{hs}: Hierarchical Softmax used; \emph{sample}: Frequent word sub-sampling threshold; \emph{MCC}: Matthews Correlation Coefficient}
-
-\paragraph{Vector Size}
-As was to expect the vector size of the model correlates with the performance. Again the highest chosen dimensionality was 300 which yielded the best results with a Matthews Correlation Coefficient of 0.53, however the difference to a 100-dimensional model was marginal with 1\% absolute improvement. Surprisingly even a 10-dimensional vector space model is capable of achieving almost best results with a difference of only 2\% to the 300-dimensional model. Even a 2-dimensional model could achieve a MCC score of 14\%.
+Next a vector space model was build using the approach proposed by~\cite{Le:2014aa} and described in detail in Section~\ref{subp:Paragraph Vectors}. There are several variants and hyper-parameters to this model and their effect was experimentally evaluated. As this model is computationally quite expensive a grid search as for the N-gram model above was infeasible. Hence performance effects were measured by varying the hyper-parameters one at a time while keeping the others fixed. In this process Logistic Regression was used with 5-fold cross-validation. All Paragraph Vector models were tested with both the trained vectors as well as vectors inferred at prediction time. The default configuration can be seen in Table ~\ref{tab:Paragraph Vector Defaults}. The next sections will outline the results of these experiments.
 
 \begin{table}[h]
   \begin{center}
-    \begin{tabular}{ c | *2c | *2c }
-      \toprule
-       & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
-      Vector Size & Trained & Inferred & Trained & Inferred \\
-      \midrule
-      2   & 0.302 & 0.255 & 0.173 & 0.251 \\
-      10  & 0.457 & 0.417 & 0.296 & \textbf{0.405} \\
-      100 & 0.535 & 0.358 & 0.341 & 0.384 \\
-      300 & 0.575 & 0.363 & 0.347 & 0.393 \\
-      \bottomrule
-    \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying vector size.}
-\label{tab:Paragraph Vector Parameter Results Size}
+  \begin{tabular}{ l | l }
+    \toprule
+    Vector Size & 100 \\
+    Sub-sampling threshold & No \\
+    Hierarchical Softmax & Yes \\
+    Negative Sampling Value & 3 \\
+    Window Size & 10 \\
+    Model Type & PV-DBOW \\
+    \bottomrule
+  \end{tabular}
+  \caption{Default hyper-parameter configuration for Paragraph Vectors}
+  \label{tab:Paragraph Vector Defaults}
 \end{center}
 \end{table}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ c | c | c | c }
+      \toprule
+      Hyper-Parameter & Setting & \gls{MCC} Training & \gls{MCC} Test\\
+      \midrule
+      \multirow{4}{*}{Vector Size}
+       & 2 & 0.229 & 0.223 \\
+       & 10  & 0.545 & 0.541 \\
+       & 100 & 0.614 & 0.589 \\
+       & 300 & 0.648 & \textbf{0.608} \\
+      \midrule
+      \multirow{4}{*}{Sub-sampling Threshold}
+       & None & 0.611 & \textbf{0.588} \\
+       & 1e-4 & 0.495 & 0.475 \\
+       & 1e-5 & 0.328 & 0.303 \\
+       & 1e-6 & 0.149 & 0.127 \\
+      \midrule
+      \multirow{2}{*}{Hierarchical Softmax}
+       & Not used & 0.600 & 0.578 \\
+       & Used     & 0.613 & \textbf{0.586} \\
+      \midrule
+      \multirow{4}{*}{Negative Sampling Value}
+       & 0 & 0.598 & 0.575 \\
+       & 2 & 0.612 & 0.591 \\
+       & 4 & 0.612 & 0.587 \\
+       & 6 & 0.613 & \textbf{0.590} \\
+      \midrule
+      \multirow{3}{*}{Window Size}
+       & 5  & 0.611 & 0.586 \\
+       & 10 & 0.614 & \textbf{0.588} \\
+       & 15 & 0.612 & 0.586 \\
+      \midrule
+      \multirow{2}{*}{Model Type}
+       & PV-DBOW & 0.610 & 0.580 \\
+       & PV-DM   & 0.405 & 0.411 \\
+      \midrule
+      \multirow{2}{*}{Inference Type}
+       & Trained Vectors  & 0.519 & 0.366 \\
+       & Inferred Vectors & 0.404 & \textbf{0.408} \\
+      \bottomrule
+    \end{tabular}
+  \caption{Test and Training scores measured using \gls{MCC} with the different hyper-parameter settings. In all configurations only one hyper-parameter was adjusted while keeping the others as shown in Table~\ref{tab:Paragraph Vector Defaults}}
+\label{tab:Paragraph Vector Parameter Hyper-Parameter Results}
+\end{center}
+\end{table}
+
+\paragraph{Vector Size}
+As was to expect the vector size of the model correlates with the performance. Again the highest chosen dimensionality was 300 which yielded the best results with a Matthews Correlation Coefficient of 0.53, however the difference to a 100-dimensional model was marginal with 1\% absolute improvement. Surprisingly even a 10-dimensional vector space model is capable of achieving almost best results with a difference of only 2\% to the 300-dimensional model. Even a 2-dimensional model could achieve a MCC score of 14\%.
 
 \begin{figure}[h!]
     \centering
@@ -353,10 +394,7 @@ Frequent word sub-sampling can boost performance quite much, but again choosing 
        & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
       Sub-sampling threshold & Trained & Inferred & Trained & Inferred \\
       \midrule
-      No sub-sampling & 0.536 & 0.363 & 0.336 & 0.384 \\
-      1e-4 & 0.627 & 0.377 & 0.315 & \textbf{0.397} \\
-      1e-5 & 0.599 & 0.250 & 0.173 & 0.247 \\
-      1e-6 & 0.431 & 0.147 & 0.106 & 0.129 \\
+
     \bottomrule
   \end{tabular}
   \caption{Matthews Correlation Coefficient with varying frequent word sub-sampling threshold.}
@@ -393,22 +431,6 @@ Frequent word sub-sampling can boost performance quite much, but again choosing 
 \paragraph{Hierarchical Softmax}
 Using hierarchical softmax increased the performance, leading to a 12\% absolute difference in terms of MCC score. This result is counter-intuitive as using the hierarchical softmax should as an approximation be less performant. However it might simply mitigate overfitting of the model.
 
-\begin{table}[h]
-  \begin{center}
-    \begin{tabular}{ c | *2c | *2c }
-      \toprule
-       & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
-      Hierarchical Softmax & Trained & Inferred & Trained & Inferred \\
-      \midrule
-      Not used & 0.364 & 0.195 & 0.201 & 0.236 \\
-      Used     & 0.534 & 0.365 & 0.340 & \textbf{0.387} \\
-    \bottomrule
-  \end{tabular}
-  \caption{Matthews Correlation Coefficient with and without using hierarchical softmax.}
-\label{tab:Paragraph Vector Parameter Results Hierarchical Softmax}
-\end{center}
-\end{table}
-
 \begin{figure}[h!]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -428,22 +450,6 @@ Using hierarchical softmax increased the performance, leading to a 12\% absolute
 \paragraph{Negative Sampling}
 Negative Sampling generally increased the performance of the model and smaller values actually worked best out of the tested settings from 0 to 6. Choosing the number of negative samples to be 2 resulted in the best performance, but the absolute difference in performance was only about 6\% of achieved MMC score.
 
-\begin{table}[h]
-  \begin{center}
-    \begin{tabular}{ c | *2c | *2c }
-      \toprule
-       & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
-      Negative Sampling Value & Trained & Inferred & Trained & Inferred \\
-      \midrule
-      0 & 0.581 & 0.221 & 0.332 & 0.343 \\
-      2 & 0.555 & 0.338 & 0.363 & \textbf{0.399} \\
-      4 & 0.517 & 0.336 & 0.350 & 0.378 \\
-      6 & 0.489 & 0.317 & 0.338 & 0.363 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying negative sampling value.}
-\label{tab:Paragraph Vector Parameter Results Negative Sampling}
-\end{center}
 
 \end{table}
 
@@ -476,22 +482,6 @@ Negative Sampling generally increased the performance of the model and smaller v
 \paragraph{Window Size}
 Window sizes of 5, 10 and 15 were experimented with which increase or decrease the width of context the model is trained on. Here a window size of 10 showed best results. It is safe to assume that increasing the window size much further does not lead to any improvement in the model as the correlation with the word should become weaker the farther we move away from it in a document or text.
 
-\begin{table}[h]
-  \begin{center}
-    \begin{tabular}{ c | *2c | *2c }
-      \toprule
-       & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
-      Window size & Trained & Inferred & Trained & Inferred \\
-      \midrule
-      5 & 0.534 & 0.358 & 0.380 & \textbf{0.411} \\
-      10 & 0.540 & 0.347 & 0.366 & 0.393 \\
-      15 & 0.536 & 0.317 & 0.339 & 0.373 \\
-    \bottomrule
-    \end{tabular}
-  \caption{Matthews Correlation Coefficient with varying window size.}
-\label{tab:Paragraph Vector Parameter Results Window Size}
-\end{center}
-\end{table}
 
 \begin{figure}[h!]
     \centering
@@ -515,24 +505,9 @@ Window sizes of 5, 10 and 15 were experimented with which increase or decrease t
 \end{figure}
 
 
-\paragraph{PV-DBOW versus PM-DV}
-Both models for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vector (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
+\paragraph{Model Type}
+Both model types for paragraph vectors proposed in~\cite{Le:2014aa} were tried, namely Distributed Bag of Words version of Paragraph Vector (PV-DBOW) and Distributed Memory version of Paragraph Vector (PV-DM). In these tests the DBOW model achieves significantly better results with an MCC that is 14\% than the PV-DM model in absolute terms. This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
 
-\begin{table}[h]
-  \begin{center}
-    \begin{tabular}{ c | *2c | *2c }
-      \toprule
-       & \multicolumn{2}{c|}{MCC Training} & \multicolumn{2}{|c}{MCC Test}\\
-      Window size & Trained & Inferred & Trained & Inferred \\
-      \midrule
-      PV-BBOW & 0.627 & 0.610 & 0.544 & \textbf{0.582} \\
-      PV-DM   & 0.534 & 0.365 & 0.341 & 0.391 \\
-    \bottomrule
-    \end{tabular}
-    \caption{Matthews Correlation Coefficient using the two models proposed in~\cite{Le:2014aa}.}
-\label{tab:Paragraph Vector Parameter Results PV-DBOW versus PM-DV}
-\end{center}
-\end{table}
 
 \begin{figure}[h!]
     \centering
