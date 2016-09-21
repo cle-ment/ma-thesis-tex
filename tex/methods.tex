@@ -250,6 +250,7 @@ The most prominent algorithm in this class is \emph{Logistic Regression} which u
 
 \begin{equation}
   \sigma (a) = \frac{1}{1 + \exp(-a)}
+  \label{eq:sigmoid}
 \end{equation}
 
 This yields posterior class probabilities of:
@@ -377,7 +378,7 @@ Where $\mathcal{I}(\cdot)$ is the indicator function. Other voting schemes have 
 
 Another common class of learning algorithms are \emph{instance-based learning methods}, also known as \emph{example-based methods} or \emph{memory-based learning methods}. These methods directly use the given training examples and comparing new unseen examples with the training data at inference time, thus constructing the hypothesis directly from the data.
 
-One of the most prominent instance-based classification methods is the \gls{kNN} algorithm which simply makes a class prediction based on the majority class amongst its $k$ nearest neighbors in the input space.
+One of the most prominent instance-based classification methods is the \gls{kNN} algorithm which simply makes a class prediction based on the majority class amongst its $k$ nearest neighbors in the input space. This type of learning algorithm is a
 
 The choice for the parameter $k$ depends on the type of problem and is often determined empirically via hyper-parameter optimization\todo{glossary?} or based on heuristics. The \gls{kNN} algorithm is highly prone to the curse of dimensionality as when a metric such as the Euclidean Distance is used as a metric for the \gls{kNN} algorithm to determine the nearest neighbors to the query vector there is little difference in the distance between samples in very high-dimensional spaces. Thus often \gls{Feature Extraction} or \gls{Dimensionality Reduction} techniques are employed before applying the \gls{kNN} algorithm.
 
@@ -386,7 +387,7 @@ The choice for the parameter $k$ depends on the type of problem and is often det
 
 \todo{rewrite a bit}
 
-Kernel Methods can be seen as a set of instance-based methods (see Section~\ref{subs:Instance-based Methods}, as they construct the hypothesis using based on the training data. To achieve predictions on unseen data a similarity function $k$ between the training examples and the unseen data points is used. This function is called the \emph{kernel function} or simply \emph{kernel}, giving rise to the name of this class of these methods. The kernel function is chosen to be expressible as the inner product in another vector space $\mathcal{V}$. With a function adhering to this property a feature map $\varphi \colon {\mathcal {X}}\to {\mathcal {V}}$ can be constructed, satisfying:
+Kernel Methods can be seen as a set of instance-based methods (see Section~\ref{subs:Instance-based Methods}, as they construct the hypothesis based on the training data. To predict on unseen data a similarity function $k$ between the training examples and the unseen data points is used. This function is called the \emph{kernel function} or simply \emph{kernel}, giving rise to the name of this class of methods. The kernel function is chosen to be expressible as the inner product in another vector space $\mathcal{V}$. With a function adhering to this property a feature map $\varphi \colon {\mathcal {X}}\to {\mathcal {V}}$ can be constructed, satisfying:
 
 \begin{equation}
   k(\mathbf {x} ,\mathbf {x'} )=\langle \varphi (\mathbf {x} ),\varphi (\mathbf {x'} )\rangle _{\mathcal {V}}.
@@ -394,18 +395,111 @@ Kernel Methods can be seen as a set of instance-based methods (see Section~\ref{
 
 This avoids the explicit mapping that is needed to get linear learning algorithms to learn a nonlinear function or decision boundary.
 
-The best known member of is the \gls{svm}.
+The best known member of is the \gls{svm}. 
 
 \subsubsection{Neural Networks}
 \label{subs:Neural Networks}
 
-\gls{ANN} are a
+The \gls{ANN} algorithm, often simply referred to as a \emph{Neural Network}, draws its inspiration and name form the way information processing in the brain is understood. Its biological analogy are neurons, nerve cells that can receive signals from other neurons through their input connections called dendrites. A neuron can than react to this input by firing a signal to other neurons itself and this reacting depends on the strength of the incoming connections which are adapted as an organism learns over time.
 
+Modeling this behavior, a neural network is composed of multiple nodes, also referred to as \emph{neurons}. Each node can receive several signals from other nodes, combine these signals by applying an \emph{activation function} on their weighted sum and output a single signal as the result. The algorithm learns by adapting each single weight of this weighted sum for every node-to-node connection.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{img/NN}
+  \caption{Conceptual visualization of a Feed-forward Neural Network}
+  \label{fig:NN}
+\end{figure}
+
+The most common form, known as \emph{Feed-forward Neural Network}, is a network where all nodes of successive layers are connected and each node in the network passes on its output signal to all nodes in the next layer until the transformed signal reaches the last layer. This layer represents the output signal or prediction and is thus called the \emph{output layer}. The first layer is called \emph{input layer} and is simply fed with real-valued vectors, e.g. as produced by a Vector Space method as described in Section~\ref{sub:Vector Space Models}. All layers in between are called \emph{hidden layers}. An exemplified illustration of such a feed-forward neural network with one hidden layer can be seen in Figure~\ref{fig:NN}.
+
+For a single node the computation can formally be expressed as follows. We first compute the weighted sum of the inputs of the node:
+
+\begin{equation}
+  a_j = \sum_i w_{ji} z_i
+  \label{eq:NN weighted sum}
+\end{equation}
+
+where $a_j$ is the weighted sum for node $j$, $w_kj$ is the weight for an input from node $i$ to node $j$ and $z_i$ is the output of node $i$. Then we apply the non-linear activation function $h(\cdot)$ to $a_j$ to receive the nodes output $z_j$:
+
+\begin{equation}
+  z_j = h(a_j)
+  \label{eq:NN activation}
+\end{equation}
+
+For training the network it is essential that the activation function $h$ is differentiable. This is because we use partial derivatives of the error function with regards to each weight to obtain the error this weight is produced and update it accordingly. We can achieve this by making use of the chain rule for partial derivatives which, given the error in one layer, lets us derive the errors for the previous layer. This procedure is called \emph{backpropagation} since the error is propagated backwards through the network and will be described as follows.
+
+First, using the chain rule, we can write the derivative of the error $E_n$ with respect to an incoming weight $w_{ji}$ as:
+
+\begin{equation}
+	\frac{\partial E_n}{\partial w_{ji}} = \frac{\partial E_n}{\partial a_j} \frac{\partial a_j}{\partial w_{ji}} = \delta_j z_i
+	\label{eq:NN derivatives}
+\end{equation}
+
+where we use Equation~\ref{eq:NN weighted sum} and where $\delta_j$ denotes the \emph{error} at node $j$, defined as:
+
+\begin{equation}
+	\delta_j = \frac{\partial E_n}{\partial a_j}
+	\label{eq:NN delta definition}
+\end{equation}
+
+Then for each output node $k$ given the sum-of-squares error we can directly calculate $\delta_k$ as follows:
+
+\begin{equation}
+	\delta_k = y_k - t_k
+	\label{eq:NN output error}
+\end{equation}
+
+where $y_k$ denotes the computed output of node $k$ and $t_k$ the expected output, also called the \emph{target} value.
+
+For hidden nodes we again apply the chain rule which yields
+
+\begin{equation}
+	\delta_j \equiv \frac{\partial E_n}{\partial a_j} = \sum_k \frac{\partial E_n}{\partial a_k} \frac{\partial a_k}{\partial a_j}
+	= h'(a_j) \sum_k w_{kj}\delta_k
+	\label{eq:NN backprop formula}
+\end{equation}
+
+by making use of Equations~\ref{eq:NN delta definition},~\ref{eq:NN weighted sum} and~\ref{eq:NN activation} and the fact that the error in node $j$ is a result of the errors in the nodes $k$ in the following layer in direction of the output.
+
+Starting with the $\delta$ of the output nodes we can recursively apply Equation~\ref{eq:NN backprop formula} to compute all $\delta$'s in the network which then allows to compute the derivatives with regards to each weight using Equation~\ref{eq:NN derivatives}.
+
+\begin{enumerate}
+  \item We first perform a feed-forward pass, i.e. starting from the input nodes we propagate the signal through the network by successive application of weighted sum in Equation~\ref{eq:NN weighted sum} and  the activation function in Equation~\ref{eq:NN activation} until we receive output.
+  \item Then we compute the $\delta_k$ of the error for each output node with Equation~\ref{eq:NN output error}.
+	\item Next we can compute the $\delta$'s by backpropagating the errors using Equation~\ref{eq:NN backprop formula}.
+	\item Lastly we can compute the derivatives for all weights using Equation~\ref{eq:NN derivatives} and adapt the weights by a learning rate to reduce the error.
+\end{enumerate}
+
+The study of Neural Networks comprises whole books and has been a subject of research for decades with strong fluctuations in popularity.
+Recently there has been much interest in this technique again, especially regarding in Deep Neural Networks, i.e. networks with many hidden layers where the network can learn layers of data representations with increasing abstraction.
+Various developments in research and technology, such as the available of massive parallel computational resources through \glspl{GPU} and learnings e.g.\ on the importance of initialization of the nodes in a network, have led to huge success in various application domains. Further there are various extensions to the learning procedure such as regularization methods and alternative network architectures such as the \gls{CNN}. It is beyond the scope of this work to cover these topics in depth and the interested reader shall be referred to any standard machine learning literature for an introduction to the topic, such as~\cite{Bishop:2006aa} from which this section's description was adapted. For a more recent treatment on the topic and on \gls{Deep Learning} in particular \cite{Bengio:2015aa} offers a great overview and  \cite{Cho:2014aa}
+Various developments in research and technology, such as the available of massive parallel computational resources through \glspl{GPU} and learnings e.g.\ on the importance of initialization of the nodes in a network, have led to huge success in various application domains. Further there are various extensions to the learning procedure such as regularization methods and alternative network architectures such as the \gls{CNN}. It is beyond the scope of this work to cover these topics in depth and the interested reader shall be referred to standard machine learning literature for an introduction to the topic, such as~\cite{Bishop:2006aa} from which this section's description was adapted. For a more recent treatment on the topic and on \gls{Deep Learning} in particular \cite{Bengio:2015aa} offers a great overview and \cite{Cho:2014aa}, a Ph.D. thesis published at Aalto University two years ago, gives a broad coverage of the field as well.
 
 \subsection{Sequential Models For Text Classification}
 \label{sub:Sequential Models For Text Classification}
 
-\cite{Gers:1999aa} --- Learning to forget: continual prediction with LSTM.
+In Section~\ref{sub:Vector Space Models} we covered an approach to text classification where each text segment to be classified was first transformed into a fixed size vector representation and fed into a classifier afterwards. This approach treats each text segment as a document and assumes it belongs to a certain class.
+
+An alternative approach is to model text as a sequential signal produced over time, similar to a time-series. This assumes strong dependencies between the current time step and previous time steps in the signal.
+We can take this view with different levels of granularity: The most fine-grained representation of text are characters so text can just be seen as a sequence of characters, but also using words or sentences as the atomic unit would be possible. As the space of possible letters in most western languages is quite limited we can directly use these as states that our signal can take. In the case of words or longer sequences we would either have a huge space of states where similarity of words would be disregarded or we could use a vector space representations for words or sequences.
+
+There are various algorithmic approaches to model time-series and sequences of evolving states such as Linear Dynamic Systems or Hidden Markov Models. However many of these methods tend to ``forget fast'', i.e. they are unable to model long-term dependencies. An extreme case are HMM's where the next state only depends on the current state.
+
+While Recursive Neural Networks can model much longer dependencies in theory, these are often still difficult to learn for such models. This problem is known as the vanishing gradient problem. We will next look at Long-Term Short Memory Networks (LSTMs), a method introduced specifically to overcome this problem, which allows to model much longer dependencies in sequences efficiently.
+
+\subsubsection{LSTMs}
+\label{subs:LSTMs}
+
+
+
+% \cite{Gers:1999aa} --- Learning to forget: continual prediction with LSTM.
+
+
+
+
+
+
 
 \subsection{Evaluation Metrics}
 \label{sub:Evaluation Metrics}

@@ -5,7 +5,9 @@
 \glossaryentry{silhouette score?\glossentry{silhouette score}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{$k$-Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Matthews correlation coefficient?\glossentry{Matthews correlation coefficient}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Convolutional Neural Network (CNN)?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsnumberformat}{i}
+\glossaryentry{Graphical Processing Unit (GPU)?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{langdetect?\glossentry{langdetect}|setentrycounter[]{page}\glsnumberformat}{i}
 \glossaryentry{Beautiful Soup?\glossentry{Beautiful Soup}|setentrycounter[]{page}\glsnumberformat}{i}
@@ -63,8 +65,11 @@
 \glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{32}
 \glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{Matthews correlation coefficient?\glossentry{Matthews correlation coefficient}|setentrycounter[]{page}\glsnumberformat}{38}
-\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{64}
+\glossaryentry{Convolutional Neural Network (CNN)?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsnumberformat}{34}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{34}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{34}
+\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{Matthews correlation coefficient?\glossentry{Matthews correlation coefficient}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{67}
