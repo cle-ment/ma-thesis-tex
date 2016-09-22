@@ -12,3 +12,6 @@
 *.tdo
 *.toc
 *.pdf
+# exclude everything in literature folder except the bib itself
+literature/*
+!literature/thesis.bib
