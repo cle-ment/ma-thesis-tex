@@ -385,17 +385,89 @@ The choice for the parameter $k$ depends on the type of problem and is often det
 \subsubsection{Kernel Methods}
 \label{subs:Kernel Methods}
 
-\todo{rewrite a bit}
+Kernel Methods are a set of instance-based methods (see Section~\ref{subs:Instance-based Methods}), as they construct the hypothesis and make predictions using the training data. Similar to other learning algorithms, kernel methods make use of transformations from an input space $\mathcal{X}$ into a another space $\mathcal{V}$. If the transformation is non-linear this allows a learning algorithm to learn a linear decision boundary in the projected space $\mathcal{V}$ which then corresponds to a non-linear decision boundary in the original space $\mathcal{X}$.
 
-Kernel Methods can be seen as a set of instance-based methods (see Section~\ref{subs:Instance-based Methods}, as they construct the hypothesis based on the training data. To predict on unseen data a similarity function $k$ between the training examples and the unseen data points is used. This function is called the \emph{kernel function} or simply \emph{kernel}, giving rise to the name of this class of methods. The kernel function is chosen to be expressible as the inner product in another vector space $\mathcal{V}$. With a function adhering to this property a feature map $\varphi \colon {\mathcal {X}}\to {\mathcal {V}}$ can be constructed, satisfying:
+Kernel methods build on this idea and enable us to completely avoid the explicit mapping from the input space $\mathcal{X}$ to the transformed space $\mathcal{V}$ using the so-called \emph{kernel trick}: Using the fact that certain functions $k(x, x')$ in a space $\mathcal{X}$ can be expressed as an inner product in another space $\mathcal{V}$, we can directly operate on the scalar dot products which can be interpreted as distances or similarities between the data. A function adhering to this property is called a \emph{kernel function} and a variety of such functions have been proposed, with extensions beyond transformations on real-valued vectors to kernel functions on complex objects such as graphs (see e.g.~\cite{Shervashidze:2011aa} for an interesting example of a graph kernel method).
+
+A particularly successful classification method using kernels is the \gls{SVM} algorithm introduced by the name of \emph{Support Vector Networks} by~\cite{Cortes:aa}. Originally it was formulated as a linear classifier in~\cite{Vapnik:1982aa} and as such belongs to the family of generalized linear models introduced in Section~\ref{subs:Generalized Linear Models}. This corresponds to using a so-called linear kernel as $k(x, y) = x^T y$. The \gls{SVM} belongs to the class of \emph{maximum margin classifiers}: Figuratively speaking and assuming linear separability and dichotomous classification, the decision boundary is trained to be maximally distant to the closest data points of each class. We can formalize the approach as follows:
+
+We are given data points $x_1, \ldots, x_N$ and target values $t_1, \ldots, t_N$ for these points where $t_n \in {-1, 1}$ and $x_n \in \mathbb{R}^d$. We will use a linear model of the form:
 
 \begin{equation}
-  k(\mathbf {x} ,\mathbf {x'} )=\langle \varphi (\mathbf {x} ),\varphi (\mathbf {x'} )\rangle _{\mathcal {V}}.
+	y(x) = w^T \phi(x) + b
+	\label{eq:svm linear model}
 \end{equation}
 
-This avoids the explicit mapping that is needed to get linear learning algorithms to learn a nonlinear function or decision boundary.
+where $\phi$ denotes a transformation function. Then the perpendicular distance of a point $x$ to the decision hyperplane is given by
 
-The best known member of is the \gls{svm}. 
+\begin{equation}
+	\frac{|y(x)}{\|w\|}
+\end{equation}
+
+Since we want a hyperplane where all data points are correctly classified the decision boundary takes the form
+
+\begin{equation}
+	\frac{t_n y(x_n)}{\|w\|} = \frac{t_n (w^T \phi(x_n) + b)}{\|w\|}
+\end{equation}
+
+We now want to find the parameters $b$ and $w$ so that we maximize the margin which is given by the closest points to the decision boundary. This can be formulated as
+
+\begin{equation}
+	\argmax_{w, b} \left\{ \frac{1}{\|w\|} \min_n [ t_n (w^T \phi(x_n) + b) ] \right\}
+\end{equation}
+
+We can define the margin being one by scaling the input space which leads to the constraint that each point is either on the margin with distance 1 or further away:
+
+\begin{equation}
+	t_n (w^T \phi(x_n) + b) \geq 1 \quad\quad n = 1, \ldots, N
+\end{equation}
+
+We are thus given a constrained optimization problem which can be solved using Lagrange multipliers $a_n \geq 0$ giving:
+
+\begin{equation}
+	L(w, b, a) = \frac{1}{2} \|w\|^2 - \sum_{n=1}^N a_n \{ t_n (w^T \phi(x_n) + b) -1 \}
+	\label{eq:svm lagrange}
+\end{equation}
+
+Taking the derivatives of $L$ with respect to $w$ and $b$ yields:
+
+\begin{equation}
+	w = \sum_{n=1}^N a_n t_n \phi(x_n)
+	\label{eq:svm derivative w}
+\end{equation}
+
+\begin{equation}
+	0 = \sum_{n=1}^N a_n t_n
+	\label{eq:svm derivative b}
+\end{equation}
+
+Using Equations~\ref{eq:svm derivative w} and~\ref{eq:svm derivative b}, we can rewrite Equation~\ref{eq:svm lagrange} as:
+
+\begin{equation}
+	\widetilde{L}(a) = \sum_{n=1}^N a_n - \frac{1}{2} \sum_{n=1}^N \sum_{m=1}^N a_n a_m t_n t_m k(x_n, x_m)
+\end{equation}
+
+where $a$ is subject to the constrains
+
+\begin{equation}
+	a_n \geq 0 \quad \quad n = 1, \ldots, N
+\end{equation}
+
+\begin{equation}
+	\sum_{n=1}^N a_n t_n = 0
+\end{equation}
+
+and the kernel function being defined as $k(x, x') = \phi(x)^T \phi(x')$.
+
+Predictions on new data can then be made evaluating the sign in Equation~\ref{eq:svm linear model} where we can substitute $w$ using Equation~\ref{eq:svm derivative w}:
+
+\begin{equation}
+	y(x) = \sum_{n=1}^N a_n t_n k(x, x_n) + b
+\end{equation}
+
+Here due to the constraints for every data point either $a_n = 0$ or $t_n y(x_n) = 1$ so that all only points on the margin will remain in the sum and these are hence called \emph{support vectors}.
+
+There are many extensions to the model with the most important one being the introduction of \emph{slack variables} by~\cite{Cortes:aa} in order to handle overlapping class distribution in the input space. Books dedicated to the topic such as~\cite{Shawe-Taylor:2004aa} offer a thorough introduction into Kernel Methods and again the topic is covered in most introductory books to machine learning. 
 
 \subsubsection{Neural Networks}
 \label{subs:Neural Networks}
@@ -533,7 +605,7 @@ An intuitive choice towards classification is to simply ask which data points we
 
 This choice can give a good intuition and it does capture the effectiveness on both true positives as well as true negatives, but it is strongly influenced by bias of the true and predicted class distribution (known as prevalence RP/N and label bias) as pointed out by~\cite{Powers:2011aa}. For example given a population of 900 positive and 100 negative examples, a predictor that simply always chooses a positive assignment can achieve accuracy of 90\% while it obviously is not a great predictor.
 
-\textquote{There is a good reason why accuracy is not an appropriate measure for information retrieval problems. In almost all circumstances, the data is ex- tremely skewed: normally over 99.9\% of the documents are in the nonrele- vant category. A system tuned to maximize accuracy can appear to perform well by simply deeming all documents nonrelevant to all queries. Even if the system is quite good, trying to label some documents as relevant will almost always lead to a high rate of false positives. However, labeling all documents as nonrelevant is completely unsatisfying to an information retrieval system user. }\cite[Chapter 8.3, p.~155]{Manning:2008aa}
+\textquote{There is a good reason why accuracy is not an appropriate measure for information retrieval problems. In almost all circumstances, the data is extremely skewed: normally over 99.9\% of the documents are in the nonrelevant category. A system tuned to maximize accuracy can appear to perform well by simply deeming all documents nonrelevant to all queries. Even if the system is quite good, trying to label some documents as relevant will almost always lead to a high rate of false positives. However, labeling all documents as nonrelevant is completely unsatisfying to an information retrieval system user. }\cite[Chapter 8.3, p.~155]{Manning:2008aa}
 
 \paragraph{Precision, Recall and F1 Score}
 \label{par:Precision, Recall and F1 Score}
