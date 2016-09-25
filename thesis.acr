@@ -2,83 +2,69 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{A}\relax \glsresetentrylist %
 \glossentry{AI}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{2}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4}}}%
 \glossentry{ANN}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{33}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{39}\delimN 
-		\glsseeformat[Glossary:]{Artificial Neural Network}{Z}}}%
-\glossentry{api}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\glsseeformat[Glossary:]{apig}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{34}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{41}}}%
+\glossentry{API}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossentry{CL}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4}}}%
 \glossentry{CNN}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{35}\delimN 
-		\glsseeformat[Glossary:]{Convolutional Neural Network}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{36}}}\glsgroupskip
 \glsgroupheading{F}\relax \glsresetentrylist %
 \glossentry{ffe}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\glsseeformat[Glossary:]{ffeg}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{GPU}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{35}\delimN 
-		\glsseeformat[Glossary:]{Graphical Processing Unit}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{36}}}\glsgroupskip
 \glsgroupheading{I}\relax \glsresetentrylist %
 \glossentry{IR}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{42}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{20}}}\glsgroupskip
+\glsgroupheading{J}\relax \glsresetentrylist %
+\glossentry{JSON}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{13}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{K}\relax \glsresetentrylist %
 \glossentry{kNN}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{12}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{31}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{53}\delimN 
-		\glsseeformat[Glossary:]{k Nearest Neighbors}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{13\delimN 14}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{32}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{55}}}\glsgroupskip
 \glsgroupheading{M}\relax \glsresetentrylist %
 \glossentry{MCC}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{42}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{44\delimR 46}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{49\delimR 51}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{53}\delimN 
-		\glsseeformat[Glossary:]{MCC}{Z}}}%
+		\setentrycounter[]{page}\glsnumberformat{14}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{17}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{20}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{44}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{46\delimR 48}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{51\delimR 53}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{55\delimR 57}}}%
 \glossentry{ML}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
 \glossentry{NLP}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4\delimN 5}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{54}}}%
+		\setentrycounter[]{page}\glsnumberformat{58}}}%
 \glossentry{NLTK}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{19}\delimN 
-		\glsseeformat[Glossary:]{Natural Language Toolkit}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{16}}}\glsgroupskip
 \glsgroupheading{P}\relax \glsresetentrylist %
 \glossentry{PCA}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{13}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{46}\delimN 
-		\glsseeformat[Glossary:]{Principal Components Analysis}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{48}}}\glsgroupskip
+\glsgroupheading{R}\relax \glsresetentrylist %
+\glossentry{REST}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{SVM}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{32}\delimN 
-		\glsseeformat[Glossary:]{Support Vector Machine}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{32}}}\glsgroupskip
 \glsgroupheading{T}\relax \glsresetentrylist %
 \glossentry{t-SNE}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{46}\delimN 
-		\glsseeformat[Glossary:]{t-Distributed Stochastic Neighbor Embedding}{Z}}}%
+		\setentrycounter[]{page}\glsnumberformat{48}}}%
 \glossentry{TC}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4}}}%
 \end{theglossary}\glossarypostamble

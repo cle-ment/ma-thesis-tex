@@ -2,131 +2,140 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{glssymbols}\relax \glsresetentrylist %
 \glossentry{k Nearest Neighbors}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{12}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{13}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{A}\relax \glsresetentrylist %
-\glossentry{apig}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}}}%
+\glossentry{Amazon Mechanical Turk}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{16}}}%
+\glossentry{Application Programming Interface}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{67}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{67}}}%
 \glossentry{Artificial Neural Network}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{33}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{34}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{Bagging}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{30}}}%
+		\setentrycounter[]{page}\glsnumberformat{31}}}%
 \glossentry{Beautiful Soup}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{19}}}%
+		\setentrycounter[]{page}\glsnumberformat{16}}}%
 \glossentry{Boosting}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{30}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{31}}}\glsgroupskip
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossentry{click-through rate}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}}}%
+		\setentrycounter[]{page}\glsignore{67}}}%
 \glossentry{confusion matrix}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{39}}}%
+		\setentrycounter[]{page}\glsnumberformat{41}}}%
 \glossentry{Convolutional Neural Network}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{35}}}%
+		\setentrycounter[]{page}\glsnumberformat{36}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}%
+\glossentry{Cross-Validation}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{13}}}%
 \glossentry{crowd sourcing}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{19}}}%
+		\setentrycounter[]{page}\glsnumberformat{20}}}%
 \glossentry{CrowdFlower}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{19}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{16\delimN 17}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{20}}}\glsgroupskip
 \glsgroupheading{D}\relax \glsresetentrylist %
 \glossentry{Deep Learning}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{8}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{35}}}%
+		\setentrycounter[]{page}\glsnumberformat{36\delimN 37}}}%
 \glossentry{Dimensionality Reduction}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{31}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{32}}}\glsgroupskip
 \glsgroupheading{E}\relax \glsresetentrylist %
 \glossentry{Ensemble Method}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{30}}}%
+		\setentrycounter[]{page}\glsnumberformat{31}}}%
 \glossentry{error matrix}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{39}\delimN 
-		\glsseeformat[Glossary:]{confusion matrix}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{41}}}\glsgroupskip
 \glsgroupheading{F}\relax \glsresetentrylist %
 \glossentry{Feature Extraction}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{31}}}%
+		\setentrycounter[]{page}\glsnumberformat{32}}}%
 \glossentry{Feature Selection}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}}}%
+		\setentrycounter[]{page}\glsignore{67}}}%
 \glossentry{ffeg}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}}}\glsgroupskip
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{GitHub}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{11}}}%
 \glossentry{Google Docs}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{9}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{69}}}%
+		\setentrycounter[]{page}\glsnumberformat{76}}}%
 \glossentry{Graphical Processing Unit}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}}}\glsgroupskip
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
+\glsgroupheading{J}\relax \glsresetentrylist %
+\glossentry{JavaScript Object Notation}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{67}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{67}}}\glsgroupskip
 \glsgroupheading{K}\relax \glsresetentrylist %
 \glossentry{K-means clustering}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{12}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{13}}}\glsgroupskip
 \glsgroupheading{L}\relax \glsresetentrylist %
 \glossentry{langdetect}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{19}}}%
-\glossentry{Lloyds Algorithm}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{12}}}\glsgroupskip
-\glsgroupheading{M}\relax \glsresetentrylist %
-\glossentry{Matthews correlation coefficient}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{42}}}%
-\glossentry{MongoDB}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{11}}}%
+\glossentry{Lloyds Algorithm}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{13}}}\glsgroupskip
+\glsgroupheading{M}\relax \glsresetentrylist %
+\glossentry{Machine Learning}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{9}}}%
+\glossentry{Matthews correlation coefficient}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{14}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{20}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}%
+\glossentry{mikro-tasking}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{67}}}%
+\glossentry{MongoDB}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}}}%
+\glossentry{Multi-Class Classification}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{14}}}%
+\glossentry{Multi-Label Classification}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{67}}}%
 \glossentry{Mustache}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{11}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
 \glossentry{Natural Language Toolkit}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{19}}}%
+		\setentrycounter[]{page}\glsnumberformat{16}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}%
 \glossentry{Node.js}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{11}}}\glsgroupskip
 \glsgroupheading{O}\relax \glsresetentrylist %
 \glossentry{Oikotie Tyopaikat}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{18}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{8}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{19}}}\glsgroupskip
 \glsgroupheading{P}\relax \glsresetentrylist %
 \glossentry{page views}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}}}%
+		\setentrycounter[]{page}\glsignore{67}}}%
 \glossentry{Principal Components Analysis}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{13}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{48}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{R}\relax \glsresetentrylist %
 \glossentry{Randomized Algorithm}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{30}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{31}}}%
+\glossentry{Representational state transfer}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{67}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{68}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{Sanoma}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{18}}}%
+		\setentrycounter[]{page}\glsnumberformat{19}}}%
+\glossentry{scikit-learn}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{67}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{74}}}%
 \glossentry{silhouette score}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{12}}}%
+		\setentrycounter[]{page}\glsnumberformat{13}}}%
+\glossentry{Supervised Learning}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}}}%
 \glossentry{Support Vector Machine}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{32}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{32}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}\glsgroupskip
 \glsgroupheading{T}\relax \glsresetentrylist %
 \glossentry{t-Distributed Stochastic Neighbor Embedding}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{46}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{48}\delimN 
+		\setentrycounter[]{page}\glsignore{67}}}%
+\glossentry{Topic Modeling}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}}}\glsgroupskip
+\glsgroupheading{U}\relax \glsresetentrylist %
+\glossentry{Unsupervised Learning}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{11}}}\glsgroupskip
 \glsgroupheading{V}\relax \glsresetentrylist %
 \glossentry{Voting}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{i}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{30}}}%
+		\setentrycounter[]{page}\glsnumberformat{31}}}%
 \end{theglossary}\glossarypostamble

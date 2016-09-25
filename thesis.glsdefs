@@ -1,0 +1,2070 @@
+\ifglsentryexists{API}{}%
+{%
+\gls@defglossaryentry{API}%
+{%
+name={API},%
+sort={API},%
+type={acronym},%
+first={Application Programming Interface\glsadd {Application Programming Interface}\glsspace (API)},%
+firstplural={Application Programming Interface\glsadd {Application Programming Interface}s\glsspace (APIs)},%
+text={API},%
+plural={APIs},%
+description={Application Programming Interface\glsadd {Application Programming Interface}},%
+descriptionplural={Application Programming Interface\glsadd {Application Programming Interface}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Application Programming Interface\glsadd {Application Programming Interface}},%
+longplural={Application Programming Interface\glsadd {Application Programming Interface}s},%
+short={API},%
+shortplural={APIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Application Programming Interface}{}%
+{%
+\gls@defglossaryentry{Application Programming Interface}%
+{%
+name={Application Programming Interface},%
+sort={Application Programming Interface},%
+type={main},%
+first={Application Programming Interface},%
+firstplural={Application Programming Interfaces},%
+text={Application Programming Interface},%
+plural={Application Programming Interfaces},%
+description={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API},%
+descriptionplural={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{REST}{}%
+{%
+\gls@defglossaryentry{REST}%
+{%
+name={REST},%
+sort={REST},%
+type={acronym},%
+first={Representational state transfer\glsadd {Representational state transfer}\glsspace (REST)},%
+firstplural={Representational state transfer\glsadd {Representational state transfer}s\glsspace (RESTs)},%
+text={REST},%
+plural={RESTs},%
+description={Representational state transfer\glsadd {Representational state transfer}},%
+descriptionplural={Representational state transfer\glsadd {Representational state transfer}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Representational state transfer\glsadd {Representational state transfer}},%
+longplural={Representational state transfer\glsadd {Representational state transfer}s},%
+short={REST},%
+shortplural={RESTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Representational state transfer}{}%
+{%
+\gls@defglossaryentry{Representational state transfer}%
+{%
+name={Representational state transfer (REST)},%
+sort={Representational state transfer (REST)},%
+type={main},%
+first={Representational state transfer (REST)},%
+firstplural={Representational state transfer (REST)s},%
+text={Representational state transfer (REST)},%
+plural={Representational state transfer (REST)s},%
+description={\textquote {Representational state transfer (REST) is an architectural style used for web development. [\ldots ] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url {https://en.wikipedia.org/wiki/Representational_state_transfer}},%
+descriptionplural={\textquote {Representational state transfer (REST) is an architectural style used for web development. [\ldots ] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url {https://en.wikipedia.org/wiki/Representational_state_transfer}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Lloyds Algorithm}{}%
+{%
+\gls@defglossaryentry{Lloyds Algorithm}%
+{%
+name={Lloyds Algorithm},%
+sort={Lloyds Algorithm},%
+type={main},%
+first={Lloyds Algorithm},%
+firstplural={Lloyds Algorithms},%
+text={Lloyds Algorithm},%
+plural={Lloyds Algorithms},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Topic Modeling}{}%
+{%
+\gls@defglossaryentry{Topic Modeling}%
+{%
+name={Topic Modeling},%
+sort={Topic Modeling},%
+type={main},%
+first={Topic Modeling},%
+firstplural={Topic Modelings},%
+text={Topic Modeling},%
+plural={Topic Modelings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Supervised Learning}{}%
+{%
+\gls@defglossaryentry{Supervised Learning}%
+{%
+name={Supervised Learning},%
+sort={Supervised Learning},%
+type={main},%
+first={Supervised Learning},%
+firstplural={Supervised Learnings},%
+text={Supervised Learning},%
+plural={Supervised Learnings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Unsupervised Learning}{}%
+{%
+\gls@defglossaryentry{Unsupervised Learning}%
+{%
+name={Unsupervised Learning},%
+sort={Unsupervised Learning},%
+type={main},%
+first={Unsupervised Learning},%
+firstplural={Unsupervised Learnings},%
+text={Unsupervised Learning},%
+plural={Unsupervised Learnings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Amazon Mechanical Turk}{}%
+{%
+\gls@defglossaryentry{Amazon Mechanical Turk}%
+{%
+name={Amazon Mechanical Turk},%
+sort={Amazon Mechanical Turk},%
+type={main},%
+first={Amazon Mechanical Turk},%
+firstplural={Amazon Mechanical Turks},%
+text={Amazon Mechanical Turk},%
+plural={Amazon Mechanical Turks},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{scikit-learn}{}%
+{%
+\gls@defglossaryentry{scikit-learn}%
+{%
+name={scikit-learn},%
+sort={scikit-learn},%
+type={main},%
+first={scikit-learn},%
+firstplural={scikit-learns},%
+text={scikit-learn},%
+plural={scikit-learns},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mikro-tasking}{}%
+{%
+\gls@defglossaryentry{mikro-tasking}%
+{%
+name={Mikro-tasking},%
+sort={Mikro-tasking},%
+type={main},%
+first={Mikro-tasking},%
+firstplural={Mikro-taskings},%
+text={Mikro-tasking},%
+plural={Mikro-taskings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{K-means clustering}{}%
+{%
+\gls@defglossaryentry{K-means clustering}%
+{%
+name={K-means clustering},%
+sort={K-means clustering},%
+type={main},%
+first={K-means clustering},%
+firstplural={K-means clusterings},%
+text={K-means clustering},%
+plural={K-means clusterings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{silhouette score}{}%
+{%
+\gls@defglossaryentry{silhouette score}%
+{%
+name={silhouette score},%
+sort={silhouette score},%
+type={main},%
+first={silhouette score},%
+firstplural={silhouette scores},%
+text={silhouette score},%
+plural={silhouette scores},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kNN}{}%
+{%
+\gls@defglossaryentry{kNN}%
+{%
+name={kNN},%
+sort={kNN},%
+type={acronym},%
+first={k-Nearest Neighbors (kNN)\glsadd {k Nearest Neighbors}},%
+firstplural={k-Nearest Neighbors (kNN)\glsadd {k Nearest Neighbors}s},%
+text={kNN},%
+plural={kNNs},%
+description={k-Nearest Neighbors},%
+descriptionplural={k-Nearest Neighbors},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{k Nearest Neighbors}{}%
+{%
+\gls@defglossaryentry{k Nearest Neighbors}%
+{%
+name={$k$-Nearest Neighbors},%
+sort={$k$-Nearest Neighbors},%
+type={main},%
+first={$k$-Nearest Neighbors},%
+firstplural={$k$-Nearest Neighborss},%
+text={$k$-Nearest Neighbors},%
+plural={$k$-Nearest Neighborss},%
+description={The $k$-Nearest Neighbors algorithm is a non-parametric method for classification or regression tasks. See Section~\ref {subs:Instance-based Methods}},%
+descriptionplural={The $k$-Nearest Neighbors algorithm is a non-parametric method for classification or regression tasks. See Section~\ref {subs:Instance-based Methods}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MCC}{}%
+{%
+\gls@defglossaryentry{MCC}%
+{%
+name={MCC},%
+sort={MCC},%
+type={acronym},%
+first={Matthews correlation coefficient (MCC)\glsadd {Matthews correlation coefficient}},%
+firstplural={Matthews correlation coefficient (MCC)\glsadd {Matthews correlation coefficient}s},%
+text={MCC},%
+plural={MCCs},%
+description={Matthews correlation coefficient},%
+descriptionplural={Matthews correlation coefficient},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Matthews correlation coefficient}{}%
+{%
+\gls@defglossaryentry{Matthews correlation coefficient}%
+{%
+name={Matthews correlation coefficient},%
+sort={Matthews correlation coefficient},%
+type={main},%
+first={Matthews correlation coefficient},%
+firstplural={Matthews correlation coefficients},%
+text={Matthews correlation coefficient},%
+plural={Matthews correlation coefficients},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CNN}{}%
+{%
+\gls@defglossaryentry{CNN}%
+{%
+name={CNN},%
+sort={CNN},%
+type={acronym},%
+first={Convolutional Neural Network (CNN)\glsadd {Convolutional Neural Network}},%
+firstplural={Convolutional Neural Network (CNN)\glsadd {Convolutional Neural Network}s},%
+text={CNN},%
+plural={Convolutional Neural Networks (CNN's)},%
+description={Convolutional Neural Network},%
+descriptionplural={Convolutional Neural Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Convolutional Neural Network}{}%
+{%
+\gls@defglossaryentry{Convolutional Neural Network}%
+{%
+name={Convolutional Neural Network (CNN)},%
+sort={Convolutional Neural Network (CNN)},%
+type={main},%
+first={Convolutional Neural Network (CNN)},%
+firstplural={Convolutional Neural Network (CNN)s},%
+text={Convolutional Neural Network (CNN)},%
+plural={Convolutional Neural Network (CNN)s},%
+description={todo},%
+descriptionplural={todo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ANN}{}%
+{%
+\gls@defglossaryentry{ANN}%
+{%
+name={ANN},%
+sort={ANN},%
+type={acronym},%
+first={Artificial Neural Network (ANN)\glsadd {Artificial Neural Network}},%
+firstplural={Artificial Neural Network (ANN)\glsadd {Artificial Neural Network}s},%
+text={ANN},%
+plural={Artificial Neural Networks},%
+description={Artificial Neural Network},%
+descriptionplural={Artificial Neural Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Artificial Neural Network}{}%
+{%
+\gls@defglossaryentry{Artificial Neural Network}%
+{%
+name={Artificial Neural Networks (ANN)},%
+sort={Artificial Neural Networks (ANN)},%
+type={main},%
+first={Artificial Neural Networks (ANN)},%
+firstplural={Artificial Neural Networks (ANN)s},%
+text={Artificial Neural Networks (ANN)},%
+plural={Artificial Neural Networks (ANN)s},%
+description={or simply Neural Networks (NN) are a learning algorithm inspired by the \todo {finish}. See Section~\ref {par:K Nearest Neighbors}},%
+descriptionplural={or simply Neural Networks (NN) are a learning algorithm inspired by the \todo {finish}. See Section~\ref {par:K Nearest Neighbors}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GPU}{}%
+{%
+\gls@defglossaryentry{GPU}%
+{%
+name={GPU},%
+sort={GPU},%
+type={acronym},%
+first={GPU},%
+firstplural={Graphical Processing Units},%
+text={GPU},%
+plural={Graphical Processing Units},%
+description={Graphical Processing Unit},%
+descriptionplural={Graphical Processing Unit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Graphical Processing Unit}{}%
+{%
+\gls@defglossaryentry{Graphical Processing Unit}%
+{%
+name={Graphical Processing Unit (GPU)},%
+sort={Graphical Processing Unit (GPU)},%
+type={main},%
+first={Graphical Processing Unit (GPU)},%
+firstplural={Graphical Processing Unit (GPU)s},%
+text={Graphical Processing Unit (GPU)},%
+plural={Graphical Processing Unit (GPU)s},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CL}{}%
+{%
+\gls@defglossaryentry{CL}%
+{%
+name={CL},%
+sort={CL},%
+type={acronym},%
+first={Computational Linguistics (CL)},%
+firstplural={Computational Linguistics (CL)s},%
+text={CL},%
+plural={CLs},%
+description={Computational Linguistics},%
+descriptionplural={Computational Linguistics},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NLP}{}%
+{%
+\gls@defglossaryentry{NLP}%
+{%
+name={NLP},%
+sort={NLP},%
+type={acronym},%
+first={Natural Language Processing (NLP)},%
+firstplural={Natural Language Processing (NLP)s},%
+text={NLP},%
+plural={NLPs},%
+description={Natural Language Processing},%
+descriptionplural={Natural Language Processing},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AI}{}%
+{%
+\gls@defglossaryentry{AI}%
+{%
+name={AI},%
+sort={AI},%
+type={acronym},%
+first={Artificial Intelligence (AI)},%
+firstplural={Artificial Intelligence (AI)s},%
+text={AI},%
+plural={AIs},%
+description={Artificial Intelligence},%
+descriptionplural={Artificial Intelligence},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ML}{}%
+{%
+\gls@defglossaryentry{ML}%
+{%
+name={ML},%
+sort={ML},%
+type={acronym},%
+first={Machine Learning (ML)},%
+firstplural={Machine Learning (ML)s},%
+text={ML},%
+plural={MLs},%
+description={Machine Learning},%
+descriptionplural={Machine Learning},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Machine Learning}{}%
+{%
+\gls@defglossaryentry{Machine Learning}%
+{%
+name={Machine Learning},%
+sort={Machine Learning},%
+type={main},%
+first={Machine Learning},%
+firstplural={Machine Learnings},%
+text={Machine Learning},%
+plural={Machine Learnings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Cross-Validation}{}%
+{%
+\gls@defglossaryentry{Cross-Validation}%
+{%
+name={Cross-Validation},%
+sort={Cross-Validation},%
+type={main},%
+first={Cross-Validation},%
+firstplural={Cross-Validations},%
+text={Cross-Validation},%
+plural={Cross-Validations},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IR}{}%
+{%
+\gls@defglossaryentry{IR}%
+{%
+name={IR},%
+sort={IR},%
+type={acronym},%
+first={Information Retrieval (IR)},%
+firstplural={Information Retrieval (IR)s},%
+text={IR},%
+plural={IRs},%
+description={Information Retrieval},%
+descriptionplural={Information Retrieval},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TC}{}%
+{%
+\gls@defglossaryentry{TC}%
+{%
+name={TC},%
+sort={TC},%
+type={acronym},%
+first={Text Classification (TC)},%
+firstplural={Text Classification (TC)s},%
+text={TC},%
+plural={TCs},%
+description={Text Classification},%
+descriptionplural={Text Classification},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NLTK}{}%
+{%
+\gls@defglossaryentry{NLTK}%
+{%
+name={NLTK},%
+sort={NLTK},%
+type={acronym},%
+first={Natural Language Toolkit (NLTK)\glsadd {Natural Language Toolkit}},%
+firstplural={Natural Language Toolkit (NLTK)\glsadd {Natural Language Toolkit}s},%
+text={NLTK},%
+plural={NLTKs},%
+description={Natural Language Toolkit},%
+descriptionplural={Natural Language Toolkit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Natural Language Toolkit}{}%
+{%
+\gls@defglossaryentry{Natural Language Toolkit}%
+{%
+name={Natural Language Toolkit (NLTK)},%
+sort={Natural Language Toolkit (NLTK)},%
+type={main},%
+first={Natural Language Toolkit (NLTK)},%
+firstplural={Natural Language Toolkit (NLTK)s},%
+text={Natural Language Toolkit (NLTK)},%
+plural={Natural Language Toolkit (NLTK)s},%
+description={``NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning and wrappers for industrial-strength NLP libraries.'' See \url {http://www.nltk.org}},%
+descriptionplural={``NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning and wrappers for industrial-strength NLP libraries.'' See \url {http://www.nltk.org}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{langdetect}{}%
+{%
+\gls@defglossaryentry{langdetect}%
+{%
+name={langdetect},%
+sort={langdetect},%
+type={main},%
+first={langdetect},%
+firstplural={langdetects},%
+text={langdetect},%
+plural={langdetects},%
+description={Language detection library ported from Google's language-detection (\url {https://code.google.com/p/language-detection/}). See \url {https://pypi.python.org/pypi/langdetect?}},%
+descriptionplural={Language detection library ported from Google's language-detection (\url {https://code.google.com/p/language-detection/}). See \url {https://pypi.python.org/pypi/langdetect?}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Beautiful Soup}{}%
+{%
+\gls@defglossaryentry{Beautiful Soup}%
+{%
+name={Beautiful Soup},%
+sort={Beautiful Soup},%
+type={main},%
+first={Beautiful Soup},%
+firstplural={Beautiful Soups},%
+text={Beautiful Soup},%
+plural={Beautiful Soups},%
+description={Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. See \url {https://www.crummy.com/software/BeautifulSoup/}},%
+descriptionplural={Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. See \url {https://www.crummy.com/software/BeautifulSoup/}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{confusion matrix}{}%
+{%
+\gls@defglossaryentry{confusion matrix}%
+{%
+name={Confusion Matrix},%
+sort={Confusion Matrix},%
+type={main},%
+first={Confusion Matrix},%
+firstplural={Confusion Matrixs},%
+text={Confusion Matrix},%
+plural={Confusion Matrixs},%
+description={todo},%
+descriptionplural={todo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Oikotie Tyopaikat}{}%
+{%
+\gls@defglossaryentry{Oikotie Tyopaikat}%
+{%
+name={Oikotie Työpaikat},%
+sort={Oikotie Työpaikat},%
+type={main},%
+first={Oikotie Ty\IeC {\"o}paikat},%
+firstplural={Oikotie Ty\IeC {\"o}paikats},%
+text={Oikotie Ty\IeC {\"o}paikat},%
+plural={Oikotie Ty\IeC {\"o}paikats},%
+description={todo},%
+descriptionplural={todo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Node.js}{}%
+{%
+\gls@defglossaryentry{Node.js}%
+{%
+name={Node.js},%
+sort={Node.js},%
+type={main},%
+first={Node.js},%
+firstplural={Node.jss},%
+text={Node.js},%
+plural={Node.jss},%
+description={\textquote {Node.js is an open-source, cross-platform runtime environment for developing server-side Web applications.}Source: \url {https://en.wikipedia.org/wiki/Node.js} \url {https://nodejs.org/}},%
+descriptionplural={\textquote {Node.js is an open-source, cross-platform runtime environment for developing server-side Web applications.}Source: \url {https://en.wikipedia.org/wiki/Node.js} \url {https://nodejs.org/}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MongoDB}{}%
+{%
+\gls@defglossaryentry{MongoDB}%
+{%
+name={MongoDB},%
+sort={MongoDB},%
+type={main},%
+first={MongoDB},%
+firstplural={MongoDBs},%
+text={MongoDB},%
+plural={MongoDBs},%
+description={\textquote {MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. [\ldots ].} Source: \url {https://en.wikipedia.org/wiki/MongoDB}, Website: \url {https://www.mongodb.com}},%
+descriptionplural={\textquote {MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. [\ldots ].} Source: \url {https://en.wikipedia.org/wiki/MongoDB}, Website: \url {https://www.mongodb.com}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Mustache}{}%
+{%
+\gls@defglossaryentry{Mustache}%
+{%
+name={Mustache},%
+sort={Mustache},%
+type={main},%
+first={Mustache},%
+firstplural={Mustaches},%
+text={Mustache},%
+plural={Mustaches},%
+description={\textquote {Mustache is a simple web template system.} Source: \url {https://en.wikipedia.org/wiki/Mustache_(template_system)}, Website: \url {https://mustache.github.io}},%
+descriptionplural={\textquote {Mustache is a simple web template system.} Source: \url {https://en.wikipedia.org/wiki/Mustache_(template_system)}, Website: \url {https://mustache.github.io}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Sanoma}{}%
+{%
+\gls@defglossaryentry{Sanoma}%
+{%
+name={Sanoma},%
+sort={Sanoma},%
+type={main},%
+first={Sanoma},%
+firstplural={Sanomas},%
+text={Sanoma},%
+plural={Sanomas},%
+description={todo},%
+descriptionplural={todo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{error matrix}{}%
+{%
+\gls@defglossaryentry{error matrix}%
+{%
+name={Error Matrix},%
+sort={Error Matrix},%
+type={main},%
+first={Error Matrix},%
+firstplural={Error Matrixs},%
+text={Error Matrix},%
+plural={Error Matrixs},%
+description={todo},%
+descriptionplural={todo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ffe}{}%
+{%
+\gls@defglossaryentry{ffe}%
+{%
+name={FFE},%
+sort={FFE},%
+type={acronym},%
+first={Fuzzy Front End (FFE)\glsadd {ffeg}},%
+firstplural={Fuzzy Front End (FFE)\glsadd {ffeg}s},%
+text={FFE},%
+plural={FFEs},%
+description={Fuzzy Front End},%
+descriptionplural={Fuzzy Front End},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ffeg}{}%
+{%
+\gls@defglossaryentry{ffeg}%
+{%
+name={Fuzzy Front End},%
+sort={Fuzzy Front End},%
+type={main},%
+first={Fuzzy Front End},%
+firstplural={Fuzzy Front Ends},%
+text={Fuzzy Front End},%
+plural={Fuzzy Front Ends},%
+description={The early exploration phase in the design process (see~\cite {Council:2007aa}). Also refers to an awesome band from Finland.},%
+descriptionplural={The early exploration phase in the design process (see~\cite {Council:2007aa}). Also refers to an awesome band from Finland.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Ensemble Method}{}%
+{%
+\gls@defglossaryentry{Ensemble Method}%
+{%
+name={Ensemble Method},%
+sort={Ensemble Method},%
+type={main},%
+first={Ensemble Method},%
+firstplural={Ensemble Methods},%
+text={Ensemble Method},%
+plural={Ensemble Methods},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Google Docs}{}%
+{%
+\gls@defglossaryentry{Google Docs}%
+{%
+name={Google Docs},%
+sort={Google Docs},%
+type={main},%
+first={Google Docs},%
+firstplural={Google Docss},%
+text={Google Docs},%
+plural={Google Docss},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Randomized Algorithm}{}%
+{%
+\gls@defglossaryentry{Randomized Algorithm}%
+{%
+name={Randomized Algorithm},%
+sort={Randomized Algorithm},%
+type={main},%
+first={Randomized Algorithm},%
+firstplural={Randomized Algorithms},%
+text={Randomized Algorithm},%
+plural={Randomized Algorithms},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Boosting}{}%
+{%
+\gls@defglossaryentry{Boosting}%
+{%
+name={Boosting},%
+sort={Boosting},%
+type={main},%
+first={Boosting},%
+firstplural={Boostings},%
+text={Boosting},%
+plural={Boostings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Bagging}{}%
+{%
+\gls@defglossaryentry{Bagging}%
+{%
+name={Bagging},%
+sort={Bagging},%
+type={main},%
+first={Bagging},%
+firstplural={Baggings},%
+text={Bagging},%
+plural={Baggings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Voting}{}%
+{%
+\gls@defglossaryentry{Voting}%
+{%
+name={Voting},%
+sort={Voting},%
+type={main},%
+first={Voting},%
+firstplural={Votings},%
+text={Voting},%
+plural={Votings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Feature Selection}{}%
+{%
+\gls@defglossaryentry{Feature Selection}%
+{%
+name={Feature Selection},%
+sort={Feature Selection},%
+type={main},%
+first={Feature Selection},%
+firstplural={Feature Selections},%
+text={Feature Selection},%
+plural={Feature Selections},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Feature Extraction}{}%
+{%
+\gls@defglossaryentry{Feature Extraction}%
+{%
+name={Feature Extraction},%
+sort={Feature Extraction},%
+type={main},%
+first={Feature Extraction},%
+firstplural={Feature Extractions},%
+text={Feature Extraction},%
+plural={Feature Extractions},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{click-through rate}{}%
+{%
+\gls@defglossaryentry{click-through rate}%
+{%
+name={Click-through rate},%
+sort={Click-through rate},%
+type={main},%
+first={Click-through rate},%
+firstplural={Click-through rates},%
+text={Click-through rate},%
+plural={Click-through rates},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{page views}{}%
+{%
+\gls@defglossaryentry{page views}%
+{%
+name={page views},%
+sort={page views},%
+type={main},%
+first={page views},%
+firstplural={page viewss},%
+text={page views},%
+plural={page viewss},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Principal Components Analysis}{}%
+{%
+\gls@defglossaryentry{Principal Components Analysis}%
+{%
+name={Principal Components Analysis},%
+sort={Principal Components Analysis},%
+type={main},%
+first={Principal Components Analysis},%
+firstplural={Principal Components Analysiss},%
+text={Principal Components Analysis},%
+plural={Principal Components Analysiss},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PCA}{}%
+{%
+\gls@defglossaryentry{PCA}%
+{%
+name={PCA},%
+sort={PCA},%
+type={acronym},%
+first={Principal Components Analysis (PCA)\glsadd {Principal Components Analysis}},%
+firstplural={Principal Components Analysis (PCA)\glsadd {Principal Components Analysis}s},%
+text={PCA},%
+plural={PCAs},%
+description={Principal Components Analysis},%
+descriptionplural={Principal Components Analysis},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{t-Distributed Stochastic Neighbor Embedding}{}%
+{%
+\gls@defglossaryentry{t-Distributed Stochastic Neighbor Embedding}%
+{%
+name={t-Distributed Stochastic Neighbor Embedding},%
+sort={t-Distributed Stochastic Neighbor Embedding},%
+type={main},%
+first={t-Distributed Stochastic Neighbor Embedding},%
+firstplural={t-Distributed Stochastic Neighbor Embeddings},%
+text={t-Distributed Stochastic Neighbor Embedding},%
+plural={t-Distributed Stochastic Neighbor Embeddings},%
+description={t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) technique for dimensionality reduction that is particularly well suited for the visualization of high-dimensional datasets. For more information visit the authors information website (\url {https://lvdmaaten.github.io/tsne/}) and see the introductory publication (\cite {Maaten:2008aa})},%
+descriptionplural={t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) technique for dimensionality reduction that is particularly well suited for the visualization of high-dimensional datasets. For more information visit the authors information website (\url {https://lvdmaaten.github.io/tsne/}) and see the introductory publication (\cite {Maaten:2008aa})},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{t-SNE}{}%
+{%
+\gls@defglossaryentry{t-SNE}%
+{%
+name={t-SNE},%
+sort={t-SNE},%
+type={acronym},%
+first={t-Distributed Stochastic Neighbor (t-SNE)\glsadd {t-Distributed Stochastic Neighbor Embedding}},%
+firstplural={t-Distributed Stochastic Neighbor (t-SNE)\glsadd {t-Distributed Stochastic Neighbor Embedding}s},%
+text={t-SNE},%
+plural={t-SNEs},%
+description={t-Distributed Stochastic Neighbor},%
+descriptionplural={t-Distributed Stochastic Neighbor},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Dimensionality Reduction}{}%
+{%
+\gls@defglossaryentry{Dimensionality Reduction}%
+{%
+name={Dimensionality Reduction},%
+sort={Dimensionality Reduction},%
+type={main},%
+first={Dimensionality Reduction},%
+firstplural={Dimensionality Reductions},%
+text={Dimensionality Reduction},%
+plural={Dimensionality Reductions},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Multi-Class Classification}{}%
+{%
+\gls@defglossaryentry{Multi-Class Classification}%
+{%
+name={Multi-Class Classification},%
+sort={Multi-Class Classification},%
+type={main},%
+first={Multi-Class Classification},%
+firstplural={Multi-Class Classifications},%
+text={Multi-Class Classification},%
+plural={Multi-Class Classifications},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Multi-Label Classification}{}%
+{%
+\gls@defglossaryentry{Multi-Label Classification}%
+{%
+name={Multi-Label Classification},%
+sort={Multi-Label Classification},%
+type={main},%
+first={Multi-Label Classification},%
+firstplural={Multi-Label Classifications},%
+text={Multi-Label Classification},%
+plural={Multi-Label Classifications},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SVM}{}%
+{%
+\gls@defglossaryentry{SVM}%
+{%
+name={SVM},%
+sort={SVM},%
+type={acronym},%
+first={Support Vector Machine (SVM)\glsadd {Support Vector Machine}},%
+firstplural={Support Vector Machine (SVM)\glsadd {Support Vector Machine}s},%
+text={SVM},%
+plural={SVMs},%
+description={Support Vector Machine},%
+descriptionplural={Support Vector Machine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{JSON}{}%
+{%
+\gls@defglossaryentry{JSON}%
+{%
+name={JSON},%
+sort={JSON},%
+type={acronym},%
+first={Application Programming Interface\glsadd {JavaScript Object Notation}\glsspace (JSON)},%
+firstplural={Application Programming Interface\glsadd {JavaScript Object Notation}s\glsspace (JSONs)},%
+text={JSON},%
+plural={JSONs},%
+description={Application Programming Interface\glsadd {JavaScript Object Notation}},%
+descriptionplural={Application Programming Interface\glsadd {JavaScript Object Notation}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Application Programming Interface\glsadd {JavaScript Object Notation}},%
+longplural={Application Programming Interface\glsadd {JavaScript Object Notation}s},%
+short={JSON},%
+shortplural={JSONs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{JavaScript Object Notation}{}%
+{%
+\gls@defglossaryentry{JavaScript Object Notation}%
+{%
+name={JavaScript Object Notation},%
+sort={JavaScript Object Notation},%
+type={main},%
+first={JavaScript Object Notation},%
+firstplural={JavaScript Object Notations},%
+text={JavaScript Object Notation},%
+plural={JavaScript Object Notations},%
+description={\textquote {JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.} Source: \url {http://www.json.org}},%
+descriptionplural={\textquote {JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.} Source: \url {http://www.json.org}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Support Vector Machine}{}%
+{%
+\gls@defglossaryentry{Support Vector Machine}%
+{%
+name={Support Vector Machine},%
+sort={Support Vector Machine},%
+type={main},%
+first={Support Vector Machine},%
+firstplural={Support Vector Machines},%
+text={Support Vector Machine},%
+plural={Support Vector Machines},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Deep Learning}{}%
+{%
+\gls@defglossaryentry{Deep Learning}%
+{%
+name={Deep Learning},%
+sort={Deep Learning},%
+type={main},%
+first={Deep Learning},%
+firstplural={Deep Learnings},%
+text={Deep Learning},%
+plural={Deep Learnings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CrowdFlower}{}%
+{%
+\gls@defglossaryentry{CrowdFlower}%
+{%
+name={CrowdFlower},%
+sort={CrowdFlower},%
+type={main},%
+first={CrowdFlower},%
+firstplural={CrowdFlowers},%
+text={CrowdFlower},%
+plural={CrowdFlowers},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{crowd sourcing}{}%
+{%
+\gls@defglossaryentry{crowd sourcing}%
+{%
+name={crowd sourcing},%
+sort={crowd sourcing},%
+type={main},%
+first={crowd sourcing},%
+firstplural={crowd sourcings},%
+text={crowd sourcing},%
+plural={crowd sourcings},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GitHub}{}%
+{%
+\gls@defglossaryentry{GitHub}%
+{%
+name={GitHub},%
+sort={GitHub},%
+type={main},%
+first={GitHub},%
+firstplural={GitHubs},%
+text={GitHub},%
+plural={GitHubs},%
+description={TODO},%
+descriptionplural={TODO},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

@@ -17,10 +17,11 @@
   linkcolor=[HTML]{000060},
   citecolor=[HTML]{000060},
   pdftitle={Default Title, Modify},
-  pdfauthor={Your Name},
+  pdfauthor={Clemens Westrup},
   pdfkeywords={Modify keywords}}
 
 \usepackage{tabularx}
+\usepackage{minted}
 
 \usepackage{amsmath}
 \usepackage[english]{babel}
@@ -38,9 +39,12 @@
 
 \setboolean{@twoside}{false}
 
+
 % Glossaries
 \usepackage[acronym,toc]{glossaries}
 \makeglossaries
+% reset entries at the start of each chapter
+% \preto\chapter{\glsresetall}
 
 % Define argmin and argmax operators
 \newcommand*{\argmin}{\operatornamewithlimits{argmin}\limits}

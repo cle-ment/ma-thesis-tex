@@ -14,17 +14,13 @@
 
 % \includeonly{./tex/preamble, ./tex/background }
 
-% Load Glossary and Acronyms
-\include{./tex/_glossary}
-\glsaddall % add all glossary entries, even if not used.
-
 \begin{document}
 
 \include{./tex/preamble}
 
 \listoftodos
 
-%\maketitle
+% \maketitle
 %\tableofcontents
 %\listoffigures
 %\listoftables
@@ -53,6 +49,12 @@
 
 \clearpage
 
+% Load Glossary and Acronyms
+\include{./tex/_glossary}
+
+% \glsaddall % add all glossary entries, even if not used.
+\glsaddallunused
+\glossarystyle{altlist}
 
 \printglossary[type=\acronymtype]
 \clearpage
@@ -61,6 +63,5 @@
 %% Appendix
 
 \include{./tex/appendix}
-
 
 \end{document}

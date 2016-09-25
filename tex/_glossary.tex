@@ -1,14 +1,34 @@
 % !TEX root = ../thesis.tex
 % !TEX spellcheck = en-US
 
-\newglossaryentry{api}{type=\acronymtype, name={API}, description={Application
-Programming Interface}, first={Application
-Programming Interface (API)\glsadd{apig}}, see=[Glossary:]{apig}}
+\newacronym[see={[Glossary:]{Application Programming Interface}}]{API}{API}{Application
+Programming Interface\glsadd{Application
+Programming Interface}}
 
-\newglossaryentry{apig}{name={API},
+
+\newglossaryentry{Application Programming Interface}{name={Application Programming Interface},
     description={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API}}
 
+\newacronym[see={[Glossary:]{Representational state transfer}}]{REST}{REST}{Representational state transfer\glsadd{Representational state transfer}}
+
+% \newglossaryentry{REST}{type=\acronymtype, name={REST}, description={Representational state transfer}, first={Representational state transfer (REST)\glsadd{Representational state transfer}}, see=[Glossary:]{Representational state transfer}}
+
+\newglossaryentry{Representational state transfer}{name={Representational state transfer (REST)},
+    description={\textquote{Representational state transfer (REST) is an architectural style used for web development. [\ldots] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url{https://en.wikipedia.org/wiki/Representational_state_transfer}}}
+
 \newglossaryentry{Lloyds Algorithm}{name={Lloyds Algorithm}, description={TODO}}
+
+\newglossaryentry{Topic Modeling}{name={Topic Modeling}, description={TODO}}
+
+\newglossaryentry{Supervised Learning}{name={Supervised Learning}, description={TODO}}
+
+\newglossaryentry{Unsupervised Learning}{name={Unsupervised Learning}, description={TODO}}
+
+\newglossaryentry{Amazon Mechanical Turk}{name={Amazon Mechanical Turk}, description={TODO}}
+
+\newglossaryentry{scikit-learn}{name={scikit-learn}, description={TODO}}
+
+\newglossaryentry{mikro-tasking}{name={Mikro-tasking}, description={TODO}}
 
 \newglossaryentry{K-means clustering}{name={K-means clustering}, description={TODO}}
 
@@ -17,7 +37,7 @@ Programming Interface (API)\glsadd{apig}}, see=[Glossary:]{apig}}
 \newglossaryentry{kNN}{type=\acronymtype, name={kNN}, description={k-Nearest Neighbors}, first={k-Nearest Neighbors (kNN)\glsadd{k Nearest Neighbors}}, see=[Glossary:]{k Nearest Neighbors}}
 
 \newglossaryentry{k Nearest Neighbors}{name={$k$-Nearest Neighbors},
-    description={The $k$-Nearest Neighbors algorithm is a non-parametric method for classification or regression tasks. See Section~\ref{par:K Nearest Neighbors}}}
+    description={The $k$-Nearest Neighbors algorithm is a non-parametric method for classification or regression tasks. See Section~\ref{subs:Instance-based Methods}}}
 
 \newglossaryentry{MCC}{type=\acronymtype, name={MCC}, description={Matthews correlation coefficient}, first={Matthews correlation coefficient (MCC)\glsadd{Matthews correlation coefficient}}, see=[Glossary:]{MCC}}
 
@@ -46,7 +66,13 @@ description={TODO}}
 
 \newglossaryentry{AI}{type=\acronymtype, name={AI}, description={Artificial Intelligence}, first={Artificial Intelligence (AI)}} % glossary entry??
 
-\newglossaryentry{ML}{type=\acronymtype, name={ML}, description={Machine Learning}, first={Machine Learning (ML)}} % glossary entry??
+\newglossaryentry{ML}{type=\acronymtype, name={ML}, description={Machine Learning}, first={Machine Learning (ML)}}
+
+\newglossaryentry{Machine Learning}{name={Machine Learning},
+description={TODO}}
+
+\newglossaryentry{Cross-Validation}{name={Cross-Validation},
+description={TODO}}
 
 \newglossaryentry{IR}{type=\acronymtype, name={IR}, description={Information Retrieval}, first={Information Retrieval (IR)}} % glossary entry??
 
@@ -119,10 +145,20 @@ description={TODO}}
 
 \newglossaryentry{Dimensionality Reduction}{name={Dimensionality Reduction}, description={TODO}}
 
+\newglossaryentry{Multi-Class Classification}{name={Multi-Class Classification}, description={TODO}}
+
+\newglossaryentry{Multi-Label Classification}{name={Multi-Label Classification}, description={TODO}}
+
 \newglossaryentry{SVM}{type=\acronymtype, name={SVM}, description={Support Vector Machine}, first={Support Vector Machine (SVM)\glsadd{Support Vector Machine}}, see=[Glossary:]{Support Vector Machine}}
 
-\newglossaryentry{Support Vector Machine}{name={Support Vector Machine},
-    description={TODO}}
+\newacronym[see={[Glossary:]{JavaScript Object Notation}}]{JSON}{JSON}{JavaScript Object Notation\glsadd{JavaScript Object Notation}}
+
+% \newglossaryentry{JSON}{type=\acronymtype, name={JSON}, description={JavaScript Object Notation}, first={JavaScript Object Notation (JSON)\glsadd{JavaScript Object Notation}}, see=[Glossary:]{JavaScript Object Notation}}
+
+\newglossaryentry{JavaScript Object Notation}{name={JavaScript Object Notation}, description={\textquote{JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.} Source: \url{http://www.json.org} }}
+
+
+\newglossaryentry{Support Vector Machine}{name={Support Vector Machine}, description={TODO}}
 
 \newglossaryentry{Deep Learning}{name={Deep Learning},
     description={TODO}}

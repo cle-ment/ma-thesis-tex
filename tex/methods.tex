@@ -18,24 +18,22 @@ Concepts:
   \item information theory
 \end{itemize}
 
-\subsection{Overview}
-\label{sub:Overview}
 
-\paragraph{Feature Space Construction}
-\label{par:Space Construction Pipeline}
-
-- vector space models with ngrams
-
-\paragraph{Representation Learning}
-\label{par:Representation Learning for Feature Spaces}
-
-- learning embeddings via distributed representations
-
-\paragraph{Deep Sequential Learning}
-\label{par:Deep Sequential Learning}
-
-- learning embeddings on the fly
-- sequential modeling
+% \paragraph{Feature Space Construction}
+% \label{par:Space Construction Pipeline}
+%
+% - vector space models with ngrams
+%
+% \paragraph{Representation Learning}
+% \label{par:Representation Learning for Feature Spaces}
+%
+% - learning embeddings via distributed representations
+%
+% \paragraph{Deep Sequential Learning}
+% \label{par:Deep Sequential Learning}
+%
+% - learning embeddings on the fly
+% - sequential modeling
 
 
 % - vector space models: same principle as feature space construction in other typical ML pipelines
@@ -467,7 +465,7 @@ Predictions on new data can then be made evaluating the sign in Equation~\ref{eq
 
 Here due to the constraints for every data point either $a_n = 0$ or $t_n y(x_n) = 1$ so that all only points on the margin will remain in the sum and these are hence called \emph{support vectors}.
 
-There are many extensions to the model with the most important one being the introduction of \emph{slack variables} by~\cite{Cortes:aa} in order to handle overlapping class distribution in the input space. Books dedicated to the topic such as~\cite{Shawe-Taylor:2004aa} offer a thorough introduction into Kernel Methods and again the topic is covered in most introductory books to machine learning. 
+There are many extensions to the model with the most important one being the introduction of \emph{slack variables} by~\cite{Cortes:aa} in order to handle overlapping class distribution in the input space. Books dedicated to the topic such as~\cite{Shawe-Taylor:2004aa} offer a thorough introduction into Kernel Methods and again the topic is covered in most introductory books to machine learning.
 
 \subsubsection{Neural Networks}
 \label{subs:Neural Networks}
@@ -560,7 +558,7 @@ There are various algorithmic approaches to model time-series and sequences of e
 
 While Recursive Neural Networks can model much longer dependencies in theory, these are often still difficult to learn for such models. This problem is known as the vanishing gradient problem. We will next look at Long-Term Short Memory Networks (LSTMs), a method introduced specifically to overcome this problem, which allows to model much longer dependencies in sequences efficiently.
 
-\subsubsection{LSTMs}
+\subsubsection*{LSTMs}
 \label{subs:LSTMs}
 
 
@@ -767,6 +765,7 @@ This given, we can suggest MCC as the best off-the-shelf evaluating tool for gen
 
 Thus Matthews Correlation Coefficient is the preferred measure when possible.
 
+
 \paragraph{Categorical Cross-Entropy}
 \label{par:Categorical Cross-Entropy}
 
@@ -776,15 +775,4 @@ The \emph{cross-entropy} loss function as defined above in Section~\ref{par:Cros
   E(\mathbf{w}_1, \ldots, \mathbf{w}_k) = -\ln p(\mathbf{T} \mid \mathbf{w}_1, \ldots, \mathbf{w}_k) = - \sum_{n=1}^N \sum_{k=1}^K t_{nk} \ln y_{nk}
 \end{equation}
 
-where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of target variables with elements $t_{nk}$ (see as in~\cite[Chapter 4.3.4, p.~209 ]{Bishop:2006aa}). This form is also referred to as \emph{multi-class log loss} and gives an aggregated loss over all classes. \todo{more detail?}
-
-\subsubsection*{Multi-label Classification}
-\label{subs:Multi-label Classification}
-
-% \subsection{Visualization}
-%
-% \subsubsection{PCA}
-% \label{sub:PCA}
-%
-% \subsubsection{t-SNE}
-% \label{sub:t-SNE}
+where $y_{nk} = y_k (\phi_n)$, and $\mathbf{T}$ is an  $N \times K$ matrix of target variables with elements $t_{nk}$ (see as in~\cite[Chapter 4.3.4, p.~209 ]{Bishop:2006aa}). This form is also referred to as \emph{multi-class log loss} and gives an aggregated loss over all classes.
