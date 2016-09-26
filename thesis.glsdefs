@@ -1,3 +1,33 @@
+\ifglsentryexists{gls-API}{}%
+{%
+\gls@defglossaryentry{gls-API}%
+{%
+name={Application Programming Interface},%
+sort={Application Programming Interface},%
+type={main},%
+first={Application Programming Interface\glsadd {API}},%
+firstplural={Application Programming Interface\glsadd {API}s},%
+text={Application Programming Interface\glsadd {API}},%
+plural={Application Programming Interface\glsadd {API}s},%
+description={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API.},%
+descriptionplural={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{API}{}%
 {%
 \gls@defglossaryentry{API}%
@@ -28,19 +58,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{Application Programming Interface}{}%
+\ifglsentryexists{Grid Search}{}%
 {%
-\gls@defglossaryentry{Application Programming Interface}%
+\gls@defglossaryentry{Grid Search}%
 {%
-name={Application Programming Interface},%
-sort={Application Programming Interface},%
+name={Grid Search},%
+sort={Grid Search},%
 type={main},%
-first={Application Programming Interface},%
-firstplural={Application Programming Interfaces},%
-text={Application Programming Interface},%
-plural={Application Programming Interfaces},%
-description={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API},%
-descriptionplural={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API},%
+first={Grid Search},%
+firstplural={Grid Searchs},%
+text={Grid Search},%
+plural={Grid Searchs},%
+description={TODO},%
+descriptionplural={TODO},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -58,19 +88,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{REST}{}%
+\ifglsentryexists{Gold Standard}{}%
 {%
-\gls@defglossaryentry{REST}%
+\gls@defglossaryentry{Gold Standard}%
 {%
-name={REST},%
-sort={REST},%
-type={acronym},%
-first={Representational state transfer\glsadd {Representational state transfer}\glsspace (REST)},%
-firstplural={Representational state transfer\glsadd {Representational state transfer}s\glsspace (RESTs)},%
-text={REST},%
-plural={RESTs},%
-description={Representational state transfer\glsadd {Representational state transfer}},%
-descriptionplural={Representational state transfer\glsadd {Representational state transfer}\acrpluralsuffix },%
+name={Gold Standard},%
+sort={Gold Standard},%
+type={main},%
+first={Gold Standard},%
+firstplural={Gold Standards},%
+text={Gold Standard},%
+plural={Gold Standards},%
+description={see \gls {Ground Truth}},%
+descriptionplural={see \gls {Ground Truth}},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -79,28 +109,28 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Representational state transfer\glsadd {Representational state transfer}},%
-longplural={Representational state transfer\glsadd {Representational state transfer}s},%
-short={REST},%
-shortplural={RESTs},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
 counter={page},%
 parent={},%
 %
 }%
 }%
-\ifglsentryexists{Representational state transfer}{}%
+\ifglsentryexists{Ground Truth}{}%
 {%
-\gls@defglossaryentry{Representational state transfer}%
+\gls@defglossaryentry{Ground Truth}%
 {%
-name={Representational state transfer (REST)},%
-sort={Representational state transfer (REST)},%
+name={Ground Truth},%
+sort={Ground Truth},%
 type={main},%
-first={Representational state transfer (REST)},%
-firstplural={Representational state transfer (REST)s},%
-text={Representational state transfer (REST)},%
-plural={Representational state transfer (REST)s},%
-description={\textquote {Representational state transfer (REST) is an architectural style used for web development. [\ldots ] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url {https://en.wikipedia.org/wiki/Representational_state_transfer}},%
-descriptionplural={\textquote {Representational state transfer (REST) is an architectural style used for web development. [\ldots ] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url {https://en.wikipedia.org/wiki/Representational_state_transfer}},%
+first={Ground Truth},%
+firstplural={Ground Truths},%
+text={Ground Truth},%
+plural={Ground Truths},%
+description={The ground truth, also sometimes referred to as \gls {Gold Standard}, is the known set of labels in \gls {Supervised Learning} which forms the target for learning and is thus also used for evaluating a learning algorithm.},%
+descriptionplural={The ground truth, also sometimes referred to as \gls {Gold Standard}, is the known set of labels in \gls {Supervised Learning} which forms the target for learning and is thus also used for evaluating a learning algorithm.},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -143,6 +173,126 @@ long={},%
 longplural={},%
 short={},%
 shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Latent Dirichlet Allocation}{}%
+{%
+\gls@defglossaryentry{Latent Dirichlet Allocation}%
+{%
+name={Latent Dirichlet Allocation},%
+sort={Latent Dirichlet Allocation},%
+type={main},%
+first={Latent Dirichlet Allocation},%
+firstplural={Latent Dirichlet Allocations},%
+text={Latent Dirichlet Allocation},%
+plural={Latent Dirichlet Allocations},%
+description={Latent Dirichlet Allocation is a popular algorithm for \gls {Topic Modeling} proposed by~\cite {Blei:2003aa}. Conceptually it assumes that a document is generated first sampling a set of topics from a distribution of topics and then sampling words from each of these topics distributions of words. Learning topics from documents can then be achieved by figuratively inverting this process and inferring topics from the distributions of words under the same assumption how the document was generated.},%
+descriptionplural={Latent Dirichlet Allocation is a popular algorithm for \gls {Topic Modeling} proposed by~\cite {Blei:2003aa}. Conceptually it assumes that a document is generated first sampling a set of topics from a distribution of topics and then sampling words from each of these topics distributions of words. Learning topics from documents can then be achieved by figuratively inverting this process and inferring topics from the distributions of words under the same assumption how the document was generated.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LDA}{}%
+{%
+\gls@defglossaryentry{LDA}%
+{%
+name={LDA},%
+sort={LDA},%
+type={acronym},%
+first={Latent Dirichlet Allocation\glsadd {Latent Dirichlet Allocation}\glsspace (LDA)},%
+firstplural={Latent Dirichlet Allocation\glsadd {Latent Dirichlet Allocation}s\glsspace (LDAs)},%
+text={LDA},%
+plural={LDAs},%
+description={Latent Dirichlet Allocation\glsadd {Latent Dirichlet Allocation}},%
+descriptionplural={Latent Dirichlet Allocation\glsadd {Latent Dirichlet Allocation}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Latent Dirichlet Allocation\glsadd {Latent Dirichlet Allocation}},%
+longplural={Latent Dirichlet Allocation\glsadd {Latent Dirichlet Allocation}s},%
+short={LDA},%
+shortplural={LDAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Representational state transfer}{}%
+{%
+\gls@defglossaryentry{Representational state transfer}%
+{%
+name={Representational state transfer (REST)},%
+sort={Representational state transfer (REST)},%
+type={main},%
+first={Representational state transfer (REST)},%
+firstplural={Representational state transfer (REST)s},%
+text={Representational state transfer (REST)},%
+plural={Representational state transfer (REST)s},%
+description={\textquote {Representational state transfer (REST) is an architectural style used for web development. [\ldots ] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url {https://en.wikipedia.org/wiki/Representational_state_transfer}},%
+descriptionplural={\textquote {Representational state transfer (REST) is an architectural style used for web development. [\ldots ] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url {https://en.wikipedia.org/wiki/Representational_state_transfer}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{REST}{}%
+{%
+\gls@defglossaryentry{REST}%
+{%
+name={REST},%
+sort={REST},%
+type={acronym},%
+first={Representational state transfer\glsadd {Representational state transfer}\glsspace (REST)},%
+firstplural={Representational state transfer\glsadd {Representational state transfer}s\glsspace (RESTs)},%
+text={REST},%
+plural={RESTs},%
+description={Representational state transfer\glsadd {Representational state transfer}},%
+descriptionplural={Representational state transfer\glsadd {Representational state transfer}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Representational state transfer\glsadd {Representational state transfer}},%
+longplural={Representational state transfer\glsadd {Representational state transfer}s},%
+short={REST},%
+shortplural={RESTs},%
 counter={page},%
 parent={},%
 %
@@ -628,19 +778,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{ANN}{}%
+\ifglsentryexists{NN}{}%
 {%
-\gls@defglossaryentry{ANN}%
+\gls@defglossaryentry{NN}%
 {%
-name={ANN},%
-sort={ANN},%
+name={NN},%
+sort={NN},%
 type={acronym},%
-first={Artificial Neural Network (ANN)\glsadd {Artificial Neural Network}},%
-firstplural={Artificial Neural Network (ANN)\glsadd {Artificial Neural Network}s},%
-text={ANN},%
-plural={Artificial Neural Networks},%
-description={Artificial Neural Network},%
-descriptionplural={Artificial Neural Network},%
+first={Neural Network (ANN)\glsadd {Neural Network}},%
+firstplural={Neural Network (ANN)\glsadd {Neural Network}s},%
+text={NN},%
+plural={Neural Networks},%
+description={Neural Network},%
+descriptionplural={Neural Network},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -658,19 +808,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{Artificial Neural Network}{}%
+\ifglsentryexists{Neural Network}{}%
 {%
-\gls@defglossaryentry{Artificial Neural Network}%
+\gls@defglossaryentry{Neural Network}%
 {%
-name={Artificial Neural Networks (ANN)},%
-sort={Artificial Neural Networks (ANN)},%
+name={Neural Networks (ANN)},%
+sort={Neural Networks (ANN)},%
 type={main},%
-first={Artificial Neural Networks (ANN)},%
-firstplural={Artificial Neural Networks (ANN)s},%
-text={Artificial Neural Networks (ANN)},%
-plural={Artificial Neural Networks (ANN)s},%
-description={or simply Neural Networks (NN) are a learning algorithm inspired by the \todo {finish}. See Section~\ref {par:K Nearest Neighbors}},%
-descriptionplural={or simply Neural Networks (NN) are a learning algorithm inspired by the \todo {finish}. See Section~\ref {par:K Nearest Neighbors}},%
+first={Neural Networks (ANN)},%
+firstplural={Neural Networks (ANN)s},%
+text={Neural Networks (ANN)},%
+plural={Neural Networks (ANN)s},%
+description={or Artificial Neural Network (NN), a learning algorithm inspired by the \todo {finish}. See Section~\ref {par:K Nearest Neighbors}},%
+descriptionplural={or Artificial Neural Network (NN), a learning algorithm inspired by the \todo {finish}. See Section~\ref {par:K Nearest Neighbors}},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -1211,6 +1361,36 @@ text={MongoDB},%
 plural={MongoDBs},%
 description={\textquote {MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. [\ldots ].} Source: \url {https://en.wikipedia.org/wiki/MongoDB}, Website: \url {https://www.mongodb.com}},%
 descriptionplural={\textquote {MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. [\ldots ].} Source: \url {https://en.wikipedia.org/wiki/MongoDB}, Website: \url {https://www.mongodb.com}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Representation Learning}{}%
+{%
+\gls@defglossaryentry{Representation Learning}%
+{%
+name={Representation Learning},%
+sort={Representation Learning},%
+type={main},%
+first={Representation Learning},%
+firstplural={Representation Learnings},%
+text={Representation Learning},%
+plural={Representation Learnings},%
+description={TODO},%
+descriptionplural={TODO},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

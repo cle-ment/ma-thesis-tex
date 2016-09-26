@@ -1,3 +1,18 @@
+\glossaryentry{API?\glossentry{API}|glsseeformat[Glossary:]{gls-API}}{Z}
+\glossaryentry{LDA?\glossentry{LDA}|glsseeformat[Glossary:]{Latent Dirichlet Allocation}}{Z}
+\glossaryentry{REST?\glossentry{REST}|glsseeformat[Glossary:]{Representational state transfer}}{Z}
+\glossaryentry{kNN?\glossentry{kNN}|glsseeformat[Glossary:]{k Nearest Neighbors}}{Z}
+\glossaryentry{MCC?\glossentry{MCC}|glsseeformat[Glossary:]{MCC}}{Z}
+\glossaryentry{CNN?\glossentry{CNN}|glsseeformat[Glossary:]{Convolutional Neural Network}}{Z}
+\glossaryentry{RNN?\glossentry{RNN}|glsseeformat[Glossary:]{Recurrent Neural Network}}{Z}
+\glossaryentry{NN?\glossentry{NN}|glsseeformat[Glossary:]{Neural Network}}{Z}
+\glossaryentry{GPU?\glossentry{GPU}|glsseeformat[Glossary:]{Graphical Processing Unit}}{Z}
+\glossaryentry{NLTK?\glossentry{NLTK}|glsseeformat[Glossary:]{Natural Language Toolkit}}{Z}
+\glossaryentry{FFE?\glossentry{ffe}|glsseeformat[Glossary:]{ffeg}}{Z}
+\glossaryentry{PCA?\glossentry{PCA}|glsseeformat[Glossary:]{Principal Components Analysis}}{Z}
+\glossaryentry{t-SNE?\glossentry{t-SNE}|glsseeformat[Glossary:]{t-Distributed Stochastic Neighbor Embedding}}{Z}
+\glossaryentry{SVM?\glossentry{SVM}|glsseeformat[Glossary:]{Support Vector Machine}}{Z}
+\glossaryentry{JSON?\glossentry{JSON}|glsseeformat[Glossary:]{JavaScript Object Notation}}{Z}
 \glossaryentry{AI?\glossentry{AI}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{ML?\glossentry{ML}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{CL?\glossentry{CL}|setentrycounter[]{page}\glsnumberformat}{3}
@@ -25,40 +40,44 @@
 \glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{SVM?\glossentry{SVM}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{SVM?\glossentry{SVM}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{ANN?\glossentry{ANN}|setentrycounter[]{page}\glsnumberformat}{33}
-\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{CNN?\glossentry{CNN}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{CNN?\glossentry{CNN}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{RNN?\glossentry{RNN}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{ANN?\glossentry{ANN}|setentrycounter[]{page}\glsnumberformat}{41}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{SVM?\glossentry{SVM}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{SVM?\glossentry{SVM}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{NN?\glossentry{NN}|setentrycounter[]{page}\glsnumberformat}{34}
+\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{36}
+\glossaryentry{CNN?\glossentry{CNN}|setentrycounter[]{page}\glsnumberformat}{36}
+\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{36}
+\glossaryentry{CNN?\glossentry{CNN}|setentrycounter[]{page}\glsnumberformat}{36}
+\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{RNN?\glossentry{RNN}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{NN?\glossentry{NN}|setentrycounter[]{page}\glsnumberformat}{42}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{45}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{PCA?\glossentry{PCA}|setentrycounter[]{page}\glsnumberformat}{49}
-\glossaryentry{t-SNE?\glossentry{t-SNE}|setentrycounter[]{page}\glsnumberformat}{49}
-\glossaryentry{PCA?\glossentry{PCA}|setentrycounter[]{page}\glsnumberformat}{49}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{PCA?\glossentry{PCA}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{t-SNE?\glossentry{t-SNE}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{PCA?\glossentry{PCA}|setentrycounter[]{page}\glsnumberformat}{50}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{52}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{53}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{54}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{57}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{57}
-\glossaryentry{NLP?\glossentry{NLP}|setentrycounter[]{page}\glsnumberformat}{59}
-\glossaryentry{API?\glossentry{API}|setentrycounter[]{page}\glsignore}{68}
-\glossaryentry{REST?\glossentry{REST}|setentrycounter[]{page}\glsignore}{68}
-\glossaryentry{FFE?\glossentry{ffe}|setentrycounter[]{page}\glsignore}{68}
-\glossaryentry{JSON?\glossentry{JSON}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{kNN?\glossentry{kNN}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{GPU?\glossentry{GPU}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{NLP?\glossentry{NLP}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{61}
+\glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{61}
+\glossaryentry{LDA?\glossentry{LDA}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{API?\glossentry{API}|setentrycounter[]{page}\glsignore}{82}
+\glossaryentry{LDA?\glossentry{LDA}|setentrycounter[]{page}\glsignore}{82}
+\glossaryentry{REST?\glossentry{REST}|setentrycounter[]{page}\glsignore}{82}
+\glossaryentry{FFE?\glossentry{ffe}|setentrycounter[]{page}\glsignore}{82}
+\glossaryentry{JSON?\glossentry{JSON}|setentrycounter[]{page}\glsignore}{82}

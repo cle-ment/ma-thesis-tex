@@ -12,82 +12,58 @@
 
 \subsubsection{N-gram Models}
 
-Not without reason are N-Gram Models still so widely used as these experiments confirm. They are easy to understand, relatively straightforward to train, fast to compute and yield good performance for many problems in \gls{NLP}. As shown in Section~\ref{subs:N-gram Models (Experimental Results)}
+Not without reason are N-Gram Models still so widely used as the experiments in Section~\ref{sec:Experimental Results} confirm. They are easy to understand, straightforward to train using publicly available software libraries, fast to compute and yield good performance for many problems in \gls{NLP}.
 
-% on stop words
-It seems there is information carried within these stop words. Of course this outcome is also influenced by the particular stop-list used (see Section~\ref{subp:Stop words}).
+Hyper-parameters have to be adjusted before training the model as they affect the results differently given the problem and also the used classifier. As we saw in Section~\ref{subs:N-gram Models (Experiments and Results)} the type of N-gram (word vs.\ character-based) and the vector dimensionality have the strongest impact on the results. Other hyper-parameters do not have a substantial influence, for instance stop-words, or do not seem to matter at all in this particular settings such as Sub-linear term frequency scaling.
 
-% on size
-Thus we can conclude that size matters and bigger is better as higher-dimensional vectors can capture more information about N-gram occurrences. However performance gain with increased dimensionality diminishes beyond a certain threshold which depends on the dataset and further models start to overfit, harming generalization performance.
-Also in practice the vector size must always be limited as it grows with the vocabulary, potentially at an exponential rate if N-grams larger than Unigrams are used.
+Optimizing for hyper-parameters though is very cheap as well as an N-gram model is so fast to train, allowing to easily and automatically explore a wide parameter-space with simple \gls{Grid Search}.
 
-% IDF
- Thus it seems advisable to leave this parameter free for and evaluate both variants with a given classifier. For logistic regression however the performance differences are marginal and so the choice for this parameter seems somewhat arbitrary.
-
- % # normalizing
-
- Is seems that normalizing the vectors in most cases does not lead to any performance gains. Again this is an often recommended practice but here it does not seem to add any value to the model.
-
+N-Grams thus make for a great choice as a baseline model with good performance and simply usage.
 
 \subsubsection{Bag-of-Means Model}
 
-%performs well!
-This is surprising as performance previously reported to be rather poor as mention in Section~\ref{subp:Bag-of-Means}.
+Composition of feature vectors to produce a feature representation for a group of objects is a known approach (see e.g.~\cite{Mitchell:2010aa} for a study on compositions of word embeddings). However this technique is also seen as an ad-hoc solution with unforeseeable side-effects such as flattening out the significance of complementary patterns as the number of vectors increase. As~\cite{Zhang:2015aa} puts it: \textquote{Bag-of-means is a misuse of word2vec [...]} and \textquote{such a simple use of a distributed word representation may not give us an advantage to text classification}. Further~\cite{Le:2014aa} state that \textquote{weighted averaging of word vectors [...] loses the word order in the same way as the standard bag-of-words models do}.
 
- Further investigation into the use of different classifiers could shed light into these diverging results which are not observed using the N-gram models in the section above.
+Given these previous results and thoughts it is the more surprising how well the Bag-of-Means model performs, achieving the highest performance of all models in combination with a simple \gls{Neural Network}. This type of model might work well in this specific case for two reasons:
+First the word vectors that were used had been trained on a humongous dataset, implicit knowledge that the model could leverage while the other vector space models could not. Second the dataset consists of sentences, so short sequences of text where the problem of vectors negating each other's patterns can be expected to not be as severe.
+
+Regarding computational complexity this model is relatively fast to train if one uses pre-computed word-vectors as done in the experiments. However the training of such corpus of 1 billion word-vectors itself takes enormous time and resources.
 
 \subsubsection{Paragraph Vectors using Distributed Representations}
 
-% on hyper parameters
-and which turn out to have a huge influence on its performance as the results below indicate
+The Paragraph Vector model is appealing with it's inspiration from word embeddings and has been shown to outperform other text representations, specifically N-gram models (see e.g.~\cite{Le:2014aa}). However significant effort is needed to achieve good results with this technique and it is especially sensitive to the configuration of its hyper-parameters which are challenging to extensively test due to the computational resources needed.
 
-% vector size
-- even in 2 dimensions very expressive
-% frequenct workd subsampling
-- problably doesn't work because dataset small anyway
-- when using PM-DV this significantly improved training score but test score was still poor
-% hs
-This result is counter-intuitive as using the hierarchical softmax should as an approximation be less performant. However it might simply mitigate overfitting of the model.
-% window size
-It is safe to assume that increasing the window size much further does not lead to any improvement in the model as the correlation with the word should become weaker the farther we move away from it in a document or text.
-% Model type dbow better
-This is in contrast with the results in the aforementioned paper, where the authors state that \textquote{PV-DM is consistently better than PV-DBOW.}~\cite{Le:2014aa}.
+With regards to the hyper-parameters, the choice the biggest impact on performance is the chosen model architecture. The results on this specific task and dataset show that contrary to the observations in~\cite{Le:2014aa} the Distributed Bag-Of-Words (PV-DBOW) architecture achieves significantly higher performance (an absolute difference of almost 14\% in terms of \gls{MCC} test score) and is more stable towards overfitting.
+As in other vector space models the dimensionality of the vector representation naturally has a strong impact on performance, however the with decreasing vector size performance does not suffer as much as N-Grams models do and the model still achieves an \gls{MCC} test score of 0.223 with only 2 dimensions. This corresponds to a relative loss in performance by a factor of 2/3 while scaling down in dimensionality by a factor of 150. Further adding to the complexity of finding a good model several hyper-parameter interact with each other. For instance sub-sampling of frequent words only helped performance when using the Distributed Memory (PV-DM) model and otherwise significantly harmed it.
 
-- tend to overfit easily
+An interesting observation is that a number of classifiers tend to overfit using the vectors produced by this model. This could mean that it produces clearer patterns in the representation of documents and a richer representation. It is very likely that this type of model needs a much larger dataset in order to achieve it's highest performance as for many models based on Neural Network architectures. As mentioned earlier the word2vec models in~\cite{Mikolov:2013ad} were trained on a dataset of a billion words.
+
+\subsubsection{Comparison of Vector Space Models}
+\label{subs:Comparison of Vector Space Models}
+
+- computational resources
+
+- feature engineering vs from scratch
+
+
+
+As mentioned earlier the computational needs to train this model are higher than an N-Grams model by an order of magnitudes.
+
+- Ngrams very feature engineering
+
+
 
 
 % MORE DATA needed
 - comparision between only training set with validation split and traning + test for vector space models with Log Reg, 10\% lower performance almost
 
-\todo{show computation time?}
 
-\paragraph{Evaluating the best hyper-parameter setting}
-
-Taking the learnings about the effects of the different hyper-parameters to the performance of the model a subset of models were tested in search of the best hyper-parameter selection. The results of these experiments can be seen in Table~\ref{tab:Paragraph Vector Parameter Results Best}.
-
-A few interesting observations can be made here. First, as indicated before, the model is highly sensitive to the settings of the hyper-parameters. Secondly we can see that the hyper-parameters interact quite strongly in some combinations. This leads to a different behavior in performance for some of the hyper-parameters than identified in the above sections, depending on what the other hyper-parameters settings are.
-
-For instance using hierarchical softmax decreases performance when setting all other parameters to individually optimal settings, as opposed to in the previous experiment above.
-\todo{write a bit more here}
+\subsubsection{Classification Methods}
+\label{subs:Classification Methods}
 
 
-% \subsubsection{Paragraph Vectors using pre-initialized weights *}
-%
-% In another experiment the weight matrix for the words was initialized with pre-trained weights from from the Google News dataset.
-
-% \subsubsection{Paragraph Vectors using context sentences *}
-%
-% \todo{This section in further research? Because it would have to be done for N-grams as well (building a model with the context around a sentence) and it doesn't fit the task (only sentence given). Could also go into exploration}
-
-% \subsubsection{Inversion of Distributed Language Representations (??)}
-%
-% \todo{if this is described here it has to go into background as well}
-
-- A note about train/validation/test splits (by testing the vector space models on the test data I leaked information on the test set into the training/model selection)
-
-
-\subsection{Approach 2: Sequential Models}
-\label{sub:Approach 2: Sequential Models (Results)}
+\subsection{Sequential Modeling}
+\label{sub:Sequential Modeling}
 
 
 
