@@ -49,6 +49,8 @@ Concepts:
 \subsection{Vector Space Models}
 \label{sub:Vector Space Models}
 
+
+
 Text documents cannot be used directly as input to a classifier, and are thus usually mapped into a vector space so that each document can be represented by a vector $\mathbf{v} \in \mathbb{R}^d$. This procedure is also known as \emph{Document Indexing}~\cite{Sebastiani:2002aa}.
 
 
@@ -387,7 +389,7 @@ Kernel Methods are a set of instance-based methods (see Section~\ref{subs:Instan
 
 Kernel methods build on this idea and enable us to completely avoid the explicit mapping from the input space $\mathcal{X}$ to the transformed space $\mathcal{V}$ using the so-called \emph{kernel trick}: Using the fact that certain functions $k(x, x')$ in a space $\mathcal{X}$ can be expressed as an inner product in another space $\mathcal{V}$, we can directly operate on the scalar dot products which can be interpreted as distances or similarities between the data. A function adhering to this property is called a \emph{kernel function} and a variety of such functions have been proposed, with extensions beyond transformations on real-valued vectors to kernel functions on complex objects such as graphs (see e.g.~\cite{Shervashidze:2011aa} for an interesting example of a graph kernel method).
 
-A particularly successful classification method using kernels is the \gls{SVM} algorithm introduced by the name of \emph{Support Vector Networks} by~\cite{Cortes:aa}. Originally it was formulated as a linear classifier in~\cite{Vapnik:1982aa} and as such belongs to the family of generalized linear models introduced in Section~\ref{subs:Generalized Linear Models}. This corresponds to using a so-called linear kernel as $k(x, y) = x^T y$. The \gls{SVM} belongs to the class of \emph{maximum margin classifiers}: Figuratively speaking and assuming linear separability and dichotomous classification, the decision boundary is trained to be maximally distant to the closest data points of each class. We can formalize the approach as follows:
+A particularly successful classification method using kernels is the \gls{SVM} algorithm introduced by the name of \emph{Support Vector Networks} by~\cite{Cortes:aa}. Originally it was formulated as a linear classifier in~\cite{Vapnik:1982aa} and as such belongs to the family of generalized linear models introduced in Section~\ref{subs:Generalized Linear Modelsl}. This corresponds to using a so-called linear kernel as $k(x, y) = x^T y$. The \gls{SVM} belongs to the class of \emph{maximum margin classifiers}: Figuratively speaking and assuming linear separability and dichotomous classification, the decision boundary is trained to be maximally distant to the closest data points of each class. We can formalize the approach as follows:
 
 We are given data points $x_1, \ldots, x_N$ and target values $t_1, \ldots, t_N$ for these points where $t_n \in {-1, 1}$ and $x_n \in \mathbb{R}^d$. We will use a linear model of the form:
 
@@ -554,22 +556,40 @@ In Section~\ref{sub:Vector Space Models} we covered an approach to text classifi
 An alternative approach is to model text as a sequential signal produced over time, similar to a time-series. This assumes strong dependencies between the current time step and previous time steps in the signal.
 We can take this view with different levels of granularity: The most fine-grained representation of text are characters so text can just be seen as a sequence of characters, but also using words or sentences as the atomic unit would be possible. As the space of possible letters in most western languages is quite limited we can directly use these as states that our signal can take. In the case of words or longer sequences we would either have a huge space of states where similarity of words would be disregarded or we could use a vector space representations for words or sequences.
 
-There are various algorithmic approaches to model time-series and sequences of evolving states such as Linear Dynamic Systems or Hidden Markov Models. However many of these methods tend to ``forget fast'', i.e. they are unable to model long-term dependencies. An extreme case are HMM's where the next state only depends on the current state.
+There are various algorithmic approaches to model time-series and sequences of evolving states such as Linear Dynamic Systems or Hidden Markov Models. However many of these methods tend to ``forget fast'', i.e. they are unable to model long-term dependencies. An extreme case are HMM's where the next state only depends on the current state. Here we will look at Recursive Neural Networks in particular which are attractive for their ability to model long-term dependencies.
 
-While Recursive Neural Networks can model much longer dependencies in theory, these are often still difficult to learn for such models. This problem is known as the vanishing gradient problem. We will next look at Long-Term Short Memory Networks (LSTMs), a method introduced specifically to overcome this problem, which allows to model much longer dependencies in sequences efficiently.
+\subsubsection*{Recursive Neural Networks}
+\label{subs:Recursive Neural Networks}
 
-\subsubsection*{LSTMs}
-\label{subs:LSTMs}
+Recurrent Neural Networks are networks with loops, meaning that in contrast to Feedforward Neural Networks they can have connections feedback connections from a neuron's output back into it's input. This allows the network to pass information between time steps. Conceptually this can be thought of as a neural network copied $T$ times along the depth axis where the output of nodes $k_t$ at time step $t$ is connected to the input of the same node in the successive copy $k_{t+1}$ at time step $t+1$. This process of turning a network with feedback loops into a three dimensional feedforward network with connections between the time steps is called \emph{unrolling}.
+It also provides a way for training the network where the standard back-propagation algorithm for Feedforward Neural Networks (see Section~\ref{subs:Neural Networks}) can be extended to incorporate these dependencies, then called \emph{Back-propagtion through time (BPTT)} introduced by~\cite{Werbos:1988aa} and others independently. A visualization of such an unrolled network for a single node is shown in Figure~\ref{fig:RNN}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{img/LSTM3-SimpleRNN.png}
+  \caption{An unit in a recursive neural network, unrolled over time. Source: \url{http://colah.github.io/posts/2015-08-Understanding-LSTMs/}}
+\label{fig:RNN}
+\end{figure}
 
 
-
-% \cite{Gers:1999aa} --- Learning to forget: continual prediction with LSTM.
-
-
+\subsubsection*{Long Short-Term Memory (LSTM) Networks}
+\label{subs:Long Short-Term Memory (LSTM) Networks}
 
 
+While Recursive Neural Networks can model longer dependencies than e.g. Hidden Markov Models in theory, long-term dependencies are often still difficult to learn for such models. The reason is that when training the network with back-propagation, the gradient error signals are multiplied over many time steps, weakening the signal. This weakness is known as the \emph{vanishing gradient problem} which was formalized and studied in depth by~\cite{Hochreiter:1991aa}. The opposite effect is known as \emph{exploding gradients} where the gradient signal is so large that learning can diverge. Based on these insights~\cite{Hochreiter:1997aa} then introduced a new recurrent network design specifically to overcome this shortcoming.
+This network architecture is called Long-Term Short Memory Network (LSTM) and has seen tremendous interest recently due to its effectiveness for learning sequential and temporal structure. In many popular application domains in machine learning it achieves state-of-the-art results, including sequence to sequence language translation, handwriting recognition and generative sequence modeling (see e.g.~\cite{Greff:2015aa} where popular variants of the architecture are compared and applied to a set of problems). Similar to the developments in \gls{Deep Learning}, much of the recent successes have just recently been made possible with technological advancement of concurrent computational hardware, specifically \glspl{GPU}, as recurrent neural networks are very expensive to train in terms of computational resources due to their complexity.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{img/LSTM3-chain.png}
+  \caption{An unrolled LSTM node, showing the architecture. Source: \url{http://colah.github.io/posts/2015-08-Understanding-LSTMs/}}
+  \label{fig:LSTM}
+\end{figure}
 
+The specific architecture can be seen in Figure~\ref{fig:LSTM}, again unrolled over time as above. A node in an LSTM network introduces a few modifications to a standard cell in a traditional \gls{RNN}. The current cell state is passed through to the next time step by default. This signal can be intercepted by a number of so-called \emph{gates} depending on the previous cell state, the previous cell output and the current data input.
+The first of such interactions is the \emph{forget gate} that was in fact a later addition to the model introduced in~\cite{Gers:1999aa} but is now considered part of the standard LSTM model. The forget gate is a sigmoid function receiving the previous cell output and the current data input and can influence how much of the cell state is kept or ``forgot''. Next the \emph{input gate} with a sigmoid function determines which values will be updated in the cell and another $\tanh$ activation node selects candidates for the update based on the previous cell output, replacing the current cell state. Lastly the cell outputs the updated cell state and the cell output based on what the input gate let through.
+
+As mentioned early there are many variants, extensions and simplifications of this model. The previously mentioned study by~\cite{Greff:2015aa} offers a good overview as well as a comparative study by~\cite{Zaremba:2015aa}. For a comprehensive introduction to Recurrent Neural Networks the reader shall be referred to~\cite{Graves:2012aa}.
 
 \subsection{Evaluation Metrics}
 \label{sub:Evaluation Metrics}

@@ -7,16 +7,13 @@
 \label{sec:Experimental Results}
 
 With the final problem definition and dataset in place a series of experiments were conducted to evaluate the performance of the different approaches explained in Section~\ref{sec:Methods}.
-This part of the thesis lays out these experiments and their results. First the research objectives will be defined and the metrics used for evaluation will be described. Next the experimental setup for each of the methods will be described and the outcomes and observations will be presented.
+This part of the thesis lays out these experiments and their results. First the research objectives will be reiterated. Next the experimental setup for each of the methods will be described and the outcomes and observations will be presented.
 
 \subsection{Objectives}
 \label{sub:Objectives}
 
-The experiments had simple objectives: The goal was to evaluate each method in terms of its effectiveness using a prediction metric well-suited for this problem. Further additional considerations, especially algorithmic time and space complexity were taken into account by comparing methods with regards to their runtime and need for computational resources.
-
-
-\todo{Mention goals: find algorithm that generalizes well (reliable), has high score, 2nd priority: hungryness for computation power, simplicity }
-
+The experiments had simple objectives: The goal was to evaluate each method in terms of its effectiveness using a prediction metric well-suited for this problem. The metric used was \gls{MCC} as described in Section~\ref{sub:Performance Metric: Matthews Correlation Coefficient}. Effectiveness in particular meant comparing the algorithms with regards to their overall performance on test data and their ability to generalize well, i.e. to be robust against overfitting.
+% Further considerations were taken into account such as the simplicity of the model in terms of model assumptions but also ease of use and interpretability, as well as algorithmic time and space complexity requirements.
 
 
 \subsection{Baseline}
@@ -122,41 +119,14 @@ Table~\ref{tab:Ngram Grid Search} shows the five best results of the exhaustive 
 \end{center}
 \end{table}
 
-The following observations can be made from the results of the grid search with regards to each of hyper-parameters:
+The effects of the different hyper-parameters on performance can be observed based on these results. Regarding the N-gram \emph{type}, words as the atomic unit for N-grams consistently led to better results. This is due to the fact that the search space of combinations of characters is significantly larger than the search space of known words, so model complexity increases exponentially.
+With regards to the \emph{range}, i.e.\ the interval for possible $N$ in N-grams, there are slight differences to be observed between the three classifiers used, but with all three models the best performance is achieved using Unigrams. Also all of the top results across all classifiers include Unigrams in the model while some extend the range towards bigrams or trigrams.
+None of the top results of the performed grid searches used \emph{stop words}. This is interesting as using stop-words to remove hand-picked, highly frequent words that do not carry much meaning is common practice.
+When it comes to the \emph{size} of vectors, for the given settings the highest vector dimensionality of 300 achieves the best performance.
+There is no consensus between the classifiers on whether or not to weigh the N-gram frequencies by the inverse document frequency (\emph{IDF}, see Section~\ref{subp:TF.IDF weighting}). With respect to the \emph{norm} used, in these experiments normalizing vectors decreased performance. Only in the fifth best performing configuration when using Logistic Regression vectors were normalized, in this case using the L2 norm.
+Lastly applying sub-linear term frequency scaling (\emph{Sub-linear TF}, see Section~\ref{subp:Sublinear TF scaling}) did not seem to affect the results significantly and about half of the top results were obtained using this technique.
 
-\todo{remove paragraph headers and shorten text}
-
-\paragraph{Type}
-\label{par:Type}
-Words as the atomic unit for N-grams consistently led to better results. This can be explained by the fact that the search space of combinations of characters is significantly larger than the search space of known words, so model complexity increases exponentially.
-
-\paragraph{Range}
-\label{par:Range}
-With regards to the range, i.e.\ the interval for possible $N$ in N-grams, there are slight differences to be observed between the three classifiers used, but with all three models the best performance is achieved using Unigrams. Also all of the top results across all classifiers include Unigrams in the model while some extend the range towards bigrams or trigrams.
-
-\paragraph{Stop Words}
-\label{par:Stop Words}
-None of the top results of the performed grid searches used stop words. This is interesting as using stop-words to remove hand-picked, highly frequent words that do not carry much meaning is common practice.
-
-\paragraph{Size}
-\label{par:Size}
-For the given settings the highest vector dimensionality of 300 achieves the best performance.
-
-\paragraph{IDF}
-\label{par:IDF}
-There is no consensus between the classifiers on whether or not to weigh the N-gram frequencies by the inverse document frequency (see Section~\ref{subp:TF.IDF weighting}).
-
-\paragraph{Norm}
-\label{par:Norm}
-In these experiments normalizing vectors decreased performance.
-Only in the fifth best performing configuration when using Logistic Regression vectors were normalized, in this case using the L2 norm.
-
-\paragraph{Sub-linear TF}
-\label{par:Sub-linear TF}
-Applying sub-linear term frequency scaling (see Section~\ref{subp:Sublinear TF scaling}) did not seem to affect the results significantly and about half of the top results were obtained using this technique.
-\bigskip
-
-Finally to the best model for each classifier with regards to \gls{MCC} validation score was chosen and trained on the whole training data and tested on the test data set to estimate the final performance. Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier using these best N-gram models. It is evident that here logistic regression performs best, achieving the highest \gls{MCC} score as well as good accuracy.
+Based on these observations the best model for each classifier with regards to \gls{MCC} validation score was chosen and trained on the whole training data and tested on the test data set to estimate the final performance. Table~\ref{tab:Ngram Grid Search Scores} shows the scores of each classifier using these best N-gram models. It is evident that here logistic regression performs best, achieving the highest \gls{MCC} score as well as good accuracy.
 
 \begin{table}
   \begin{center}
@@ -302,7 +272,7 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
     Negative Sampling Value & 3 \\
     Window Size & 10 \\
     Model Type & PV-DBOW \\
-    Inference Type & Inferred Vectors \\
+    Training Type & Inferred Vectors \\
     \bottomrule
   \end{tabular}
   \caption{Default hyper-parameter configuration for Paragraph Vectors}
@@ -347,7 +317,7 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
        & PV-DBOW & 0.610 & \textbf{0.580} \\
        & PV-DM   & 0.405 & 0.411 \\
       \midrule
-      \multirow{2}{*}{Inference Type}
+      \multirow{2}{*}{Training Type}
        & Trained Vectors  & 0.519 & 0.366 \\
        & Inferred Vectors & 0.404 & \textbf{0.408} \\
       \bottomrule
@@ -357,13 +327,13 @@ Next a vector space model was build using the approach proposed by~\cite{Le:2014
 \end{center}
 \end{table}
 
-Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} shows the results of the hyper-parameter experiments. Similarly to N-Gram Models the vector size correlates positively with the performance. Again the highest chosen dimensionality was 300 which yielded the highest test score of 0.608. However the difference to a 100-dimensional model is marginal with 2\% absolute improvement and a 10-dimensional representation only leads to an absolute loss of 6\% in performance. Further choosing the representation in only two dimensions yields a test score of 0.223. In comparison the best N-gram model achieved an \gls{MCC} score of 0.151 when limited to two dimensions.
+Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} shows the results of the hyper-parameter experiments. Similarly to N-Gram Models the \emph{vector size} correlates positively with the performance. Again the highest chosen dimensionality was 300 which yielded the highest test score of 0.608. However the difference to a 100-dimensional model is marginal with 2\% absolute improvement and a 10-dimensional representation only leads to an absolute loss of 6\% in performance. Further choosing the representation in only two dimensions yields a test score of 0.223. In comparison the best N-gram model achieved an \gls{MCC} score of 0.151 when limited to two dimensions.
 
-With regards to frequent word sub-sampling performance was best without its use. Note that this is in contrast with previous work on word vectors where this setting increased performance (see~\cite{Mikolov:2013ab}). Using hierarchical softmax increased the performance, although only leading to a marginal improvement of around 1\% in terms of MCC score. Negative Sampling generally increased performance. However no trend is apparent as the best performing configurations were a sampling value of 2 and 6 while choosing a value of 4 lead to a slightly lower score. The highest score amongst the tested settings for the window size was achieved with a value of 10 while both a window of 5 and a window of 15 words achieved a lower score.
+With regards to frequent word \emph{sub-sampling} performance was best without its use. Note that this is in contrast with previous work on word vectors where this setting increased performance (see~\cite{Mikolov:2013ab}). Using \emph{hierarchical softmax} increased the performance, although only leading to a marginal improvement of around 1\% in terms of MCC score. \emph{Negative sampling} generally increased performance. However no trend is apparent as the best performing configurations were a sampling value of 2 and 6 while choosing a value of 4 lead to a slightly lower score. The highest score amongst the tested settings for the window size was achieved with a value of 10 while both a window of 5 and a window of 15 words achieved a lower score.
 
-Both model types for paragraph vectors proposed in~\cite{Le:2014aa} were tested, namely the Distributed Bag of Words Model of Paragraph Vectors (PV-DBOW) and the Distributed Memory Model of Paragraph Vectors (PV-DM). The choice of the model type among has a significant influence on the result. As we can see in Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} the \gls{MCC} test score of the PV-DBOW model is 16.9\% higher in absolute terms.
+Both \emph{model types} for paragraph vectors proposed in~\cite{Le:2014aa} were tested, namely the Distributed Bag of Words Model of Paragraph Vectors (PV-DBOW) and the Distributed Memory Model of Paragraph Vectors (PV-DM). The choice of the model type among has a significant influence on the result. As we can see in Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} the \gls{MCC} test score of the PV-DBOW model is 16.9\% higher in absolute terms.
 
-The choice of vectors to train the classifier, i.e.\ the training type, can be seen to have a strong impact on the results as well. When using directly the vectors that are trained with the Paragraph Vector model, performance is notably lower than when inferring new vectors for the training data using the inference procedure described in~\cite{Le:2014aa}. Furthermore when using the model vectors for training the model easily overfits. This effect can be seen in Figure~\ref{fig:doc2vec_training} where the training and test scores are shown over 140 iterations of training. While using the model vectors leads to higher training scores the test scores are significantly lower than when inferring vectors for training.
+The choice of vectors to train the classifier, i.e.\ the \emph{training type}, can be seen to have a strong impact on the results as well. When using directly the vectors that are trained with the Paragraph Vector model, performance is notably lower than when inferring new vectors for the training data using the inference procedure described in~\cite{Le:2014aa}. Furthermore when using the model vectors for training the model easily overfits. This effect can be seen in Figure~\ref{fig:doc2vec_training} where the training and test scores are shown over 140 iterations of training. While using the model vectors leads to higher training scores the test scores are significantly lower than when inferring vectors for training.
 
 \begin{figure}[h]
     \centering
@@ -411,7 +381,8 @@ While a \gls{MCC} test score of 0.574 the lowest amongst the candidates the high
 \paragraph{Experimental Setup}
 \label{par:Experimental Setup}
 
-From the previous experiments on vector space models the best performing setting of each type was chosen. Specifically those were the following settings:
+From the previous experiments on vector space models the best performing setting of each type was chosen.
+Specifically those were the following settings:
 
 \begin{itemize}
   \item \textbf{N-Grams}: Unigrams were used with a dimensionality of 300. No stop words filtering and no vector normalization were applied and while using sub-linear TF and IDF.
@@ -419,20 +390,22 @@ From the previous experiments on vector space models the best performing setting
   \item \textbf{Paragraph Vectors}: PV-DBOW word vectors were generated using inference on the training data, a window size of 8, a negative sampling value of 10, hierarchical softmax and no frequent word sub-sampling.
 \end{itemize}
 
-Next a diverse set of established classification algorithms representative of the algorithm classes described in Section~\ref{sub:Methods For Classification With Vector Space Models} were applied to the data and evaluated. The following model characteristics were chosen for each model:
+Next a diverse set of classification algorithms representative of the algorithm classes described in Section~\ref{sub:Methods For Classification With Vector Space Models} were applied to the data and evaluated.
 
-\begin{itemize}
-  \item \textbf{Logistic Regression} A $C$ value of ${0.01, 0.1, 1, 10}$ was evaluated during cross-validation.
-  \item \textbf{Decision Tree}
-  \item \textbf{Naive Bayes} Bernoulli Naive Bayes% Naive Bayes is Bernoulli
-  \item \textbf{SVM}
-  \item \textbf{kNN}
-  \item \textbf{Random Forest}
-  \item \textbf{Neural Network}
-  \item \textbf{Deep Neural Network}
-\end{itemize}
+% The following model characteristics were chosen for each model:
+%
+% \begin{itemize}
+%   \item \textbf{Logistic Regression} A $C$ value of ${0.01, 0.1, 1, 10}$ was evaluated during cross-validation.
+%   \item \textbf{Decision Tree}
+%   \item \textbf{Naive Bayes} Bernoulli Naive Bayes% Naive Bayes is Bernoulli
+%   \item \textbf{SVM}
+%   \item \textbf{kNN}
+%   \item \textbf{Random Forest}
+%   \item \textbf{Neural Network}
+%   \item \textbf{Deep Neural Network}
+% \end{itemize}
 
-The dataset was then split into 5 folds to perform cross-validation\todo{glossary}. For reproducibility, comparability and to save computational resources the vector representations produced by the three vector space models were precomputed for all folds. Naturally the models were trained on the training data in each fold and applied on the test data to ensure unbiased results.
+The dataset was then split into 5 folds to perform \gls{Cross-Validation}. For reproducibility, comparability and to save computational resources the vector representations produced by the three vector space models were precomputed for all folds. Naturally the models were trained on the training data in each fold and applied on the test data to ensure unbiased results.
 
 \clearpage
 
@@ -451,7 +424,7 @@ The dataset was then split into 5 folds to perform cross-validation\todo{glossar
   kNN & 0.726 \\
   Decision Tree & 0.676 \\
   \midrule
-  Ngrams & 0.795 \\
+  N-Grams & 0.795 \\
   Bag-Of-Means & 0.763 \\
   Paragraph Vectors & 0.679 \\
   \bottomrule
@@ -459,27 +432,6 @@ The dataset was then split into 5 folds to perform cross-validation\todo{glossar
 \caption{Test to training score ratio for classifiers and vector space models: For classifiers (top) the best performing vector space model was chosen and for vector space models (bottom) scores are averaged over all classifiers.}
 \label{tab:Test/Training Ratio}
 \end{wraptable}
-
-
-
-test performance
-
-
-\paragraph{Generalization Performance}
-\label{par:Generalization Performance}
-
-We will first take a look at the results in terms of their capability to generalized the learned structure from the training data. In indicator for this ability is the ratio between performance on test and training data. Table~\ref{tab:Test/Training Ratio} shows a comparison in terms of this ration between both the classification algorithms as well as the vector space models when averaged over the performance with all algorithms. The results are sorted in order of their score which was measured in terms of \gls{MCC} as mentioned previously.
-
-Regarding the classifiers we can observe that Naive Bayes and Logistic Regression achieve a very high ratio signaling successful generalization.
-% Looking at Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} we can see that the algorithms also both perform considerably well
-For the Neural Networks models tested it is apparent that the deep architecture overfits more than the network with a single hidden layer, i.e. it achieves higher training but lower test scores. When comparing the Deep Neural Network to Random Forests using Paragraph Vectors though we can see that while both methods achieve similarly high scores on the training data, Random Forests perform significantly worse on the test data --- Random Forests achieve scores of 0.985 (training) and 0.509 (test) as opposed to the scores of 0.989 (training) and 0.679 (test)  for the Deep Neural Network.
-
-
-\paragraph{Performance of Vector Space Models with Different Classifiers}
-\label{par:Performance of Vector Space Models with Different Classifiers}
-
-
-A set of methods achieve remarkable performance on the
 
 \begin{table}[h]
   \begin{center}
@@ -539,6 +491,26 @@ A set of methods achieve remarkable performance on the
 \end{center}
 \end{table}
 
+\paragraph{Generalization Performance}
+\label{par:Generalization Performance}
+
+We will first take a look at the results in terms of their capability to generalized the learned structure from the training data. In indicator for this ability is the ratio between performance on test and training data. Table~\ref{tab:Test/Training Ratio} shows a comparison in terms of this ration between both the classification algorithms as well as the vector space models when averaged over the performance with all algorithms. The results are sorted in order of their score which was measured in terms of \gls{MCC} as mentioned previously.
+
+Regarding the classifiers we can observe that Naive Bayes and Logistic Regression achieve a very high ratio signaling successful generalization.
+% Looking at Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} we can see that the algorithms also both perform considerably well
+For the Neural Networks models tested it is apparent that the deep architecture overfits more than the network with a single hidden layer, i.e. it achieves higher training but lower test scores. When comparing the Deep Neural Network to Random Forests using Paragraph Vectors though we can see that while both methods achieve similarly high scores on the training data, Random Forests perform significantly worse on the test data --- Random Forests achieve scores of 0.985 (training) and 0.509 (test) as opposed to the scores of 0.989 (training) and 0.679 (test) for the Deep Neural Network. In such a setting we can expect these methods to increase the level of overfitting when the dataset size is increased.
+
+
+\paragraph{Performance of Vector Space Models with Different Classifiers}
+\label{par:Performance of Vector Space Models with Different Classifiers}
+
+A set of methods achieve remarkable performance with simple N-Grams. Among them the SVM ranks highest with a \gls{MCC} test score of 0.713. Interestingly though in many cases the training score using Paragraph Vectors is highest, including both Tree-based methods, the Neural Network approaches and \gls{kNN}. This means that in principle they offer a better representation of the data to the algorithm, making it possible overfit on the rather small dataset. This is also shown in Table~\ref{par:Generalization Performance} where Paragraph Vectors show a 10\% decreased generalization performance, meaning that on average the classifiers tend to overfit on this representation.
+Another important result is that the Bag-of-Means model performs best overall and this is consistent half of the classifiers. The highest test score of 0.716 was achieved by a Neural Network using this model.
+
+\paragraph{Comparison of Classifiers}
+\label{par:Comparison of Classifiers}
+
+
 
 
 naive bayes does strange things (BOM vs Ngram)
@@ -565,34 +537,32 @@ First of all we note that in none of the setups paragraph vectors performed best
 -
 
 
-% \paragraph{Logistic Regression}
-% \label{par:Logistic Regression}
-%
-%
-% \paragraph{Decision Tree}
-% \label{par:Decision Tree}
-%
-% \paragraph{Naive Bayes}
-% \label{par:Naive Bayes}
-%
-% \paragraph{Support Vector Machine}
-% \label{par:Support Vector Machine}
-%
-% \paragraph{$k$ Nearest Neighbors}
-% \label{par:k Nearest Neighbors}
-%
-% \paragraph{Random Forest}
-% \label{par:Random Forest}
-%
-% \paragraph{Vanilla Neural Network}
-% \label{par:Vanilla Neural Network}
-%
-% \paragraph{Deep Neural Network}
-% \label{par:Deep Neural Network}
+\paragraph{Overall test performance}
+\label{par:Overall test performance}
 
-% \paragraph{Convolutional Neural Network}
-% \label{par:Convolutional Neural Network}
-
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ l c c c }
+      \toprule
+      Algorithm & N-Grams & Bag-Of-Means & Paragraph Vectors \\
+      \midrule
+      Data Transformation & 0.68s & 1.49m & 5.31h \\
+      \midrule
+      Logistic Regression & 32.08s & 2.15m & 6.26m \\
+      Decision Tree & 30.05s & 4.47m & 4.85m \\
+      Naive Bayes & 1.33s & 12.29s & 12.07s \\
+      SVM & 15.53m & 1.30h & 1.60h \\
+      kNN & 4.24s & 1.16h & 1.23h \\
+      Random Forest & 14.82m & 4.24h & 5.65h \\
+      \midrule
+      Neural Network & 21.32m & 21.26m & 21.04m \\
+      Deep Neural Network & 32.84m & 32.65m & 32.22m \\
+      \bottomrule
+    \end{tabular}
+  \caption{Computation time for the experiments. The top row shows the time for generating the feature space models and the rest of the results show the runtime for the different classifiers. The neural network models are separated because they were trained on an Amazon AWS \emph{g2.2xlarge} \gls{GPU} instance while the other models were trained on \emph{c4.large} instance using a multi-core CPU. The runtime of all classifiers includedes 5-fold \gls{Cross-Validation} and grid-search over hyper-parameters for most models. Thus the results are only representative to a certain extent as some models had a smaller hyper-parameter space to be evaluated.}
+\label{tab:Computation}
+\end{center}
+\end{table}
 
 \subsection{Classification With Sequential Models}
 \label{sub:Classification With Sequential Models}

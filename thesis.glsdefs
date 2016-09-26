@@ -538,6 +538,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{RNN}{}%
+{%
+\gls@defglossaryentry{RNN}%
+{%
+name={RNN},%
+sort={RNN},%
+type={acronym},%
+first={Recurrent Neural Network (CNN)\glsadd {Recurrent Neural Network}},%
+firstplural={Recurrent Neural Network (CNN)\glsadd {Recurrent Neural Network}s},%
+text={RNN},%
+plural={Recurrent Neural Networks (CNN's)},%
+description={Recurrent Neural Network},%
+descriptionplural={Recurrent Neural Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Recurrent Neural Network}{}%
+{%
+\gls@defglossaryentry{Recurrent Neural Network}%
+{%
+name={Recurrent Neural Network (CNN)},%
+sort={Recurrent Neural Network (CNN)},%
+type={main},%
+first={Recurrent Neural Network (CNN)},%
+firstplural={Recurrent Neural Network (CNN)s},%
+text={Recurrent Neural Network (CNN)},%
+plural={Recurrent Neural Network (CNN)s},%
+description={todo},%
+descriptionplural={todo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{Convolutional Neural Network}{}%
 {%
 \gls@defglossaryentry{Convolutional Neural Network}%

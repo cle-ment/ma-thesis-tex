@@ -44,29 +44,34 @@
 \glossaryentry{Convolutional Neural Network (CNN)?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsnumberformat}{35}
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{35}
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{40}
-\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{40}
-\glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{Application Programming Interface?\glossentry{Application Programming Interface}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Representational state transfer (REST)?\glossentry{Representational state transfer}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{$k$-Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Matthews correlation coefficient?\glossentry{Matthews correlation coefficient}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Convolutional Neural Network (CNN)?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Graphical Processing Unit (GPU)?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Fuzzy Front End?\glossentry{ffeg}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Feature Selection?\glossentry{Feature Selection}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Click-through rate?\glossentry{click-through rate}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{page views?\glossentry{page views}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsignore}{66}
-\glossaryentry{Application Programming Interface?\glossentry{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{66}
-\glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsnumberformat}{66}
-\glossaryentry{Representational state transfer (REST)?\glossentry{Representational state transfer}|setentrycounter[]{page}\glsnumberformat}{67}
-\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{73}
-\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{37}
+\glossaryentry{Recurrent Neural Network (CNN)?\glossentry{Recurrent Neural Network}|setentrycounter[]{page}\glsnumberformat}{37}
+\glossaryentry{Confusion Matrix?\glossentry{confusion matrix}|setentrycounter[]{page}\glsnumberformat}{42}
+\glossaryentry{Error Matrix?\glossentry{error matrix}|setentrycounter[]{page}\glsnumberformat}{42}
+\glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsnumberformat}{49}
+\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{49}
+\glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{Application Programming Interface?\glossentry{Application Programming Interface}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Representational state transfer (REST)?\glossentry{Representational state transfer}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{$k$-Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Matthews correlation coefficient?\glossentry{Matthews correlation coefficient}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Recurrent Neural Network (CNN)?\glossentry{Recurrent Neural Network}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Convolutional Neural Network (CNN)?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Artificial Neural Networks (ANN)?\glossentry{Artificial Neural Network}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Graphical Processing Unit (GPU)?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Fuzzy Front End?\glossentry{ffeg}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Feature Selection?\glossentry{Feature Selection}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Click-through rate?\glossentry{click-through rate}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{page views?\glossentry{page views}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsignore}{68}
+\glossaryentry{Application Programming Interface?\glossentry{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{68}
+\glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsnumberformat}{68}
+\glossaryentry{Representational state transfer (REST)?\glossentry{Representational state transfer}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{76}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{77}

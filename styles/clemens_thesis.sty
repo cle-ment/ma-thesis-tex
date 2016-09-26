@@ -1,3 +1,5 @@
+% !TEX root = ../thesis.tex
+% !TEX spellcheck = en-US
 
 %% Use this if you write hard core mathematics, these are usually needed
 \usepackage{amsfonts,amssymb,amsbsy}
@@ -13,9 +15,12 @@
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \hypersetup{pdfpagemode=UseNone, pdfstartview=FitH,
   colorlinks=true,
-  urlcolor=[HTML]{000060},
-  linkcolor=[HTML]{000060},
-  citecolor=[HTML]{000060},
+  urlcolor=[HTML]{191970},
+  linkcolor=[HTML]{191970},
+  citecolor=[HTML]{191970},
+  % urlcolor=[HTML]{000060},
+  % linkcolor=[HTML]{000060},
+  % citecolor=[HTML]{000060},
   pdftitle={Default Title, Modify},
   pdfauthor={Clemens Westrup},
   pdfkeywords={Modify keywords}}
@@ -44,7 +49,7 @@
 \usepackage[acronym,toc]{glossaries}
 \makeglossaries
 % reset entries at the start of each chapter
-% \preto\chapter{\glsresetall}
+\preto\chapter{\glsresetall}
 
 % Define argmin and argmax operators
 \newcommand*{\argmin}{\operatornamewithlimits{argmin}\limits}

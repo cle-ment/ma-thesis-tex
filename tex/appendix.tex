@@ -18,7 +18,27 @@
 % \section{Appendix \label{A}: Something something}
 \section{Appendix}
 
-\subsection*{Stopwords for N-grams}
+\subsection{Code}
+
+\subsubsection*{thesis-tagger: A Tool for Tagging Chunked Job Ads}
+\label{sub:thesis-tagger: A Tool for Tagging Chunked Job Ads}
+
+\url{https://github.com/cle-ment/thesis-tagger}
+
+\subsubsection*{thesis-experiments: Evaluating Approaches to Multi-label Text Classification}
+\label{sub:thesis-experiments: Evaluating Approaches to Multi-label Text Classification}
+
+\todo{rename this repository!!}
+
+\url{https://github.com/cle-ment/thesis-experiments}
+
+\subsubsection*{ma-thesis-tex: The Document You Are Reading}
+\label{sub:ma-thesis-tex: The Document You Are Reading}
+
+\url{https://github.com/cle-ment/ma-thesis-tex}
+
+\clearpage
+\subsection{Stopwords for N-grams}
 \label{sub:Stopwords for N-grams}
 
 
@@ -63,563 +83,127 @@ you, your, yours, yourself, yourselves
 
 \end{minted}
 
-
-\clearpage
-
-\subsection{Results}
-\label{sub:Results}
-
-\subsubsection{Full Results for Classifiers on Vector Space Models}
-\label{subs:Full Results for Classifiers on Vector Space Models}
-
-
-\begin{table}[h]
-  \begin{center}
-    \begin{tabular}{ lll cc }
-      \toprule
-      Classifier & Scheme & Vector Space & Training Score & Test Score \\
-      \midrule
-      \multirow{6}{*}{Logistic Regression}
-       & \multirow{3}{*}{One-vs-Rest}
-         & N-Grams & 0.744 & \textbf{0.702} \\
-       & & Bag-of-Means & 0.704 & 0.671 \\
-       & & PV & 0.684 & 0.606 \\
-       \cmidrule(r){2-5}
-       & \multirow{3}{*}{multinomial}
-       & N-Grams & 0.770 & 0.697 \\
-       & & Bag-of-Means & 0.743 & \textbf{0.706} \\
-       & & PV & 0.709 & 0.643 \\
-      \midrule
-      \multirow{6}{*}{Decision Tree}
-       & \multirow{3}{*}{One-vs-Rest}
-         & N-Grams & --- & --- \\
-       & & Bag-of-Means & --- & --- \\
-       & & PV & 0.994 & 0.339 \\
-       \cmidrule(r){2-5}
-       & \multirow{3}{*}{Multinomial}
-       & N-Grams & 0.924 & \textbf{0.625} \\
-       & & Bag-of-Means & 0.938 & 0.455 \\
-       & & PV & 0.994 & 0.290 \\
-      \midrule
-      \multirow{2}{*}{Naive Bayes}
-       & \multirow{1}{*}{One-vs-Rest}
-         & N-Grams & 0.668 & \textbf{0.648} \\
-         & & Bag-of-Means & 0.498 & 0.491 \\
-         & & PV & 0.603 & 0.573 \\
-       \cmidrule(r){2-5}
-       & \multirow{1}{*}{Multinomial}
-       & N-Grams & 0.637 & \textbf{0.618} \\
-       & & Bag-of-Means & 0.479 & 0.472 \\
-       & & PV & 0.594 & 0.562 \\
-      \midrule
-      \multirow{6}{*}{SVM}
-       & \multirow{3}{*}{One-vs-Rest}
-         & N-Grams & 0.882 & 0.713 \\
-       & & Bag-of-Means & --- & --- \\
-       & & PV & 0.831 & 0.683 \\
-       \cmidrule(r){2-5}
-       & \multirow{3}{*}{Multinomial}
-         & N-Grams & 0.759 & 0.692 \\
-       & & Bag-of-Means & 0.751 & 0.704 \\
-       & & PV & 0.722 & 0.635 \\
-      \midrule
-      \multirow{6}{*}{kNN}
-      & \multirow{3}{*}{One-vs-Rest}
-      & N-Grams & 0.929 & 0.642 \\
-      & & Bag-of-Means & 0.944 & \textbf{0.685} \\
-      & & PV & 0.993 & 0.579 \\
-      \cmidrule(r){2-5}
-      & \multirow{3}{*}{Multinomial}
-      & N-Grams & 0.911 & 0.623 \\
-      & & Bag-of-Means & 0.936 & \textbf{0.678} \\
-      & & PV & 0.993 & 0.581 \\
-      \midrule
-      \multirow{6}{*}{Random Forest}
-      & \multirow{3}{*}{One-vs-Rest}
-      & N-Grams & 0.924 & \textbf{0.701} \\
-      & & Bag-of-Means & 0.940 & 0.618 \\
-      & & PV & 0.985 & 0.509 \\
-      \cmidrule(r){2-5}
-      & \multirow{3}{*}{Multinomial}
-      & N-Grams & 0.922 & \textbf{0.696} \\
-      & & Bag-of-Means & 0.937 & 0.616 \\
-      & & PV & 0.993 & 0.515 \\
-      \midrule
-      \multirow{3}{*}{Neural Network}
-      & \multirow{3}{*}{Multinomial}
-      & N-Grams & 0.911 & 0.709 \\
-      & & Bag-of-Means & 0.930 & \textbf{0.716} \\
-      & & PV & 0.975 & 0.665 \\
-      \midrule
-      \multirow{3}{*}{Deep Neural Network}
-      & \multirow{3}{*}{Multinomial}
-      & N-Grams & 0.913 & 0.708 \\
-      & & Bag-of-Means & 0.936 & \textbf{0.715} \\
-      & & PV & 0.989 & 0.679 \\
-      % \midrule
-      % \multirow{3}{*}{Convolutional \gls{ANN}}
-      % & \multirow{3}{*}{---}
-      % & N-Grams & --- & --- \\
-      % & & Bag-of-Means & --- & --- \\
-      % & & PV & --- & --- \\
-      \bottomrule
-    \end{tabular}
-  \caption{sdf}
-\label{tab:Paragraph Vector Parameter Hyper-Parameter Results Full}
-\end{center}
-\end{table}
+%
+% \subsection{Results}
+% \label{sub:Results}
+%
+% \subsubsection{Full Results for Classifiers on Vector Space Models}
+% \label{subs:Full Results for Classifiers on Vector Space Models}
+%
+% \begin{table}[h]
+%   \begin{center}
+%     \begin{tabular}{ lll cc }
+%       \toprule
+%       Classifier & Scheme & Vector Space & Training Score & Test Score \\
+%       \midrule
+%       \multirow{6}{*}{Logistic Regression}
+%        & \multirow{3}{*}{One-vs-Rest}
+%          & N-Grams & 0.744 & \textbf{0.702} \\
+%        & & Bag-of-Means & 0.704 & 0.671 \\
+%        & & PV & 0.684 & 0.606 \\
+%        \cmidrule(r){2-5}
+%        & \multirow{3}{*}{multinomial}
+%        & N-Grams & 0.770 & 0.697 \\
+%        & & Bag-of-Means & 0.743 & \textbf{0.706} \\
+%        & & PV & 0.709 & 0.643 \\
+%       \midrule
+%       \multirow{6}{*}{Decision Tree}
+%        & \multirow{3}{*}{One-vs-Rest}
+%          & N-Grams & --- & --- \\
+%        & & Bag-of-Means & --- & --- \\
+%        & & PV & 0.994 & 0.339 \\
+%        \cmidrule(r){2-5}
+%        & \multirow{3}{*}{Multinomial}
+%        & N-Grams & 0.924 & \textbf{0.625} \\
+%        & & Bag-of-Means & 0.938 & 0.455 \\
+%        & & PV & 0.994 & 0.290 \\
+%       \midrule
+%       \multirow{2}{*}{Naive Bayes}
+%        & \multirow{1}{*}{One-vs-Rest}
+%          & N-Grams & 0.668 & \textbf{0.648} \\
+%          & & Bag-of-Means & 0.498 & 0.491 \\
+%          & & PV & 0.603 & 0.573 \\
+%        \cmidrule(r){2-5}
+%        & \multirow{1}{*}{Multinomial}
+%        & N-Grams & 0.637 & \textbf{0.618} \\
+%        & & Bag-of-Means & 0.479 & 0.472 \\
+%        & & PV & 0.594 & 0.562 \\
+%       \midrule
+%       \multirow{6}{*}{SVM}
+%        & \multirow{3}{*}{One-vs-Rest}
+%          & N-Grams & 0.882 & 0.713 \\
+%        & & Bag-of-Means & --- & --- \\
+%        & & PV & 0.831 & 0.683 \\
+%        \cmidrule(r){2-5}
+%        & \multirow{3}{*}{Multinomial}
+%          & N-Grams & 0.759 & 0.692 \\
+%        & & Bag-of-Means & 0.751 & 0.704 \\
+%        & & PV & 0.722 & 0.635 \\
+%       \midrule
+%       \multirow{6}{*}{kNN}
+%       & \multirow{3}{*}{One-vs-Rest}
+%       & N-Grams & 0.929 & 0.642 \\
+%       & & Bag-of-Means & 0.944 & \textbf{0.685} \\
+%       & & PV & 0.993 & 0.579 \\
+%       \cmidrule(r){2-5}
+%       & \multirow{3}{*}{Multinomial}
+%       & N-Grams & 0.911 & 0.623 \\
+%       & & Bag-of-Means & 0.936 & \textbf{0.678} \\
+%       & & PV & 0.993 & 0.581 \\
+%       \midrule
+%       \multirow{6}{*}{Random Forest}
+%       & \multirow{3}{*}{One-vs-Rest}
+%       & N-Grams & 0.924 & \textbf{0.701} \\
+%       & & Bag-of-Means & 0.940 & 0.618 \\
+%       & & PV & 0.985 & 0.509 \\
+%       \cmidrule(r){2-5}
+%       & \multirow{3}{*}{Multinomial}
+%       & N-Grams & 0.922 & \textbf{0.696} \\
+%       & & Bag-of-Means & 0.937 & 0.616 \\
+%       & & PV & 0.993 & 0.515 \\
+%       \midrule
+%       \multirow{3}{*}{Neural Network}
+%       & \multirow{3}{*}{Multinomial}
+%       & N-Grams & 0.911 & 0.709 \\
+%       & & Bag-of-Means & 0.930 & \textbf{0.716} \\
+%       & & PV & 0.975 & 0.665 \\
+%       \midrule
+%       \multirow{3}{*}{Deep Neural Network}
+%       & \multirow{3}{*}{Multinomial}
+%       & N-Grams & 0.913 & 0.708 \\
+%       & & Bag-of-Means & 0.936 & \textbf{0.715} \\
+%       & & PV & 0.989 & 0.679 \\
+%       % \midrule
+%       % \multirow{3}{*}{Convolutional \gls{ANN}}
+%       % & \multirow{3}{*}{---}
+%       % & N-Grams & --- & --- \\
+%       % & & Bag-of-Means & --- & --- \\
+%       % & & PV & --- & --- \\
+%       \bottomrule
+%     \end{tabular}
+%   \caption{sdf}
+% \label{tab:Paragraph Vector Parameter Hyper-Parameter Results Full}
+% \end{center}
+% \end{table}
 
 % \includepdf[offset=75,-75,scale=0.8,clip,trim=0cm 0cm 0cm 2cm,pages={1},pagecommand={\section{appendix}\subsection{part1}}]{appendix/InferringStructureofJobAdvertisements-experiment-example}
 % \includepdf[scale=0.8,clip,trim=0cm 0cm 0cm 2cm,pages={2-},pagecommand={}]{appendix/InferringStructureofJobAdvertisements-experiment-example}
 
+\clearpage
 \includepdf[scale=0.71, pages=1, offset=85 -120, frame, pagecommand={
-\subsection*{Understanding How Humans Structure Text}\label{sub:Understanding How Humans Structure Text}
+\subsection{Experiment Example: Inferring Structure of Job Advertisements}\label{sub:Understanding How Humans Structure Text}
 This section shows an example of the task given to participants during the experiment described in Section~\ref{subs:Inferring Structure in Job Advertisements}. The task was presented in \gls{Google Docs}, enabling the participants to highlight and comment sections of the text.
 }]{appendix/InferringStructureofJobAdvertisements-experiment-example.pdf}
 \includepdf[scale=0.71, pages=2-, offset=85 -75, frame, pagecommand={}]{appendix/InferringStructureofJobAdvertisements-experiment-example.pdf}
 
+\clearpage
 \subsection{Collected Labels in Paragraph Experiment}
 \label{sub:Collected Labels in Paragraph Experiment}
 
-% \subsubsection{Manual Clustering Bottom Up}
-% \label{subs:Manual Clustering Bottom Up}
-%
-% \begin{minted}{json}
-%   {
-%       "N/A": [
-%            "empy", "-", "empty", "none", "nothing", "empty space",
-%            "no data"],
-%       "requirements": [
-%           "required skill", "required skills", "capabilities", "skills",
-%           "skill", "requirements", "applicant's abilities",
-%           "actual requirements", "wished skills", "requirements ",
-%           "requirement", "competence", "skill requirement",
-%           "skill exception", "candidate's requirements",
-%           "prerequisite studies", "requirement ", "formal requirements", "job requirements",
-%           "important requirements",
-%           "job specific requirements",
-%           "common requirements",
-%
-%           "start of skills list",
-%           "skills heading",
-%           "checklist for requirements ",
-%           "requirements title",
-%
-%           "html5",
-%           "user-testing",
-%           "prototyping",
-%           "programming languages",
-%           "programming",
-%           "programming skills",
-%           "software development",
-%           "mobile development",
-%           "software developer",
-%
-%           "language requirement",
-%           "languages",
-%           "langugage skills",
-%           "language requirements",
-%           "language",
-%           "language skill",
-%           "language skills",
-%
-%           "web services integration",
-%           "software",
-%           "mgmt",
-%           "agile",
-%           "a360",
-%           "istqb",
-%           "bugtracking tool",
-%           "tools",
-%           "manollo",
-%           "clojure",
-%           "java",
-%           "scala",
-%           "design",
-%           "thread programming",
-%           "mobile",
-%           "spring",
-%           "angularjs",
-%
-%           "additional skills",
-%           "bonus skills",
-%           "desired skill",
-%
-%           "applicant's personality",
-%           "personal",
-%           "soft skills",
-%           "personal skill",
-%           "social skills",
-%           "characteristics",
-%           "habits",
-%           "character",
-%           "attitude",
-%
-%           "transaction management",
-%           "technical skills",
-%           "domain skill",
-%           "project management",
-%           "quality assurance",
-%           "analysis",
-%           "tracking",
-%           "testing",
-%           "communication skill",
-%           "communication skills",
-%           "communication",
-%           "repeated"
-%       ],
-%       "expectations / qualifications": [
-%           "travel requirements",
-%           "traveling requirements",
-%           "travel",
-%           "expected values",
-%           "time commitment",
-%           "time",
-%           "company's needs",
-%           "performance",
-%           "employee qualities ",
-%           "degree",
-%           "job specific tag",
-%           "knwoledge",
-%           "education",
-%           "knowledge",
-%           "capability",
-%           "expectations",
-%           "background",
-%           "job challenge",
-%           "business-minded",
-%           "qualifications",
-%           "asset"
-%       ],
-%       "knowledge and experience": [
-%           "innovation",
-%           "tech",
-%           "experience requirement",
-%           "experience",
-%           "integration experience",
-%           "previous experience",
-%           "work experience"
-%       ],
-%       "meta information": [
-%           "job id",
-%           "number",
-%           "job number"
-%       ],
-%       "measurable job expectations": [
-%           "working hours",
-%           "detailed info"
-%       ],
-%       "measurable facts about the job": [
-%           "location of job",
-%           "finlandjob",
-%           "location ",
-%           "job location",
-%           "where",
-%           "location data",
-%           "sijainti",
-%           "paikka",
-%           "place",
-%           "office",
-%           "job ad",
-%           "location",
-%           "finland",
-%
-%           "duration",
-%           "time frame",
-%           "dates",
-%           "starting date",
-%           "time period",
-%           "conditions"
-%       ],
-%       "info about job": [
-%           "intro",
-%           "job description",
-%           "job position",
-%           "description",
-%           "general",
-%           "job info",
-%           "general job description",
-%           "basic info",
-%           "job introduction ",
-%           "introduction",
-%           "general task",
-%           "general task ",
-%           "job",
-%           "job related field",
-%           "announcement",
-%           "announcement ",
-%           "about",
-%           "job description ",
-%           "overview",
-%           "position description",
-%           "job desription",
-%           "position",
-%           "kuvaus",
-%           "high level summary",
-%           "summary",
-%           "global work",
-%           "software integrations",
-%           "customer experience"
-%       ],
-%       "additional info": [
-%           "employer listing",
-%           "more about position",
-%           "further info",
-%           "further information",
-%           "more information",
-%           "futrher information",
-%           "lisätieto",
-%           "more info",
-%           "additional information",
-%           "link"
-%       ],
-%       "job type (time)": [
-%           "full time",
-%           "temps",
-%           "job form",
-%           "job classification ",
-%           "extent",
-%           "position type",
-%           "job duration ",
-%           "job type",
-%           "employment type",
-%           "work type"
-%       ],
-%       "info about the employer": [
-%           "company",
-%           "company info",
-%           "introduction to organization",
-%           "company description",
-%           "company ",
-%           "employer's information",
-%           "general company info",
-%           "history of employer",
-%           "company description ",
-%           "company facts",
-%           "organisatio",
-%           "employer info",
-%           "employer description",
-%           "website of employer",
-%           "website contact info",
-%           "website",
-%           "employer listing ",
-%           "service offering",
-%           "product line",
-%           "detailed information on productline",
-%           "company introduction",
-%           "intro to company",
-%           "who",
-%           "company presentation",
-%           "organization",
-%           "ccompany details",
-%           "company details",
-%           "organisation description",
-%           "about us",
-%           "company data",
-%
-%           "industry",
-%           "field of operations",
-%           "retail",
-%           "business type",
-%           "consulting",
-%           "employer",
-%           "money games"
-%       ],
-%       "company values": [
-%           "non-discrimination",
-%           "equal opportunity",
-%           "company vision",
-%           "company culture",
-%           "company policy"
-%       ],
-%       "semantic identifiers": [
-%           "start of list",
-%           "heading",
-%           "section title",
-%           "header",
-%           "introductory phrase ",
-%           "transition",
-%           "subheader",
-%           "headline",
-%           "question"
-%       ],
-%       "judgement / emotional response": [
-%           "90% bullshit",
-%           "blabla",
-%           "signal for interview question",
-%           "bullshit",
-%           "useless info",
-%           "crap"
-%       ],
-%       "role / tasks / responsibilites": [
-%           "functions",
-%           "responsibilities heading",
-%           "role",
-%           "job role",
-%           "detailed task",
-%           "about the role",
-%           "duties",
-%           "checklist for job description ",
-%           "general tasks",
-%           "job responsibilities",
-%           "work summary",
-%           "task titles",
-%           "responsibilites",
-%           "main tasks",
-%           "tasks",
-%           "responsibility",
-%           "responsibilities",
-%           "task"
-%       ],
-%       "position / unit in company": [
-%           "team",
-%           "unit",
-%           "unit description",
-%           "team title",
-%           "company branch",
-%           "level",
-%           "asw",
-%           "practicalities",
-%           "position level",
-%           "department",
-%           "organisational position",
-%           "unit of the company",
-%           "unit of company",
-%           "company unit descriptions"
-%       ],
-%       "company name": [
-%            "manpower",
-%            "bayer",
-%            "bayer2013",
-%            "bayerr&d",
-%            "bayerrecruiting ",
-%            "kemira",
-%            "reaktor",
-%            "company name",
-%            "tieto",
-%            "paf"
-%       ],
-%       "application practicalities": [
-%           "applying",
-%           "contract",
-%           "selection",
-%           "apply",
-%           "how to apply",
-%           "apply info",
-%           "application process",
-%           "application information",
-%           "application practicalities ",
-%           "practical information",
-%           "application instructions",
-%           "how to apply?",
-%           "instructions",
-%           # procedure
-%           "application submission",
-%           "application",
-%           "application procedure",
-%           "attachments",
-%           "application details",
-%           # dates
-%           "opening date",
-%           "closing date",
-%           "deadline ",
-%           "deadline for application",
-%           "dealine",
-%           "application deadline",
-%           "deadline",
-%           "timetable",
-%
-%           "auxiliary target group",
-%           "encouragement",
-%           "invitation ",
-%           "invitation"
-%       ],
-%       "contact": [
-%           "contact details",
-%           "contact person",
-%           "contact info",
-%           "contact",
-%           "contact practicalities ",
-%           "contact person name ",
-%           "contact person title ",
-%           "contact person mail ",
-%           "job contact information",
-%           "job inquiry email",
-%           "phone number",
-%           "contacts",
-%           "contact ddetails",
-%           "help",
-%           "signature ",
-%           "contact ",
-%           "contact person title",
-%           "details",
-%           "contact information"
-%       ],
-%       "benefits / offerings": [
-%           "benefits",
-%           "reward",
-%           "treats",
-%           "job benefits",
-%           "company's treats",
-%           "opportunities",
-%           "additional job opportunities",
-%           "incentive",
-%           "additional opportunity",
-%           "salary",
-%           "offering",
-%           "we offer",
-%           "job offer",
-%           "compensation",
-%           "oppoturnity",
-%           "what you get",
-%           "offer"
-%       ],
-%       "job title": [
-%           "job title ",
-%           "seniormanager",
-%           "clinicalcontractcoordinator",
-%           "search",
-%           "ask",
-%           "what",
-%           "work title",
-%           "need",
-%           "looking for",
-%           "title",
-%           "job title"
-%       ],
-%       "recruiting agency": [
-%           "recruiter",
-%           "recruiting",
-%           "contact agent",
-%           "job agent",
-%           "about job agent ",
-%           "about job agent"
-%       ],
-%       "why should you apply": [
-%           "marketing the job",
-%           "goal",
-%           "selling the job",
-%           "marketing of the company",
-%           "sales pitch",
-%           "remuneration",
-%           "motivation",
-%           "self-advertising",
-%       ],
-%       "tags": [
-%            "keywords"
-%       ],
-%       "info": [
-%            "information",
-%            "info"
-%       ]
-%   }
-% \end{minted}
-
-\subsubsection{Manual Clustering Top Down}
-\label{subs:Manual Clustering Top Down}
 
 \begin{minted}{json}
-  {"Summary: Short introduction": [
+  {
+      "Summary: Short introduction": [
           "intro", "job description", "job position", "description",
           "general", "job info", "general job description",
           "basic info", "job introduction ", "introduction",
@@ -633,7 +217,7 @@ This section shows an example of the task given to participants during the exper
       ],
       "Person specification (Who you are)": [
           "required skill", "required skills", "capabilities",
-           "skills", "skill", "requirements", "applicant's abilities",
+          "skills", "skill", "requirements", "applicant's abilities",
           "actual requirements", "wished skills",
           "requirements ", "requirement", "competence",
           "skill requirement", "skill exception",
@@ -645,368 +229,190 @@ This section shows an example of the task given to participants during the exper
           "requirements title", "html5", "user-testing",
           "prototyping", "programming languages", "programming",
           "programming skills", "software development",
-          "mobile development", "software developer", "language requirement",
-          "languages", "langugage skills", "language requirements", "language", "language skill", "language skills", "web services integration", "software", "mgmt", "agile", "a360", "istqb", "bugtracking tool", "tools", "manollo", "clojure", "java", "scala", "design", "thread programming", "mobile",
-          "spring",
-          "angularjs",
-
-          "additional skills",
-          "bonus skills",
-          "desired skill",
-
-          "applicant's personality",
-          "personal",
-          "soft skills",
-          "personal skill",
-          "social skills",
-          "characteristics",
-          "habits",
-          "character",
-          "attitude",
-
-          "transaction management",
-          "technical skills",
-          "domain skill",
-          "project management",
-          "quality assurance",
-          "analysis",
-          "tracking",
-          "testing",
-          "communication skill",
-          "communication skills",
-          "communication",
-          "repeated",
-
-          "travel requirements",
-          "traveling requirements",
-          "travel",
-          "expected values",
-          "time commitment",
-          "time",
-          "company's needs",
-          "performance",
-          "employee qualities ",
-          "degree",
-          "job specific tag",
-          "knwoledge",
-          "education",
-          "knowledge",
-          "capability",
-          "expectations",
-          "background",
-          "job challenge",
-          "business-minded",
-          "qualifications",
-          "asset",
-          "working hours",
-          "detailed info",
-
-          "innovation",
-          "tech",
-          "experience requirement",
-          "experience",
-          "integration experience",
-          "previous experience",
-          "work experience",
-
-          "full time",
-          "temps",
-          "job form",
-          "job classification ",
-          "extent",
-          "position type",
-          "job duration ",
-          "job type",
-          "employment type",
-          "work type"
+          "mobile development", "software developer",
+          "language requirement", "languages", "langugage skills",
+          "language requirements", "language", "language skill",
+          "language skills", "web services integration", "software",
+          "mgmt", "agile", "a360", "istqb", "bugtracking tool",
+          "tools", "manollo", "clojure", "java", "scala", "design",
+          "thread programming", "mobile", "spring", "angularjs",
+          "additional skills", "bonus skills", "desired skill",
+          "applicant's personality", "personal", "soft skills",
+          "personal skill", "social skills", "characteristics",
+          "habits", "character", "attitude", "transaction management",
+          "technical skills", "domain skill", "project management",
+          "quality assurance", "analysis", "tracking", "testing",
+          "communication skill", "travel requirements",
+          "traveling requirements", "travel", "expected values",
+          "time commitment", "time", "company's needs", "performance",
+          "employee qualities ", "degree", "job specific tag",
+          "knwoledge", "education", "knowledge", "capability",
+          "expectations", "background", "job challenge",
+          "business-minded", "qualifications", "asset",
+          "working hours", "detailed info", "innovation",
+          "tech", "experience requirement", "experience",
+          "integration experience", "previous experience",
+          "work experience", "full time", "temps", "job form",
+          "job classification ", "extent", "position type",
+          "job duration ", "job type", "employment type", "work type"
 
       ],
       "Benefits (What we give)": [
-
-          "marketing the job",
-          "goal",
-          "selling the job",
-          "marketing of the company",
-          "sales pitch",
-          "remuneration",
-          "motivation",
-          "self-advertising",
-
-          "benefits",
-          "reward",
-          "treats",
-          "job benefits",
-          "company's treats",
-          "opportunities",
-          "additional job opportunities",
-          "incentive",
-          "additional opportunity",
-          "salary",
-          "offering",
-          "we offer",
-          "job offer",
-          "compensation",
-          "oppoturnity",
-          "what you get",
-          "offer"
+          "marketing the job", "goal", "selling the job",
+          "marketing of the company", "sales pitch", "remuneration",
+          "motivation", "self-advertising", "benefits", "reward",
+          "treats", "job benefits", "company's treats",
+          "opportunities", "additional job opportunities",
+          "incentive", "additional opportunity", "salary", "offering",
+          "we offer", "job offer", "compensation", "oppoturnity",
+          "what you get", "offer"
       ],
       "Job specification (What you give)": [
-
-          "job title ",
-          "seniormanager",
-          "clinicalcontractcoordinator",
-          "search",
-          "ask",
-          "what",
-          "work title",
-          "need",
-          "looking for",
-          "title",
-          "job title"
-
-          "functions",
-          "responsibilities heading",
-          "role",
-          "job role",
-          "detailed task",
-          "about the role",
-          "duties",
-          "checklist for job description ",
-          "general tasks",
-          "job responsibilities",
-          "work summary",
-          "task titles",
-          "responsibilites",
-          "main tasks",
-          "tasks",
-          "responsibility",
-          "responsibilities",
-          "task",
-
-          "team",
-          "unit",
-          "unit description",
-          "team title",
-          "company branch",
-          "level",
-          "asw",
-          "practicalities",
-          "position level",
-          "department",
-          "organisational position",
-          "unit of the company",
-          "unit of company",
-          "company unit descriptions",
-
-          "location of job",
-          "finlandjob",
-          "location ",
-          "job location",
-          "where",
-          "location data",
-          "sijainti",
-          "paikka",
-          "place",
-          "office",
-          "job ad",
-          "location",
-          "finland",
-          "duration",
-          "time frame",
-          "dates",
-          "starting date",
-          "time period",
+          "job title ", "seniormanager", "clinicalcontractcoordinator",
+          "search", "ask", "what", "work title", "need", "looking for",
+          "title", "job title" "functions", "responsibilities heading",
+          "role", "job role", "detailed task", "about the role",
+          "duties", "checklist for job description ", "general tasks",
+          "job responsibilities", "work summary", "task titles",
+          "responsibilites", "main tasks", "tasks", "responsibility",
+          "responsibilities", "task", "team", "unit",
+          "unit description", "team title", "company branch", "level",
+          "asw", "practicalities", "position level", "department",
+          "organisational position", "unit of the company",
+          "unit of company", "company unit descriptions",
+          "location of job", "finlandjob", "location ", "job location",
+          "where", "location data", "sijainti", "paikka", "place",
+          "office", "job ad", "location", "finland", "duration",
+          "time frame", "dates", "starting date", "time period",
           "conditions"
-
       ],
       "Company (Who we are)": [
-
-          "manpower",
-          "bayer",
-          "bayer2013",
-          "bayerr&d",
-          "bayerrecruiting ",
-          "kemira",
-          "reaktor",
-          "company name",
-          "tieto",
-          "paf",
-
-          "company",
-          "company info",
-          "introduction to organization",
-          "company description",
-          "company ",
-          "employer`s information",
-          "general company info",
-          "history of employer",
-          "company description ",
-          "company facts",
-          "organisatio",
-          "employer info",
-          "employer description",
-          "website of employer",
-          "website contact info",
-          "website",
-          "employer listing ",
-          "service offering",
-          "product line",
+          "manpower", "bayer", "bayer2013", "bayerr&d",
+          "bayerrecruiting ", "kemira", "reaktor", "company name",
+          "tieto", "paf", "company", "company info",
+          "introduction to organization", "company description",
+          "company ", "employer`s information", "general company info",
+          "history of employer", "company description ",
+          "company facts", "organisatio", "employer info",
+          "employer description", "website of employer",
+          "website contact info", "website", "employer listing ",
+          "service offering", "product line",
           "detailed information on productline",
-          "company introduction",
-          "intro to company",
-          "who",
-          "company presentation",
-          "organization",
-          "ccompany details",
-          "company details",
-          "organisation description",
-          "about us",
-          "company data",
-          "industry",
-          "field of operations",
-          "retail",
-          "business type",
-          "consulting",
-          "employer",
-          "money games",
-
-          "non-discrimination",
-          "equal opportunity",
-          "company vision",
-          "company culture",
-          "company policy"
-
+          "company introduction", "intro to company", "who",
+          "company presentation", "organization", "ccompany details",
+          "company details", "organisation description", "about us",
+          "company data", "industry", "field of operations", "retail",
+          "business type", "consulting", "employer", "money games",
+          "non-discrimination", "equal opportunity", "company vision",
+          "company culture", "company policy"
       ],
       "Next steps": [
-
-          "applying",
-          "contract",
-          "selection",
-          "apply",
-          "how to apply",
-          "apply info",
-          "application process",
-          "application information",
-          "application practicalities ",
-          "practical information",
-          "application instructions",
-          "how to apply?",
-          "instructions",
-
-          "application submission",
-          "application",
-          "application procedure",
-          "attachments",
-          "application details",
-
-          "opening date",
-          "closing date",
-          "deadline ",
-          "deadline for application",
-          "dealine",
-          "application deadline",
-          "deadline",
-          "timetable",
-
-          "auxiliary target group",
-          "encouragement",
-          "invitation ",
-          "invitation"
-
-          "employer listing",
-          "more about position",
-          "further info",
-          "further information",
-          "more information",
-          "futrher information",
-          "lisätieto",
-          "more info",
-          "additional information",
-          "link",
-
-          "contact details",
-          "contact person",
-          "contact info",
-          "contact",
-          "contact practicalities ",
-          "contact person name ",
-          "contact person title ",
-          "contact person mail ",
-          "job contact information",
-          "job inquiry email",
-          "phone number",
-          "contacts",
-          "contact ddetails",
-          "help",
-          "signature ",
-          "contact ",
-          "contact person title",
-          "details",
-          "contact information",
-
-          "recruiter",
-          "recruiting",
-          "contact agent",
-          "job agent",
-          "about job agent ",
+          "applying", "contract", "selection", "apply", "how to apply",
+          "apply info", "application process",
+          "application information", "application practicalities ",
+          "practical information", "application instructions",
+          "how to apply?", "instructions", "application submission",
+          "application", "application procedure", "attachments",
+          "application details", "opening date", "closing date",
+          "deadline ", "deadline for application", "dealine",
+          "application deadline", "deadline", "timetable",
+          "auxiliary target group", "encouragement", "invitation ",
+          "invitation" "employer listing", "more about position",
+          "further info", "further information", "more information",
+          "futrher information", "lisätieto", "more info",
+          "additional information", "link", "contact details",
+          "contact person", "contact info", "contact",
+          "contact practicalities ", "contact person name ",
+          "contact person title ", "contact person mail ",
+          "job contact information", "job inquiry email",
+          "phone number", "contacts", "contact ddetails",
+          "help", "signature ", "contact ", "contact person title",
+          "details", "contact information", "recruiter", "recruiting",
+          "contact agent", "job agent", "about job agent ",
           "about job agent"
-
       ],
       "Other": [
-
-          "empy",
-          "-",
-          "empty",
-          "none",
-          "nothing",
-          "empty space",
-          "no data",
-
-          "start of list",
-          "heading",
-          "section title",
-          "header",
-          "introductory phrase ",
-          "transition",
-          "subheader",
-          "headline",
-          "question",
-
-          "job id",
-          "number",
-          "job number",
-          "keywords",
-
-          "90% bullshit",
-          "blabla",
-          "signal for interview question",
-          "bullshit",
-          "useless info",
-          "crap",
-
-          "information",
-          "info"
+          "empy", "-", "empty", "none", "nothing", "empty space",
+          "no data", "start of list", "heading", "section title",
+          "header", "introductory phrase ", "transition", "subheader",
+          "headline", "question", "job id", "number", "job number",
+          "keywords", "90% bullshit", "blabla",
+          "signal for interview question", "bullshit", "useless info",
+          "crap", "information", "info"
       ]
   }
 \end{minted}
 
 \clearpage
-
-\subsection{Code}
-
-\subsubsection*{thesis-tagger: A Tool for Tagging Chunked Job Ads}
-\label{sub:thesis-tagger: A Tool for Tagging Chunked Job Ads}
-
-\url{https://github.com/cle-ment/thesis-tagger}
-
-\subsubsection*{thesis-experiments: Evaluating Approaches to Multi-label Text Classification}
-\label{sub:thesis-experiments: Evaluating Approaches to Multi-label Text Classification}
-
-\todo{rename this repository!!}
-
-\url{https://github.com/cle-ment/thesis-experiments}
-
-\subsubsection*{ma-thesis-tex: The Document You Are Reading}
-\label{sub:ma-thesis-tex: The Document You Are Reading}
-
-\url{https://github.com/cle-ment/ma-thesis-tex}
+%
+% {\color{gray}
+% {\tiny
+% \begin{verbatim}
+%   mmmdhdddhyhhhhddhdmmmmmhyyyyyydNMMMMMMNNdNNNNmmmmmo+////++++++++++++++++++++++++++oommmNNNNNNNNMMMMNNNNNNNNNdhyssssyyyhhhhhhdddhhh
+%   mmddhddyo////+oyhdmmmmmhyyyyydNMMNNNMMNhhhhyyhdmmNs+/////////+++++++++++++++++++++oodmmmmmNNNNNMMMNNNNNNNNNNmhs++++sysosssssyhhhhh
+%   mmdhho.         `:hmmmmhyyyydNMNNNNNMMm      +dmmNy+/////////++++++++++++++++++++++odmmmmmmmNNNNMMNNNmmmmNNNo      +y/      ohhhhh
+%   mmdh/      .`     .mmmmhyyyhNNNNNNNNMMm      +dddmh+//////////++++/+++++++++++/+++oodmmmmmmmNNNNNNmmmmmmmmmmh+++++/oy/      sdhhhh
+%   NNdh.     -yo      hmNMm+-.````.:+hNMMm      :/.````-///.`````./-``+++++++/-`` ``-:`.....dmNNy+-.````./smmmms......sdo      smhhhh
+%   Nmhy.     .ys....--hmNh.     `    `/NMm       `      `//.     ``  `+++++++.      `       dNm:     `     .hmm+      sNs      sNhhhh
+%   mmhy:      .:oyhydmmmN.     om-     oMm      /d:      //.         `//++++/      .+-      dN+     .mo     .dm+      sNs      sNhhhh
+%   dmhyy:        ./sdmmmd      sN:     -Nm      +d+      :/.        `.++++++/      -o:      hm.     -ms      hm+      smo      smhyyh
+%   yyyyyhs:`       `-ymmh      ``      .Nm      +d+      :/.      -///++++++/      -o:      hm.      ``      ym+      sdo      sNhyyh
+%   yyyyydmdhs:`      `hNh      .-------:Nm      +d+      //.      /++++////+/      -/-      hm.     `--......ym+      os-      smhyyh
+%   hddd+:::::+d+      /Nh      smhooooooNm      +d+      //.      ++++++++++/      -+-      hm.     -md++++++hm+      +s:      smhyyh
+%   dmNN:     :mm.     -Nd      sNs     .Nm      +d+      //.      /+++///+++/      ./.      hm.     -md`     ym+      os/      smhyyh
+%   dmNN+     -md.     :Nm`     sNs     :Nm      +d+      //.      +++////////.      `       hm:     -md`     hm+      /s:      omhyhh
+%   hdNNd.     ..      yNMo`    ./.    .hNm      +d+      +/.      /++/////////:.```.--      hmh.     :-     +mm+      /o:      +mhyhy
+%   hdNNNd+.`      `.:yNNMNh/.`     `.+dNNm``````+d+````` //.     `/+/////////......-/-     `dmmd+-`     ``:sdmd+``    /o:      /yyyhh
+%   hdNNNNNmdhysssydmNNNNMNNNmdhyyyhdmNNNNNhhhhhyhdhyyyhy++/:-:::::///////////.      `     `ommmNNmdhyssyyhdmmmmhyyy+//+/+//++//+ssyhh
+%   dhNNNMMMMMMMNNNNMMMNNMMNNNNNNNNNNNNNNNNNmmmmddddddmmmo++/:::://////////////-.```````.:ohdmmmNNNNNNmmmmmmmmddddddyooooo++oo+++osyyy
+%   hhmMMMMMMMMMMNNMMMMMMMNNNNNNNNNNNNNNNNNNmmmmdddddddmms++///+ooooo+////////////::///+yddddddmNNNNNNmmmmmmmdddddddhoo+++++oo+++oso+s
+%   dhmMMMMMMMMMMMMMMMMMMMNNNNNNNNNNNmNNNNNNmmmmdddddddmNyssssossyyhysooo++/////////++++sddddddmNNNdysssyhyhdddmmmdhoo+++/+++++++yh/.-
+%   dhdMMMMMMMMMMMMMMMMMMMNNNNNNNNNNmmNNNNNmmmmmdddddddmmhysoo+++oosssyyhhhyo+//////////oddddddmNNm+::----:-:/+oooooooo++//////++os///
+%   dhdMMNMMMMMMMNMMMMMMMMNNNNNNNmNNNNNmNNNmmmmmhhhddddys+///::::::://+syddmdhy/::::/::/oddddddmNNmyso++++++/::---/oo++++++////+++++++
+%   hyyhysymMMMMMMMMMMMMMMNNNNNNNmNNNNmNNNNNmmmmdhhhhyo/////::------::://oydddmdo/////:/oddddddmNNNNmdhsoooo++++++++++ooooo++++++++//+
+%   -.:sso+sNNmmmNMMMMMMMMNNNNNNNNNNNNmNNNNmmmmmhhhyo+//////::------::::///+oshmNy/::://oddddddmNNNNNNmdhhhdyyo++++++ooooooo+++++++//+
+%   :-.oyyydy+/::+dMMMMMNMNNNNNNNNNNNNNNNNNNmmmmhhso+/////:::-----::////////+/shmmo::://+hdddddmNNNNNNmmdddmmmddhhyo++/////+++++++////
+%   ::::oydy+ohyo+oNMMMMNMNNNNNNNNNNNNNNNNNmmmmmhsso+/:::/++oo++++///////////+oyddd/:::/+hdddddmNNNNNNmmdddmmmdhddddhhysso+++/////////
+%   :-..-/+:ohmdddmNNmdmNNNNNNNNNNNNNNNNNNNmmmmmddmmhs+//oydddhho++//////////+osyhdh:://+ddddddmNNNNNNmmmdddddhyhddddddddddddds///////
+%   ````..-oyhsdmNo/+///+dNNNNNNNNNNNNNNNNNmmNNMMMNNNmdoyNMNNNmmNmh+++////++oosssshdysssyhdddddmNNNNNNmmmddddddhyhdddddddddddmdo//////
+%   `````../ssohmy-.-/::/ohmNNNNNNNNNNNNNNNmmNMMNNNNmms-sNNNNNNNmms///++++ossosyyyyhmmNNmddddddmmNNNNNmmmddddddddddddddmdmdddmms+/////
+%   ``````.s+yddy:--//:.-/:.+sdmNNNNNNNNNNNmmNNNNNMMNo.-/mmNNNNmdo--:://+oosssyhhyyymmdddddddddmNmNNNNmmmddddddddddddmmmmNdddmmho+////
+%   `-:::-..shd+::-/y/::/+/.--::+shmNNNNNNNmmmNmdmmdo..-:+hdmmmdyo/://++///:/+ossoyhmddhhhdddddmNmNNNNmmmdddddddddddmmddmmdddmmhso+///
+%   `-+++/-`-yo::+yyysoo+/:-.......-/sdmNNNmmmmddhyo/://::/+++++oo///////:--/o+syhshmddhhhdddddmmNNNNNmmmdddmmdddddmmddddddddmmho+++//
+%   -...--.`-s-/o.::---:/:--.+-`:-.``..+NNNmmmhyo+shyyhdhs/o+/::///////:-..-+oys+soymddhdddddddmNmNNNNmmmdddmmddddmmdddddddddmmho+++//
+%   so+:.```.::-:-:-...-:--./:./hhhs+-.yNNNmmmoyssohmy++/:-:o+////////::...-+ohs-//ddhhddddddddmNNNNNNmmmmddmmmmmmdddddddddddmmhooo+//
+%   s//++++::+/:s:-....-::.:/`:hhhdddsomNNNmmoohs/+yyo/--...:o+///////:-....:+/:::ydddhhdddddddmNNNNNNmmmmmmmmmmmddddddddddddmmho++++/
+%   /:----:/+oo/+y+:..:::-:o-:hddddmdohmNNNmd+oy+odmmdhhdds/-:///////:-.-....-:-:sdddddddddddddmNNNNNNmmmmmmmmmmdddddddddddddmmho+++//
+%   s/--..--.-://osssooo+::..odddmmms:`.omNmo/oosdmmmmdhhhhho:://///:--.---..-/sdddddddddddddddmNNNNNNmmmmmmmmmmddddddddddddddhys+++//
+%   +o/:--........-:/+oooo/:.../ohdy:.``.oms:-:/shsooo+////oo/-------..-.----/sdmddddddddddddddmNNNNNNmmmmmmmmmmdddddddddhyo/::ss+++//
+%   :oo+/:-..`..``...-:/oooo+/-...--`````:h/---/oo+////o+///++-......-...----sdmmddddddddddddddmNNNNNNmmmNNmmmmmddddhyo/:------oso+///
+%   ---------........:+o++++++++/:/ys-```-/:::///:----:/::::://:----.-....--/ddhhhhhhdddddddddddmmddhhyyyyyhhhhyso+/:--......../oo++/+
+%   ...-.----..-----/++ossssssso+///-.````.--//:--.-..---:/:/:::-......--.-+oos+/--....---::/+o+/:-----..-------------........./o+++++
+%   ----------------://++///-:/:::----.````.:::--:-..------:----..-..-:/++syyssss+/:..`...------...--..------------------------:o+++++
+%   ::::::::::::::------:://:::::-------.``-//:::/::::/::::::::://+/+ssyhhdddhyso++::-----::---.-----------::::::::::::::::::::/+o+++o
+%   ////////////:::::::::::---:----------``:sso////++/++///+ooosyyyhhddddddhso///:::-----------.--::-::::::::://///////////////++ooooo
+%   ++++++++++++//////////:--------::::--.`.:/+oosssoosysoyhhhhdddddhhyssso+/:----------------:--://::::://///++++++++++++++++++ooossy
+%   +++++++ooooo+o+ooooo+::----------:----``.--:/+osssyhhhyyyyysyso+++::::------:------------::--:/+/////+++++++++++++++++++++++ooosyy
+%   ++++++++oooooosssyys/:::-::::::::::---.``.....---::///////:::---------------------------------:oooooooooooo+++++++/////////++osyyh
+%   +++++++++ooosssyyhy+//::::/+++++/////:-``.-...............--.-.......-....----:::--------------+yyssssooooo+++++/////////+++++ooss
+%   +++oooooossyyyhddds+//:///osoosoo++++/:.``.-----..-.........-..............------::::::-:::----:ohhyyssoooo+++////////++o+++/::+oo
+%   soossssyhhddddmmdso+///+ossyyyssoo++o++:.``-:::------...-...............-.------:::::::::/::---:+yddhyysoo+++///////+ooo++//:--:/+
+%   hhhyyyhhdmmmmmmhyo++//+ossyyhhysooooooso:.`.://////:::-------.---.-.------://::::///////++//::::/+ymmdhysoo+++++++ossoo+++//:-.-/+
+%   hddddddmmmmmmmyso++/+osyyhhhyyysyyyssyoso/-..:/ooo+++/:/:---------:::::::::///////////+oooo+/::::/odmmmmdhyssossyyysoo++++sso.``:+
+%   hhdddmmmmmmmmhso+//+ssyyyhdhyyyyyssoosssoo+:..-:ossssooo+++++/::::://:::::::://///////+ooosoo//::/+ydmNmmmdddddhhysso+++sdhsso/:::
+%   hhdddmmmmmmmdo++/++sysyhyyhhyydhyyyssssoooo+:.`./oooosyhhyyssooo++++/++/+//++++++++++++osyyyyo+/:/+shmNmmNmmmmdhhysso++sdmdmh+-:::
+%   hhdddmmmmmmds++++osyssyyhhdhhyysooo++ooooooo+-``.://+++ooo+ooooooossooooo++oooosossssssssyyhyyso///ssdmmmmmmmmddhyysoosdhdmy:::::/
+%   hhdddddddddho+++ooyyssyyhhhyyo++++oooooooooo+/-``.://:://///+++++++++ooooooooossyhhhhyysssyyyssys//o+/:///++osssyyysosdhhmy:--:::/
+%   sssoo+++/////+++ssysssyyssso//+++o++++++++/////.``.::::::+o+//+////++oooooosoosssyyyyyyhhhyyyssss/-.`````````...--:::/osys:----::/
+%   --....``````..-/osyssysso+/++ooooo++++++++++//:-.``---/+/+++////+//++///+ooooosooooosyyhhyyyssss/.```````````````````````.....--:/
+%   ````````````````..-:/+++//+ooooo++++++++++//::::-.`.-:://o//::::///////////+ooooooooooosyo/:-..`````````````````````````````...-/s
+%   `````````````````````./++ooooooooso++////+::/::---.`.----/::/:-:::///+++//+///+o+++oooo++.```````````````````````````````````./o+/
+%   ````````````````````.-++oo++oooo+oo+///:/++//:---......--::-:----:::::///+///++++++ossoo+-``````````````````````````````````-oo/:/
+%   ````````````````````../+ooooooo+ossoo+////+/::---....---::-::-----:-:::///++//+soooosoo/-.````` `````````````````````````..+o/://:
+%   ``````````````````````.-/ossssssoooo++++/////::--....-::://-----:-:::://///+o++ooo++/::.``````` `` `````````````````````.:o+:::::/
+%   `````````````````````````..:+ossssooo+++////:::-....-:/++:+://::---:::/::////+++++:-.````  ````````````````````````````./s+:/:--:/
+%   ...`````````````````````````.--::::/++o+++////--....-::--...........-----.-..----.```````           ```````````````````/s+::...--:
+%   ..............````......`.``````````.-:-:+/:/+:.``...``````````````` `````                       ``       ````` ``````:so/-```....
+% \end{verbatim}
+% }
+% }

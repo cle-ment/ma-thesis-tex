@@ -29,11 +29,11 @@ The work was done in close collaboration with the Helsinki-based media and learn
 \subsection{Problem Statement}
 
 The problem addressed during with this thesis to better understand the structure of job advertisements. In particular job postings typically consist of several parts with a certain function or theme: Usually the company is introduced, the job is described with it's tasks and responsibilities, the requirements for the job are listed, then benefits and offerings by the company are named and the reader is asked to apply in a specified way he or she is interested.
-Almost all of the text\footnote{Only 4\% of the sentences collected for evaluating the final experiments in this thesis were sorted into the category \emph{other} while the rest falls into either of the categories described. This is described in more detail in Section }\todo{link section} of a job description falls into these categories and the task can thus be posed as predicting a category for each sentence in a job advertisement, that corresponds with this sentence belonging to one of the job ads' parts as described above.
+Almost all of the text of a job description falls into these categories\footnote{Only about 4\% of the sentences collected for evaluating the final experiments in this thesis were sorted into the category \emph{other} while the rest falls into either of the categories described. This is described in more detail in Section~\ref{subs:Multi-class Sentence Classification}} and the task can thus be posed as predicting a category for each sentence in a job advertisement, that corresponds with this sentence belonging to one of the job ads' parts as described above.
 This is a challenging problem in itself but can further be used to extract certain functional parts of each job ad, to study a possible correlation between structural patterns and the reach and success of an ad and so forth. The problem therefore can be labelled as \emph{Text Categorization} or \emph{Text Classification} as referred to in the scientific literature.
 
 
-\subsection{Motivation}
+\subsection{Need Statement and Motivation}
 
 % -- need statement
 
@@ -48,10 +48,12 @@ This was the company's initial motivation for this thesis project --- To explore
 
 % -- personal motivation
 
-From a personal perspective this work was interesting as offered many research possibilities while at the same time being relevant for a real business. Natural Language Processing and Computer Linguistics had always been of strong interest to me for the complex nature and yet high interpretability of problems and their proximity and relatedness to progress in universal machine intelligence. This presented me with the challenge position to balance pursuing research objectives and yet exploring potential business and user needs, learn on new fronts and deepen my knowledge in others as well as combining my experience in Product Development and Innovation, thus made for a great project to mark the competition of my studies as a Master's student.
+From a personal perspective this work was interesting as offered many research possibilities while at the same time being relevant for and inspired by real life applications. The complex nature of \gls{CL} with its proximity to the general study of machine intelligence and the high interpretability of problems makes poses makes it a fascinating problem domain. This presented a great challenge to learn balancing scientific research objectives and yet exploring potential business and user needs, learn on new fronts and deepen the knowledge in others and apply it to real data.
 
 \subsection{Related work}
 \label{sub:Related work}
+
+\todo{add unsupervised learning (LDA etc) or remove reference in exploration}
 
 The problem of \gls{TC}, also known as Text Categorization, is one of the various challenges in the thriving fields of \gls{CL} and \gls{NLP}. These areas of research have started out as theoretically challenging but rather marginally interesting fields between \gls{AI} and formal linguistics and have since exploded in terms of popularity with their applications being deployed currently at large scale to practically all kinds of consumer products such as smart phones and home entertainment systems as well as digital services like social networks or automatic translation engines and conversational agents, so-called chatbots.
 Today there are textbooks dedicated specifically to this area, such as~\cite{Manning:1999aa},~\cite{Jurafsky:2014aa} and~\cite{Clark:2013aa} There is also much overlap to the field of \gls{IR} that rose to popularity during the late 1980's due to the Internet starting to become a mainstream medium (see~\cite{Manning:2008aa},~\cite{Leskovec:2014aa} and the classic work by~\cite{Rijsbergen:1979aa}).
@@ -149,11 +151,7 @@ This thesis was initiated as a research project for Sanoma's recruitment platfor
 
 \blockquote{Find an application of data mining / machine learning to the customer-generated data on the recruitment platform Oikotie Työpaikat which has the potential of bringing value to the user of the platform and is technically feasible in the scope of a master’s thesis. Further define and investigate a research problem that is essential to this application by researching literature and previous work on similar problems trying different approaches based on the literature using the results and learnings to create an improved approach.}
 
-\todo{write this out}
-on the research side
-- define a good topic and scope
-- evaluate solutions to that problem scope to find the best possible way of solving it, i.e. try cutting edge methods
-- try to possibly built on ideas to adapt these methods for the problem to make them more effective or advance certain ideas
+In order to meet these objectives a predefined development process was applied that will be explained in the next section.
 
 \subsection{Methodological Approach}
 \label{sub:Methodological Approach}
@@ -165,7 +163,7 @@ on the research side
 \label{fig:double-diamond}
 \end{figure}
 
-The design and development process of the project was adapted from the double diamond approach that was developed by the by the British Design Council in 2005 (see ~\cite{Council:2007aa}). A design process is \textquote{the specific series of events, actions or methods by which a procedure or set of procedures are followed, in order to achieve an intended purpose, goal or outcome.}~\cite{Best:2006aa}.
+The development process of the project was adapted from the double diamond design process developed by the by the British Design Council in 2005 (see ~\cite{Council:2007aa}). A design process is \textquote{the specific series of events, actions or methods by which a procedure or set of procedures are followed, in order to achieve an intended purpose, goal or outcome.}~\cite{Best:2006aa}.
 
 \paragraph{Discover}
 \label{par:Discover}
