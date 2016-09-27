@@ -1,6 +1,6 @@
 \glossaryentry{API?\glossentry{API}|glsseeformat[Glossary:]{gls-API}}{Z}
-\glossaryentry{LDA?\glossentry{LDA}|glsseeformat[Glossary:]{Latent Dirichlet Allocation}}{Z}
-\glossaryentry{REST?\glossentry{REST}|glsseeformat[Glossary:]{Representational state transfer}}{Z}
+\glossaryentry{LDA?\glossentry{LDA}|glsseeformat[Glossary:]{gls-LDA}}{Z}
+\glossaryentry{REST?\glossentry{REST}|glsseeformat[Glossary:]{gls-REST}}{Z}
 \glossaryentry{kNN?\glossentry{kNN}|glsseeformat[Glossary:]{k Nearest Neighbors}}{Z}
 \glossaryentry{MCC?\glossentry{MCC}|glsseeformat[Glossary:]{MCC}}{Z}
 \glossaryentry{CNN?\glossentry{CNN}|glsseeformat[Glossary:]{Convolutional Neural Network}}{Z}
@@ -75,9 +75,7 @@
 \glossaryentry{NLP?\glossentry{NLP}|setentrycounter[]{page}\glsnumberformat}{60}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{61}
 \glossaryentry{MCC?\glossentry{MCC}|setentrycounter[]{page}\glsnumberformat}{61}
+\glossaryentry{API?\glossentry{API}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{LDA?\glossentry{LDA}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{REST?\glossentry{REST}|setentrycounter[]{page}\glsnumberformat}{69}
 \glossaryentry{LDA?\glossentry{LDA}|setentrycounter[]{page}\glsnumberformat}{74}
-\glossaryentry{API?\glossentry{API}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{LDA?\glossentry{LDA}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{REST?\glossentry{REST}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{FFE?\glossentry{ffe}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{JSON?\glossentry{JSON}|setentrycounter[]{page}\glsignore}{82}

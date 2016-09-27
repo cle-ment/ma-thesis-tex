@@ -51,21 +51,21 @@
 % reset entries at the start of each chapter
 % \preto\chapter{\glsresetall}
 
-% \usepackage{xparse}
-% \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
-%   \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3}},
-%     description={#6},#1
-%   }
-%   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
-% }
-
 \usepackage{xparse}
 \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
-  \newglossaryentry{gls-#3}{name={#5},text={#5},
+  \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3}},
     description={#6},#1
   }
-  \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5}
+  \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
 }
+
+% \usepackage{xparse}
+% \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
+%   \newglossaryentry{gls-#3}{name={#5},text={#5},
+%     description={#6},#1
+%   }
+%   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5}
+% }
 
 % \usepackage{xparse}
 % \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {

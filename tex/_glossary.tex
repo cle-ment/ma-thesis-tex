@@ -1,15 +1,20 @@
 % !TEX root = ../thesis.tex
 % !TEX spellcheck = en-US
 
+% EXAMPLE:
+
+% \newdualentry{API} % label
+%   {API}            % abbreviation
+%   {Application Programming Interface}  % long form
+%   {An Application Programming Interface (API) ...} % description
+
+
 % A
 
-\newdualentry{API} % label
+\newdualentry{API}
   {API}            % abbreviation
   {Application Programming Interface}  % long form
   {An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API.} % description
-
-% \newglossaryentry{Application Programming Interface}{name={Application Programming Interface}, description={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API}}
-% \newacronym[see={[Glossary:]{Application Programming Interface}}]{API}{API}{Application Programming Interface\glsadd{Application Programming Interface}}
 
 % B
 
@@ -39,10 +44,11 @@
 
 % L
 
-\newglossaryentry{Lloyds Algorithm}{name={Lloyds Algorithm}, description={Lloyd's algorithm, introduced by~\cite{Lloyd:1982aa}, is an method for the tackling the K-means clustering problem, i.e. to partition an input space by finding cluster centroids representing the mean of each cluster's points so that each point belongs to the cluster whose centroid is closest.}}
+\newdualentry{LDA}
+  {LDA}
+  {Latent Dirichlet Allocation}
+  {Latent Dirichlet Allocation is a popular algorithm for \gls{Topic Modeling} proposed by~\cite{Blei:2003aa}. Conceptually it assumes that a document is generated first sampling a set of topics from a distribution of topics and then sampling words from each of these topics distributions of words. Learning topics from documents can then be achieved by figuratively inverting this process and inferring topics from the distributions of words under the same assumption how the document was generated.}
 
-\newglossaryentry{Latent Dirichlet Allocation}{name={Latent Dirichlet Allocation}, description={Latent Dirichlet Allocation is a popular algorithm for \gls{Topic Modeling} proposed by~\cite{Blei:2003aa}. Conceptually it assumes that a document is generated first sampling a set of topics from a distribution of topics and then sampling words from each of these topics distributions of words. Learning topics from documents can then be achieved by figuratively inverting this process and inferring topics from the distributions of words under the same assumption how the document was generated.}}
-\newacronym[see={[Glossary:]{Latent Dirichlet Allocation}}]{LDA}{LDA}{Latent Dirichlet Allocation}
 
 % M
 
@@ -56,14 +62,20 @@
 
 % R
 
-\newglossaryentry{Representational state transfer}{name={Representational state transfer (REST)}, description={\textquote{Representational state transfer (REST) is an architectural style used for web development. [\ldots] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url{https://en.wikipedia.org/wiki/Representational_state_transfer}}}
-\newacronym[see={[Glossary:]{Representational state transfer}}]{REST}{REST}{Representational state transfer\glsadd{Representational state transfer}}
+\newdualentry{REST}
+  {REST}
+  {Representational state transfer}
+  {\textquote{Representational state transfer (REST) is an architectural style used for web development. [\ldots] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url{https://en.wikipedia.org/wiki/Representational_state_transfer}}
 
 % S
+
+\newglossaryentry{Supervised Learning}{name={Supervised Learning}, description={Supervised Learning refers to a set of \gls{Machine Learning} problems where a \gls{Ground Truth} is given. That means given a set of tuples $(x_i, t_i)$ where $x_i$ are data points and $t_i$ are targets or labels to an algorithm to predict the targets $t_k$ for unseen data $x_k$.}}
 
 % T
 
 \newglossaryentry{Topic Modeling}{name={Topic Modeling}, description={Topic Modeling refers to the research problem of identifying the prevalent topics for a set of documents. This problem is usually in terms of \gls{Unsupervised Learning} since topic \gls{Ground Truth} exists beforehand. A popular algorithm for Topic Modeling is \acrshort{LDA}.}}
+
+% \newglossaryentry{Test Data}{name={Test Data}, description={}}
 
 
 % U
@@ -87,7 +99,7 @@
 
 
 
-\newglossaryentry{Supervised Learning}{name={Supervised Learning}, description={TODO}}
+
 
 \newglossaryentry{Unsupervised Learning}{name={Unsupervised Learning}, description={TODO}}
 

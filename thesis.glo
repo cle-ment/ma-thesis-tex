@@ -56,32 +56,19 @@
 \glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{58}
 \glossaryentry{Grid Search?\glossentry{Grid Search}|setentrycounter[]{page}\glsnumberformat}{60}
 \glossaryentry{Neural Networks (ANN)?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{Application Programming Interface?\glossentry{gls-API}|setentrycounter[]{page}\glsnumberformat}{69}
 \glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsnumberformat}{69}
 \glossaryentry{$k$-Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsnumberformat}{69}
-\glossaryentry{Representational state transfer (REST)?\glossentry{Representational state transfer}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{Latent Dirichlet Allocation?\glossentry{gls-LDA}|setentrycounter[]{page}\glsnumberformat}{69}
+\glossaryentry{Representational state transfer?\glossentry{gls-REST}|setentrycounter[]{page}\glsnumberformat}{69}
 \glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{Gold Standard?\glossentry{Gold Standard}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{Supervised Learning?\glossentry{Supervised Learning}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{Topic Modeling?\glossentry{Topic Modeling}|setentrycounter[]{page}\glsnumberformat}{72}
+\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{74}
 \glossaryentry{Unsupervised Learning?\glossentry{Unsupervised Learning}|setentrycounter[]{page}\glsnumberformat}{74}
 \glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{74}
-\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{77}
-\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{78}
-\glossaryentry{Application Programming Interface?\glossentry{gls-API}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Latent Dirichlet Allocation?\glossentry{Latent Dirichlet Allocation}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Representational state transfer (REST)?\glossentry{Representational state transfer}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{$k$-Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Matthews correlation coefficient?\glossentry{Matthews correlation coefficient}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Recurrent Neural Network (CNN)?\glossentry{Recurrent Neural Network}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Convolutional Neural Network (CNN)?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Graphical Processing Unit (GPU)?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Natural Language Toolkit (NLTK)?\glossentry{Natural Language Toolkit}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Fuzzy Front End?\glossentry{ffeg}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Feature Selection?\glossentry{Feature Selection}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Click-through rate?\glossentry{click-through rate}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{page views?\glossentry{page views}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsignore}{82}
-\glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsignore}{82}
+\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{76}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{77}
