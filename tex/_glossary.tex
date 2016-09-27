@@ -1,32 +1,99 @@
 % !TEX root = ../thesis.tex
 % !TEX spellcheck = en-US
 
-% EXAMPLE:
-
-% \newdualentry{API} % label
-%   {API}            % abbreviation
-%   {Application Programming Interface}  % long form
+% \newdualentry{API}
+%   {API}
+%   {Application Programming Interface}
 %   {An Application Programming Interface (API) ...} % description
 
 
 % A
 
+\newdualentry{AI}
+  {AI}
+  {Artificial intelligence}
+  {\textquote{Artificial intelligence is intelligence exhibited by machines. In computer science, an ideal intelligent machine is a flexible rational agent that perceives its environment and takes actions that maximize its chance of success at some goal. Colloquially, the term artificial intelligence is applied when a machine mimics cognitive functions that humans associate with other human minds, such as learning and problem solving. As machines become increasingly capable, facilities once thought to require intelligence are removed from the definition. For example, optical character recognition is no longer perceived as an exemplar of artificial intelligence having become a routine technology.} Source: \url{https://en.wikipedia.org/wiki/Artificial_intelligence}} % description
+
 \newdualentry{API}
-  {API}            % abbreviation
-  {Application Programming Interface}  % long form
+  {API}
+  {Application Programming Interface}
   {An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API.} % description
+
+\newglossaryentry{Amazon Mechanical Turk}{name={Amazon Mechanical Turk}, description={\textquote{Amazon Mechanical Turk (MTurk) is a crowdsourcing Internet marketplace enabling individuals and businesses (known as Requesters) to coordinate the use of human intelligence to perform tasks that computers are currently unable to do}. Source: \url{https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk}. See also \gls{Mikrotasking}.}}
 
 % B
 
+\newglossaryentry{Boosting}{name={Boosting}, description={\textquote{Boosting is a machine learning ensemble meta-algorithm for primarily reducing bias, and also variance[1] in supervised learning, and a family of machine learning algorithms which convert weak learners to strong ones.} Source: \url{https://en.wikipedia.org/wiki/Boosting_(machine_learning)}}}
+
+\newglossaryentry{Bagging}{name={Bagging}, description={\textquote{Bootstrap aggregating, also called bagging, is a machine learning ensemble meta-algorithm designed to improve the stability and accuracy of machine learning algorithms used in statistical classification and regression. It also reduces variance and helps to avoid overfitting.} Source: \url{https://en.wikipedia.org/wiki/Bootstrap_aggregating}}}
+
+\newglossaryentry{Beautiful Soup}{name={Beautiful Soup},
+    description={Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. See \url{https://www.crummy.com/software/BeautifulSoup/}}}
+
 % C
+
+\newglossaryentry{Click-through rate}{name={Click-through rate}, description={\textquote{Click-through rate (CTR) is the ratio of users who click on a specific link to the number of total users who view a page, email, or advertisement. It is commonly used to measure the success of an online advertising campaign for a particular website as well as the effectiveness of email campaigns.} Source: \url{https://en.wikipedia.org/wiki/Click-through_rate}}}
+
+\newglossaryentry{Confusion Matrix}{name={Confusion Matrix},
+    description={A Confusion Matrix, sometimes referred to as \gls{Error Matrix}, is a table listing the expected versus actual results of a classification algorithm for each class. It is often visualized to understand the behaviour of an algorithm.}}
+
+\newdualentry{CL}
+  {CL}
+  {Computational Linguistics}
+  {Computational Linguistics is \textquote{the scientific study of language from a computational perspective. Computational linguists are interested in providing computational models of various kinds of linguistic phenomena.} Source: \url{http://www.aclweb.org/archive/misc/what.html}} % description
+
+\newdualentry{CNN}
+  {CNN}
+  {Convolutional Neural Network}
+  {A Convolutional Neural Network is a specific \gls{Neural Network} architecture which enable the network to potentially be more invariant to certain transformations of patterns in the data. Specifically it is often used in Computer Vision tasks where it can learn patterns invariantly of their rotation and positon in a picture. For more information refer e.g. to~\cite{Bengio:2015aa}} % description
+
+\newdualentry{CV}
+  {CV}
+  {Cross-Validation}
+  {In order to validate or evaluate a machine learning model Cross-Validation is an effictive technique. The data is split into $k$ parts, so-called folds, and then $k$ times on of these folds is used as the \gls{Test Set} or \gls{Validation Set} while the other folds together form the \gls{Training Set}.} % description
+
+  \newglossaryentry{Crowdsourcing}{name={Crowdsourcing},
+      description={\textquote{Crowdsourcing is the process of obtaining needed services, ideas, or content by soliciting contributions from a large group of people, especially an online community, rather than from employees or suppliers.} Source: \url{https://en.wikipedia.org/wiki/Crowdsourcing}. See also \gls{Mikrotasking}}}
+
+  \newglossaryentry{CrowdFlower}{name={CrowdFlower},
+      description={\textquote{CrowdFlower is a data enrichment, data mining and crowdsourcing company based in the Mission District of San Francisco, California. The company's software as a service platform allows users to access an online workforce of millions of people to clean, label and enrich data. CrowdFlower is typically used by data scientists at academic institutions, start-ups and large enterprises.} Source \url{https://en.wikipedia.org/wiki/CrowdFlower}. See \url{https://www.crowdflower.com} for the company's official website.}}
 
 % D
 
+\newglossaryentry{Deep Learning}{name={Deep Learning},
+    description={Deep Learning is a sub-field of \gls{Machine Learning} which is related to \gls{Representation Learning}. In particular models are used which can learn several layers of representations of patterns in data at increasing level of abstraction. Many of such methods use \gls{Neural Network} approaches and recently the field has gained much interest as with enough computational resources and amounts of data state-of-the-art results are being achieved in many application domains. See~\cite{Bengio:2015aa}} for an in-depth coverage.}
+
+\newglossaryentry{Dimensionality Reduction}{name={Dimensionality Reduction}, description={Dimensionality Reduction is the problem of reducing the dimensionality of a vector space and thus transforming the data in this space to a lower dimensionality, while aiming to retain as much of the contained information as possible. See e.g.~\cite[Chapter 6, p.~105]{Alpaydin:2014aa}.}}
+
 % E
+
+\newglossaryentry{Ensemble Method}{name={Ensemble Method}, plural={Ensemble Methods}, description={Ensemble Methods are approaches to combine the predictions of several learning models. See Section~\ref{subs:Ensemble Methods} for a brief introduction.}}
+
+\newglossaryentry{Error Matrix}{name={Error Matrix},
+    description={See \gls{Confusion Matrix}}}
 
 % F
 
+\newglossaryentry{Feature Selection}{name={Feature Selection}, description={Feature Selection refers to a reduction of features that are fed into a learning algorithm based on a criterion that helps to remove redundancies or irrelevant features and decrease the input size.}}
+
+\newglossaryentry{Feature Extraction}{name={Feature Extraction}, description={Feature Extraction is a way to generate a more succint feature representation given the features that are used as input for a learning algorithm and as such is strongly related to \gls{Dimensionality Reduction}.}}
+
+\newdualentry{FFE}
+  {FFE}
+  {Fuzzy Front End}
+  {Fuzzy Front End refers to the early exploration phase in a design process (see e.g.~\cite{Council:2007aa})} % description
+
 % G
+
+\newglossaryentry{Google Docs}{name={Google Docs}, description={\textquote{Google Docs, Google Sheets and Google Slides are a word processor, a spreadsheet and a presentation program respectively, all part of a free, web-based software office suite offered by Google within its Google Drive service. The suite allows users to create and edit documents online while collaborating with other users in real-time.} Source: \url{https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides}}}
+
+\newglossaryentry{GitHub}{name={GitHub},
+    description={\textquote{GitHub is a web-based Git repository hosting service. It offers all of the distributed version control and source code management (SCM) functionality of Git as well as adding its own features. It provides access control and several collaboration features such as bug tracking, feature requests, task management, and wikis for every project.} Source: \url{https://en.wikipedia.org/wiki/GitHub}}}
+
+\newdualentry{GPU}
+  {GPU}
+  {Graphical Processing Unit}
+  {{A graphics processing unit (GPU) [\ldots] is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display. [\ldots] Modern GPUs are very efficient at manipulating computer graphics and image processing, and their highly parallel structure makes them more efficient than general-purpose CPUs for algorithms where the processing of large blocks of data is done in parallel.} Source: \url{https://en.wikipedia.org/wiki/Graphics_processing_unit}} % description
 
 \newglossaryentry{Grid Search}{name={Grid Search}, description={Grid Search describes the systematic exhaustive search over a space of hyper-parameters. Usually this is combined with \gls{Cross-Validation} in order to test each hyper-parameter combination within reasonable bounds to find the best configuration for a given model or algorithm.}}
 
@@ -38,49 +105,161 @@
 
 % I
 
+\newdualentry{IR}
+  {IR}
+  {Information Retrieval}
+  {Information Retrieval is the problem of retrieving relevant information from a often humongous collection of possible resources. For more information on the subject see e.g.~\cite{Rijsbergen:1979aa} and~\cite{Manning:2008aa}} % description
+
 % J
+
+\newdualentry{JSON}
+  {JSON}
+  {JavaScript Object Notation}
+  {\textquote{JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.} Source: \url{http://www.json.org}} % description
 
 % K
 
+\newdualentry{kNN}
+  {kNN}
+  {k Nearest Neighbors}
+  {The $k$-Nearest Neighbors algorithm is a non-parametric method for classification or regression tasks. See Section~\ref{subs:Instance-based Methods}} % description
+
+\newglossaryentry{K-means Clustering}{name={K-means Clustering}, description={K-means Clustering is the problem to find clusters by partitioning a euclidean space to finding $k$ cluster centroids which  are the mean of the points beloning to each cluster.}}
+
 % L
+
+\newglossaryentry{Lloyds Algorithm}{name={Lloyds Algorithm}, description={Lloyd's algorithm, introduced by~\cite{Lloyd:1982aa}, is an method for the tackling the \gls{K-means Clustering} problem. See \gls{K-means Clustering}.}}
 
 \newdualentry{LDA}
   {LDA}
   {Latent Dirichlet Allocation}
   {Latent Dirichlet Allocation is a popular algorithm for \gls{Topic Modeling} proposed by~\cite{Blei:2003aa}. Conceptually it assumes that a document is generated first sampling a set of topics from a distribution of topics and then sampling words from each of these topics distributions of words. Learning topics from documents can then be achieved by figuratively inverting this process and inferring topics from the distributions of words under the same assumption how the document was generated.}
 
+\newglossaryentry{langdetect}{name={langdetect},
+    description={langdetect is a language detection library ported from Google's tool \emph{language-detection} (\url{https://code.google.com/p/language-detection/}). See \url{https://pypi.python.org/pypi/langdetect}}}
 
 % M
 
+\newglossaryentry{MongoDB}{name={MongoDB},
+    description={\textquote{MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. [\ldots].} Source: \url{https://en.wikipedia.org/wiki/MongoDB}, Website: \url{https://www.mongodb.com}}}
+
+\newdualentry{ML}
+  {ML}
+  {Machine Learning}
+  {Machine Learning is a discipline that aims to design algorithms which can adapt to and generalize from data, using a performance criterion to optimize their performance. For an in-depth introduction into the topic see e.g.~\cite{Murphy:2012aa},~\cite{Bishop:2006aa} or~\cite{Alpaydin:2014aa}} % description
+
+\newdualentry{MCC}
+  {MCC}
+  {Matthews Correlation Coefficient}
+  {Matthews Correlation Coefficient is an unbiased correlation score which can be used to evaluate the performance of a supervised learning algorithm. This score is covered in detail in Section~\ref{par:Informedness, Markedness and Matthews Correlation Coefficient}.} % description
+
+\newglossaryentry{Mikrotasking}{name={Mikrotasking}, description={\textquote{Microtasking is the process of splitting a job into its component microwork and distributing this work over the Internet. Since the inception of microwork, many online services have been developed that specialize in different types of microtasking. Most of them rely on a large, voluntary workforce composed of Internet users from around the world.} Source: \url{https://en.wikipedia.org/wiki/Microwork}}}
+
+\newglossaryentry{Mustache}{name={Mustache},
+    description={\textquote{Mustache is a simple web template system.} Source: \url{https://en.wikipedia.org/wiki/Mustache_(template_system)}, Website: \url{https://mustache.github.io}}}
+
+
+\newglossaryentry{Multi-Class Classification}{name={Multi-Class Classification}, description={Multi-Class Classification refers to the task of assigning data points with classes. As opposed to \gls{Multi-Label Classification} each data point can only be assigned one class, meaning that classes are assumed to be non-overlapping.}}
+
+\newglossaryentry{Multi-Label Classification}{name={Multi-Label Classification}, description={Multi-Label Classification is the problem of assigning data points with an one or more classes. This is sometimes also referred to as tagging as the several classes can be assigned to one data point, contrary to \gls{Multi-Class Classification}}}
+
 % N
+
+\newglossaryentry{Node.js}{name={Node.js},
+    description={\textquote{Node.js is an open-source, cross-platform runtime environment for developing server-side Web applications.} Source: \url{https://en.wikipedia.org/wiki/Node.js} \url{https://nodejs.org/}}}
+
+\newdualentry{NN}
+  {NN}
+  {Neural Network}
+  {A Neural Network, also referred to as Artificial Neural Network, is a learning algorithm inspired by ideas from Neuro-biology on information processing in the brain. It consists of chained function compositions and learns by adapting the weights in these compositions to reduce error. See~\ref{subs:Neural Networks} for an introduction to the technique.}
+
+\newdualentry{NLP}
+  {NLP}
+  {Natural Language Processing}
+  {\textquote{Natural language processing (NLP) is a field of computer science, artificial intelligence, and computational linguistics concerned with the interactions between computers and human (natural) languages. As such, NLP is related to the area of human–computer interaction. Many challenges in NLP involve: natural language understanding, enabling computers to derive meaning from human or natural language input; and others involve natural language generation.} Source: \url{https://en.wikipedia.org/wiki/Natural_language_processing}}
+
+\newdualentry{NLTK}
+  {NLTK}
+  {Natural Language Toolkit}
+  {\textquote{NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning and wrappers for industrial-strength NLP libraries.} Source: \url{http://www.nltk.org}}
 
 % O
 
+\newglossaryentry{Oikotie Tyopaikat}{name={Oikotie Työpaikat},
+    description={Oikotie Työpaikat is a recruitment platform offered by \gls{Sanoma} which offers companies the possibilty to post publicly job advertisments for open positions and much more. See \url{https://tyopaikat.oikotie.fi}.}}
+
 % P
+
+\newdualentry{PCA}
+  {PCA}
+  {Principal Components Analysis}
+  {Principal Components Analysis is a \gls{Dimensionality Reduction} technique. It transforms data into a lower-dimentional space by projecting it onto a lower-dimensional orthogonal basis that is aligned with the highest variance in the data. It is thus often used for data exploration and visualization. See e.g.~\cite{Alpaydin:2014aa} for a treatment of this method.}
+
+\newglossaryentry{Page view}{name={Page view}, plural={Page views}, description={A Page view is the event of a visitor requesting to load a document or site from a web service. The amount of Page views for a site is thus often used as a measure of popularity.}}
 
 % Q
 
 % R
 
+\newglossaryentry{Randomized Algorithm}{name={Randomized Algorithm}, plural={Randomized Algorithms}, description={Randomized algorithms are algorithms that use randomness as part of their logic. Often this is used to trade algorithmic space and time complexity for accuracy in results, using approximations to achieve faster run-time or less space usage.}}
+
+\newglossaryentry{Representation Learning}{name={Representation Learning},
+    description={Representation Learning is the problem of \textquote{learning representations of the data that make it easier to extract useful information when building classifiers or other predictors}~\cite{Bengio:2013aa}. Often seen as opposed to so-called feature engineering where domain knowledge is used to create a good representation of data for a model to learn, the focus of representation learning is to extract the representation with a data-driven approach by exploiting and finding regularities in the data. See the mentioned paper or~\cite{Bengio:2015aa} for a coverage of the topic.}}
+
+\newdualentry{RNN}
+  {RNN}
+  {Recurrent Neural Network}
+  {A Recurrent Neural Network is a type of \gls{Neural Network} model with feedback loops built in, making it well suitable to model temporal and sequential patterns. See~\ref{subs:Recurrent Neural Networks} for more information.}
+
 \newdualentry{REST}
   {REST}
-  {Representational state transfer}
-  {\textquote{Representational state transfer (REST) is an architectural style used for web development. [\ldots] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url{https://en.wikipedia.org/wiki/Representational_state_transfer}}
+  {Representational State Transfer}
+  {\textquote{Representational State Transfer (REST) is an architectural style used for web development. [\ldots] RESTful systems typically, but not always, communicate over Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web pages and to send data to remote servers.} Source: \url{https://en.wikipedia.org/wiki/Representational_state_transfer}}
 
 % S
 
+\newdualentry{SVM}
+  {SVM}
+  {Support Vector Machine}
+  {Support Vector Machine refers to a popular kernel-based learning algorithm and is described in detail in Section~\ref{subs:Kernel Methods}.} % description
+
+\newglossaryentry{Sanoma}{name={Sanoma},
+    description={\textquote{Sanoma Corporation (Finnish: Sanoma Oyj, formerly SanomaWSOY) is a leading media group in the Nordic countries with operations in over 10 European countries, based in Helsinki. The group is also among the top five European magazine publishers and has a strong position in Finland as well as in Belgium, Croatia, the Czech Republic, Denmark, Estonia, Hungary, Latvia, Lithuania, the Netherlands, Russia, Serbia, Slovakia, and (until 2015) in Ukraine.} Source: \url{https://en.wikipedia.org/wiki/Sanoma}. See \url{http://www.sanoma.com}}}
+
+\newglossaryentry{Silhouette Score}{name={Silhouette Score}, description={\textquote{Silhouette refers to a method of interpretation and validation of consistency within clusters of data. The technique provides a succinct graphical representation of how well each object lies within its cluster. It was first described by Peter J. Rousseeuw in 1986.} Source: \url{https://en.wikipedia.org/wiki/Silhouette_(clustering)}. See~\cite{Rousseeuw:1987aa}}}
+
 \newglossaryentry{Supervised Learning}{name={Supervised Learning}, description={Supervised Learning refers to a set of \gls{Machine Learning} problems where a \gls{Ground Truth} is given. That means given a set of tuples $(x_i, t_i)$ where $x_i$ are data points and $t_i$ are targets or labels to an algorithm to predict the targets $t_k$ for unseen data $x_k$.}}
+
+\newglossaryentry{scikit-learn}{name={scikit-learn}, description={\textquote{Scikit-learn is a Python module integrating a wide range of state-of-the-art machine learning algorithms for medium-scale supervised and unsupervised problems. This package focuses on bringing machine learning to non-specialists using a general-purpose high-level language. Emphasis is put on ease of use, performance, documentation, and API consistency. It has minimal dependencies and is distributed under the simplified BSD license, encouraging its use in both academic and commercial settings. Source code, binaries, and documentation can be downloaded from http://scikit-learn.sourceforge.net.}~\cite{Pedregosa:2011aa}}}
 
 % T
 
+\newdualentry{t-SNE}
+  {t-SNE}
+  {t-Distributed Stochastic Neighbor Embedding}
+  {t-Distributed Stochastic Neighbor Embedding (t-SNE) is a technique for dimensionality reduction that is particularly well suited for the visualization of high-dimensional datasets. For more information visit the authors information website (\url{https://lvdmaaten.github.io/tsne/}) and see the introductory publication (\cite{Maaten:2008aa})}
+
+\newdualentry{TC}
+  {TC}
+  {Text Classification}
+  {Text Classification refers to the problem of assiging classes or categories to text sections or documents. A good review of the field is given in~\cite{Sebastiani:2002aa} and Section~\ref{subs:Context: Definition of Text Classification} gives a formal definition.}
+
+\newglossaryentry{Test Set}{name={Test Set}, description={In \gls{Supervised Learning} the Test Set is the part of the data used for a final evaluation of a model as opposed to the \gls{Training Set} that is used for training it and the \gls{Validation Set} used for tuning the algorithm. }}
+
 \newglossaryentry{Topic Modeling}{name={Topic Modeling}, description={Topic Modeling refers to the research problem of identifying the prevalent topics for a set of documents. This problem is usually in terms of \gls{Unsupervised Learning} since topic \gls{Ground Truth} exists beforehand. A popular algorithm for Topic Modeling is \acrshort{LDA}.}}
 
-% \newglossaryentry{Test Data}{name={Test Data}, description={}}
-
+\newglossaryentry{Training Set}{name={Training Set}, description={The Training Set is the portion of the data in \gls{Supervised Learning} which is used to train a model. After training the model can then be tested on the \gls{Test Set} for a final evaluation of its performance.}}
 
 % U
 
+\newglossaryentry{Unsupervised Learning}{name={Unsupervised Learning}, description={Unsupervised Learning is the study of algorithms and data modeling techniques to discover and extract patterns in the data. Contrary to \gls{Supervised Learning} no \gls{Ground Truth} is given which the algorithm tries to approximate and so rather aims to reveal structure in the data under modeling assumptions.}}
+
 % V
+
+\newglossaryentry{Voting}{name={Voting}, description={Voting is an \gls{Ensemble Method} where the predictions of several models are combined, e.g. using weighted averaging, to form a common prediction. See \gls{Ensemble Method}}}
+
+\newglossaryentry{Validation Set}{name={Validation Set},
+    description={When tuning the hyper-parameters of a learning algorithm often the data is split up into a \gls{Training Set} used to train the algorithm, a \gls{Validation Set} used to test different configurations and variations of the model and a \gls{Test Set} to perform the final evaluation. }}
 
 % W
 
@@ -89,196 +268,3 @@
 % Y
 
 % Z
-
-
-
-
-
-
-
-
-
-
-
-
-\newglossaryentry{Unsupervised Learning}{name={Unsupervised Learning}, description={TODO}}
-
-\newglossaryentry{Amazon Mechanical Turk}{name={Amazon Mechanical Turk}, description={TODO}}
-
-\newglossaryentry{scikit-learn}{name={scikit-learn}, description={TODO}}
-
-\newglossaryentry{mikro-tasking}{name={Mikro-tasking}, description={TODO}}
-
-\newglossaryentry{K-means clustering}{name={K-means clustering}, description={TODO}}
-
-\newglossaryentry{silhouette score}{name={silhouette score}, description={TODO}}
-
-\newacronym[see={[Glossary:]{k Nearest Neighbors}}]{kNN}{kNN}{k Nearest Neighbors\glsadd{k Nearest Neighbors}}
-
-
-\newglossaryentry{k Nearest Neighbors}{name={$k$-Nearest Neighbors},
-    description={The $k$-Nearest Neighbors algorithm is a non-parametric method for classification or regression tasks. See Section~\ref{subs:Instance-based Methods}}}
-
-
-
-\newglossaryentry{MCC}{type=\acronymtype, name={MCC}, description={}, first={Matthews correlation coefficient (MCC)\glsadd{Matthews correlation coefficient}}, see=[Glossary:]{MCC}}
-
-
-\newglossaryentry{Matthews correlation coefficient}{name={Matthews correlation coefficient},
-    description={TODO}}
-
-\newglossaryentry{CNN}{type=\acronymtype, name={CNN}, description={Convolutional Neural Network}, plural={Convolutional Neural Networks (CNN's)}, first={Convolutional Neural Network (CNN)\glsadd{Convolutional Neural Network}}, see=[Glossary:]{Convolutional Neural Network}}
-
-\newglossaryentry{RNN}{type=\acronymtype, name={RNN}, description={Recurrent Neural Network}, plural={Recurrent Neural Networks (CNN's)}, first={Recurrent Neural Network (CNN)\glsadd{Recurrent Neural Network}}, see=[Glossary:]{Recurrent Neural Network}}
-
-\newglossaryentry{Recurrent Neural Network}{name={Recurrent Neural Network (CNN)},
-description={todo}}
-
-\newglossaryentry{Convolutional Neural Network}{name={Convolutional Neural Network (CNN)},
-description={todo}}
-
-\newglossaryentry{NN}{type=\acronymtype, name={NN}, description={Neural Network}, plural={Neural Networks}, first={Neural Network (ANN)\glsadd{Neural Network}}, see=[Glossary:]{Neural Network}}
-
-
-\newglossaryentry{Neural Network}{name={Neural Networks (ANN)},
-description={or Artificial Neural Network (NN), a learning algorithm inspired by the \todo{finish}. See Section~\ref{par:K Nearest Neighbors}}}
-
-\newglossaryentry{GPU}{type=\acronymtype, name={GPU}, description={Graphical Processing Unit}, plural={Graphical Processing Units}, see=[Glossary:]{Graphical Processing Unit}}
-
-\newglossaryentry{Graphical Processing Unit}{name={Graphical Processing Unit (GPU)},
-description={TODO}}
-
-\newglossaryentry{CL}{type=\acronymtype, name={CL}, description={Computational Linguistics}, first={Computational Linguistics (CL)}} % glossary entry??
-
-\newglossaryentry{NLP}{type=\acronymtype, name={NLP}, description={Natural Language Processing}, first={Natural Language Processing (NLP)}} % glossary entry??
-
-\newglossaryentry{AI}{type=\acronymtype, name={AI}, description={Artificial Intelligence}, first={Artificial Intelligence (AI)}} % glossary entry??
-
-\newglossaryentry{ML}{type=\acronymtype, name={ML}, description={Machine Learning}, first={Machine Learning (ML)}}
-
-\newglossaryentry{Machine Learning}{name={Machine Learning},
-description={TODO}}
-
-\newglossaryentry{Cross-Validation}{name={Cross-Validation},
-description={TODO}}
-
-\newglossaryentry{IR}{type=\acronymtype, name={IR}, description={Information Retrieval}, first={Information Retrieval (IR)}} % glossary entry??
-
-\newglossaryentry{TC}{type=\acronymtype, name={TC}, description={Text Classification}, first={Text Classification (TC)}} % glossary entry??
-
-\newglossaryentry{NLTK}{type=\acronymtype, name={NLTK}, description={Natural Language Toolkit}, first={Natural Language Toolkit (NLTK)\glsadd{Natural Language Toolkit}}, see=[Glossary:]{Natural Language Toolkit}}
-
-\newglossaryentry{Natural Language Toolkit}{name={Natural Language Toolkit (NLTK)}, description={``NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning and wrappers for industrial-strength NLP libraries.'' See \url{http://www.nltk.org}}}
-
-\newglossaryentry{langdetect}{name={langdetect},
-    description={Language detection library ported from Google's language-detection (\url{https://code.google.com/p/language-detection/}). See \url{https://pypi.python.org/pypi/langdetect?}}}
-
-\newglossaryentry{Beautiful Soup}{name={Beautiful Soup},
-    description={Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. See \url{https://www.crummy.com/software/BeautifulSoup/}}}
-
-\newglossaryentry{confusion matrix}{name={Confusion Matrix},
-    description={todo}}
-
-\newglossaryentry{Oikotie Tyopaikat}{name={Oikotie Työpaikat},
-    description={todo}}
-
-\newglossaryentry{Node.js}{name={Node.js},
-    description={\textquote{Node.js is an open-source, cross-platform runtime environment for developing server-side Web applications.}Source: \url{https://en.wikipedia.org/wiki/Node.js} \url{https://nodejs.org/}}}
-
-\newglossaryentry{MongoDB}{name={MongoDB},
-    description={\textquote{MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. [\ldots].} Source: \url{https://en.wikipedia.org/wiki/MongoDB}, Website: \url{https://www.mongodb.com}}}
-
-\newglossaryentry{Representation Learning}{name={Representation Learning},
-    description={TODO}}
-
-\newglossaryentry{Mustache}{name={Mustache},
-    description={\textquote{Mustache is a simple web template system.} Source: \url{https://en.wikipedia.org/wiki/Mustache_(template_system)}, Website: \url{https://mustache.github.io}}}
-
-
-\newglossaryentry{Sanoma}{name={Sanoma},
-    description={todo}}
-
-\newglossaryentry{error matrix}{name={Error Matrix},
-    description={todo},see=[Glossary:]{confusion matrix}}
-
-\newglossaryentry{ffe}{type=\acronymtype, name={FFE}, description={Fuzzy Front End}, first={Fuzzy Front End (FFE)\glsadd{ffeg}}, see=[Glossary:]{ffeg}}
-
-\newglossaryentry{ffeg}{name={Fuzzy Front End},
-    description={The early exploration phase in the design process (see~\cite{Council:2007aa}). Also refers to an awesome band from Finland.}}
-
-\newglossaryentry{Ensemble Method}{name={Ensemble Method}, plural={Ensemble Methods}, description={TODO}}
-
-\newglossaryentry{Google Docs}{name={Google Docs}, description={TODO}}
-
-\newglossaryentry{Randomized Algorithm}{name={Randomized Algorithm}, plural={Randomized Algorithms}, description={TODO}}
-
-\newglossaryentry{Boosting}{name={Boosting}, description={TODO}}
-
-\newglossaryentry{Bagging}{name={Bagging}, description={TODO}}
-
-\newglossaryentry{Voting}{name={Voting}, description={TODO}}
-
-\newglossaryentry{Feature Selection}{name={Feature Selection}, description={TODO}}
-
-\newglossaryentry{Feature Extraction}{name={Feature Extraction}, description={TODO}}
-
-\newglossaryentry{click-through rate}{name={Click-through rate}, description={TODO}}
-
-\newglossaryentry{page views}{name={page views}, description={TODO}}
-
-\newglossaryentry{Principal Components Analysis}{name={Principal Components Analysis}, description={TODO}}
-
-\newglossaryentry{PCA}{type=\acronymtype, name={PCA}, description={Principal Components Analysis}, first={Principal Components Analysis (PCA)\glsadd{Principal Components Analysis}}, see=[Glossary:]{Principal Components Analysis}}
-
-\newglossaryentry{t-Distributed Stochastic Neighbor Embedding}{name={t-Distributed Stochastic Neighbor Embedding}, description={t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) technique for dimensionality reduction that is particularly well suited for the visualization of high-dimensional datasets. For more information visit the authors information website (\url{https://lvdmaaten.github.io/tsne/}) and see the introductory publication (\cite{Maaten:2008aa})}}
-
-\newglossaryentry{t-SNE}{type=\acronymtype, name={t-SNE}, description={t-Distributed Stochastic Neighbor}, first={t-Distributed Stochastic Neighbor (t-SNE)\glsadd{t-Distributed Stochastic Neighbor Embedding}}, see=[Glossary:]{t-Distributed Stochastic Neighbor Embedding}}
-
-\newglossaryentry{Dimensionality Reduction}{name={Dimensionality Reduction}, description={TODO}}
-
-\newglossaryentry{Multi-Class Classification}{name={Multi-Class Classification}, description={TODO}}
-
-\newglossaryentry{Multi-Label Classification}{name={Multi-Label Classification}, description={TODO}}
-
-\newglossaryentry{SVM}{type=\acronymtype, name={SVM}, description={Support Vector Machine}, first={Support Vector Machine (SVM)\glsadd{Support Vector Machine}}, see=[Glossary:]{Support Vector Machine}}
-
-\newacronym[see={[Glossary:]{JavaScript Object Notation}}]{JSON}{JSON}{JavaScript Object Notation\glsadd{JavaScript Object Notation}}
-
-% \newglossaryentry{JSON}{type=\acronymtype, name={JSON}, description={JavaScript Object Notation}, first={JavaScript Object Notation (JSON)\glsadd{JavaScript Object Notation}}, see=[Glossary:]{JavaScript Object Notation}}
-
-\newglossaryentry{JavaScript Object Notation}{name={JavaScript Object Notation}, description={\textquote{JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.} Source: \url{http://www.json.org} }}
-
-
-\newglossaryentry{Support Vector Machine}{name={Support Vector Machine}, description={TODO}}
-
-\newglossaryentry{Deep Learning}{name={Deep Learning},
-    description={TODO}}
-
-\newglossaryentry{CrowdFlower}{name={CrowdFlower},
-    description={TODO}}
-
-\newglossaryentry{crowd sourcing}{name={crowd sourcing},
-    description={TODO}}
-
-\newglossaryentry{GitHub}{name={GitHub},
-    description={TODO}}
-
-% SVM & Support Vector Machine \\
-% NN & Neural Network \\
-% RNN & Recurrent Neural Network \\
-% LSTM & Long Short-Term Memory \\
-% MCC & Matthews Correlation Coefficient, see Section~\ref{par:Informedness, Markedness and Matthews Correlation Coefficient}
-
-
-% Bayes' Theorem
-% one-hot-encoding
-% grid search
-% Mturk & see \emph{Mechanical Turk} \\
-
-% MongoDB
-% Mongoose
-% GitHub
-% decision boundary
-% discriminant function
-% gradient descent
-% Bias-Variance Dilemma

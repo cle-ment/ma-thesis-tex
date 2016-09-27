@@ -5,24 +5,17 @@
 		\setentrycounter[]{page}\glsnumberformat{2}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{4}}}%
 \glossentry{API}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{69}\delimN 
-		\glsseeformat[Glossary:]{gls-API}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{11}}}\glsgroupskip
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossentry{CL}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3\delimN 4}}}%
 \glossentry{CNN}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{36}\delimN 
-		\glsseeformat[Glossary:]{Convolutional Neural Network}{Z}}}\glsgroupskip
-\glsgroupheading{F}\relax \glsresetentrylist %
-\glossentry{ffe}{\glossaryentrynumbers{\relax 
-		\glsseeformat[Glossary:]{ffeg}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{36}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{GPU}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{36}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{38}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{58}\delimN 
-		\glsseeformat[Glossary:]{Graphical Processing Unit}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{58}}}\glsgroupskip
 \glsgroupheading{I}\relax \glsresetentrylist %
 \glossentry{IR}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
@@ -30,19 +23,15 @@
 \glsgroupheading{J}\relax \glsresetentrylist %
 \glossentry{JSON}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{13}\delimN 
-		\glsseeformat[Glossary:]{JavaScript Object Notation}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{13}}}\glsgroupskip
 \glsgroupheading{K}\relax \glsresetentrylist %
 \glossentry{kNN}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{13\delimN 14}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{31}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{57}\delimN 
-		\glsseeformat[Glossary:]{k Nearest Neighbors}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{57}}}\glsgroupskip
 \glsgroupheading{L}\relax \glsresetentrylist %
 \glossentry{LDA}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{69}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{73}\delimN 
-		\glsseeformat[Glossary:]{gls-LDA}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{78}}}\glsgroupskip
 \glsgroupheading{M}\relax \glsresetentrylist %
 \glossentry{MCC}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{14}\delimN 
@@ -52,8 +41,7 @@
 		\setentrycounter[]{page}\glsnumberformat{47\delimN 48}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{52\delimR 54}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{56\delimR 58}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{61}\delimN 
-		\glsseeformat[Glossary:]{MCC}{Z}}}%
+		\setentrycounter[]{page}\glsnumberformat{61}}}%
 \glossentry{ML}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
@@ -61,32 +49,24 @@
 		\setentrycounter[]{page}\glsnumberformat{4\delimN 5}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{60}}}%
 \glossentry{NLTK}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{15}\delimN 
-		\glsseeformat[Glossary:]{Natural Language Toolkit}{Z}}}%
+		\setentrycounter[]{page}\glsnumberformat{15}}}%
 \glossentry{NN}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{34}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{42}\delimN 
-		\glsseeformat[Glossary:]{Neural Network}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{42}}}\glsgroupskip
 \glsgroupheading{P}\relax \glsresetentrylist %
 \glossentry{PCA}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{50}\delimN 
-		\glsseeformat[Glossary:]{Principal Components Analysis}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{50}}}\glsgroupskip
 \glsgroupheading{R}\relax \glsresetentrylist %
 \glossentry{REST}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{11}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{69}\delimN 
-		\glsseeformat[Glossary:]{gls-REST}{Z}}}%
+		\setentrycounter[]{page}\glsnumberformat{11}}}%
 \glossentry{RNN}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{38}\delimN 
-		\glsseeformat[Glossary:]{Recurrent Neural Network}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{38}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{SVM}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{32}\delimN 
-		\glsseeformat[Glossary:]{Support Vector Machine}{Z}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{32}}}\glsgroupskip
 \glsgroupheading{T}\relax \glsresetentrylist %
 \glossentry{t-SNE}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{50}\delimN 
-		\glsseeformat[Glossary:]{t-Distributed Stochastic Neighbor Embedding}{Z}}}%
+		\setentrycounter[]{page}\glsnumberformat{50}}}%
 \glossentry{TC}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{4}}}%
 \end{theglossary}\glossarypostamble

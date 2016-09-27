@@ -1,6 +1,3 @@
-% !TEX root = ../thesis.tex
-% !TEX spellcheck = en-US
-
 %% Use this if you write hard core mathematics, these are usually needed
 \usepackage{amsfonts,amssymb,amsbsy}
 
@@ -46,41 +43,26 @@
 
 
 % Glossaries
-\usepackage[nopostdot,acronym,toc]{glossaries}
+\usepackage[nopostdot,acronym,toc,nogroupskip]{glossaries}
 \makeglossaries
 % reset entries at the start of each chapter
-% \preto\chapter{\glsresetall}
+\preto\section{\glsresetall}
+
+% \usepackage{xparse}
+% \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
+%   \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3}},
+%     description={#6},#1
+%   }
+%   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+% }
 
 \usepackage{xparse}
 \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
-  \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3}},
+  \newglossaryentry{#5}{name={#5},text={#5},
     description={#6},#1
   }
-  \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+  \newacronym[#2]{#3}{#4}{\gls{#5}}
 }
-
-% \usepackage{xparse}
-% \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
-%   \newglossaryentry{gls-#3}{name={#5},text={#5},
-%     description={#6},#1
-%   }
-%   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5}
-% }
-
-% \usepackage{xparse}
-% \DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
-%   \newglossaryentry{gls-#3}{name={#5},text={#5},
-%     description={#6},#1
-%   }
-%   \newglossaryentry{#3}{
-%     type=\acronymtype,
-%     name={#4},
-%     description={#5},
-%     first={#5 (#4)},
-%     see=[Glossary:]{gls-#3}
-%   }
-% }
-
 
 % Define argmin and argmax operators
 \newcommand*{\argmin}{\operatornamewithlimits{argmin}\limits}

@@ -52,10 +52,15 @@
 
 \clearpage
 
-
+\glossarystyle{super}
+\setlength{\glsdescwidth}{0.8\textwidth}
+\renewcommand*{\arraystretch}{1.5}% default is 1
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
 \printglossary[type=\acronymtype]
+
 \clearpage
 \glossarystyle{altlist}
+\renewcommand*{\arraystretch}{1}% default is 1
 \printglossary[type=main]
 
 %% Appendix
