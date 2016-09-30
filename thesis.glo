@@ -1,9 +1,35 @@
+\glossaryentry{Artificial intelligence?\glossentry{Artificial intelligence}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{Computational Linguistics?\glossentry{Computational Linguistics}|setentrycounter[]{page}\glsnumberformat}{2}
+\glossaryentry{Text Classification?\glossentry{Text Classification}|setentrycounter[]{page}\glsnumberformat}{2}
+\glossaryentry{Computational Linguistics?\glossentry{Computational Linguistics}|setentrycounter[]{page}\glsnumberformat}{2}
+\glossaryentry{Natural Language Processing?\glossentry{Natural Language Processing}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{Artificial intelligence?\glossentry{Artificial intelligence}|setentrycounter[]{page}\glsnumberformat}{2}
-\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{2}
-\glossaryentry{Computational Linguistics?\glossentry{Computational Linguistics}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{Information Retrieval?\glossentry{Information Retrieval}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{Text Classification?\glossentry{Text Classification}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{Text Classification?\glossentry{Text Classification}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{Information Retrieval?\glossentry{Information Retrieval}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{3}
 \glossaryentry{Text Classification?\glossentry{Text Classification}|setentrycounter[]{page}\glsnumberformat}{4}
-\glossaryentry{Natural Language Processing?\glossentry{Natural Language Processing}|setentrycounter[]{page}\glsnumberformat}{4}
-\glossaryentry{Information Retrieval?\glossentry{Information Retrieval}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Supervised Learning?\glossentry{Supervised Learning}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Feature Engineering?\glossentry{Feature Engineering}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Computational Linguistics?\glossentry{Computational Linguistics}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Feature Engineering?\glossentry{Feature Engineering}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Convolutional Neural Network?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Recurrent Neural Network?\glossentry{Recurrent Neural Network}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Expectation Maximization?\glossentry{Expectation Maximization}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Self Organizing Map?\glossentry{Self Organizing Map}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Conditional Random Field?\glossentry{Conditional Random Field}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Unsupervised Learning?\glossentry{Unsupervised Learning}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Latent Dirichlet Allocation?\glossentry{Latent Dirichlet Allocation}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Topic Modeling?\glossentry{Topic Modeling}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{5}
+\glossaryentry{GitHub?\glossentry{GitHub}|setentrycounter[]{page}\glsnumberformat}{5}
 \glossaryentry{Oikotie Työpaikat?\glossentry{Oikotie Tyopaikat}|setentrycounter[]{page}\glsnumberformat}{8}
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{8}
 \glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{9}
@@ -37,17 +63,15 @@
 \glossaryentry{Crowdsourcing?\glossentry{Crowdsourcing}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{Matthews Correlation Coefficient?\glossentry{Matthews Correlation Coefficient}|setentrycounter[]{page}\glsnumberformat}{19}
-\glossaryentry{Information Retrieval?\glossentry{Information Retrieval}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{22}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{k Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{30}
 \glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{32}
 \glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{34}
 \glossaryentry{Graphical Processing Unit?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsnumberformat}{36}
@@ -55,24 +79,19 @@
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{36}
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{36}
 \glossaryentry{Deep Learning?\glossentry{Deep Learning}|setentrycounter[]{page}\glsnumberformat}{38}
-\glossaryentry{Recurrent Neural Network?\glossentry{Recurrent Neural Network}|setentrycounter[]{page}\glsnumberformat}{38}
 \glossaryentry{Confusion Matrix?\glossentry{Confusion Matrix}|setentrycounter[]{page}\glsnumberformat}{42}
 \glossaryentry{Error Matrix?\glossentry{Error Matrix}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{Matthews Correlation Coefficient?\glossentry{Matthews Correlation Coefficient}|setentrycounter[]{page}\glsnumberformat}{45}
 \glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsnumberformat}{50}
 \glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{50}
 \glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{55}
-\glossaryentry{k Nearest Neighbors?\glossentry{k Nearest Neighbors}|setentrycounter[]{page}\glsnumberformat}{57}
-\glossaryentry{Graphical Processing Unit?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsnumberformat}{58}
 \glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{58}
-\glossaryentry{Natural Language Processing?\glossentry{Natural Language Processing}|setentrycounter[]{page}\glsnumberformat}{60}
 \glossaryentry{Grid Search?\glossentry{Grid Search}|setentrycounter[]{page}\glsnumberformat}{60}
 \glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{60}
-\glossaryentry{Matthews Correlation Coefficient?\glossentry{Matthews Correlation Coefficient}|setentrycounter[]{page}\glsnumberformat}{61}
 \glossaryentry{Artificial intelligence?\glossentry{Artificial intelligence}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Application Programming Interface?\glossentry{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Computational Linguistics?\glossentry{Computational Linguistics}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Convolutional Neural Network?\glossentry{Convolutional Neural Network}|setentrycounter[]{page}\glsnumberformat}{70}
+\glossaryentry{Conditional Random Field?\glossentry{Conditional Random Field}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Graphical Processing Unit?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Information Retrieval?\glossentry{Information Retrieval}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{JavaScript Object Notation?\glossentry{JavaScript Object Notation}|setentrycounter[]{page}\glsnumberformat}{70}
@@ -86,6 +105,7 @@
 \glossaryentry{Principal Components Analysis?\glossentry{Principal Components Analysis}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Representational State Transfer?\glossentry{Representational State Transfer}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Recurrent Neural Network?\glossentry{Recurrent Neural Network}|setentrycounter[]{page}\glsnumberformat}{70}
+\glossaryentry{Self Organizing Map?\glossentry{Self Organizing Map}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{t-Distributed Stochastic Neighbor Embedding?\glossentry{t-Distributed Stochastic Neighbor Embedding}|setentrycounter[]{page}\glsnumberformat}{70}
 \glossaryentry{Text Classification?\glossentry{Text Classification}|setentrycounter[]{page}\glsnumberformat}{70}
@@ -95,29 +115,30 @@
 \glossaryentry{Test Set?\glossentry{Test Set}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{Validation Set?\glossentry{Validation Set}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{Training Set?\glossentry{Training Set}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{Mikrotasking?\glossentry{Mikrotasking}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{72}
+\glossaryentry{Mikrotasking?\glossentry{Mikrotasking}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{73}
 \glossaryentry{Confusion Matrix?\glossentry{Confusion Matrix}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{73}
 \glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{73}
-\glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{74}
 \glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{74}
 \glossaryentry{Gold Standard?\glossentry{Gold Standard}|setentrycounter[]{page}\glsnumberformat}{74}
 \glossaryentry{Supervised Learning?\glossentry{Supervised Learning}|setentrycounter[]{page}\glsnumberformat}{74}
 \glossaryentry{Topic Modeling?\glossentry{Topic Modeling}|setentrycounter[]{page}\glsnumberformat}{75}
 \glossaryentry{K-means Clustering?\glossentry{K-means Clustering}|setentrycounter[]{page}\glsnumberformat}{75}
 \glossaryentry{K-means Clustering?\glossentry{K-means Clustering}|setentrycounter[]{page}\glsnumberformat}{75}
-\glossaryentry{Multi-Label Classification?\glossentry{Multi-Label Classification}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{Multi-Label Classification?\glossentry{Multi-Label Classification}|setentrycounter[]{page}\glsnumberformat}{76}
 \glossaryentry{Multi-Class Classification?\glossentry{Multi-Class Classification}|setentrycounter[]{page}\glsnumberformat}{76}
-\glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{76}
+\glossaryentry{Sanoma?\glossentry{Sanoma}|setentrycounter[]{page}\glsnumberformat}{77}
 \glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{77}
 \glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{77}
 \glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{78}
 \glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{78}
-\glossaryentry{Supervised Learning?\glossentry{Supervised Learning}|setentrycounter[]{page}\glsnumberformat}{78}
-\glossaryentry{Training Set?\glossentry{Training Set}|setentrycounter[]{page}\glsnumberformat}{78}
-\glossaryentry{Validation Set?\glossentry{Validation Set}|setentrycounter[]{page}\glsnumberformat}{78}
+\glossaryentry{Supervised Learning?\glossentry{Supervised Learning}|setentrycounter[]{page}\glsnumberformat}{79}
+\glossaryentry{Training Set?\glossentry{Training Set}|setentrycounter[]{page}\glsnumberformat}{79}
+\glossaryentry{Validation Set?\glossentry{Validation Set}|setentrycounter[]{page}\glsnumberformat}{79}
 \glossaryentry{Unsupervised Learning?\glossentry{Unsupervised Learning}|setentrycounter[]{page}\glsnumberformat}{79}
 \glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{79}
 \glossaryentry{Supervised Learning?\glossentry{Supervised Learning}|setentrycounter[]{page}\glsnumberformat}{79}
@@ -126,8 +147,8 @@
 \glossaryentry{Ground Truth?\glossentry{Ground Truth}|setentrycounter[]{page}\glsnumberformat}{79}
 \glossaryentry{Training Set?\glossentry{Training Set}|setentrycounter[]{page}\glsnumberformat}{79}
 \glossaryentry{Validation Set?\glossentry{Validation Set}|setentrycounter[]{page}\glsnumberformat}{79}
-\glossaryentry{Test Set?\glossentry{Test Set}|setentrycounter[]{page}\glsnumberformat}{79}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{79}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{79}
-\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{81}
-\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{82}
+\glossaryentry{Test Set?\glossentry{Test Set}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{82}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{83}

@@ -16,12 +16,14 @@ Language is one of the most complex behaviors our species has developed. We huma
 
 Not surprisingly in the field of \gls{AI} and especially \gls{ML} building computer systems with linguistic capabilities and solving language-based problems poses one of the hardest challenges and has motivated decades of research in Computational Linguistics. In fact many of the famous test for universal machine intelligence are based on linguistic capabilities, among them the famous \emph{Turing test} by~\cite{Turing:1950aa} where the task is for a human judge to determine whether he is having a conversation with a human or a machine in order to determine if the machine can be called intelligent, or the \emph{compression test} proposed by~\cite{Mahoney:1999aa}, where a human's and machine's capability to predict missing words given a context is tested.
 
-This thesis explores the specific task of predicting the semantic structure of job advertisements as a specific example of such a language-based task that turns out to be difficult even for humans to do. The title of this work ``An \emph{Exploration} of \emph{Recent Connectionist Advances} for \emph{Supervised Topic Prediction in Job Advertisements}'' can be broken down into three pieces that captures the essence of it:
+This thesis explores the specific task of predicting the semantic structure of job advertisements as a specific example of such a language-based task that turns out to be difficult even for humans to do.
 
-\begin{itemize}
-  \item Exploration: The nature of this work is explorative in 2 ways: First a problem has been researched to find well-defined and well-motivated application of machine learning on job advertisement data. Second a solution space was explored approach this problem with special emphasis at recent progress in research.
-  \item Recent Connectionist Advances: The work
-\end{itemize}
+% The title of this work ``An \emph{Exploration} of \emph{Recent Connectionist Advances} for \emph{Supervised Topic Prediction in Job Advertisements}'' can be broken down into three pieces that captures the essence of it:
+%
+% \begin{itemize}
+%   \item Exploration: The nature of this work is explorative in 2 ways: First a problem has been researched to find well-defined and well-motivated application of machine learning on job advertisement data. Second a solution space was explored approach this problem with special emphasis at recent progress in research.
+%   \item Recent Connectionist Advances: The work
+% \end{itemize}
 
 
 The work was done in close collaboration with the Helsinki-based media and learning company \emph{Sanoma}\footnote{\textquote{Sanoma is a front running consumer media and learning company in Europe. In Finland and the Netherlands we are the market leading media company with a broad presence across multiple platforms. In Belgium we are among the Top 5. Our main markets in learning are Belgium, Finland, the Netherlands, Poland and Sweden. We entertain, inform, educate and inspire millions of people every day. We employ some 7,500 professional employees operating in Europe.}, Source: \url{http://www.sanoma.com/en/who-we-are}, visited 06.06.2016} and the research motivation was thus constantly tied back into real world challenges in the scope of Sanoma's business needs.
@@ -37,9 +39,7 @@ This is a challenging problem in itself but can further be used to extract certa
 
 % -- need statement
 
-Today's media and education, the basis of Sanoma's core businesses, are undergoing drastic and fundamental transformations that are currently disrupting whole industries.
-
-Usage of digital media as a source of information has long surpassed print media. Sanoma's most well-known product, Finland's biggest daily newspaper \emph{Helsingin Sanomat}, lost 6\% of its circulation only in 2015\footnote{Source: http://www.digitalnewsreport.org/survey/2016/finland-2016/, visited 27.07.2016}, while the wide-spread use of social media challenges traditional ways we access information. Similarly in the field of education, with the rise of Massive open online course (MOOCs), traditional learning settings are challenged and the need for advanced techniques for data processing and analysis increases, e.g.\ to personalize and adapt the learning experience to each individual user and at the same time identify trends across large groups of learners to better meet the needs of education.
+Today's media and education, the basis of Sanoma's core businesses, are undergoing drastic and fundamental transformations that are currently disrupting whole industries. Usage of digital media as a source of information has long surpassed print media. Sanoma's most well-known product, Finland's biggest daily newspaper \emph{Helsingin Sanomat}, lost 6\% of its circulation only in 2015\footnote{Source: http://www.digitalnewsreport.org/survey/2016/finland-2016/, visited 27.07.2016}, while the wide-spread use of social media challenges traditional ways we access information. Similarly in the field of education, with the rise of Massive open online course (MOOCs), traditional learning settings are challenged and the need for advanced techniques for data processing and analysis increases, e.g.\ to personalize and adapt the learning experience to each individual user and at the same time identify trends across large groups of learners to better meet the needs of education.
 
 Sanoma provides a recruitment platform named \emph{Oikotie Työpaikat}. The service is in direct competition several other international players in the recruitment industry. Through this and other services Sanoma's collects large amounts of user-generated data, offering the potential to be leveraged for machine learning solutions to provide value for their users and innovate and enrich the company's offerings.
 This was the company's initial motivation for this thesis project --- To explore ways to leverage user-generated data to potentially.
@@ -48,101 +48,51 @@ This was the company's initial motivation for this thesis project --- To explore
 
 % -- personal motivation
 
-From a personal perspective this work was interesting as offered many research possibilities while at the same time being relevant for and inspired by real life applications. The complex nature of \gls{CL} with its proximity to the general study of machine intelligence and the high interpretability of problems makes poses makes it a fascinating problem domain. This presented a great challenge to learn balancing scientific research objectives and yet exploring potential business and user needs, learn on new fronts and deepen the knowledge in others and apply it to real data.
+From a personal perspective this work was interesting as offered many research possibilities while at the same time being relevant for and inspired by real life applications. The complex nature of \acrlong{CL} with its proximity to the general study of machine intelligence and the high interpretability of problems makes poses makes it a fascinating problem domain. This presented a great challenge to learn balancing scientific research objectives and yet exploring potential business and user needs, learn on new fronts and deepen the knowledge in others and apply it to real data.
 
 \subsection{Related work}
 \label{sub:Related work}
 
-\todo{add unsupervised learning (LDA etc) or remove reference in exploration}
-
-The problem of \gls{TC}, also known as Text Categorization, is one of the various challenges in the thriving fields of \gls{CL} and \gls{NLP}. These areas of research have started out as theoretically challenging but rather marginally interesting fields between \gls{AI} and formal linguistics and have since exploded in terms of popularity with their applications being deployed currently at large scale to practically all kinds of consumer products such as smart phones and home entertainment systems as well as digital services like social networks or automatic translation engines and conversational agents, so-called chatbots.
+The problem of \gls{TC}, also known as Text Categorization, is one of the various challenges in the thriving fields of \acrfull{CL} and \gls{NLP}. These areas of research have started out as theoretically challenging but rather marginally popular fields between \acrfull{AI} and formal linguistics and have since exploded in terms of interest with their applications being deployed currently at large scale to practically all kinds of consumer products such as smart phones and home entertainment systems as well as digital services like social networks, automatic translation engines and conversational agents.
 Today there are textbooks dedicated specifically to this area, such as~\cite{Manning:1999aa},~\cite{Jurafsky:2014aa} and~\cite{Clark:2013aa} There is also much overlap to the field of \gls{IR} that rose to popularity during the late 1980's due to the Internet starting to become a mainstream medium (see~\cite{Manning:2008aa},~\cite{Leskovec:2014aa} and the classic work by~\cite{Rijsbergen:1979aa}).
 
-The field of Natural Language Processing has undergone different trends of modeling approaches to tackle its challenges. \cite{Cambria:2014aa} identify these as three main trend curves focusing on \emph{Syntactics}, \emph{Semantics}, and \emph{Pragmatics}. According to the authors the first trend of syntax-centered NLP is still prevalent and is based on algorithms that more or less directly operate on the words found in the processed texts.
+\subsubsection*{Syntactics, Semantics, and Pragmatics}
+\label{subs:Vogues in NLP: Syntactics, Semantics, and Pragmatics}
+
+The field of Natural Language Processing has undergone different trends of modeling approaches to tackle its challenges.~\cite{Cambria:2014aa} identify these as three main trend curves focusing on \emph{Syntactics}, \emph{Semantics}, and \emph{Pragmatics}. According to the authors the first trend of syntax-centered NLP is still prevalent and is based on algorithms that more or less directly operate on the words found in the processed texts.
 The second trend operates on the semantics of text, thus being able to potentially tackle more challenging problems by addressing increasingly subtle notions of meaning and context. According to the author these types of approaches are still in the early phase but at the verge of being adapted by a broader audience of researchers and practitioners in the field.
 The last trend curve of pragmatics regards the yet more complex issue of modeling inherent narratives in language where so far only pioneering work has been done but which, according to the authors, will lead to tackling problems of natural language understanding.
-% With regards to this perspective, this thesis falls between the first and second trend curve by comparing more traditional, syntax based approaches to those modeling latent semantics.
 
-The problem of \gls{TC} specifically has seen many evolving fashions of approaches and more or less loosely follows the three trend curves described above. \gls{TC} has been of immense interest for several decades now due to the exponentially increasing amounts of text data being recorded in forms of e.g. user generated content through social networks and through the increased digitalization of our daily lives. Its applications reach from document filtering, automated metadata generation such as language classification to automatic email labeling, spam identification and sentiment detection, amongst others.
+\subsubsection*{The Text Classification Problem}
+\label{subs:The Text Classification Problem}
 
-As~\cite{Sebastiani:2002aa} points out it is important to mention that the term \emph{automatic text classification} has also been used referring to different problems: \textquote{Aside from (i) the automatic assignment of documents to a predefined set of categories [\ldots], the term has also been used to mean (ii) the automatic identification of such a set of categories (e.g.,~\cite{Borko:1963aa}), or (iii) the automatic identification of such a set of categories and the grouping of documents under them (e.g.,~\cite{Merkl:1998aa}), a task usually called text clustering, or (iv) any activity of placing text items into groups, a task that has thus both TC and text clustering as particular instances~\cite{Manning:1999aa}}~\cite{Sebastiani:2002aa}
+The problem of \acrfull{TC} specifically has seen many evolving fashions of approaches and more or less loosely follows the three trend curves described above. \gls{TC} has been of immense interest for several decades now due to the exponentially increasing amounts of text data being recorded in forms of e.g.\ user generated content through social networks and through the increased digitalization of our daily lives. Its applications reach from document filtering, automated metadata generation such as language classification to automatic email labeling, spam identification and sentiment detection, amongst others.
 
-Early approaches towards solving text classification tasks in the 1980's were in often based on expert systems consisting of sets of manually created logical rules, deciding upon the category of a text segment if a certain formula applies. As discussed by \cite{Sebastiani:2002aa} the biggest downside is known as the \emph{knowledge acquisition bottleneck} which refers to the fact that each rule has to be manually created. In the 1980's machine learning approaches became more common where a \emph{classifier} automatically learns the attributes of the data and its association with the given data labels using a model that allows to then infer the categories for unseen data. This setting is called \emph{supervised learning} as labels for the data are given and predicted.
+\acrlong{TC} is nowadays covered in standard works of \acrlong{IR} and \acrlong{ML}, such as~\cite{Manning:2008aa}. As~\cite{Sebastiani:2002aa} points out it is important to mention that the term \emph{automatic text classification} has also been used referring to different problems: \textquote{Aside from (i) the automatic assignment of documents to a predefined set of categories [\ldots], the term has also been used to mean (ii) the automatic identification of such a set of categories (e.g.,~\cite{Borko:1963aa}), or (iii) the automatic identification of such a set of categories and the grouping of documents under them (e.g.,~\cite{Merkl:1998aa}), a task usually called text clustering, or (iv) any activity of placing text items into groups, a task that has thus both TC and text clustering as particular instances~\cite{Manning:1999aa}}
 
-Machine learning approaches have since been developed in countless variations. As described earlier syntax-based approaches are still very common and most follow a classic pipeline of \emph{feature extraction} or \emph{indexing} of documents followed by \emph{inductive construction} of a classifier that is lastly evaluated by a measure of effectiveness. A very successful approach to feature extraction has been the introduction of N-Gram based models, also called \emph{bag-of-words} models, which that are based on word-cooccurrence frequencies of the terms that are present in the data.
-As~\cite{Mikolov:2012aa} explains \textquote{The most significant advantages of models based on n-gram statistics are speed (probabilities of n-grams are stored in precomputed tables), reliability coming from simplicity, and generality (models can be applied to any domain or language effortlessly, as long as there exists some training data). N-gram models are today still considered as state of the art not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements, not critical for success of given application.}
-Various extensions of these models exist for dimensionality reduction or feature selection as well as smoothing techniques etc. (refer to Section~\ref{subs:N-gram Models} for an in-depth introduction). The limitation of such models is that their statistics are directly based on word co-occurrences and thus exponentially increase in size as the desired context to be captured is expanded, making them infeasible to adapt to longer text sequences.
+\subsubsection*{Early Work and Syntactic Approaches}
+\label{subs:Early Work and Syntactic Approaches}
 
-Recently approaches from the field of \emph{Representation Learning}, have found their way into and gained tremendous traction in the \gls{NLP} research community. Traditional \emph{feature engineering} techniques such as N-gram models, use prior domain or expert knowledge in order to build data representations that are effective in combination with a classifier. But as~\cite{Bengio:2013aa} point out this is a laborious and time-consuming task that only exposes the weakness from a Machine Learning point of view by not automatically learning such representations --- a challenge representation learning aims to address.
+Early approaches towards solving \acrlong{TC} tasks in the 1980's were in often based on expert systems consisting of sets of manually created logical rules, deciding upon the category of a text segment if a certain formula applies. As discussed by~\cite{Sebastiani:2002aa} the biggest downside is known as the \emph{knowledge acquisition bottleneck} which refers to the fact that each rule has to be manually created. In the 1980's machine \acrfull{ML} became more common where a \emph{classifier} automatically learns the attributes of the data and its association with the given data labels using a model that allows to then infer the categories for unseen data. This setting is called \gls{Supervised Learning} as labels for the data are given and predicted.
 
+\acrshort{ML} approaches have since been developed in countless variations. As described earlier syntax-based approaches are still very common and most follow a classic pipeline of \emph{feature extraction} or \emph{indexing} of documents followed by \emph{inductive construction} of a classifier that is lastly evaluated by a measure of effectiveness. A very successful approach to feature extraction has been the introduction of N-Gram based models, also called \emph{bag-of-words} models, which that are based on word-cooccurrence frequencies of the terms that are present in the data (see Section~\ref{subs:N-gram Models (Methods)} for an introduction).
+As~\cite{Mikolov:2012aa} explains \textquote{the most significant advantages of models based on n-gram statistics are speed (probabilities of n-grams are stored in precomputed tables), reliability coming from simplicity, and generality (models can be applied to any domain or language effortlessly, as long as there exists some training data). N-gram models are today still considered as state of the art not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements, not critical for success of given application.}
+The limitation of such models is that their statistics are directly based on word co-occurrences and thus exponentially increase in size as the desired context to be captured is expanded, making them infeasible to adapt to longer text sequences.
 
-- distributed representations beating ngrams
-- deep learning: CNNs
-- multitask / transfer learning
-- character level text classification
-% # CNNs
-% \cite{Kim:2014aa} - Convolutional neural networks for sentence classification
-% \cite{Cheng:2014aa} - Investigating the role of prior disambiguation in deep-learning compositional models of meaning
-% \cite{Kalchbrenner:2014aa} - A convolutional neural network for modelling sentences
-% \cite{Johnson:2014aa} - Effective Use of Word Order for Text Categorization with Convolutional Neural Networks
+\subsubsection*{Semantic Approaches and Representation Learning}
+\label{subs:Semantic Approaches and Representation Learning}
 
+Recently approaches from the field of \emph{Representation Learning}, have found their way into and gained tremendous traction in the \gls{NLP} research community. Traditional techniques such as N-gram models, now also referred to as \gls{Feature Engineering} approaches, use prior domain or expert knowledge in order to build data representations that are effective in combination with a classifier. But as~\cite{Bengio:2013aa} point out this is a laborious and time-consuming task that only exposes the weakness from a Machine Learning point of view by not automatically learning such representations --- a challenge representation learning aims to address. Beyond that, with regards to \gls{CL} problems, most \gls{Feature Engineering} techniques do not capture well the semantics of language.
 
-% ## related fields
-%
-% # NER
-% \cite{Baluja:2000aa} - Applying Machine Learning for High-Performance Named-Entity Extraction
-% \cite{Zhang:2004aa} - Zhang-Focused Named Entity Recognition Using
-% \cite{Strzalkowski:1996aa} - A Self-learning Universal Concept Spotter
-% \cite{Alfonseca:2002aa} - An unsupervised method for general named entity recognition and automated concept discovery
-% \cite{Nadeau:2007aa} - A survey of named entity recognition and classification.
-%
-% # Topic modeling
-% \cite{Blei:2012aa} - Probabilistic Topic Models
-%
-%
-% # Ngram models
-% \cite{Jagadish:1998aa} - Optimal histograms with quality guarantees
-%
-% # language modeling
-% \cite{Bengio:2006aa} - Neural Probabilistic Language Models.
-% \cite{Mikolov:2013aa} - Exploiting similarities among languages for machine translation.
-% \cite{Mikolov:2012aa} - Statistical Language Models Based on Neural Networks
-%
-%
-%
-% # CNNs
-% \cite{Kim:2014aa} - Convolutional neural networks for sentence classification
-% \cite{Cheng:2014aa} - Investigating the role of prior disambiguation in deep-learning compositional models of meaning
-% \cite{Kalchbrenner:2014aa} - A convolutional neural network for modelling sentences
-% \cite{Johnson:2014aa} - Effective Use of Word Order for Text Categorization with Convolutional Neural Networks
-%
-%
-%
-% # sequential modeling
-% \cite{Lafferty:2001aa} - Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data
-%
-% # \cite{Lewis:1992aa} - Feature selection and feature extraction for text categorization
-%
-%
-% Unsupervised techniques for topic discovery have been investigated widely, such as LSA
-%
-% Vector Space models are a
-%
-% - feature learning for text
-% - multitask learning
-%
-% \cite{Bastian:2014aa} - ontology learning, topic extraction approach
-%
-%
-% \cite{Collobert:2008aa} showed how both multitask learning and semi-supervised learning improve the generalization of the shared tasks on text data. They describe \textquote{a single convolutional neural network architecture that, given a sentence, outputs [\ldots] part-of-speech tags, chunks, named entity tags, semantic roles, semantically similar words and the likelihood that the sentence makes sense (grammatically and semantically) using a language model}.
-%
-% \cite{Lodhi:2002aa} string kernels
-%
-% \todo{section on transfer learning and feature learning}
-% \todo{text classification}
-% \todo{Multitask learning}
-% \todo{explicit vs implicit feature representation}
+One example particularly popular method called \emph{word2vec} was introduced by \cite{Mikolov:2013ad} and learns word representation vectors, so-called \emph{word embeddings}, through a context-prediction task. This produces extremely rich representations capturing many subtleties in the layers of meaning of words\cite{Mikolov:2013ab}. Another approach related to \gls{Representation Learning} under the name of Transfer Learning has been proposed by~\cite{Do:2006aa}. Similarly, in attempts to find more expressive ways of modeling semantics of language several breakthrough achievements in \acrshort{NLP} have been made using various \gls{Deep Learning} based methods --- a related trend that the field has picked up.
+\cite{Collobert:2011aa} succesfully applied a \acrfull{CNN} architecture to a number of standard problems in \gls{NLP} with the intention of minimizing the domain knowledge introduced: \textquote{The design of this system was determined by our desire to avoid task-specific engineering as much as possible. Instead we rely on very large unlabeled datasets and let the training algorithm discover internal representations that prove useful for all the tasks of interest.}.
+Later~\cite{Kim:2014aa} improved the method slightly, improving on state-of-the-art results in 4 out of 7 of these standard problems. Numerous related work was done building on similar ideas, such as using a \acrshort{CNN} on character level resolution for \gls{TC}~\cite{Zhang:2015aa}, Multitask Learning and Semi-Supervised Learning to improve the generalization of the shared tasks\cite{Collobert:2008aa} and using \glspl{RNN}~\cite{Liu:2016aa}. Just recently facebook research released a tool called \emph{fastText}\footnote{The tool is publicly available on \gls{GitHub}: \url{https://github.com/facebookresearch/fastText}} for \gls{TC} with a focus fast run-time while still achieving close to state-of-the-art results. The related publications draw heavily on previous work on word embeddings and similar techniques (see~\cite{Joulin:2016aa} and~\cite{Bojanowski:2016aa}).
 
+\subsubsection*{Further Related Work and Focus of This Thesis}
+\label{subs:Further Related Work and Focus of This Thesis}
+
+Numerous other classes of approaches exist and have been explored with varying popularity such as \gls{TC} using String Kernels~\cite{Lodhi:2002aa}, \gls{EM}~\cite{Nigam:2000aa} and\cite{McCallum:1999aa}, \gls{SOM}~\cite{Merkl:1998aa} and using a \gls{CRF} for sequence labeing~\cite{Lafferty:2001aa}.
+Also problem areas from the field of \gls{Unsupervised Learning} are related with techniques such as~\gls{LDA} \cite{Blei:2003aa} for \gls{Topic Modeling} where labels for text documents are found without providing a \gls{Ground Truth} beforehand. However this work specifically focuses on comparing traditional syntactic approaches to more recent semantic ones, focusing on ideas from \gls{Representation Learning} and \gls{Deep Learning}, in particular \glspl{RNN}.
 
 \subsection{Research Scope and Objectives}
 \label{sub:Research Scope and Objectives}
@@ -163,25 +113,32 @@ In order to meet these objectives a predefined development process was applied t
 \label{fig:double-diamond}
 \end{figure}
 
-The development process of the project was adapted from the double diamond design process developed by the by the British Design Council in 2005 (see ~\cite{Council:2007aa}). A design process is \textquote{the specific series of events, actions or methods by which a procedure or set of procedures are followed, in order to achieve an intended purpose, goal or outcome.}~\cite{Best:2006aa}. The process is shown in
+The development process for this thesis project was adapted from the Double Diamond design process developed by the by the British Design Council in 2005 (see ~\cite{Council:2007aa}). A design process is \textquote{the specific series of events, actions or methods by which a procedure or set of procedures are followed, in order to achieve an intended purpose, goal or outcome.}~\cite{Best:2006aa}.
+The Double Diamond process consists of iterative, explorative learning phases where first a problem worth solving is found within the \emph{Problem Scope} and afterwards the best solution is formed in the \emph{Solution Scope}. Both scopes are navigated through a so-called divergence phase where the space explored for finding possibilities followed by a convergence phase where the options are reduced and combined. These phases, as illustrated in Figure~\ref{fig:double-diamond}, are called \emph{Discovery Phase} and \emph{Definition Phase} in the Problem Scope and \emph{Development Phase} and \emph{Delivery Phase} in the Solution Scope and briefly described next:
 
-\paragraph{Discover}
-\label{par:Discover}
+\paragraph{Discovery Phase}
+\label{par:Discovery Phase}
+In the Discovery Phase opportunities for problems worth solving are evaluated. Often their potential is measured in terms of economic impact (financial viability), attractiveness to and impact on users (desirability) and the level of technological challenge (feasibility).
+These aspects require different ways of testing and as the priority in this work lays on primarily on evaluating the technical challenge the main tools were prototyping, technical benchmarking and literature research.
 
-In the first stage of the project an initial idea, motivation or inspiration is given.
+\paragraph{Definition Phase}
+\label{par:Definition Phase}
+The aim of the Definition Phase is to compile the learnings from the Discovery Phase and find the problem that has the most potential and will be tackled. This is done by iteratively reframing the problem and testing the implications of this definition.
+Thus the final problem definition is often not simply selected but developed through a series of steps of refining the problem, testing and learning.
 
-- prototyping
-- interviews
-- market research
--
+\paragraph{Development Phase}
+\label{par:Development Phase}
+When the final problem definition has been set the Development Phase aims to produce a wide variety of potential approaches to solving this problem. Here existing approaches are benchmarked and tested, and combined with new ideas, again through a \emph{test, learn, rescope} cycle.
+With regards to this work literature research was combined with testing of various methods and evaluating there performance to learn which approaches work best and how they could be improved, combined or built upon.
 
-approach to experiemtns
-
+\paragraph{Delivery Phase}
+\label{par:Delivery Phase}
+During the Delivery Phase the best possible solution is chosen through refinement of the different approaches that were evaluated. At the end there stands a result of the whole process, in this case a comprehensive evaluation and conclusion on the approaches.
 
 
 \subsection{Results}
 
-asdasd
+
 
 \subsection{Structure of the Thesis}
 
@@ -192,12 +149,4 @@ asdasd
 \label{fig:double-diamond-with-structure}
 \end{figure}
 
-% The first section of this thesis gave a brief introduction into the topic of this work, outlined the motivation and the research problem approached and showed the research objectives, the scope of the thesis as well as related work.
-%
-% Section~\ref{sec:Background}:~\nameref{sec:Background} introduces the reader to concepts and ideas of Text Classification in order to provide him or her with the necessary knowledge to understand the work described in this thesis. First the problem of Text Classification is formally defined and the most common approaches to this problem are described on a high level. Afterwards Vector Space Models are introduced in detail, which represent a popular way of tackling this task by transforming text into fixed-size vectors.
-% The following subsection then briefly presents several of the most known classification algorithms that can operate on the vectors produced by such Vector Space Models. Next the approach of Sequential Classification is described in short where text is treaded as a one-dimensional signal in time. The following subsection then shows common ways to evaluate how well the task of text classification is solved and the last subsection gives a brief introduction to two methods that are useful for exploring different models and techniques through visualization.
-%
-% Section~\ref{sec:Exploration}:~\nameref{sec:Exploration} gives an overview of the exploration of the wider topic space at the start of the thesis project as well as the experimentation with different techniques and the data given for the project. It aims to lay out to the reader the process, insights and learnings leading towards the final problem formulation and evaluation of methods to solve this problem.
-%
-% The following Section~\ref{sec:Experimental Evaluation of Multi-class Prediction of Semantic Categories for Text in Job Advertisements}:~\nameref{sec:Experimental Evaluation of Multi-class Prediction of Semantic Categories for Text in Job Advertisements} then presents the main results of the thesis. The exact problem definition is given that is used as a basis to evaluate the experiments and the dataset used for these experiments is described.
-% Subsequently the evaluation of the different approaches to Vector Space Models, the classification algorithms using the most successful of these models and the sequential modeling approach are documented. Each of these subsections first describes the experimental setup, followed by results of the different approaches and closes with a brief discussion on the outcomes presented.
+The first section of this thesis gave a brief introduction into the topic of this work, outlined the motivation and the research problem approached and showed the research objectives, the scope of the thesis as well as related work.

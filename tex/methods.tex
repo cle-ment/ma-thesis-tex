@@ -34,27 +34,25 @@ N-grams are usually used to create a vector-space model by representing each doc
 
 Where $f_{ij}$ is \textquote{the \emph{frequency} (number of occurences) of a term (word) $i$ in document $j$} and $\text{TF}_{if}$ is the \emph{term frequency}, i.e.   \textquote{$f_{ij}$ normalized by dividing it by the maximum number of occurrences of any term [\ldots] in the same document}~\cite[Chapter 1.3.1, p.~8]{Leskovec:2014aa}.
 
-\paragraph{Variants}
+As this approach has been studied for decades there is quite an extensive amount of variants and thus hyper-parameters to tune. The most important ones will be explained in the following sections:
 
-As this approach has been studied for decades \todo{citation for first or review paper here?} there is quite an extensive amount of variants and thus hyper-parameters to tune. The most important ones will be explained in the following sections:
+\paragraph{Words vs. Characters} The first choice when building an N-gram language model is to use characters or words as the atomic unit. In practically every case there are less characters than words in a dataset, but to capture expressive substrings usually larger N-gram window sizes or ranges have to be chosen, which leads to a combinatorial explosion. In case of word-based models on the other hand the maximal size of the feature space is the size of the vocabulary $\mathcal{V}$ in the case of unigrams or $V^k$ in case of $k$-grams.
+par
+\paragraph{Stop words}
+\label{par:Stop words}
+For creating N-gram models, so-called stop word lists are often used which are lists of frequent words that will be excluded as they do not carry much meaning~\cite[Chapter 1.3.1, p.~7]{Leskovec:2014aa}. The stop-word list used in these experiments is the standard list used for the Scikit-learn framework~\cite{Pedregosa:2011aa} is made available by the University of Glasgow Information Retrieval group\footnote{\url{http://www.gla.ac.uk/schools/computing/research/researchoverview/informationretrieval/}. The full stop word list can be found in the Appendix in Section~\ref{sub:Stopwords for N-grams}.}.
 
-\subparagraph{Words vs. Characters} The first choice when building an N-gram language model is to use characters or words as the atomic unit. In practically every case there are less characters than words in a dataset, but to capture expressive substrings usually larger N-gram window sizes or ranges have to be chosen, which leads to a combinatorial explosion. In case of word-based models on the other hand the maximal size of the feature space is the size of the vocabulary $\mathcal{V}$ in the case of unigrams or $V^k$ in case of $k$-grams.
-
-\subparagraph{Stop words}
-\label{subp:Stop words}
-For creating N-gram models, so-called stop word lists are often used which are lists of frequent words that will be excluded as they do not carry much meaning~\cite[Chapter 1.3.1, p.~7]{Leskovec:2014aa}. The stop-word list used in these experiments is the standard list used for the Scikit-learn framework~\cite{Pedregosa:2011aa} which is a list gathered by the University of Glasgow Information Retrieval group\footnote{\url{http://www.gla.ac.uk/schools/computing/research/researchoverview/informationretrieval/}. The full stop word list can be found at \url{http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words} and in the appendix in Section~\ref{sec:appendix-stopwords}.}.
-
-\subparagraph{N-gram range} The N-gram range, also known as window size or shingle size, refers to combinations of the atomic units of the model (words or characters) and defines an upper and lower limit for these combinations. For example a range of $[1,1]$ specifies a unigram model, $[2,2]$ a bigram model and $[1,2]$ a combination of both including all unigrams and all bigrams.
+\paragraph{N-gram range} The N-gram range, also known as window size or shingle size, refers to combinations of the atomic units of the model (words or characters) and defines an upper and lower limit for these combinations. For example a range of $[1,1]$ specifies a unigram model, $[2,2]$ a bigram model and $[1,2]$ a combination of both including all unigrams and all bigrams.
 A larger range allows the model to capture an increasing amount of word order and thus context, but again leads to a combinatorial explosion in terms of feature space.
 
-\subparagraph{Vector size} The vector size imposes an upper limit to the vector size and therefor the number of N-grams that can be encoded in the feature space. Commonly this simply uses the words with the highest frequency to reduce the vector size from the full length --- the size of the vocabulary --- to the desired size.
+\paragraph{Vector size} The vector size imposes an upper limit to the vector size and therefor the number of N-grams that can be encoded in the feature space. Commonly this simply uses the words with the highest frequency to reduce the vector size from the full length --- the size of the vocabulary --- to the desired size.
 
-\subparagraph{TF.IDF weighting}
-\label{subp:TF.IDF weighting}
+\paragraph{TF.IDF weighting}
+\label{par:TF.IDF weighting}
 A common extension to using word-counts is to weight the term frequencies by the so-called inverse document frequency, i.e.\ the inverse of the frequency of an term or N-gram in all documents. This method is commonly referred to as \emph{TF.IDF} and specifically the inverse document frequency is defined as $\text{IDF}_i = \log_2 (N/n_i)$, where logarithmic smoothing is applied. The TF.IDF value for a term or N-gram is then computed as $\text{TF}_{ij} \cdot \text{IDF}_i$.
 
-\subparagraph{Sublinear TF scaling}
-\label{subp:Sublinear TF scaling}
+\paragraph{Sublinear TF scaling}
+\label{par:Sublinear TF scaling}
  As~\cite[Chapter 6.4.1, p.~126]{Manning:2008aa} suggests \textquote{[it] seems unlikely that twenty occurrences of a term in a document truly carry twenty times the significance of a single occurrence}. Hence a common variant is \emph{sublinear scaling} where we down-weigh the increase in term importance by applying a logarithmic function to it, resulting in the sub-linear term frequency $\text{subTF}_{ij}$:
 
 \begin{displaymath}
@@ -63,21 +61,28 @@ A common extension to using word-counts is to weight the term frequencies by the
 \end{array} \right \}
 \end{displaymath}
 
-\subparagraph{Normalization} Often the term vectors are globally normalized using the $L_1$ or $L_2$ norm to remove the effect of statistical differences between the terms.
+\paragraph{Normalization} Often the term vectors are globally normalized using the $L_1$ or $L_2$ norm to remove the effect of statistical differences between the terms.
 
 There are, of course, various other variants and modifications to the N-gram model, but within the scope of this thesis only the most notable ones were introduced and will be used for experiments later. For further material on this subject refer for example to~\cite{Manning:2008aa}.
 
-\todo{mention smoothing techniques~\cite{Chen:1996aa}}
-
-\paragraph{Shortcomings}
-\label{subs:shortcomings-ngrams}
+\bigskip
 
 Today N-gram models are still in wide use and considered as state of the art \textquote{not because there are no better techniques, but because those better techniques are computationally much more complex, and provide just marginal improvements}~\cite[p.~17]{Mikolov:2012aa}. As~\cite{Mikolov:2012aa} points out further \textquote{[the] most important weakness is that the number of possible n-grams increases exponentially with the length of the context, preventing these models to effectively capture longer context patterns. This is especially painful if large amounts of training data are available, as much of the patterns from the training data cannot be effectively represented by n-grams and cannot be thus discovered during training. The idea of using neural network based LMs [Language Models] is based on this observation, and tries to overcome the exponential increase of parameters by sharing parameters among similar events, no longer requiring exact match of the history H.}~\cite[p.~17]{Mikolov:2012aa}
 
 \subsubsection{Distributed Continuous Representations}
 \label{subs:Distributed Continuous Representations}
 
-To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (annLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community. His work builds on ideas introduced in~\cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in~\cite{bengio2003neural}. Following the description in this paper, the approach is as follows:
+\begin{wrapfigure}{h!}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{img/word2vec_cities.pdf}
+  \end{center}
+  \caption{Two-dimensional PCA projection of the 1000-dimensional Skip-gram vectors of countries and their capital cities. (Adapted from~\cite{Mikolov:2013ac})}
+\label{fig:word2vec-cities}
+\end{wrapfigure}
+
+To overcome the shortcomings of popular language models such as the ones of the N-gram model mentioned above, lots of recent work went into the study of so-called distributed language models. One branch of research that gained significant attention is the work on Neural Network based Language models (NNLMs), popularized largely through the work of T. Mikolov and his software realization of such a model dubbed \emph{word2vec} with interest coming not only from the academic community.
+
+His work builds on ideas introduced in~\cite{Bengio:2000aa} where a neural network based model was proposed for modeling high-dimensional discrete data, which was then applied to the domain of language modeling in~\cite{bengio2003neural} and the idea of learned distributed representations goes back to~\cite{Hinton:1986aa}. Following the description in~\cite{Bengio:2000aa}, the approach is as follows:
 
 \begin{enumerate}
   \item Associate with each word in the vocabulary a distributed \emph{word feature vector} (a real-valued vector in $\mathbb{R}^m$),
@@ -90,6 +95,7 @@ To achieve this, a feedforward neural network model is trained to learn these \e
 \paragraph{Simplified Continuous Models}
 
 \cite{Mikolov:2013ad} then introduced two simplified models, removing the hidden layer and only using a projection layer, with shared weights for all words. The Continuous Bag-of-Words Model (CBOW) model is trained to predict the current word $w_t$ given the $k$ words around it. Its name is due to the fact that the word order does not influence the projection as the word vectors are summed or averaged. The Continuous Skip-gram Model works the other way around, predicting the most likely $k$ words around a given word $w_t$. Figure~\ref{fig:cbow-skip-gram} illustrates both models.
+
 
 \begin{figure}[h]
     \centering
@@ -109,17 +115,11 @@ To achieve this, a feedforward neural network model is trained to learn these \e
 \label{fig:cbow-skip-gram}
 \end{figure}
 
-\begin{wrapfigure}{l}{0.6\textwidth}
-  \begin{center}
-    \includegraphics[width=0.58\textwidth]{img/word2vec_cities.pdf}
-  \end{center}
-  \caption{Two-dimensional PCA projection of the 1000-dimensional Skip-gram vectors of countries and their capital cities. The figure illustrates ability of the model to automatically organize concepts and learn implicitly the relationships between them, as during the training we did not provide any supervised information about what a capital city means. (Adapted from~\cite{Mikolov:2013ac})}
-\label{fig:word2vec-cities}
-\end{wrapfigure}
-
 These models have been shown to outperform state of the art N-gram models on various tasks (see e.g.~\cite{bengio2003neural} or~\cite{Mikolov:2012aa}). An interesting outcome of this research is the fact that these \emph{word vectors} capture many interesting and often subtle semantic regularities and that these can be exploited explicitly in an algebraic manner. When trained on an extensive dataset, one can perform calculations as $v(Paris) - v(France) + v(Germany)$ and the closest vector to the result turns out to be $v(Berlin)$ where $v(\cdot)$ denotes the \emph{word vector} of a word. Figure~\ref{fig:word2vec-cities} shows a PCA projection of Skip-gram trained vectors of countries and their capital cities.
 
-A notable alternative to these models was developed by~\cite{Peannington:2014aa}. In their model called \emph{GloVe}, which stands for global vectors, they construct a vector space model with similar properties as the models introduced above, which instead relies global word-word co-occurrence counts. This method thus operates directly in the co-occurrence statistics of the corpus compared to the Neural Network based methods that \textquote{fail[\ldots] to take advantage of the vast amount of repetition in the data}~\cite{Peannington:2014aa}.
+
+A notable alternative to these models was developed by~\cite{Pennington:2014aa}. In their model called \emph{GloVe}, which stands for global vectors, they construct a vector space model with similar properties as the models introduced above, which instead relies global word-word co-occurrence counts. This method thus operates directly in the co-occurrence statistics of the corpus compared to the Neural Network based methods that \textquote{fail[\ldots] to take advantage of the vast amount of repetition in the data}~\cite{Pennington:2014aa}.
+
 
 There have been various extensions and variants to the Neural Network based language models especially, including architectures based on Recurrent Neural Networks (see~\cite{Mikolov:2012aa}). Some of the most important variations will are discussed in the following section as they were evaluated in the experiments:
 
@@ -144,8 +144,8 @@ As there the difference between frequent and infrequent words in large corpora c
 
 with $f(w_i)$ denoting the frequency of word $w_i$ and $t$ denoting a threshold. \cite{Mikolov:2013ab} state that this method, while chosen heuristically, \textquote{accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words}.
 
-\paragraph{Distributed representations for documents}
-\label{par:Distributed representations for documents}
+\subsubsection*{Distributed representations for documents}
+\label{subs:Distributed representations for documents}
 
 The models explained above are defined on words as the atomic unit. Therefore several ways have been proposed to extend these to sequences of words in order to obtain a vector space of sentences or documents. A few of these will be briefly outlined here:
 
@@ -284,7 +284,7 @@ We can then choose the class with the highest class probability as our predictio
 \label{fig:decision-tree}
 \end{wrapfigure}
 
-A simple but widely used classification as well as regression method are \emph{Decision Trees} which work by recursively partitioning the input space into dichotomous subregions, producing a binary decision tree. At inference time the resulting tree can then be used to produce an output by navigating through a path from its root to a leaf, answering a binary questions at each node to determine which child node to query next. Figure~\ref{fig:decision-tree} shows the visualization of an exemplified such a tree\footnote{Adapted from R2D3's great visual introduction to Machine Learning at \url{http://www.r2d3.us/visual-intro-to-machine-learning-part-1/}}.
+A simple but widely used classification as well as regression method are \emph{Decision Trees} which work by recursively partitioning the input space into dichotomous subregions, producing a binary decision tree. At inference time the resulting tree can then be used to produce an output by navigating through a path from its root to a leaf, answering a binary questions at each node to determine which child node to query next. Figure~\ref{fig:decision-tree} shows the visualization of an exemplified such a tree\footnote{Adapted from R2D3's ``visual introduction to Machine Learning'' at \url{http://www.r2d3.us/visual-intro-to-machine-learning-part-1/}}.
 Every node represents a threshold in the input space that  the input data is compared against, corresponding to a decision such as ``Is the elevation of this building's elevation higher than or equal to 91.9 feet?''. If the answer is ``Yes'' the left child node is queried next, otherwise the right. This procedure is repeated until a leaf with a final answer is reached.
 
 The technique was first introduced by~\cite{Breiman:1984ab} under the term \emph{Classification And Regression Tree (CART)} but exists in many variants. Learning such a model involves specifying the structure of the tree, including which input variable to query at each node in the graph and what each of the nodes' threshold values are. Since commonly it is computationally infeasible to generate and evaluate all possible decision trees for a given problem, a greedy procedure is usually chosen. We start with determining a first split in the data that represents the root node and grow the tree one node at a time, each node in the tree being determined by choosing splits that minimize an error measure.
@@ -441,7 +441,7 @@ Modeling this behavior, a neural network is composed of multiple nodes, also ref
   \label{fig:NN}
 \end{figure}
 
-The most common form, known as \emph{Feed-forward Neural Network}, is a network where all nodes of successive layers are coannected and each node in the network passes on its output signal to all nodes in the next layer until the transformed signal reaches the last layer. This layer represents the output signal or prediction and is thus called the \emph{output layer}. The first layer is called \emph{input layer} and is simply fed with real-valued vectors, e.g. as produced by a Vector Space method as described in Section~\ref{sub:Vector Space Models}. All layers in between are called \emph{hidden layers}. An exemplified illustration of such a feed-forward neural network with one hidden layer can be seen in Figure~\ref{fig:ann}.
+The most common form, known as \emph{Feed-forward Neural Network}, is a network where all nodes of successive layers are coannected and each node in the network passes on its output signal to all nodes in the next layer until the transformed signal reaches the last layer. This layer represents the output signal or prediction and is thus called the \emph{output layer}. The first layer is called \emph{input layer} and is simply fed with real-valued vectors, e.g. as produced by a Vector Space method as described in Section~\ref{sub:Vector Space Models}. All layers in between are called \emph{hidden layers}. An exemplified illustration of such a feed-forward neural network with one hidden layer can be seen in Figure~\ref{fig:NN}.
 
 For a single node the computation can formally be expressed as follows. We first compute the weighted sum of the inputs of the node:
 
