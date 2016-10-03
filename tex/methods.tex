@@ -157,13 +157,8 @@ Several approaches of composing document vectors out of word vectors have been s
 \subparagraph{Paragraph Vectors}
 \label{subp:Paragraph Vectors}
 
-In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model:
-
-Models can be used for prediction either by using the trained vectors or infer vectors at prediction time as done in~\cite{Le:2014aa}.
-
-\todo{Training type}
-\todo{model type}
-\todo{move hyper-parameters into this section}
+In~\cite{Le:2014aa} a different approach is shown that builds on the same idea as the original word2vec model. In particular two approaches proposed. The first model, dubbed \emph{Distributed Memory (PV-DM)} is similar to the continuous Bag-of-Words model as a word is predicted given the words in the context, but additionally a paragraph token is used as an input to the model. To the algorithm this simply acts as another word index but it identifies the paragraph the words stem from and serves as a context memory for this paragraph.
+The second approach is called \emph{Distributed Bag-Of-Words (PV-DBOW)} and does not use word prediction at all. Instead words are sampled from a paragraph and the associated paragraph vector has to be learned to predict these words as well as possible. This model is therefore more similar to the Skip-Gram model by~\cite{Mikolov:2013a} as the several words are predicted using a single learned representation. At inference time both models need to construct new Paragraph Vectors for unseen paragraphs using a slightly varied learning procedure (see~\cite{Le:2014aa}).
 
 \subsection{Methods For Classification With Vector Space Models}
 \label{sub:Methods For Classification With Vector Space Models}

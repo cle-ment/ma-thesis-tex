@@ -65,14 +65,14 @@
 \glossaryentry{CrowdFlower?\glossentry{CrowdFlower}|setentrycounter[]{page}\glsnumberformat}{20}
 \glossaryentry{Matthews Correlation Coefficient?\glossentry{Matthews Correlation Coefficient}|setentrycounter[]{page}\glsnumberformat}{20}
 \glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{23}
-\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{31}
-\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Randomized Algorithm?\glossentry{Randomized Algorithm}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Bagging?\glossentry{Bagging}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Boosting?\glossentry{Boosting}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Voting?\glossentry{Voting}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{32}
+\glossaryentry{Feature Extraction?\glossentry{Feature Extraction}|setentrycounter[]{page}\glsnumberformat}{33}
+\glossaryentry{Dimensionality Reduction?\glossentry{Dimensionality Reduction}|setentrycounter[]{page}\glsnumberformat}{33}
 \glossaryentry{Support Vector Machine?\glossentry{Support Vector Machine}|setentrycounter[]{page}\glsnumberformat}{33}
 \glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{35}
 \glossaryentry{Graphical Processing Unit?\glossentry{Graphical Processing Unit}|setentrycounter[]{page}\glsnumberformat}{37}
@@ -89,6 +89,11 @@
 \glossaryentry{Cross-Validation?\glossentry{Cross-Validation}|setentrycounter[]{page}\glsnumberformat}{59}
 \glossaryentry{Grid Search?\glossentry{Grid Search}|setentrycounter[]{page}\glsnumberformat}{64}
 \glossaryentry{Neural Network?\glossentry{Neural Network}|setentrycounter[]{page}\glsnumberformat}{64}
+\glossaryentry{Feature Engineering?\glossentry{Feature Engineering}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{Machine Learning?\glossentry{Machine Learning}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{Representation Learning?\glossentry{Representation Learning}|setentrycounter[]{page}\glsnumberformat}{72}
+\glossaryentry{Multi-Task Learning?\glossentry{Multi-Task Learning}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{Artificial intelligence?\glossentry{Artificial intelligence}|setentrycounter[]{page}\glsnumberformat}{80}
 \glossaryentry{Application Programming Interface?\glossentry{Application Programming Interface}|setentrycounter[]{page}\glsnumberformat}{80}
 \glossaryentry{Amazon Web Services?\glossentry{Amazon Web Services}|setentrycounter[]{page}\glsnumberformat}{80}
@@ -154,5 +159,7 @@
 \glossaryentry{Test Set?\glossentry{Test Set}|setentrycounter[]{page}\glsnumberformat}{90}
 \glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{90}
 \glossaryentry{Ensemble Method?\glossentry{Ensemble Method}|setentrycounter[]{page}\glsnumberformat}{90}
+\glossaryentry{MongoDB?\glossentry{MongoDB}|setentrycounter[]{page}\glsnumberformat}{91}
+\glossaryentry{Node.js?\glossentry{Node.js}|setentrycounter[]{page}\glsnumberformat}{91}
 \glossaryentry{scikit-learn?\glossentry{scikit-learn}|setentrycounter[]{page}\glsnumberformat}{92}
-\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{94}
+\glossaryentry{Google Docs?\glossentry{Google Docs}|setentrycounter[]{page}\glsnumberformat}{93}

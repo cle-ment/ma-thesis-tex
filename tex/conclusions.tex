@@ -6,91 +6,80 @@
 \section{Conclusions}
 \label{sec:Conclusions}
 
-This thesis has applied an explorative and iterative poduct development process to define and then research a machine learning problem and approaches to solve it. The research problem investigated was set to be multi-class text classification on sentence data. Despite being an well-known and simple problem in its nature it is far from being solved and the topic of much recent works, also because of it's wide applicability to various real world problem domains such as sentiment analysis, spam identification and document filtering.
+This thesis has applied an explorative and iterative product development process to define and then research a machine learning problem and approaches to solve it. The research problem investigated was set to be multi-class text classification on sentence data. Despite being an well-known and simple problem in its nature it is far from being solved and the topic of much recent works, also because of it's wide applicability to various real world problem domains such as sentiment analysis, spam identification and document filtering.
 
-By investigating a wide array of methods on a generated dataset a few main results can be concluded:
+This work investigated a recent trend in \gls{CL} and \gls{NLP}, but also more generally in fields across \gls{ML} towards more general purpose methods which avoid built-in assumptions about the problem domain and are therefore applicable through various domains. We saw in this work that beyond potentially freeing us from the often involved and tedious work of \gls{Feature Engineering} these methods also perform on par or even better. This is because they inform their data representation choices in a data-driven way and with enough data and a well chosen model design are shown to increasingly outperform hand-designed feature extraction techniques. This also brings us closer to one of the goals of \gls{AI} by having more world informed knowledge and decisions in intelligent systems instead of providing this knowledge in a curated form.
 
-Recent work in \gls{CL} and \gls{NLP} shows a trend towards more general purpose methods which avoid built-in assumptions about the problem domain and are therefore applicable through various domains. We saw in this work that beyond potentially freeing us from the often involved and tedious work of \gls{Feature Engineering} these methods also perform on par or even better. This is because they inform their data representation choices in a data-driven way and with enough data and a well chosen model design are shown to increasingly outperform hand-designed feature extraction techniques. 
-
-These trends were greatly accalerated by the recent wave in popularity of Deep Learning methods and more generally connectionist models where ideas from \gls{Representation Learning} and Unsupervised Feature Learning have been a focus of research for decades, by the growth in large data and its
-
- which were seperated into two conceptual categories
+These trends were greatly accelerated by the recent wave in popularity of Deep Learning methods and more generally connectionist models where ideas from \gls{Representation Learning} and Unsupervised Feature Learning have been a focus of research for decades, by the growth in large data and its availability and by increased access to massive parallel and distributed computational resources. Currently these trends are only increasing so we can expect more work in this research in this inspiring direction.
 
 
-- promise of more data driven models, reducing bias through domain knowledge
-- great because it also makes methods applicable across domains
-- even in problems that seem simple or solved new developments can make a difference
--
 
-
-- while the approaches are presented as two different techniques here the of course are complementary and somewhat overlapping. After all the LSTM uses embeddings which effectively learn vector representations for words (is that true)?
-- many of these techniques can be and are mixed and matched, e.g. using word embeddings and modeling sentences in a sequential fashion, possibly even putting a CNN on top to learn invariantly
-
-- it's a vast and fast moving field. just in the last weeks of writing this thesis facebooks fasttext was released https://github.com/facebookresearch/fastText (link to papers). this also shows the importance of this problem
-
-\begin{itemize}
-  \item For complex models need more data (NNs)
-  \item can do much more parameter tuning for NNs
-  \item small documents like sentences are hard to learn as a representation
-\end{itemize}
-
-- need more data to train NNs
-
-- good generalization => can be reliable because we know it'll perform well on future unseen data
-
-
-- lower vector size and overfitting for continous representations: I would have needed more data => could have trained the model with all ads I have and then only do supervised training on labelled data
-
-- shows how to apply product development processes to research successfully
-
-\begin{itemize}
-  \item As in many areas of machine learning much work has been going into feature engineering but it seems that feature learning, while much more computationally expensive, surpasses the potential of engineered feature representations. Deep learning and meta-learning are mature enough to make up for the gap that has been there for years: To achieve performance that is good enough to make an algorithmic system usable in production, huge amounts of research and engineering went into feature engineering and finally the performance of these methods can be matched and even surpassed by automated methods or learning features. (link here NG's transfer learning work, also Schmidhubers work of meta-learning and on function prediction etc)
-  \item There is more need to understand the representations of such feature learning systems though, statistics are quite easy to understand but weights of a neural network don't tell much. There is however potential for learning ``better statistics'' ourselves, e.g. how to efficiently learn a language (by looking at explicit indermediate representations of the states of a NN)
-  \item
-\end{itemize}
-
-
-% \subsection{Contributions *}
-% \label{sub:contributions}
+%  which were seperated into two conceptual categories
+%
+%
+% - promise of more data driven models, reducing bias through domain knowledge
+% - great because it also makes methods applicable across domains
+% - even in problems that seem simple or solved new developments can make a difference
+% -
+%
+%
+% - while the approaches are presented as two different techniques here the of course are complementary and somewhat overlapping. After all the LSTM uses embeddings which effectively learn vector representations for words (is that true)?
+% - many of these techniques can be and are mixed and matched, e.g. using word embeddings and modeling sentences in a sequential fashion, possibly even putting a CNN on top to learn invariantly
+%
+% - it's a vast and fast moving field. just in the last weeks of writing this thesis facebooks fasttext was released https://github.com/facebookresearch/fastText (link to papers). this also shows the importance of this problem
 %
 % \begin{itemize}
-%   \item compare n-gram and doc2vec (?)
+%   \item For complex models need more data (NNs)
+%   \item can do much more parameter tuning for NNs
+%   \item small documents like sentences are hard to learn as a representation
+% \end{itemize}
+%
+% - need more data to train NNs
+%
+% - good generalization => can be reliable because we know it'll perform well on future unseen data
+%
+%
+% - lower vector size and overfitting for continous representations: I would have needed more data => could have trained the model with all ads I have and then only do supervised training on labelled data
+%
+% - shows how to apply product development processes to research successfully
+%
+% \begin{itemize}
+%   \item As in many areas of machine learning much work has been going into feature engineering but it seems that feature learning, while much more computationally expensive, surpasses the potential of engineered feature representations. Deep learning and meta-learning are mature enough to make up for the gap that has been there for years: To achieve performance that is good enough to make an algorithmic system usable in production, huge amounts of research and engineering went into feature engineering and finally the performance of these methods can be matched and even surpassed by automated methods or learning features. (link here NG's transfer learning work, also Schmidhubers work of meta-learning and on function prediction etc)
+%   \item There is more need to understand the representations of such feature learning systems though, statistics are quite easy to understand but weights of a neural network don't tell much. There is however potential for learning ``better statistics'' ourselves, e.g. how to efficiently learn a language (by looking at explicit indermediate representations of the states of a NN)
 %   \item
 % \end{itemize}
+%
+%
+% % \subsection{Contributions *}
+% % \label{sub:contributions}
+% %
+% % \begin{itemize}
+% %   \item compare n-gram and doc2vec (?)
+% %   \item
+% % \end{itemize}
 
-\subsection*{Proposal for Future Research}
+\subsection*{Proposals for Future Research}
 \label{sub:further-research}
 
-Make this a structured prediction task: Closer to the original task of finding the semantic structure of a job ad. Predict a whole job, automatically chop it into categories. The knowledge about the context of the sentence carries strong prior knowledge for deciding a sentence category. Using hierarchical models or priors might make a big difference. Also in the sequential modeling setting this will most probably improve performance significantly.
+The work on this thesis has triggered and inspired quite a variety of ideas for further research. Here we will look at a few of these which might be considered as a continuation of this work:
 
-\begin{itemize}
-	\item pretrain doc vectors with the whole corpus (since it can be done unsupervised)
-  \item how well do word2vec and comparable methods generalize: e.g.\ initialize a text corpus with word vectors from a bigger corpus (Google News), then train an RNN to predict the next word vector using the small corpus but use the bigger corpus to validate and see if words in bigger corpus can be inferred
-  \item trajectory based algorithms (word trajectory through space for a sentence)
-  \item Compare with standard benchmarks (TREC etc)
-  \item Meta- / Transfer-learning: OCR with simultaneous LM learning (e.g. predict next character)
-  \item Try on Finnish data !!!
-  \item Try longer parts again maybe with better seperation (paragraphs). Doc2vec gets way better accuracy when documents are longer
-  \item Doc2Vec, evaluate how close inferred vectors are to trained vectors
-  \item combine sequential approaches with representations gained from external knowledge or trained simultaneously (learning embeddings for semantic concepts)
-  \item for complex models like CNNs and RNNs need more data!
-  \
-\end{itemize}
+\paragraph{Structured prediction} When the first problem definition was formulated it was posed as a structured prediction task (see Section~\ref{subs:Inferring Structure in Job Advertisements}). The field of structured prediction is an active field of research in \gls{ML} and the problem could be treated in such a sense directly from a \acrfull{ML} perspective, e.g. by trying to not only identify certain high level themes and topics as \emph{requirements} but also specific sub-categories as \emph{language skills} as well as the hierarchy over these.
+\paragraph{Vector Space Trajectories} As described in Section~\ref{subs:Distributed Continuous Representations} and shown by~\cite{Mikolov:2013ac} distributed representation models encode linguistic and semantic relationships through dimensions in the vector space. Mikolov's analogy task shows that even certain algebraic operations allow us to navigate between related concepts within this vector space. Further one can regard a sentence or a text as a trajectory through this word vector space. Taking this perspective leads to various interesting potential directions of research. Trajectory based classification could be applied to classify sentences (an idea somewhat related to sequential modeling of text) or one could try to identify topic change within a text, speaker identification in a conversation or more modeling subtle linguistic notions as humor through variations from an expected trajectory. One should note that these are just (somewhat wild) ideas but the principle could be investigated.
+\paragraph{Verification of assumptions regarding the size of the dataset} The result and discussion section of this work makes an assumption towards \gls{Representation Learning} and sequential modeling approaches to perform better if more data were provided, while the evidence with given data just slightly better performance. This assumption is of course based on previous work as mentioned but it could be confirmed or falsified by either collection a bigger dataset or by comparing the exact same set of methods against a standard dataset of larger size such as the Reuters-21578 dataset\footnote{\url{http://www.daviddlewis.com/resources/testcollections/reuters21578/}}.
+\paragraph{Continuation of Multi-Task Generative Model} As shown in the results the Multi-Task Learning LSTM network was not able to produce english words while previous work showed that in a single task setting this is possible. More experimentation would be needed, as it was not clear whether model was even converged in training due to its slow training time. Also, again, the dataset might have been to small for such a task. In several previous work \gls{Multi-Task Learning} has been shown to improve performance of the shared tasks (see e.g.~\cite{Collobert:2008aa}) and thus it would be interesting to test the limits of this approach.
+\paragraph{Combine approaches with \glspl{CNN}}: \glspl{CNN} have been shown to be highly effective also in language based problem domains and especially character-level networks have recently attracted attention (see e.g.~cite{\cite{Zhang:2015aa}}). While evaluating the Neural Network models a convolutional network was actually implemented but led to such poor performance that it was not further investigated. As this model captures patterns invariant of their position in the data it can be expected to align well with text analysis tasks and could be investigated with further effort.
+\paragraph{Test the methods with Finnish data}: For the sake of simplicity and interpretability only english data was analyzed. The vast majority of the dataset at hand though was in Finnish as it stems from a Finnish service. Finnish does not share the same root with english from a linguistic point of view and has a very different structure, e.g.\ making much more use of suffixes instead of prepositions. Especially word-index based methods such as N-Grams are expected to suffer in performance in this regard while character based methods might work better that ``do not know the concept of a word''. As mentioned previously a recent interesting approach in this direction was taken by~\cite{Bojanowski:2016aa} by using so-called sub-word information and could be embraced.
 
-
-\paragraph{Trajectory -Based Algorithms on Text}
-\label{par:Trajectory Algorithms on Text}
-As shown in \cite{Mikolov:2013ac} and related work that was outlined in Section\todo{reference here} vector space models for text can capture very subtle semantic relationships between words by their location in the vector space. When
-
-
-\subsection*{Learnings}
-\label{sub:learnings}
-
-\begin{itemize}
-  \item focusing on both, building a working system (engineering) and exploring new directions (science), is hard
-  \item problem framing is hard
-  \item Learned AWS
-  \item building pipelines
-  \item deep learning
-  \item collecting data
-\end{itemize}
+% \subsection*{Learnings}
+% \label{sub:learnings}
+%
+% Personally I learned a huge variety of things
+%
+% \begin{itemize}
+%   \item focusing on both, building a working system (engineering) and exploring new directions (science), is hard
+%   \item problem framing is hard
+%   \item Learned AWS
+%   \item building pipelines
+%   \item deep learning
+%   \item collecting data
+% \end{itemize}

@@ -18,36 +18,40 @@
 % \section{Appendix \label{A}: Something something}
 \section{Appendix}
 
-\subsection{Code}
+\subsection{Source Files and Code}
 
 \subsubsection*{A Tool for Crowd-Sourced Tagging of Chunked Job Ads}
 \label{sub:A Tool for Crowd-Sourced Tagging of Chunked Job Ads}
 
-\url{https://github.com/cle-ment/ma-thesis-crowdsource-text-tagger}
+The following repository contains the source code for the tool described in Section~\ref{subs:Supervised Multi-label Paragraph Classification}: \url{https://github.com/cle-ment/ma-thesis-crowdsource-text-tagger}
+It was used to collect labels for paragraphs with the help of volunteers. To use it a server running \gls{MongoDB} and \gls{Node.js} is needed. A jupyer notebook for preprocessing data is provided in case other data shall be used.
 
 \subsubsection*{Implementation of Final Experiments}
 \label{sub:Implementation of Final Experiments}
 
+This repository contains all source code needed to run the final experiments which are discussed in Section~\ref{sec:Experiments and Results}: \url{https://github.com/cle-ment/ma-thesis-experiments}
+Unfortunately there was no time to make these completely reproducible from scratch as most experiments were run on \gls{AWS} instances with all needed libraries setup. The code can be also be run locally though if the python modules are installed and the code to set up the instances is provided if a similar setup is to be achieved.
 
-\url{https://github.com/cle-ment/ma-thesis-experiments}
-
-\subsubsection*{This Thesis}
+\subsubsection*{\LaTeX\ Source of This Thesis}
 \label{sub:This Thesis}
 
-\url{https://github.com/cle-ment/ma-thesis-tex}
+The source files for this document can be found in the following repository: \url{https://github.com/cle-ment/ma-thesis-tex}. The source files were made public for others to use them as a template and as a side-effect document the process of writing quite nicely:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{img/git-tex.png}
+  \includegraphics[width=0.7\textwidth]{img/git-tex.png}
   \caption{The activity on the thesis repository during the time of writing.}
 \label{fig:git repo activity}
 \end{figure}
 
+\subsection{Google News Dataset and Word Embeddings}
+\label{sub:Google News Dataset and Word Embeddings}
+
+For constructing the Bag-Of-Means model explained in Section~\ref{subp:Bag-of-Means}, pre-computed word embeddings were used which were created by~\cite{Mikolov:2013ab} from a dataset from Google News. The dataset contains 300-dimensional vectors for 3 million words and phrases and can be obtained on the following website: \url{https://code.google.com/archive/p/word2vec/}
 
 \clearpage
 \subsection{Stopwords for N-grams}
 \label{sub:Stopwords for N-grams}
-
 
 This following list of English stop words is the one used in the \gls{scikit-learn} implementation for N-Grams and is taken from the \emph{Glasgow Information Retrieval Group}. The original list can be found at \url{http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words}.
 
@@ -92,135 +96,6 @@ you, your, yours, yourself, yourselves
 
 \clearpage
 
-\subsection{Google News Dataset and Word Embeddings}
-\label{sub:Google News Dataset and Word Embeddings}
-
-For constructing the Bag-Of-Means model explained in Section~\ref{subp:Bag-of-Means}, pre-computed word embeddings were used which were created by~\cite{Mikolov:2013ab} from a dataset from Google News. The dataset contains 300-dimensional vectors for 3 million words and phrases and can be obtained on the following website: \url{https://code.google.com/archive/p/word2vec/}
-
-%
-% \subsubsection{Model Specifics for Experiments}
-% \label{subs:Model Specifics for Experiments}
-
-% The following model characteristics were chosen for each model:
-%
-% \begin{itemize}
-%   \item \textbf{Logistic Regression} A $C$ value of ${0.01, 0.1, 1, 10}$ was evaluated during cross-validation.
-%   \item \textbf{Decision Tree}
-%   \item \textbf{Naive Bayes} Bernoulli Naive Bayes% Naive Bayes is Bernoulli
-%   \item \textbf{SVM}
-%   \item \textbf{kNN}
-%   \item \textbf{Random Forest}
-%   \item \textbf{Neural Network}
-%   \item \textbf{Deep Neural Network}
-% \end{itemize}
-
-%
-% \subsection{Results}
-% \label{sub:Results}
-%
-% \subsubsection{Full Results for Classifiers on Vector Space Models}
-% \label{subs:Full Results for Classifiers on Vector Space Models}
-%
-% \begin{table}[h]
-%   \begin{center}
-%     \begin{tabular}{ lll cc }
-%       \toprule
-%       Classifier & Scheme & Vector Space & Training Score & Test Score \\
-%       \midrule
-%       \multirow{6}{*}{Logistic Regression}
-%        & \multirow{3}{*}{One-vs-Rest}
-%          & N-Grams & 0.744 & \textbf{0.702} \\
-%        & & Bag-of-Means & 0.704 & 0.671 \\
-%        & & PV & 0.684 & 0.606 \\
-%        \cmidrule(r){2-5}
-%        & \multirow{3}{*}{multinomial}
-%        & N-Grams & 0.770 & 0.697 \\
-%        & & Bag-of-Means & 0.743 & \textbf{0.706} \\
-%        & & PV & 0.709 & 0.643 \\
-%       \midrule
-%       \multirow{6}{*}{Decision Tree}
-%        & \multirow{3}{*}{One-vs-Rest}
-%          & N-Grams & --- & --- \\
-%        & & Bag-of-Means & --- & --- \\
-%        & & PV & 0.994 & 0.339 \\
-%        \cmidrule(r){2-5}
-%        & \multirow{3}{*}{Multinomial}
-%        & N-Grams & 0.924 & \textbf{0.625} \\
-%        & & Bag-of-Means & 0.938 & 0.455 \\
-%        & & PV & 0.994 & 0.290 \\
-%       \midrule
-%       \multirow{2}{*}{Naive Bayes}
-%        & \multirow{1}{*}{One-vs-Rest}
-%          & N-Grams & 0.668 & \textbf{0.648} \\
-%          & & Bag-of-Means & 0.498 & 0.491 \\
-%          & & PV & 0.603 & 0.573 \\
-%        \cmidrule(r){2-5}
-%        & \multirow{1}{*}{Multinomial}
-%        & N-Grams & 0.637 & \textbf{0.618} \\
-%        & & Bag-of-Means & 0.479 & 0.472 \\
-%        & & PV & 0.594 & 0.562 \\
-%       \midrule
-%       \multirow{6}{*}{SVM}
-%        & \multirow{3}{*}{One-vs-Rest}
-%          & N-Grams & 0.882 & 0.713 \\
-%        & & Bag-of-Means & --- & --- \\
-%        & & PV & 0.831 & 0.683 \\
-%        \cmidrule(r){2-5}
-%        & \multirow{3}{*}{Multinomial}
-%          & N-Grams & 0.759 & 0.692 \\
-%        & & Bag-of-Means & 0.751 & 0.704 \\
-%        & & PV & 0.722 & 0.635 \\
-%       \midrule
-%       \multirow{6}{*}{kNN}
-%       & \multirow{3}{*}{One-vs-Rest}
-%       & N-Grams & 0.929 & 0.642 \\
-%       & & Bag-of-Means & 0.944 & \textbf{0.685} \\
-%       & & PV & 0.993 & 0.579 \\
-%       \cmidrule(r){2-5}
-%       & \multirow{3}{*}{Multinomial}
-%       & N-Grams & 0.911 & 0.623 \\
-%       & & Bag-of-Means & 0.936 & \textbf{0.678} \\
-%       & & PV & 0.993 & 0.581 \\
-%       \midrule
-%       \multirow{6}{*}{Random Forest}
-%       & \multirow{3}{*}{One-vs-Rest}
-%       & N-Grams & 0.924 & \textbf{0.701} \\
-%       & & Bag-of-Means & 0.940 & 0.618 \\
-%       & & PV & 0.985 & 0.509 \\
-%       \cmidrule(r){2-5}
-%       & \multirow{3}{*}{Multinomial}
-%       & N-Grams & 0.922 & \textbf{0.696} \\
-%       & & Bag-of-Means & 0.937 & 0.616 \\
-%       & & PV & 0.993 & 0.515 \\
-%       \midrule
-%       \multirow{3}{*}{Neural Network}
-%       & \multirow{3}{*}{Multinomial}
-%       & N-Grams & 0.911 & 0.709 \\
-%       & & Bag-of-Means & 0.930 & \textbf{0.716} \\
-%       & & PV & 0.975 & 0.665 \\
-%       \midrule
-%       \multirow{3}{*}{Deep Neural Network}
-%       & \multirow{3}{*}{Multinomial}
-%       & N-Grams & 0.913 & 0.708 \\
-%       & & Bag-of-Means & 0.936 & \textbf{0.715} \\
-%       & & PV & 0.989 & 0.679 \\
-%       % \midrule
-%       % \multirow{3}{*}{Convolutional \gls{ANN}}
-%       % & \multirow{3}{*}{---}
-%       % & N-Grams & --- & --- \\
-%       % & & Bag-of-Means & --- & --- \\
-%       % & & PV & --- & --- \\
-%       \bottomrule
-%     \end{tabular}
-%   \caption{sdf}
-% \label{tab:Paragraph Vector Parameter Hyper-Parameter Results Full}
-% \end{center}
-% \end{table}
-
-% \includepdf[offset=75,-75,scale=0.8,clip,trim=0cm 0cm 0cm 2cm,pages={1},pagecommand={\section{appendix}\subsection{part1}}]{appendix/InferringStructureofJobAdvertisements-experiment-example}
-% \includepdf[scale=0.8,clip,trim=0cm 0cm 0cm 2cm,pages={2-},pagecommand={}]{appendix/InferringStructureofJobAdvertisements-experiment-example}
-
-\clearpage
 \includepdf[scale=0.71, pages=1, offset=85 -120, frame, pagecommand={
 \subsection{Experiment Example: Inferring Structure of Job Advertisements}\label{sub:Understanding How Humans Structure Text}
 This section shows an example of the task given to participants during the experiment described in Section~\ref{subs:Inferring Structure in Job Advertisements}. The task was presented in \gls{Google Docs}, enabling the participants to highlight and comment sections of the text.
@@ -231,6 +106,7 @@ This section shows an example of the task given to participants during the exper
 \subsection{Collected Labels in Paragraph Experiment}
 \label{sub:Collected Labels in Paragraph Experiment}
 
+The following is the full collection of labels collected during the crowd-source paragraph labeling experiment described in Section~\ref{subs:Supervised Multi-label Paragraph Classification}:
 
 \begin{minted}{json}
   {
@@ -373,77 +249,3 @@ This section shows an example of the task given to participants during the exper
       ]
   }
 \end{minted}
-
-\clearpage
-%
-% {\color{gray}
-% {\tiny
-% \begin{verbatim}
-%   mmmdhdddhyhhhhddhdmmmmmhyyyyyydNMMMMMMNNdNNNNmmmmmo+////++++++++++++++++++++++++++oommmNNNNNNNNMMMMNNNNNNNNNdhyssssyyyhhhhhhdddhhh
-%   mmddhddyo////+oyhdmmmmmhyyyyydNMMNNNMMNhhhhyyhdmmNs+/////////+++++++++++++++++++++oodmmmmmNNNNNMMMNNNNNNNNNNmhs++++sysosssssyhhhhh
-%   mmdhho.         `:hmmmmhyyyydNMNNNNNMMm      +dmmNy+/////////++++++++++++++++++++++odmmmmmmmNNNNMMNNNmmmmNNNo      +y/      ohhhhh
-%   mmdh/      .`     .mmmmhyyyhNNNNNNNNMMm      +dddmh+//////////++++/+++++++++++/+++oodmmmmmmmNNNNNNmmmmmmmmmmh+++++/oy/      sdhhhh
-%   NNdh.     -yo      hmNMm+-.````.:+hNMMm      :/.````-///.`````./-``+++++++/-`` ``-:`.....dmNNy+-.````./smmmms......sdo      smhhhh
-%   Nmhy.     .ys....--hmNh.     `    `/NMm       `      `//.     ``  `+++++++.      `       dNm:     `     .hmm+      sNs      sNhhhh
-%   mmhy:      .:oyhydmmmN.     om-     oMm      /d:      //.         `//++++/      .+-      dN+     .mo     .dm+      sNs      sNhhhh
-%   dmhyy:        ./sdmmmd      sN:     -Nm      +d+      :/.        `.++++++/      -o:      hm.     -ms      hm+      smo      smhyyh
-%   yyyyyhs:`       `-ymmh      ``      .Nm      +d+      :/.      -///++++++/      -o:      hm.      ``      ym+      sdo      sNhyyh
-%   yyyyydmdhs:`      `hNh      .-------:Nm      +d+      //.      /++++////+/      -/-      hm.     `--......ym+      os-      smhyyh
-%   hddd+:::::+d+      /Nh      smhooooooNm      +d+      //.      ++++++++++/      -+-      hm.     -md++++++hm+      +s:      smhyyh
-%   dmNN:     :mm.     -Nd      sNs     .Nm      +d+      //.      /+++///+++/      ./.      hm.     -md`     ym+      os/      smhyyh
-%   dmNN+     -md.     :Nm`     sNs     :Nm      +d+      //.      +++////////.      `       hm:     -md`     hm+      /s:      omhyhh
-%   hdNNd.     ..      yNMo`    ./.    .hNm      +d+      +/.      /++/////////:.```.--      hmh.     :-     +mm+      /o:      +mhyhy
-%   hdNNNd+.`      `.:yNNMNh/.`     `.+dNNm``````+d+````` //.     `/+/////////......-/-     `dmmd+-`     ``:sdmd+``    /o:      /yyyhh
-%   hdNNNNNmdhysssydmNNNNMNNNmdhyyyhdmNNNNNhhhhhyhdhyyyhy++/:-:::::///////////.      `     `ommmNNmdhyssyyhdmmmmhyyy+//+/+//++//+ssyhh
-%   dhNNNMMMMMMMNNNNMMMNNMMNNNNNNNNNNNNNNNNNmmmmddddddmmmo++/:::://////////////-.```````.:ohdmmmNNNNNNmmmmmmmmddddddyooooo++oo+++osyyy
-%   hhmMMMMMMMMMMNNMMMMMMMNNNNNNNNNNNNNNNNNNmmmmdddddddmms++///+ooooo+////////////::///+yddddddmNNNNNNmmmmmmmdddddddhoo+++++oo+++oso+s
-%   dhmMMMMMMMMMMMMMMMMMMMNNNNNNNNNNNmNNNNNNmmmmdddddddmNyssssossyyhysooo++/////////++++sddddddmNNNdysssyhyhdddmmmdhoo+++/+++++++yh/.-
-%   dhdMMMMMMMMMMMMMMMMMMMNNNNNNNNNNmmNNNNNmmmmmdddddddmmhysoo+++oosssyyhhhyo+//////////oddddddmNNm+::----:-:/+oooooooo++//////++os///
-%   dhdMMNMMMMMMMNMMMMMMMMNNNNNNNmNNNNNmNNNmmmmmhhhddddys+///::::::://+syddmdhy/::::/::/oddddddmNNmyso++++++/::---/oo++++++////+++++++
-%   hyyhysymMMMMMMMMMMMMMMNNNNNNNmNNNNmNNNNNmmmmdhhhhyo/////::------::://oydddmdo/////:/oddddddmNNNNmdhsoooo++++++++++ooooo++++++++//+
-%   -.:sso+sNNmmmNMMMMMMMMNNNNNNNNNNNNmNNNNmmmmmhhhyo+//////::------::::///+oshmNy/::://oddddddmNNNNNNmdhhhdyyo++++++ooooooo+++++++//+
-%   :-.oyyydy+/::+dMMMMMNMNNNNNNNNNNNNNNNNNNmmmmhhso+/////:::-----::////////+/shmmo::://+hdddddmNNNNNNmmdddmmmddhhyo++/////+++++++////
-%   ::::oydy+ohyo+oNMMMMNMNNNNNNNNNNNNNNNNNmmmmmhsso+/:::/++oo++++///////////+oyddd/:::/+hdddddmNNNNNNmmdddmmmdhddddhhysso+++/////////
-%   :-..-/+:ohmdddmNNmdmNNNNNNNNNNNNNNNNNNNmmmmmddmmhs+//oydddhho++//////////+osyhdh:://+ddddddmNNNNNNmmmdddddhyhddddddddddddds///////
-%   ````..-oyhsdmNo/+///+dNNNNNNNNNNNNNNNNNmmNNMMMNNNmdoyNMNNNmmNmh+++////++oosssshdysssyhdddddmNNNNNNmmmddddddhyhdddddddddddmdo//////
-%   `````../ssohmy-.-/::/ohmNNNNNNNNNNNNNNNmmNMMNNNNmms-sNNNNNNNmms///++++ossosyyyyhmmNNmddddddmmNNNNNmmmddddddddddddddmdmdddmms+/////
-%   ``````.s+yddy:--//:.-/:.+sdmNNNNNNNNNNNmmNNNNNMMNo.-/mmNNNNmdo--:://+oosssyhhyyymmdddddddddmNmNNNNmmmddddddddddddmmmmNdddmmho+////
-%   `-:::-..shd+::-/y/::/+/.--::+shmNNNNNNNmmmNmdmmdo..-:+hdmmmdyo/://++///:/+ossoyhmddhhhdddddmNmNNNNmmmdddddddddddmmddmmdddmmhso+///
-%   `-+++/-`-yo::+yyysoo+/:-.......-/sdmNNNmmmmddhyo/://::/+++++oo///////:--/o+syhshmddhhhdddddmmNNNNNmmmdddmmdddddmmddddddddmmho+++//
-%   -...--.`-s-/o.::---:/:--.+-`:-.``..+NNNmmmhyo+shyyhdhs/o+/::///////:-..-+oys+soymddhdddddddmNmNNNNmmmdddmmddddmmdddddddddmmho+++//
-%   so+:.```.::-:-:-...-:--./:./hhhs+-.yNNNmmmoyssohmy++/:-:o+////////::...-+ohs-//ddhhddddddddmNNNNNNmmmmddmmmmmmdddddddddddmmhooo+//
-%   s//++++::+/:s:-....-::.:/`:hhhdddsomNNNmmoohs/+yyo/--...:o+///////:-....:+/:::ydddhhdddddddmNNNNNNmmmmmmmmmmmddddddddddddmmho++++/
-%   /:----:/+oo/+y+:..:::-:o-:hddddmdohmNNNmd+oy+odmmdhhdds/-:///////:-.-....-:-:sdddddddddddddmNNNNNNmmmmmmmmmmdddddddddddddmmho+++//
-%   s/--..--.-://osssooo+::..odddmmms:`.omNmo/oosdmmmmdhhhhho:://///:--.---..-/sdddddddddddddddmNNNNNNmmmmmmmmmmddddddddddddddhys+++//
-%   +o/:--........-:/+oooo/:.../ohdy:.``.oms:-:/shsooo+////oo/-------..-.----/sdmddddddddddddddmNNNNNNmmmmmmmmmmdddddddddhyo/::ss+++//
-%   :oo+/:-..`..``...-:/oooo+/-...--`````:h/---/oo+////o+///++-......-...----sdmmddddddddddddddmNNNNNNmmmNNmmmmmddddhyo/:------oso+///
-%   ---------........:+o++++++++/:/ys-```-/:::///:----:/::::://:----.-....--/ddhhhhhhdddddddddddmmddhhyyyyyhhhhyso+/:--......../oo++/+
-%   ...-.----..-----/++ossssssso+///-.````.--//:--.-..---:/:/:::-......--.-+oos+/--....---::/+o+/:-----..-------------........./o+++++
-%   ----------------://++///-:/:::----.````.:::--:-..------:----..-..-:/++syyssss+/:..`...------...--..------------------------:o+++++
-%   ::::::::::::::------:://:::::-------.``-//:::/::::/::::::::://+/+ssyhhdddhyso++::-----::---.-----------::::::::::::::::::::/+o+++o
-%   ////////////:::::::::::---:----------``:sso////++/++///+ooosyyyhhddddddhso///:::-----------.--::-::::::::://///////////////++ooooo
-%   ++++++++++++//////////:--------::::--.`.:/+oosssoosysoyhhhhdddddhhyssso+/:----------------:--://::::://///++++++++++++++++++ooossy
-%   +++++++ooooo+o+ooooo+::----------:----``.--:/+osssyhhhyyyyysyso+++::::------:------------::--:/+/////+++++++++++++++++++++++ooosyy
-%   ++++++++oooooosssyys/:::-::::::::::---.``.....---::///////:::---------------------------------:oooooooooooo+++++++/////////++osyyh
-%   +++++++++ooosssyyhy+//::::/+++++/////:-``.-...............--.-.......-....----:::--------------+yyssssooooo+++++/////////+++++ooss
-%   +++oooooossyyyhddds+//:///osoosoo++++/:.``.-----..-.........-..............------::::::-:::----:ohhyyssoooo+++////////++o+++/::+oo
-%   soossssyhhddddmmdso+///+ossyyyssoo++o++:.``-:::------...-...............-.------:::::::::/::---:+yddhyysoo+++///////+ooo++//:--:/+
-%   hhhyyyhhdmmmmmmhyo++//+ossyyhhysooooooso:.`.://////:::-------.---.-.------://::::///////++//::::/+ymmdhysoo+++++++ossoo+++//:-.-/+
-%   hddddddmmmmmmmyso++/+osyyhhhyyysyyyssyoso/-..:/ooo+++/:/:---------:::::::::///////////+oooo+/::::/odmmmmdhyssossyyysoo++++sso.``:+
-%   hhdddmmmmmmmmhso+//+ssyyyhdhyyyyyssoosssoo+:..-:ossssooo+++++/::::://:::::::://///////+ooosoo//::/+ydmNmmmdddddhhysso+++sdhsso/:::
-%   hhdddmmmmmmmdo++/++sysyhyyhhyydhyyyssssoooo+:.`./oooosyhhyyssooo++++/++/+//++++++++++++osyyyyo+/:/+shmNmmNmmmmdhhysso++sdmdmh+-:::
-%   hhdddmmmmmmds++++osyssyyhhdhhyysooo++ooooooo+-``.://+++ooo+ooooooossooooo++oooosossssssssyyhyyso///ssdmmmmmmmmddhyysoosdhdmy:::::/
-%   hhdddddddddho+++ooyyssyyhhhyyo++++oooooooooo+/-``.://:://///+++++++++ooooooooossyhhhhyysssyyyssys//o+/:///++osssyyysosdhhmy:--:::/
-%   sssoo+++/////+++ssysssyyssso//+++o++++++++/////.``.::::::+o+//+////++oooooosoosssyyyyyyhhhyyyssss/-.`````````...--:::/osys:----::/
-%   --....``````..-/osyssysso+/++ooooo++++++++++//:-.``---/+/+++////+//++///+ooooosooooosyyhhyyyssss/.```````````````````````.....--:/
-%   ````````````````..-:/+++//+ooooo++++++++++//::::-.`.-:://o//::::///////////+ooooooooooosyo/:-..`````````````````````````````...-/s
-%   `````````````````````./++ooooooooso++////+::/::---.`.----/::/:-:::///+++//+///+o+++oooo++.```````````````````````````````````./o+/
-%   ````````````````````.-++oo++oooo+oo+///:/++//:---......--::-:----:::::///+///++++++ossoo+-``````````````````````````````````-oo/:/
-%   ````````````````````../+ooooooo+ossoo+////+/::---....---::-::-----:-:::///++//+soooosoo/-.````` `````````````````````````..+o/://:
-%   ``````````````````````.-/ossssssoooo++++/////::--....-::://-----:-:::://///+o++ooo++/::.``````` `` `````````````````````.:o+:::::/
-%   `````````````````````````..:+ossssooo+++////:::-....-:/++:+://::---:::/::////+++++:-.````  ````````````````````````````./s+:/:--:/
-%   ...`````````````````````````.--::::/++o+++////--....-::--...........-----.-..----.```````           ```````````````````/s+::...--:
-%   ..............````......`.``````````.-:-:+/:/+:.``...``````````````` `````                       ``       ````` ``````:so/-```....
-% \end{verbatim}
-% }
-% }
