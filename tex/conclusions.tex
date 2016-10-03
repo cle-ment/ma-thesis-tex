@@ -6,6 +6,22 @@
 \section{Conclusions}
 \label{sec:Conclusions}
 
+This thesis has applied an explorative and iterative poduct development process to define and then research a machine learning problem and approaches to solve it. The research problem investigated was set to be multi-class text classification on sentence data. Despite being an well-known and simple problem in its nature it is far from being solved and the topic of much recent works, also because of it's wide applicability to various real world problem domains such as sentiment analysis, spam identification and document filtering.
+
+By investigating a wide array of methods on a generated dataset a few main results can be concluded:
+
+Recent work in \gls{CL} and \gls{NLP} shows a trend towards more general purpose methods which avoid built-in assumptions about the problem domain and are therefore applicable through various domains. We saw in this work that beyond potentially freeing us from the often involved and tedious work of \gls{Feature Engineering} these methods also perform on par or even better. This is because they inform their data representation choices in a data-driven way and with enough data and a well chosen model design are shown to increasingly outperform hand-designed feature extraction techniques. 
+
+These trends were greatly accalerated by the recent wave in popularity of Deep Learning methods and more generally connectionist models where ideas from \gls{Representation Learning} and Unsupervised Feature Learning have been a focus of research for decades, by the growth in large data and its
+
+ which were seperated into two conceptual categories
+
+
+- promise of more data driven models, reducing bias through domain knowledge
+- great because it also makes methods applicable across domains
+- even in problems that seem simple or solved new developments can make a difference
+-
+
 
 - while the approaches are presented as two different techniques here the of course are complementary and somewhat overlapping. After all the LSTM uses embeddings which effectively learn vector representations for words (is that true)?
 - many of these techniques can be and are mixed and matched, e.g. using word embeddings and modeling sentences in a sequential fashion, possibly even putting a CNN on top to learn invariantly
