@@ -616,8 +616,7 @@ It is however important to point out that any version of the F-measure is a bias
 \begin{equation}
   \begin{split}
   \text{Informedness} &= \text{Recall} + \text{Inverse Recall} \text{ – } 1 \\
-  &= 1 - \text{Miss Rate} - \text{Fallout} \\
-  &= 1 - \frac{\text{FN}}{ \text{RN}} - \frac{\text{FP}}{\text{RP}}
+  &=\frac{\text{TP}}{ \text{RP}} + \frac{\text{TN}}{\text{RN}} \text{ – } 1
   \end{split}
 \end{equation}
 
@@ -626,9 +625,8 @@ Further he defines:
 
 \begin{equation}
   \begin{split}
-  \text{Informedness} &= \text{Recall} + \text{Inverse Recall} \text{ – } 1 \\
-  &= 1 - \text{Miss Rate} - \text{Fallout} \\
-  &= 1 - \frac{\text{FN}}{ \text{RN}} - \frac{\text{FP}}{\text{RP}}
+  \text{Markedness} &= \text{Precision} + \text{Inverse Precision} \text{ – } 1\\
+  &=\frac{\text{TP}}{ \text{PP}} + \frac{\text{TN}}{\text{PN}} \text{ – } 1
   \end{split}
 \end{equation}
 

@@ -379,8 +379,7 @@ While a \gls{MCC} test score of 0.574 the lowest amongst the candidates the high
 \paragraph{Experimental Setup}
 \label{par:Experimental Setup}
 
-From the previous experiments on vector space models the best performing setting of each type was chosen.
-Specifically those were the following settings:
+From the previous experiments on vector space models the best performing setting of each type was chosen, specifically:
 
 \begin{itemize}
   \item \textbf{N-Grams}: Unigrams were used with a dimensionality of 300. No stop words filtering and no vector normalization were applied and while using sub-linear TF and IDF.
@@ -388,54 +387,43 @@ Specifically those were the following settings:
   \item \textbf{Paragraph Vectors}: PV-DBOW word vectors were generated using inference on the training data, a window size of 8, a negative sampling value of 10, hierarchical softmax and no frequent word sub-sampling.
 \end{itemize}
 
-Next a diverse set of classification algorithms representative of the algorithm classes described in Section~\ref{sub:Methods For Classification With Vector Space Models} were applied to the data and evaluated.
+Next a set of established classification methods representative of the algorithm classes described in Section~\ref{sub:Methods For Classification With Vector Space Models} were applied to the data and evaluated.
+\todo{show parameter settings of classifiers in appendix}
 
-% The following model characteristics were chosen for each model:
-%
-% \begin{itemize}
-%   \item \textbf{Logistic Regression} A $C$ value of ${0.01, 0.1, 1, 10}$ was evaluated during cross-validation.
-%   \item \textbf{Decision Tree}
-%   \item \textbf{Naive Bayes} Bernoulli Naive Bayes% Naive Bayes is Bernoulli
-%   \item \textbf{SVM}
-%   \item \textbf{kNN}
-%   \item \textbf{Random Forest}
-%   \item \textbf{Neural Network}
-%   \item \textbf{Deep Neural Network}
-% \end{itemize}
+The dataset was then split into 5 folds to perform \gls{Cross-Validation}. For the results to be reproducible, comparable and to save computational resources, the vector representations of the three types were precomputed for all folds. The full results can be seen in Table~\ref{tab:Classifier Results} while Table~\ref{tab:Test Scores sorted} shows the classifiers' best results sorted by their test score:
 
-The dataset was then split into 5 folds to perform \gls{Cross-Validation}. For reproducibility, comparability and to save computational resources the vector representations produced by the three vector space models were precomputed for all folds. Naturally the models were trained on the training data in each fold and applied on the test data to ensure unbiased results.
 
-\clearpage
-
-\begin{wraptable}{r}{0.4\textwidth}
+\begin{table}[h]
 \centering
-\begin{tabular}{ r l }
+\begin{tabular}{ l l c }
   \toprule
-  Method & Ratio \\
+  Classifier & Vector Space & Test Score \\
   \midrule
-  Naive Bayes & 0.970 \\
-  Logistic Regression & 0.950 \\
-  SVM & 0.808 \\
-  Neural Network & 0.770 \\
-  Deep Neural Network & 0.764 \\
-  Random Forest & 0.759 \\
-  kNN & 0.726 \\
-  Decision Tree & 0.676 \\
-  \midrule
-  N-Grams & 0.795 \\
-  Bag-Of-Means & 0.763 \\
-  Paragraph Vectors & 0.679 \\
+  Neural Network & Bag-of-Means & 0.716 \\
+  Deep Neural Network & Bag-of-Means & 0.715 \\
+  SVM & N-Grams & 0.713 \\
+  Logistic Regression & Bag-of-Means & 0.706 \\
+  Random Forest & N-Grams & 0.701 \\
+  kNN & Bag-of-Means & 0.685 \\
+  Naive Bayes & N-Grams & 0.648 \\
+  Decision Tree & N-Grams & 0.625 \\
   \bottomrule
 \end{tabular}
-\caption{Test to training score ratio for classifiers and vector space models: For classifiers (top) the best performing vector space model was chosen and for vector space models (bottom) scores are averaged over all classifiers.}
-\label{tab:Test/Training Ratio}
-\end{wraptable}
+\caption{The best results in terms of test score for all classifiers.}
+\label{tab:Test Scores sorted}
+\end{table}
+
+\paragraph{Test Performance}
+\label{par:Test Performance}
+
+In terms of test performance, the most important measure when considering the effectiveness of a classification method, the best performing candidate is a single hidden layer Neural Network. On the other hand we can clearly see that there is only a small margin between the top scoring methods and the multi-layer Deep Neural Network as well as SVM's perform virtually at the same level. Also Logistic Regression and Random Forests show comparable performance while kNN, Naive Bayes and Decision Trees can be seen to have a larger gap.
+
 
 \begin{table}[h]
   \begin{center}
     \begin{tabular}{ ll cc }
       \toprule
-      Classifier & Vector Space & Training Score & Test Score \\
+      Classifier & Vector Space Model & Training Score & Test Score \\
       \midrule
       \multirow{3}{*}{Logistic Regression}
        & N-Grams & 0.770 & 0.697 \\
@@ -484,59 +472,57 @@ The dataset was then split into 5 folds to perform \gls{Cross-Validation}. For r
       % & & Paragraph Vectors & --- & --- \\
       \bottomrule
     \end{tabular}
-  \caption{Test and Training performance in terms of \gls{MCC} for the whole set of classifiers. Each classifier was applied to data transformed using the best configuration for each of the three vector space model classes}
+  \caption{Test and Training performance in terms of \gls{MCC} for the whole set of classifiers. Each classifier was applied to transformed data using the best configuration for each of the three vector space model types. Note that the SVM classifier could not be evaluated in terms of \gls{MCC} score in combination with the Bag-Of-Means vector space model due to unknown reasons.}
 \label{tab:Classifier Results}
 \end{center}
 \end{table}
 
+Regarding vector space models we can see that the Paragraph Vectors did not achieve highest test performance in combination with any of the classifiers. Four of seven classifiers performed best with the Bag-of-Means model and also make up the highest two results while the N-Gram model worked best in the other cases.
+Table~\ref{tab:Classifier Results} shows that a set of methods achieve remarkable performance with simple N-Grams. Among them the SVM ranks highest with a \gls{MCC} test score of 0.713. Conversely in many cases the training score using Paragraph Vectors is highest, including both the Tree-based methods, Neural Network approaches and \gls{kNN}.
+Another important observation is that the Bag-of-Means model performs best overall and this is consistent half of the classifiers. The highest test score of 0.716 was achieved by a Neural Network using this model.
+
+
+\begin{wraptable}{r}{0.4\textwidth}
+  \centering
+\begin{tabular}{ r l }
+  \toprule
+  Method & Ratio \\
+  \midrule
+  Naive Bayes & 0.970 \\
+  Logistic Regression & 0.950 \\
+  SVM & 0.808 \\
+  Neural Network & 0.770 \\
+  Deep Neural Network & 0.764 \\
+  Random Forest & 0.759 \\
+  kNN & 0.726 \\
+  Decision Tree & 0.676 \\
+  \midrule
+  N-Grams & 0.795 \\
+  Bag-Of-Means & 0.763 \\
+  Paragraph Vectors & 0.679 \\
+  \bottomrule
+\end{tabular}
+\caption{Test to training score ratio for classifiers (top) using the best performing vector space model and vector space models (bottom) averaged over classifiers.}
+\label{tab:Test/Training Ratio}
+\end{wraptable}
+
 \paragraph{Generalization Performance}
 \label{par:Generalization Performance}
 
-We will first take a look at the results in terms of their capability to generalized the learned structure from the training data. In indicator for this ability is the ratio between performance on test and training data. Table~\ref{tab:Test/Training Ratio} shows a comparison in terms of this ration between both the classification algorithms as well as the vector space models when averaged over the performance with all algorithms. The results are sorted in order of their score which was measured in terms of \gls{MCC} as mentioned previously.
+Another property of classification techniques is their capability to generalize. An indicator for this ability is the ratio between performance on test and training data, since a classifier that simply ``memorizes'' training examples might achieve a very high training score but overfits and fails to classify new data well. Table~\ref{tab:Test/Training Ratio} shows a comparison in terms of this ratio between both the classification algorithms as well as the vector space models when averaged over the performance with all algorithms.
 
-Regarding the classifiers we can observe that Naive Bayes and Logistic Regression achieve a very high ratio signaling successful generalization.
-% Looking at Table~\ref{tab:Paragraph Vector Parameter Hyper-Parameter Results} we can see that the algorithms also both perform considerably well
-For the Neural Networks models tested it is apparent that the deep architecture overfits more than the network with a single hidden layer, i.e. it achieves higher training but lower test scores. When comparing the Deep Neural Network to Random Forests using Paragraph Vectors though we can see that while both methods achieve similarly high scores on the training data, Random Forests perform significantly worse on the test data --- Random Forests achieve scores of 0.985 (training) and 0.509 (test) as opposed to the scores of 0.989 (training) and 0.679 (test) for the Deep Neural Network. In such a setting we can expect these methods to increase the level of overfitting when the dataset size is increased.
+We can see that Naive Bayes and Logistic Regression achieve a very high ratio signaling good generalization.
+For the Neural Networks models tested it is apparent that the deep architecture overfits more than the network with a single hidden layer, i.e.\ it achieves higher training but lower test scores. When comparing the Deep Neural Network to Random Forests using Paragraph Vectors though we can see that while both methods achieve similarly high scores on the training data, Random Forests perform significantly worse on the test data --- Random Forests achieve scores of 0.985 (training) and 0.509 (test) as opposed to the scores of 0.989 (training) and 0.679 (test) for the Deep Neural Network.
 
+Naive Bayes behaves very differently with each vector space model. When using N-Grams the model shows decent performance but the score drops with the other models, showing a decrease of performance of 7.5\% with Paragraph Vectors and 15.7\% with Bag-of-Means.
 
-\paragraph{Performance of Vector Space Models with Different Classifiers}
-\label{par:Performance of Vector Space Models with Different Classifiers}
-
-A set of methods achieve remarkable performance with simple N-Grams. Among them the SVM ranks highest with a \gls{MCC} test score of 0.713. Interestingly though in many cases the training score using Paragraph Vectors is highest, including both Tree-based methods, the Neural Network approaches and \gls{kNN}. This means that in principle they offer a better representation of the data to the algorithm, making it possible overfit on the rather small dataset. This is also shown in Table~\ref{par:Generalization Performance} where Paragraph Vectors show a 10\% decreased generalization performance, meaning that on average the classifiers tend to overfit on this representation.
-Another important result is that the Bag-of-Means model performs best overall and this is consistent half of the classifiers. The highest test score of 0.716 was achieved by a Neural Network using this model.
-
-\paragraph{Comparison of Classifiers}
-\label{par:Comparison of Classifiers}
+When looking at the vector space models Paragraph Vectors show a test to training score ration which is significantly lower than both other representations with by a margin of 10\% in absolute terms. This means that on average the classifiers tend to overfit on this representation. N-grams on the other hand achieve the highest ration in these terms.
 
 
+\paragraph{Runtime Complexity}
+\label{par:Runtime Complexity}
 
-
-naive bayes does strange things (BOM vs Ngram)
-
-N-grams
-- In many cases still best performance
--
-
-
-
-Vector Spaces compared:
-
-
-First of all we note that in none of the setups paragraph vectors performed best. Vectors produced with the  Bag-Of-Means approach however did outperform the N-gram model in in combination with some of the classifiers, namely Logistic Regression, \gls{kNN} and the Neural Network models of which the simple Neural Network achieved a test score of 0.716 using this technique, the highest test score of all classifiers.
-
-% Regarding vector spaces
-- Ngrams are best in most settings
-- Bag of means performs pretty well considering that it was reported not to
-- paragraph vectors often on par but don't outperform (probably need more data)
-- PV seem to make models overfit in many cases (knn, NN, DNN)
-
-- SVM is good
-- DNN overfits (probably)
--
-
-
-\paragraph{Overall test performance}
-\label{par:Overall test performance}
+We can see quite significant variations between the computational requirements for the different methods as Table~\ref{Computation time} shows. Computation of the N-gram model with a dataset of this size (9948 sentences) can be performed in under one second for all five folds. In comparison training the Paragraph Vector model took around 5,5 hours on the same machine. Note that regarding the Bag-Of-Means model the results are not directly comparable: Although computation of this model was fast, this does not account for the fact that it uses pre-computed word embeddings whose computation is almost as complex as training the Paragraph Vector model and was done with a dataset of a billion words.
 
 \begin{table}[h]
   \begin{center}
@@ -557,14 +543,39 @@ First of all we note that in none of the setups paragraph vectors performed best
       Deep Neural Network & 32.84m & 32.65m & 32.22m \\
       \bottomrule
     \end{tabular}
-  \caption{Computation time for the experiments. The top row shows the time for generating the feature space models and the rest of the results show the runtime for the different classifiers. The neural network models are separated because they were trained on an Amazon AWS \emph{g2.2xlarge} \gls{GPU} instance while the other models were trained on \emph{c4.large} instance using a multi-core CPU. The runtime of all classifiers includedes 5-fold \gls{Cross-Validation} and grid-search over hyper-parameters for most models. Thus the results are only representative to a certain extent as some models had a smaller hyper-parameter space to be evaluated.}
-\label{tab:Computation}
+  \caption{Computation time for the experiments. The top row shows the time for generating the feature space models and the rest of the results show the runtime for the different classifiers. The neural network models are separated because they were trained on an \gls{AWS} EC2 \emph{g2.2xlarge} \gls{GPU} instance while the other models were trained on \emph{c4.large} instance using a multi-core CPU. The runtime of all classifiers includedes 5-fold \gls{Cross-Validation} and grid-search over hyper-parameters for most models. Thus the results are only representative to a certain extent as some models had a smaller hyper-parameter space to be evaluated.}
+\label{tab:Computation time}
 \end{center}
 \end{table}
+
+The difference in complexity involved in training the models can also be seen when comparing the computation time of the classifiers with the different vector space models. Here we can see that training and evaluation on 5 folds can be done with an N-Gram model in minutes even with computationally more resource-intensive methods like a Support Vector Machine. Compared to that the runtime of evaluating the Bag-of-Means models takes significantly longer with a varying degree depending on the classifier and this trend potentiates with Paragraph Vectors.
+
+The classifiers with the shortest computation time are the Naive Bayes which can be computed on an N-Gram model in only 1.33 seconds, totaling to around 2 seconds including the construction of the N-Gram vector space, and kNN. Similarly Logistic Regression and Decision Trees can be evaluated in half a minute using N-Grams and the SVM and Random Forest require much more time to compute.
+
+These relations between the classifiers translate to the other vector space models with a few exceptions: The runtime of kNN in the Bag-of-Means and Paragraph Vector spaces becomes much more resource intensive, almost reaching the level needed to compute the SVM model. Naive Bayes keeps computation within a couple of seconds for all models, but at the same time we observe its test score performance decrease with the Bag-of-Means and Paragraph Vector models as mentioned previously.
+
+Both Neural Network models were trained on a GPU instance and as such their computation time shows a very different profile. Despite parallelization of training over GPU cores these methods still have a higher demand on computation time than all other models that were trained on the single core machine when looking at the N-Gram model. On the other hand the time to evaluate these models does not increase with the Bag-of-Means or the Paragraph Vector models as it does for all other methods. In fact we can see a minimal decrease in computation time.
+
 
 \subsection{Classification With Sequential Models}
 \label{sub:Classification With Sequential Models}
 
+\todo{less time spent on optimizing these}
+
+\paragraph{Experimental setup and model choices}
+\label{par:Experimental setup and model choices}
+
+Three sequential models were evaluated, each of them based on Long Short-Term Memory Networks (see Section~\ref{subs:Long Short-Term Memory (LSTM) Networks}). All Networks are trained at character level, so instead of indices for words they receive the sentences as a sequence of characters as their input:
+
+\todo{mention embedding layers}
+
+\begin{itemize}
+\item \emph{Simple LSTM}: This model uses a single LSTM layer of dimensionality 256. The time steps of this model are 200, meaning that from each sentences the first 200 letters are used and shorter sequences are appended with padding characters. Then a dropout layer is applied, i.e. a layer which prevents forward propagation of each neuron with a given probability as proposed by~\cite{Srivastava:2014aa} to prevent overfitting. Here a probability of 0.5 was used. The output layer consists of six nodes which encode the labels used for classification and uses a softmax activation function.
+\item \emph{Stacked LSTM}: The stacked model is similar to the simple model but instead uses three LSTM layers of dimensionality 256, 64 and 32 respectively. The first two layers again return a sequence of the sequence size 200, making the model theoretically capable to learn several levels of abstractions. The last LSTM layer is again connected to the output layer encoding the prediction of labels. Dropout is applied to each LSTM layer with a probability of 0.5.
+\item \emph{Multi-task LSTM}: The multi-task model is slightly more complex in its setup. It is in principle a generative model that, given a sequence, produces both the next character and the label that is most likely at this point in the sequence. Like the other models it reads sequences, in this case limited to 40 characters. On top it uses two stacked LSTM layers of which the first one returns sequences itself. The layers have a dimensionality of 512 and dropout with a probability of 0.2 is used. The output layer in this is of size $|K| + |L|$ where $|K|$ is the amount of possible characters and $|L|$ denotes the number or labels. At inference time model was used to step through a sentence one character at a time and for each character the label prediction was used so that the whole sentence would be labelled at character level. Then a majority vote over the labels was performed to retrieve the final prediction of the label for the given sentence.
+\end{itemize}
+
+Table~\ref{tab:LSTM Results} shows the results of each model. During training the performance was measured in terms of categorical cross-entropy as the evaluation of \gls{MCC} was computationally quite expensive at each iteration due to a lack of a distributed implementation so that for evaluation a switch between GPU and CPU would have had to be performed. In the table these results are therefor called Training Loss and Test Loss. At test time the score was measured using \gls{MCC}.
 
 \begin{table}[h]
   \begin{center}
@@ -582,8 +593,46 @@ First of all we note that in none of the setups paragraph vectors performed best
 \end{center}
 \end{table}
 
-\subsubsection{Character-based LSTM *}
+\begin{wraptable}{r}{0.4\textwidth}
+  \centering
+  \begin{center}
+    \begin{tabular}{ l c c c }
+      \toprule
+      Model & Runtime \\
+      \midrule
+      Simple LSTM & 7.04h \\
+      Stacked LSTM & 3.05h \\
+      Multi-task LSTM & 27.57h \\
+      \bottomrule
+    \end{tabular}
+    \caption{Computation time for the LSTM experiments. These were carried out on a single core instance as opposed to the other Neural Network models above and could be sped up on a \gls{GPU}.}
+    \label{tab:Computation time LSTM}
+  \end{center}
+\end{wraptable}
+The first two models perform on par with the classification methods using vector space models discussed in the previously. The stacked model achieves the highest score of 0.707 which is comparable to the Logistic Regression model using a Bag-Of-Means representation but slightly worse than the Neural Network models or the SVM.
+The simple LSTM model performs worse with an absolute difference 1.8\% in test performance. The training to test ratios of 0,955 for the Simple LSTM and 0,852 for the stacked LSTM show that the model with one layer tends to overfit much less, despite performing worse overall.
+The multi-task LSTM did not nearly achieve similar performance and classifies sentences with an \gls{MCC} test score of 0.258. Training and Test loss in this case were not measured.
 
-\subsubsection{Stacked Character-based LSTM *}
+Table~\ref{tab:Computation time LSTM} shows the computation time for training and evaluating each of the models. The single LSTM layer network takes more time than the stacked one. It is important to note that these experiments were not carried out on an \gls{AWS} EC2 instance as the experiments for classification with vector space models. Instead they were computed on a personal machine which was in use so the resulting difference in computation is likely to be an artifact of that. The first two models both ran 60 iterations and the best validation loss during training was reached after 30-40 iterations. The computation time for the Multi-task network takes significantly more time with almost 28 hours.
 
-\subsubsection{Character-based Multi-task LSTM *}
+The multi-task network has the nice property that we can sample from it which is a great tool for introspection. Figure~\ref{fig:LSTM multi labeling output} shows three samples of typical output when the network is sequentially processing sentences. For each character a label is produced given the previous characters in the sequence that have already been seen. The brightness of color here encodes the confidence about the label (brighter means higher).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/LSTM-labeling-output.pdf}
+    \caption{Samples of the network sequentially labeling sentences. The brightness of the bluetone behind each character shows the confidence about the prediction, i.e. the probability the networks softmax function outputs it. In these samples the confidence is thus very low (black) or low (dark blue). The labels are: $nextsteps$ ($n$), $job$ ($j$), $benefits$ ($b$), $other$ ($o$) and $candidate$ ($a$ is used as in applicant since $c$ already encodes company).}
+\label{fig:LSTM multi labeling output}
+\end{figure}
+
+Some interesting observations can be made here, e.g. that the word \emph{work} in the first line immediately triggers the network to output the label \emph{j}. In general though the output fluctuates quite much, and the overall confidence which is achieved by a majority vote over the labels is often just over 50\%.
+
+Another interesting possibility for getting a better understanding of the model's behavior is to let it generate output on its own. The network is primed with sequence of padding characters which contain no information in the dataset as they only extend sequences to the expected length. Then we create a first character and label and this serves as the input for the next prediction. Thus the network is always provided with a truncated history of its own output and generates more on its basis.
+
+Figure~\ref{fig:LSTM multi generating output} shows such output which tells us that the network did not learn much about language. It is unable to produce output that resembles a word and generally stops using other characters than a whitespace after a few characters. Interestingly it still uses different labels at times even when producing whitespace characters.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/LSTM-generating-output.pdf}
+    \caption{Samples of the network generating sequences. At each time step the LSTM is to produce a new character and a new label for this character given the output it has already produced.}
+\label{fig:LSTM multi generating output}
+\end{figure}

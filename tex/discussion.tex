@@ -7,20 +7,22 @@
 \label{sec:Discussion}
 
 
-\subsection{Vector Space Models}
+\subsection{Vector Space Models Approach}
 \label{sub:Vector Space Models (Discussion)}
 
 \subsubsection{N-gram Models}
 
 Not without reason are N-Gram Models still so widely used as the experiments in Section~\ref{sec:Experiments and Results} confirm. They are easy to understand, straightforward to train using publicly available software libraries, fast to compute and yield good performance for many problems in \gls{NLP}.
 
-Hyper-parameters have to be adjusted before training the model as they affect the results differently given the problem and also the used classifier. As we saw in Section~\ref{subs:N-gram Models (Experiments and Results)} the type of N-gram (word vs.\ character-based) and the vector dimensionality have the strongest impact on the results. Other hyper-parameters do not have a substantial influence, for instance stop-words, or do not seem to matter at all in this particular settings such as Sub-linear term frequency scaling.
+Hyper-parameters have to be adjusted before training the model as they affect the results differently given the problem and also the used classifier. As we saw in Section~\ref{subs:N-gram Models (Experiments and Results)} the type of N-gram (word versus character-based) and the vector dimensionality have the strongest impact on the results. Other hyper-parameters do not have a substantial influence as for instance stop-words, or do not seem to matter at all in this particular settings such as sub-linear term frequency scaling.
 
-Optimizing for hyper-parameters though is very cheap as well as an N-gram model is so fast to train, allowing to easily and automatically explore a wide parameter-space with simple \gls{Grid Search}.
+Optimizing for hyper-parameters though is very cheap as well as an N-gram model can be trained and evaluated in a matter of seconds, allowing to exhaustively and automatically explore a wide parameter-space with simple \gls{Grid Search}. N-Grams thus make for a great choice as a baseline model with good performance and simple usage.
 
-N-Grams thus make for a great choice as a baseline model with good performance and simply usage.
+\todo{model is sparse because it represents words or combinations => faster training for classifiers that can take advantage of it, but also means less information density as dimensions hardly correlate or interact and information cannot be shared between them.}
 
 \subsubsection{Bag-of-Means Model}
+\label{Bag-of-Means Model (discussion)}
+
 
 Composition of feature vectors to produce a feature representation for a group of objects is a known approach (see e.g.~\cite{Mitchell:2010aa} for a study on compositions of word embeddings). However this technique is also seen as an ad-hoc solution with unforeseeable side-effects such as flattening out the significance of complementary patterns as the number of vectors increase. As~\cite{Zhang:2015aa} puts it: \textquote{Bag-of-means is a misuse of word2vec [...]} and \textquote{such a simple use of a distributed word representation may not give us an advantage to text classification}. Further~\cite{Le:2014aa} state that \textquote{weighted averaging of word vectors [...] loses the word order in the same way as the standard bag-of-words models do}.
 
@@ -28,6 +30,8 @@ Given these previous results and thoughts it is the more surprising how well the
 First the word vectors that were used had been trained on a humongous dataset, implicit knowledge that the model could leverage while the other vector space models could not. Second the dataset consists of sentences, so short sequences of text where the problem of vectors negating each other's patterns can be expected to not be as severe.
 
 Regarding computational complexity this model is relatively fast to train if one uses pre-computed word-vectors as done in the experiments. However the training of such corpus of 1 billion word-vectors itself takes enormous time and resources.
+
+\todo{ might work because sentences are short}
 
 \subsubsection{Paragraph Vectors using Distributed Representations}
 
@@ -38,33 +42,79 @@ As in other vector space models the dimensionality of the vector representation 
 
 An interesting observation is that a number of classifiers tend to overfit using the vectors produced by this model. This could mean that it produces clearer patterns in the representation of documents and a richer representation. It is very likely that this type of model needs a much larger dataset in order to achieve it's highest performance as for many models based on Neural Network architectures. As mentioned earlier the word2vec models in~\cite{Mikolov:2013ad} were trained on a dataset of a billion words.
 
+% better training score:
+% This means that in principle they offer a better representation of the data to the algorithm, making it possible overfit on the rather small dataset.
+
+
 \subsubsection{Comparison of Vector Space Models}
 \label{subs:Comparison of Vector Space Models}
 
-- computational resources
+Based on the results and learnings regarding the vector space models we can see that the choice about these models for a prediction task depends on a few factors which will be described next along with considerations regarding the models:
 
-- feature engineering vs from scratch
-
-
-
-As mentioned earlier the computational needs to train this model are higher than an N-Grams model by an order of magnitudes.
-
-- Ngrams very feature engineering
-
+\begin{itemize}
+  \item \textbf{Size of the dataset:} Especially when training distributed representations large datasets are needed. In comparison the dataset aquired for this thesis was small: For instance the Google News dataset mentioned above and created by~\cite{Mikolov:2013ab} used 3 million words while the dataset used here contains a total of 121,119 words which is 4\% of the size. It is very likely that a bigger dataset is needed to achieve the models' best performance. In the case of a small dataset as given in this work N-Grams still work reliably well.
+  \item \textbf{Type of problem:} Here a topic classification problem is given, a task that can be seen as a very objective analysis of the type of information and facts contained. Other tasks like sentiment analysis where a classifier predicts whether a positive or negative sentiment is expressed have to rely on much more subtle notions in the language in order to perform well. While sentiment analysis can be framed as a simple multi-class classification problem as is the case in this work, in order to identify for instance sarcasm slight variations in the word order or formulations can make a big difference while topic analysis can work by simply spotting words or word combinations as an N-Gram model does. In this regard distributed representation models are expected to work better the more subtleties in the language matter to the task as they are shown to be very effective at modeling these (see e.g. ~\cite{Mikolov:2013ac}), given of course enough data is available.
+  \item \textbf{Constraints on development time:} Testing, tuning and deploying an N-Gram model is significantly faster than the other models that were investigated. This is due to the fact that computation time is fast as it simply based on occurrence counts. This also makes hyper-parameter optimization feasible using exhaustive grid search. On the other hand given a set of trained word embeddings such as the Google News dataset (see Appendix Section~\ref{sub:Google News Dataset and Word Embeddings}) the computation of the Bag-Of-Means model is as simple as averaging vectors and does not require any tuning (though of course other vector compositions are possible as mentioned in~\cite{Mitchell:2010aa}). Developing a good Paragraph Vector model is possible but takes significant effort as the effects and interaction of the hyper-parameters is quite complex and quick experimentation or exhaustive search is more challenging with the computational demands of this model.
+  \item \textbf{Constraints on computational resources:} A minor point to take note of is that there is a significant difference in the need computational resources. If these are limited, e.g. for financial reasons or because the software runs on constrained hardware such as on a phone or an embedded device, training Paragraph Vectors might be infeasible and equally training the Bag-Of-Means model if the word embeddings have to be computed from scratch.
+\end{itemize}
 
 
+N-Gram models have been subject to research for many years. The results here show that these models still perform very well on small datasets and can make for a great baseline model. Further they are well and easily understood as they their assumptions align with our intuition how texts can be characterized. These assumptions however are also strong ones and their shortcomings such as insensitivity to word order and inability to capture subtle meaning and semantic relationships between words have been shown in previous work.
 
-% MORE DATA needed
-- comparision between only training set with validation split and traning + test for vector space models with Log Reg, 10\% lower performance almost
+This perspective makes the models using distributed representations much more appealing as they do not make strong assumptions about the structure of the data except that the occurrence of words in another word's context signifies a relationship between them. We have seen that while not on par with N-Grams, the Paragraph Vector model still achieve good results with a difference of only 3.6\% in absolute test performance for a Deep Neural Network. This is especially remarkable given that similar models are usually trained on much larger data. Further in comparison to N-Grams which were designed to N-Gram occurrences as a good indicator of the content of a sentence, the Paragraph Vector model did not have this knowledge or inductive bias built in but had to learn such relationships from scratch by training it to simply predict the missing word(s) given other words from a sentence.
+
+More surprisingly when using well-trained word embeddings a simple averaged model of the word vectors in a sentence, an approach that was stated by previous work as too simple and not performing well (see Section~\ref{Bag-of-Means Model (discussion)}), performed best. With this result, given we have pre-trained word vectors at hand this approach is the most straightforward to take and achieves best results. Note that given a larger dataset Paragraph Vectors might outperform this result and there is reason to believe that this technique performs worse with longer texts as mentioned in Section~\ref{Bag-of-Means Model (discussion)}.
 
 
-\subsubsection{Classification Methods}
+
+% Their good performance in this case also comes from the fact that the dataset is relatively small
+%
+% naive bayes performs very poor on the learned representations: maybe because of its simple iid assumption of words (features) and in the learned representations these are more like latent factors and model a more comlex relationship which is not mere existence or non-existance of terms but a combination of activations
+%
+% - computational resources
+%
+% - feature engineering vs from scratch
+%
+%
+%
+% As mentioned earlier the computational needs to train this model are higher than an N-Grams model by an order of magnitudes.
+%
+% - Ngrams very feature engineering
+%
+%
+%
+% % MORE DATA needed
+% - comparision between only training set with validation split and traning + test for vector space models with Log Reg, 10\% lower performance almost
+
+
+\subsubsection{Comparison of Classification Methods}
 \label{subs:Classification Methods}
 
+The classification techniques evaluated yield strongly varying results in combination with the different vector space models. A key takeaway here is that simple models should always be the starting point as we can see that a Logistic Regression classifier here already produces a very strong baseline which is only surpassed by few methods. Namely these are an the SVM and both Neural Network based algorithms which, despite a far higher level of complexity with regards to model choices such as architecture and hyper-parameters, only lead to a marginal improvement over Logistic Regression.
 
-\subsection{Sequential Modeling}
-\label{sub:Sequential Modeling}
+There seems to be a tendency of certain algorithms to work better with N-Gram models than with distributed representations. This can be observed for the tree-based methods, i.e. Decision Tree and Random Forest, and Naive Bayes. This could be interpreted with regards to these methods' model assumptions: Tree-based methods make exclusive choices on feature dimensions, splitting up the hypothesis space by thresholding the features. This works well for N-Grams as we can expect that there is no strong interaction between the dimensions: Each dimension encodes the (possibly transformed) number of occurrences of a certain pattern. Distributed representations on the other hand can be much more dense as essentially learn basis functions that are composed to show the desired pattern.
+Thus the more the patterns can be expressed in terms of compositions of these basis functions, the more information the representation can contain as it is more compressed and less redundant. This on the other hand means that simply selecting feature dimensions will not capture the complex activation composition of dimensions and might lead to the tree-based methods to perform poorly. Similarly the Naive Bayes works on the explicit assumption that features are independent and identically distributed. This is one of the reasons the technique works well in combination with N-Grams as features are words or groups of words. However similarly to Tree-based methods the compositional nature of distributed representations and does not align well with Naive Bayes' model assumptions and might be the a cause for their poor performance with these methods.
 
+Similar observations with can be made with regards to runtime: For instance training a \gls{kNN} model with distributed representations increases the runtime by an order of magnitudes although the vector representations are all of the same size. This is again likely due to these vectors being much more dense as opposed to N-Gram vectors where in the absence of an N-Gram the activation is simply zero. This can be assumed to occur relatively often as specific words with lower overall frequency are preferred for carrying more information about a certain class.
+On the other hand for some classifiers the distributed representation models do not significantly increase computation time. Decision Trees can only work with the features they are given as opposed to Random Forests which can extensively bootstrap samples for good feature subsets and therefore take much longer time to converge.
+Logistic Regression and Neural Network models simply take the input as an activation which is exactly how the distributed representations are trained in the first place, and thus do not need much more time or even less in some cases. SVM's like \gls{kNN} operate on the distance of vectors in the vector space (though not directly if the kernel-trick is applied). This makes them much slower to compute with dense vectors as well as for sparse vectors certain dimensions are automatically omitted (and become zero in the dot product). Therefore also SVM's are much more compute-intensive when using distributed representations.
 
+When choosing a classifier similar considerations as for the vector space model apply. Simple models such as Logistic Regression need far less time to be implemented, tested and tuned and with and lead to good performance. Of course this choice has to be informed by empirical results as simply choosing a method that is easy to implement and understand can lead to very poor performance as for the combination of Decision Trees with a Paragraph Vector representation (\gls{MCC} test score of 0.290). With more time and effort the limits can of performance can be pushed but as mentioned above the most limiting factor for distributed representations and also for methods like Deep Neural Networks is the size of the dataset used as argued e.g. by~\cite{Halevy:2009aa}.
+
+\subsection{Sequential Modeling Approach}
+\label{sub:Sequential Modeling Approach}
+
+When building the \gls{RNN} models the expectation was that they might be able to achieve a positive correlation score but not much more. This is mostly because these models, especially when stacked, need lots of training data. A nice read on the topic can be found on Andrej Karpathy's blog \footnote{\url{http://karpathy.github.io/2015/05/21/rnn-effectiveness/}} where different generative LSTM based models were trained to produce english text, or linux source code. Similarly~\cite{Graves:2013aa} used LSTM Networks to generate wikipedia articles. For these experiments a wikipedia dataset of 100MB was used, and Andrej Karpathy's smallest dataset is 1MB or a million characters which is slightly more than the dataset given here, before splitting it into training and test sets.
+
+Nevertheless the experiments yield results on the same level with a Logistic Regression model paired with Bag-Of-Means or a Neural Network using N-Grams and  with an \gls{MCC} test score of 0.707 are among the higher scoring models in this thesis. This is surprising for at least two reasons: First these models did not have any assumptions about language built in, not even the information what a word is. This means they had to learn a representation of the english language at least to the level that is needed to identify the enough structure to effectively classify sentences --- and in the case of the Multi-Learner actual english language one of the objectives was to produce written language.
+The other reason is that while for the vector spaces methods, especially the Paragraph Vector models, extensive research and experimentation was needed to achieve good results, the LSTM models used here were the result of a few rounds of testing different regularization by modifying the Dropout probability and trying different sizes of hidden layers. The final models are actually fairly small, \cite{Graves:2013aa} for instance used a network with an LSTM of 1000 nodes. However it is important to note that in general LSTM models are far more complex in their nature compared to e.g. a Logistic Regression model. While using open software packages that abstract much of the implementation details away and example code for network architectures known to be effective towards certain problems available it would have been significantly more effort to implement and tune these models from scratch.
+
+Is is questionable whether the performance of these models reached their potential. As mentioned before these models work much better with more data, further the architecture was small and with stronger regularization training bigger networks would have been successful. This is especially visible for the Multi-Task Learning Network which clearly did not reach a level where it can produce output resembling english language. While it had to predict both characters and labels, a task that is slightly more involved than only producing the next character given a sequence, its poor performance is likely to be an artifact of either too little data or mistakes setting the training parameters as almost identical architectures were shown to master this task (as can be seen in the blog post mentioned above and~\cite{Graves:2013aa}).
+
+Computational requirements of \glspl{RNN} and LSTM Networks in particular are very high as seen in these experiments, although it is important to note that these runtimes do not compare with the other Neural Network models as these were trained on a \gls{GPU}. Making use of parallel computing capabilities also training recurrent models will be faster by an order of magnitudes.
 
 \subsection{Comparison of Approaches}
+
+Vector Space models are an effective way of tackling problems in \gls{CL} and \gls{NLP} as we have seen. It is crucial though to not blindly pick from the wide array of possible representation approaches and classification methods but to choose a vector representation approach whose model assumptions align with the classifier's assumptions to enable the classifier to be able to exploit and leverage the structure exposed by the representation. N-Gram models can work with very little data due their strong inductive bias but are somewhat limited in their expressiveness while distributed representations produce much more dense vectors with strong interaction between dimensions, similar to the idea of basis functions in sparse coding or ``self-taught learning'' (see e.g.~\cite{Raina:2007aa}).
+
+The idea of treating text as a signal in time and modeling its dynamics without imposing any assumptions about language on the model on the other hand is very appealing and as shown here can lead to comparable results even with small datasets. While the \gls{RNN} model variants themselves can be quite involved they allow for much less thinking about the characteristics of the problem domain, learning to expose the needed structure themselves.
