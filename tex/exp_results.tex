@@ -477,6 +477,8 @@ In terms of test performance, the most important measure when considering the ef
 \end{center}
 \end{table}
 
+\clearpage
+
 Regarding vector space models we can see that the Paragraph Vectors did not achieve highest test performance in combination with any of the classifiers. Four of seven classifiers performed best with the Bag-of-Means model and also make up the highest two results while the N-Gram model worked best in the other cases.
 Table~\ref{tab:Classifier Results} shows that a set of methods achieve remarkable performance with simple N-Grams. Among them the SVM ranks highest with a \gls{MCC} test score of 0.713. Conversely in many cases the training score using Paragraph Vectors is highest, including both the Tree-based methods, Neural Network approaches and \gls{kNN}.
 Another important observation is that the Bag-of-Means model performs best overall and this is consistent half of the classifiers. The highest test score of 0.716 was achieved by a Neural Network using this model.
@@ -513,7 +515,6 @@ Another property of classification techniques is their capability to generalize.
 
 We can see that Naive Bayes and Logistic Regression achieve a very high ratio signaling good generalization.
 For the Neural Networks models tested it is apparent that the deep architecture overfits more than the network with a single hidden layer, i.e.\ it achieves higher training but lower test scores. When comparing the Deep Neural Network to Random Forests using Paragraph Vectors though we can see that while both methods achieve similarly high scores on the training data, Random Forests perform significantly worse on the test data --- Random Forests achieve scores of 0.985 (training) and 0.509 (test) as opposed to the scores of 0.989 (training) and 0.679 (test) for the Deep Neural Network.
-
 Naive Bayes behaves very differently with each vector space model. When using N-Grams the model shows decent performance but the score drops with the other models, showing a decrease of performance of 7.5\% with Paragraph Vectors and 15.7\% with Bag-of-Means.
 
 When looking at the vector space models Paragraph Vectors show a test to training score ration which is significantly lower than both other representations with by a margin of 10\% in absolute terms. This means that on average the classifiers tend to overfit on this representation. N-grams on the other hand achieve the highest ration in these terms.
